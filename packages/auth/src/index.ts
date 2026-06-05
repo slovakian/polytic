@@ -12,12 +12,12 @@ export function createAuth() {
       provider: "postgresql",
     }),
 
-    trustedOrigins: [env.CORS_ORIGIN],
+    trustedOrigins: [env.APP_URL],
     emailAndPassword: {
       enabled: true,
     },
     secret: env.BETTER_AUTH_SECRET,
-    baseURL: env.BETTER_AUTH_URL,
+    baseURL: env.APP_URL,
     plugins: [tanstackStartCookies()],
   });
 }
