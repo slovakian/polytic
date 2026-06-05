@@ -249,13 +249,12 @@ function HomeComponent() {
             Polytik
           </h1>
           <p className="text-balance text-xl text-foreground sm:text-2xl">
-            Understand your own politics in high resolution.
+            Figure out where you stand.
           </p>
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            The political compass is too crude, and left-vs-right is cruder still. Polytik
-            is a free resource for putting precise words to where you actually stand —
-            not through a fixed quiz, but through a conversation that surfaces nuance and
-            ends in a considered verdict.
+            Political compasses and left-right labels miss a lot. Polytik is a guided
+            conversation about your views. You get questions, some pushback, and a summary
+            at the end.
           </p>
         </header>
 
@@ -263,35 +262,31 @@ function HomeComponent() {
         <section className="flex flex-col gap-4">
           <h2 className="font-heading text-2xl text-foreground">A skill, not a site</h2>
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            Polytik ships as a <strong className="font-medium text-foreground">grilling
-            skill</strong> you install into any AI agent — Claude, Cursor, or anything
-            that speaks the skills format. The agent interviews you across political
-            dimensions, challenges your inconsistencies without ever pushing a side, and
-            hands you an evidence-backed verdict in established political vocabulary.
+            Polytik is a <strong className="font-medium text-foreground">grilling
+            skill</strong> you install in an AI agent like Claude or Cursor. The agent
+            asks about your politics, notes where your answers conflict, and writes up
+            where you seem to land. It does not argue for a side.
           </p>
           <ul className="flex flex-col gap-3 text-sm leading-relaxed text-muted-foreground">
             <li className="flex gap-3">
-              <span aria-hidden="true" className="select-none text-foreground/40">—</span>
+              <span aria-hidden="true" className="select-none text-foreground/40">·</span>
               <span>
                 <strong className="font-medium text-foreground">Non-partisan.</strong> The
-                agent never reveals or pushes its own politics. It steelmans every side
-                equally.
+                agent does not share or push its own politics.
               </span>
             </li>
             <li className="flex gap-3">
-              <span aria-hidden="true" className="select-none text-foreground/40">—</span>
+              <span aria-hidden="true" className="select-none text-foreground/40">·</span>
               <span>
-                <strong className="font-medium text-foreground">Maps, doesn&apos;t
-                grade.</strong> It describes where you are; it never judges where you
-                should be.
+                <strong className="font-medium text-foreground">Descriptive.</strong> It
+                explains your views. It does not rate them.
               </span>
             </li>
             <li className="flex gap-3">
-              <span aria-hidden="true" className="select-none text-foreground/40">—</span>
+              <span aria-hidden="true" className="select-none text-foreground/40">·</span>
               <span>
-                <strong className="font-medium text-foreground">Nuance over
-                reduction.</strong> It adds dimensions and resolution instead of collapsing
-                you onto a crude axis.
+                <strong className="font-medium text-foreground">More than a quiz.</strong>{" "}
+                It follows what you say instead of fixed categories.
               </span>
             </li>
           </ul>
@@ -301,14 +296,12 @@ function HomeComponent() {
         <section className="flex flex-col gap-4">
           <h2 className="font-heading text-2xl text-foreground">Install it</h2>
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            Run the install command with your package runner of choice, then tell your
-            agent <em className="text-foreground not-italic">&ldquo;Grill me on my
-            politics&rdquo;</em>.
+            Run the command below, then ask your agent to{" "}
+            <em className="text-foreground not-italic">grill you on your politics</em>.
           </p>
           <InstallCard />
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Prefer to paste it in by hand? Expand the full prompt below and drop it into
-            any agent.
+            Or open the full prompt below and paste it into any agent.
           </p>
           <SkillBlock />
         </section>
@@ -323,7 +316,7 @@ function HomeComponent() {
           >
             {REPO} on GitHub →
           </a>
-          <p>Polytik is non-partisan. It maps where you are; it never grades where you should be.</p>
+          <p>Non-partisan. Open source.</p>
         </footer>
       </div>
     </main>
