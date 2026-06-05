@@ -17,6 +17,38 @@ landscape using the language political thinkers have built over centuries.
    out the skill. First-party in-app grilling, profiles, and alignment scoring come
    later — see `docs/roadmap.md`. **Do not build ahead of Phase 0.**
 
+## Polytik Party skill (public install)
+
+The distributable skill lives in **`skills/polytik-party/`** and publishes to
+**[`slovakian/polytik-party`](https://github.com/slovakian/polytik-party)** via git subtree.
+This private repo is the **source of truth**; the public repo is a read-only mirror.
+
+```bash
+npx skills add slovakian/polytik-party
+```
+
+### Keeping the public repo in sync (agents)
+
+When you change anything under `skills/polytik-party/`:
+
+1. **Edit only in the monorepo** — never treat the public repo as canonical.
+2. **Commit** skill changes in this private repo.
+3. **Publish** to the public mirror:
+   ```bash
+   bun run skills:publish
+   ```
+   (runs `git subtree push --prefix=skills/polytik-party polytik-party main`)
+4. If `subtree push` fails on first publish or after history rewrites, bootstrap once:
+   ```bash
+   git subtree split --prefix=skills/polytik-party -b publish/polytik-party
+   git push polytik-party publish/polytik-party:main
+   git branch -D publish/polytik-party
+   ```
+5. **Rare reverse sync** (hotfix landed on GitHub):  
+   `git subtree pull --prefix=skills/polytik-party polytik-party main --squash`
+
+Remote name: `polytik-party` → `git@github.com:slovakian/polytik-party.git`. Full maintainer notes: **`skills/README.md`**. Product behavior: **`docs/grilling-protocol.md`**.
+
 ## Inviolable principles
 
 These bind every feature, forever. If a change violates one, it's wrong.

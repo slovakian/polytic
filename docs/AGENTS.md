@@ -26,7 +26,7 @@ why*.
 | --- | --- |
 | `vision.md` | The thesis and north star, long form. |
 | `principles.md` | The inviolable design laws, expanded with rationale. |
-| `grilling-protocol.md` | How the v1 grilling skill works and the open questions. |
+| `grilling-protocol.md` | How the v1 grilling skill works, install command, open questions. |
 | `dimension-taxonomy.md` | The model for Polytik's political axes (source-of-truth asset). |
 | `label-library.md` | The model for the label catalog verdicts anchor to (source-of-truth asset). |
 | `roadmap.md` | Phases 0–4. v1 is Phase 0 only. |

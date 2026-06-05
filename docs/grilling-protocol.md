@@ -4,6 +4,16 @@ The v1 product is a **distributable grilling skill**: a prompt installed via the
 skills CLI or copy-pasted into any AI agent. It interviews the user and delivers a
 verdict on their politics. This doc describes how it should behave.
 
+## Install
+
+Published from the public skills repo (not this private app repo):
+
+```bash
+npx skills add slovakian/polytik-party
+```
+
+Source in this monorepo: `skills/polytik-party/`. Maintainer notes: `skills/README.md`.
+
 ## Shape
 
 - **Full sweep, then verdict.** The skill grills across the dimensions, *then*

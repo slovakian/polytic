@@ -33,7 +33,8 @@
     "db:migrate": "bun run --filter @polytik/db db:migrate",
     "deploy": "bun run --filter @polytik/infra deploy",
     "destroy": "bun run --filter @polytik/infra destroy",
-    "check": "oxlint && oxfmt --write"
+    "check": "oxlint && oxfmt --write",
+    "skills:publish": "git subtree push --prefix=skills/polytik-party polytik-party main"
   },
   "dependencies": {
     "@polytik/env": "workspace:*",

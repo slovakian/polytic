@@ -1,5 +1,19 @@
 # polytik
 
+**Polytik** helps people understand their own politics in high resolution — an AI that
+*grills* you and delivers a nuanced verdict, not a crude compass score.
+
+This repo is the **Phase 0 showcase app** (private). The distributable grilling skill is
+published separately:
+
+```bash
+npx skills add slovakian/polytik-party
+```
+
+See `AGENTS.md`, `docs/`, and `skills/README.md` for product detail and maintainer workflow.
+
+---
+
 This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React, TanStack Start, Self, and more.
 
 ## Features
