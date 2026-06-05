@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
+import { CopyButton } from "@/components/copy-button";
+import { SkillPreview } from "@/components/skill-preview";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 // The grilling skill, mirrored from skills/polytik-party/SKILL.md (also published to
@@ -112,57 +114,6 @@ const RUNNERS = [
 
 const SKILL_ARG = `skills add ${REPO}`;
 
-async function copyText(text: string) {
-  try {
-    if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(text);
-      return true;
-    }
-  } catch {
-    // fall through to legacy path
-  }
-  try {
-    const el = document.createElement("textarea");
-    el.value = text;
-    el.setAttribute("readonly", "");
-    el.style.position = "absolute";
-    el.style.left = "-9999px";
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-function useCopied() {
-  const [copied, setCopied] = useState(false);
-  const copy = async (text: string) => {
-    const ok = await copyText(text);
-    if (ok) {
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    }
-  };
-  return { copied, copy };
-}
-
-function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
-  const { copied, copy } = useCopied();
-  return (
-    <button
-      type="button"
-      onClick={() => copy(text)}
-      aria-label={copied ? "Copied to clipboard" : label}
-      className="inline-flex h-7 shrink-0 items-center gap-1.5 rounded-md border border-border bg-background px-2.5 text-xs font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-    >
-      {copied ? "Copied" : label}
-    </button>
-  );
-}
-
 function InstallCard() {
   // Default-selected runner is deterministic, so server and client render identically.
   const [active, setActive] = useState<(typeof RUNNERS)[number]["id"]>("npm");
@@ -203,127 +154,66 @@ function InstallCard() {
   );
 }
 
-function SkillBlock() {
-  // Collapsed by default; same initial value on server and client (no hydration mismatch).
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
-      <div className="flex items-center justify-between gap-3 px-4 py-3">
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="skill-source"
-          className="flex items-center gap-2 text-left text-sm font-medium text-foreground"
-        >
-          <span
-            aria-hidden="true"
-            className={
-              "inline-block text-muted-foreground transition-transform " +
-              (open ? "rotate-90" : "rotate-0")
-            }
-          >
-            ▶
-          </span>
-          {open ? "Hide the full skill prompt" : "View & copy the full skill prompt"}
-        </button>
-        <CopyButton text={skillSource} label="Copy prompt" />
-      </div>
-      {open ? (
-        <div id="skill-source" className="border-t border-border/60">
-          <pre className="max-h-[28rem] overflow-auto px-4 py-4 font-mono text-xs leading-relaxed text-muted-foreground">
-            {skillSource}
-          </pre>
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
 function HomeComponent() {
   return (
     <main className="min-h-svh px-6 py-16 sm:py-24">
       <div className="fixed top-4 right-4 z-10">
         <ThemeToggle />
       </div>
-      <div className="mx-auto flex max-w-2xl flex-col gap-12">
+      <div className="mx-auto flex max-w-2xl flex-col gap-10">
         {/* Wordmark + thesis */}
         <header className="flex flex-col gap-5">
           <h1 className="font-heading text-6xl leading-none tracking-tight text-foreground sm:text-7xl">
-            Polytik
+            <span className="rainbow-text">Poly</span>
+            tik
           </h1>
           <p className="text-balance text-xl text-foreground sm:text-2xl">
-            Figure out where you stand.
+            Understand your politics in high resolution.
           </p>
-          <p className="text-pretty leading-relaxed text-muted-foreground">
-            Political compasses and left-right labels miss a lot. Polytik is a guided
-            conversation about your views. You get questions, some pushback, and a summary
-            at the end.
-          </p>
-          <h2 className="font-heading text-xl text-muted-foreground">
-            From{" "}
-            <a
-              href={AUTHOR_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="font-bold text-foreground underline-offset-4 hover:underline"
-            >
-              Jason Procka
-            </a>
-          </h2>
+          <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
+            <p>
+              Left vs. right is one crude axis. Political compasses add another and feel less
+              silly—but you are still a point in two dimensions. Real views do not fit on a chart.
+            </p>
+            <p>
+              Polytik uses AI to map where you stand{" "}
+              <strong className="font-medium text-foreground">multi-dimensionally</strong>: an agent
+              grills you across political topics, follows up on contradictions, and summarizes what
+              you actually believe.
+            </p>
+          </div>
         </header>
-
-        {/* What it is */}
-        <section className="flex flex-col gap-4">
-          <h2 className="font-heading text-2xl text-foreground">A skill, not a site</h2>
-          <p className="text-pretty leading-relaxed text-muted-foreground">
-            Polytik is a <strong className="font-medium text-foreground">grilling
-            skill</strong> you install in an AI agent like Claude or Cursor. The agent
-            asks about your politics, notes where your answers conflict, and writes up
-            where you seem to land. It does not argue for a side.
-          </p>
-          <ul className="flex flex-col gap-3 text-sm leading-relaxed text-muted-foreground">
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="select-none text-foreground/40">·</span>
-              <span>
-                <strong className="font-medium text-foreground">Non-partisan.</strong> The
-                agent does not share or push its own politics.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="select-none text-foreground/40">·</span>
-              <span>
-                <strong className="font-medium text-foreground">Descriptive.</strong> It
-                explains your views. It does not rate them.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="select-none text-foreground/40">·</span>
-              <span>
-                <strong className="font-medium text-foreground">More than a quiz.</strong>{" "}
-                It follows what you say instead of fixed categories.
-              </span>
-            </li>
-          </ul>
-        </section>
 
         {/* Install */}
         <section className="flex flex-col gap-4">
-          <h2 className="font-heading text-2xl text-foreground">Install it</h2>
+          <h2 className="font-heading text-2xl text-foreground">Install the skill</h2>
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            Run the command below, then ask your agent to{" "}
+            Polytik ships as a{" "}
+            <strong className="font-medium text-foreground">grilling skill</strong> for your AI
+            agent. Run the command below—or copy the prompt—and ask it to{" "}
             <em className="text-foreground not-italic">grill you on your politics</em>.
           </p>
           <InstallCard />
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Or open the full prompt below and paste it into any agent.
+            Or copy the full prompt below and paste it into any agent.
           </p>
-          <SkillBlock />
+          <SkillPreview source={skillSource} />
         </section>
 
         {/* Footer */}
         <footer className="flex flex-col gap-2 border-t border-border/60 pt-6 text-sm text-muted-foreground">
+          <p>
+            By{" "}
+            <a
+              href={AUTHOR_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="text-foreground underline-offset-4 hover:underline"
+            >
+              Jason Procka
+            </a>
+            . Non-partisan. Open source.
+          </p>
           <a
             href={REPO_URL}
             target="_blank"
@@ -340,7 +230,6 @@ function HomeComponent() {
           >
             @pinesheet on X →
           </a>
-          <p>Non-partisan. Open source.</p>
         </footer>
       </div>
     </main>
