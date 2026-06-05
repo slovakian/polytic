@@ -7,7 +7,9 @@ export const getRouter = () => {
     routeTree,
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
-    context: {},
+    context: {
+      serverSeed: 0,
+    },
     defaultNotFoundComponent: () => <div>Not Found</div>,
   });
 

@@ -32,3 +32,23 @@
     background-position: 0% 50%;
   }
 }
+
+@keyframes buy-me-a-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.72;
+  }
+}
+
+.buy-me-a-pulse {
+  animation: buy-me-a-pulse 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buy-me-a-pulse {
+    animation: none;
+  }
+}

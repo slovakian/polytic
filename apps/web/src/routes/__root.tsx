@@ -1,12 +1,19 @@
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { getServerSeed } from "@/server/get-server-seed";
 
 import appCss from "../index.css?url";
 
-export interface RouterAppContext {}
+export interface RouterAppContext {
+  serverSeed: number;
+}
 
 export const Route = createRootRouteWithContext<RouterAppContext>()({
+  beforeLoad: async () => {
+    const serverSeed = await getServerSeed();
+    return { serverSeed };
+  },
   head: () => ({
     meta: [
       {

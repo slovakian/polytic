@@ -115,21 +115,24 @@ function HomeComponent() {
           <SkillPreview source={skillSource} />
         </section>
 
-        <BuyMeACarousel />
-
         {/* Footer */}
         <footer className="flex flex-col gap-2 border-t border-border/60 pt-6 text-sm text-muted-foreground">
-          <p>
-            By{" "}
-            <a
-              href={AUTHOR_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="text-foreground underline-offset-4 hover:underline"
-            >
-              Jason Procka
-            </a>
-            .
+          <p className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <span>
+              By{" "}
+              <a
+                href={AUTHOR_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="text-foreground underline-offset-4 hover:underline"
+              >
+                Jason Procka
+              </a>
+            </span>
+            <span aria-hidden className="text-border">
+              ·
+            </span>
+            <BuyMeACarousel />
           </p>
           <a
             href={REPO_URL}

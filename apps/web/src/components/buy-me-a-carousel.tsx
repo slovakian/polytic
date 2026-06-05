@@ -1,27 +1,77 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { cn } from "@polytik/ui/lib/utils";
 
 import { Link } from "@/components/link";
+import { useServerSeed } from "@/hooks/use-server-seed";
+import { seededShuffle } from "@/lib/seeded-random";
 
 const BUY_ME_A_COFFEE_URL = "https://buymeacoffee.com/procka";
 
 const TREATS = [
-  { emoji: "🍺", label: "beer" },
-  { emoji: "🍡", label: "some mochi" },
-  { emoji: "🍔", label: "a burger" },
-  { emoji: "☕", label: "a coffee" },
-  { emoji: "🍕", label: "a slice" },
-  { emoji: "🥟", label: "dumplings" },
-  { emoji: "🍦", label: "ice cream" },
-  { emoji: "🧋", label: "bubble tea" },
-  { emoji: "🌮", label: "a taco" },
-  { emoji: "🍩", label: "a donut" },
+  { emoji: "🍺", prefix: "Buy me a", label: "beer" },
+  { emoji: "🍡", prefix: "Buy me some", label: "mochi" },
+  { emoji: "🍔", prefix: "Buy me a", label: "burger" },
+  { emoji: "☕", prefix: "Buy me a", label: "coffee" },
+  { emoji: "🍕", prefix: "Buy me a", label: "slice" },
+  { emoji: "🥟", prefix: "Buy me some", label: "dumplings" },
+  { emoji: "🍦", prefix: "Buy me some", label: "ice cream" },
+  { emoji: "🧋", prefix: "Buy me a", label: "bubble tea" },
+  { emoji: "🌮", prefix: "Buy me a", label: "taco" },
+  { emoji: "🍩", prefix: "Buy me a", label: "donut" },
 ] as const;
 
 const ROTATE_MS = 3200;
 
+function TreatSlot({
+  treats,
+  index,
+  motionOk,
+}: {
+  treats: (typeof TREATS)[number][];
+  index: number;
+  motionOk: boolean;
+}) {
+  const treat = treats[index] ?? treats[0]!;
+
+  if (!motionOk) {
+    return (
+      <span className="inline-flex flex-wrap items-baseline gap-x-1">
+        <span className="text-muted-foreground">{treat.prefix}</span>
+        <span className="inline-flex items-center gap-1">
+          <span aria-hidden>{treat.emoji}</span>
+          {treat.label}
+        </span>
+      </span>
+    );
+  }
+
+  return (
+    <span className="inline-grid [&>*]:col-start-1 [&>*]:row-start-1">
+      {treats.map((item, i) => (
+        <span
+          key={item.label}
+          className={cn(
+            "inline-flex flex-wrap items-baseline gap-x-1 whitespace-nowrap transition-opacity duration-500",
+            i === index ? "opacity-100" : "opacity-0",
+          )}
+          aria-hidden={i !== index}
+        >
+          <span className="text-muted-foreground">{item.prefix}</span>
+          <span className="inline-flex items-center gap-1">
+            <span aria-hidden>{item.emoji}</span>
+            {item.label}
+          </span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
 export function BuyMeACarousel() {
+  const serverSeed = useServerSeed();
+  const treats = useMemo(() => seededShuffle(TREATS, serverSeed), [serverSeed]);
+
   const [index, setIndex] = useState(0);
   const [motionOk, setMotionOk] = useState(true);
 
@@ -36,52 +86,18 @@ export function BuyMeACarousel() {
   useEffect(() => {
     if (!motionOk) return;
     const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % TREATS.length);
+      setIndex((i) => (i + 1) % treats.length);
     }, ROTATE_MS);
     return () => window.clearInterval(id);
-  }, [motionOk]);
-
-  const treat = TREATS[index];
+  }, [motionOk, treats.length]);
 
   return (
     <Link
       href={BUY_ME_A_COFFEE_URL}
-      className="group block rounded-xl bg-card px-5 py-4 text-center no-underline ring-1 ring-foreground/10 transition-colors hover:bg-muted/40 hover:no-underline"
-      aria-label="Support Polytik on Buy Me a Coffee"
+      className="buy-me-a-pulse inline-flex flex-wrap items-baseline"
+      aria-label="Buy me a treat on Buy Me a Coffee"
     >
-      <p className="text-sm text-muted-foreground">Enjoying Polytik?</p>
-      <p className="mt-1 font-heading text-xl text-foreground sm:text-2xl">
-        Buy me a{" "}
-        <span className="relative inline-flex min-w-[9ch] justify-center">
-          {motionOk ? (
-            TREATS.map((item, i) => (
-              <span
-                key={item.label}
-                className={cn(
-                  "absolute left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap transition-opacity duration-500",
-                  i === index ? "opacity-100" : "opacity-0",
-                )}
-                aria-hidden={i !== index}
-              >
-                <span aria-hidden>{item.emoji}</span>
-                {item.label}
-              </span>
-            ))
-          ) : (
-            <span className="inline-flex items-center gap-1.5">
-              <span aria-hidden>{treat.emoji}</span>
-              {treat.label}
-            </span>
-          )}
-          <span className="invisible inline-flex items-center gap-1.5 whitespace-nowrap">
-            <span aria-hidden>{TREATS[0].emoji}</span>
-            {TREATS[0].label}
-          </span>
-        </span>
-      </p>
-      <p className="mt-2 text-xs text-muted-foreground group-hover:text-foreground">
-        buymeacoffee.com/procka →
-      </p>
+      <TreatSlot treats={treats} index={index} motionOk={motionOk} />
     </Link>
   );
 }
