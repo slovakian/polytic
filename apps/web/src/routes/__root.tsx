@@ -1,8 +1,4 @@
-import { Toaster } from "@polytik/ui/components/sonner";
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-
-import Header from "../components/header";
 
 import appCss from "../index.css?url";
 
@@ -19,7 +15,12 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "My App",
+        title: "Polytik — Understand your politics in high resolution",
+      },
+      {
+        name: "description",
+        content:
+          "Polytik is a resource that helps you understand your own politics in high resolution. Install the grilling skill into any AI agent and get interviewed across political dimensions — then handed an evidence-backed verdict.",
       },
     ],
     links: [
@@ -40,12 +41,7 @@ function RootDocument() {
         <HeadContent />
       </head>
       <body>
-        <div className="grid h-svh grid-rows-[auto_1fr]">
-          <Header />
-          <Outlet />
-        </div>
-        <Toaster richColors />
-        <TanStackRouterDevtools position="bottom-left" />
+        <Outlet />
         <Scripts />
       </body>
     </html>
