@@ -24,9 +24,57 @@ Source in this monorepo: `skills/polytik-party/`. Maintainer notes: `skills/READ
   taxonomy (`dimension-taxonomy.md`) as its skeleton, but within each dimension it
   probes whatever issues, edge-cases, and contradictions actually surface. The map is
   shared and comparable across people; the conversation is bespoke.
-- **Challenge for coherence.** When answers conflict or stay vague, the AI asks
-  *"why this and not that?"* — testing consistency, never pushing a direction (see
-  `principles.md`).
+- **Challenge for coherence.** When answers conflict or stay vague, the AI probes —
+  testing consistency, never pushing a direction (see `principles.md`).
+- **Rapid-fire turns.** During the grill, agent replies stay to 1–2 sentences: one
+  sharp question, no praise or answer summaries. Depth comes from many short probes,
+  not long monologues. The verdict at the end is where length belongs.
+
+## Interview engine (state machine)
+
+The skill treats the session as a tree, not a personality:
+
+```
+ANCHOR → SKELETON SWEEP → LOCALIZED STRESS-TESTS → VERDICT
+```
+
+1. **Anchor** — establish country/region (or where politics mainly apply) and a rough
+   worldview. Later questions filter through this lens.
+2. **Skeleton sweep** — walk the dimension taxonomy sequentially.
+3. **Localized stress-tests** — highest-stakes, country-specific divisive issues.
+4. **Verdict** — evidence-backed summary only at the end.
+
+### Verdict gate (mandatory)
+
+The skill must not output a verdict until **all** of the following hold:
+
+1. Anchor complete (region + worldview).
+2. **Every** v0 scaffolding area in the skill's `taxonomy.md` visited in order (3–5 turns
+   per area unless unsettled after probes).
+3. Localized stress-tests: 3–5 turns across **several** country-specific flashpoints (not
+   one token question).
+4. At least **20 user answers** in the grill (unless the user explicitly stops early →
+   partial verdict).
+5. Confidence in the verdict matches the session — "I don't know" / unsettled topics are
+   **open** or **mixed**, never **settled**.
+
+The full gate and anti-patterns (thread-chasing, weak-model rush to verdict) live in
+`skills/polytik-party/references/protocol.md`. Verdict markdown template lives in
+`references/verdict-format.md` and should be read only at the end.
+
+### Micro-loop (every turn)
+
+Before each agent reply, classify the user's answer:
+
+| Signal | Action |
+| --- | --- |
+| Surface (vague, slogan, dodge) | **Probe** — same topic, edge case or counterfactual. Max 2 probes, then mark unsettled and advance. |
+| Nuanced (conditions, principles) | **Log & advance** — note internally, next question. |
+| Contradictory with prior answers | **Tension** — name the conflict in one line, one follow-up question. |
+| Unsettled after probes | Mark **open** internally; **advance to next dimension** — not verdict. |
+
+This prevents the common failure mode: accepting "it's fine" and moving on, or padding
+every turn with validation and recap.
 
 ## The verdict
 

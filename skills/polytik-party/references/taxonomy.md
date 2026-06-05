@@ -12,26 +12,80 @@
 ## Canonical status
 
 When this file contains a full authored dimension list (names, definitions, sub-topics,
-seed issues), treat it as **canonical** and cover every dimension before the verdict.
+seed issues), treat it as **canonical** and cover **every** dimension before the verdict.
 
 When the section below still says **v0 scaffolding**, use those areas as conversation
-scaffolding only — do not present them as final Polytik axes or numeric scores.
+scaffolding only — do not present them as final Polytik axes or numeric scores. You must
+still **visit every area below** before the verdict gate allows a full verdict.
 
 ---
 
 ## v0 scaffolding (until canonical taxonomy ships)
 
-Use these **illustrative areas** to structure the grill. They are direction for
-coverage, not official Polytik dimensions:
+Walk these **seven areas in order** during the skeleton sweep. Spend **3–5 turns per
+area** (more when answers stay surface). Do not skip an area because an earlier answer
+seemed to cover it tangentially.
 
-1. **Economic organization** — markets, property, welfare, trade, labor.
-2. **Social order & tradition** — family, culture, religion in public life, moral norms.
-3. **State authority vs. liberty** — surveillance, policing, speech, guns, drugs.
-4. **Nationalism vs. cosmopolitanism** — borders, immigration, international institutions.
-5. **Change tempo** — reform vs. revolution, institutions vs. rupture.
-6. **Epistemics & expertise** — who to trust, science in policy, media literacy.
-7. **Ecology & the long term** — climate, growth, intergenerational tradeoffs.
+### 1. Economic organization
 
-Within each area: start from something concrete the user cares about, follow
-contradictions, and only move on when you have a stable read or an honest "still
-unsettled" flag.
+Markets, property, welfare, trade, labor.
+
+*Seed angles:* entitlement programs, healthcare funding, tax burden, unions, trade
+protection vs openness.
+
+### 2. Social order & tradition
+
+Family, culture, religion in public life, moral norms.
+
+*Seed angles:* religion in schools, gender roles, DEI, cultural change vs tradition.
+**Note:** A strong opening answer on "woke" or culture does not complete this sweep —
+still ask distinct concrete questions here if anchor already touched culture, or advance
+quickly after 1–2 turns but do not skip the area entirely.
+
+### 3. State authority vs. liberty
+
+Surveillance, policing, speech, guns, drugs.
+
+*Seed angles:* platform moderation, police powers, gun rights, drug legalization,
+surveillance for security.
+
+### 4. Nationalism vs. cosmopolitanism
+
+Borders, immigration, international institutions.
+
+*Seed angles:* deportation, legal immigration levels, refugee policy, NATO/UN, globalism.
+
+### 5. Change tempo
+
+Reform vs. revolution, institutions vs. rupture.
+
+*Seed angles:* working inside the system vs outsider politics, court reform, constitutional
+convention, protest tactics.
+
+### 6. Epistemics & expertise
+
+Who to trust, science in policy, media literacy.
+
+*Seed angles:* trust in experts vs populist knowledge, mandating vaccines/masks, climate
+science in policy, media bias.
+
+### 7. Ecology & the long term
+
+Climate, growth, intergenerational tradeoffs.
+
+*Seed angles:* climate regulation vs growth, nuclear, fossil phase-out, future generations
+vs present jobs.
+
+---
+
+## Per-area rules
+
+Within each area: start from something concrete the user cares about or a scenario tied to
+their country. Surface answers get probed (max 2 per sub-topic) before you advance. Move
+on with a stable read or an honest **unsettled** flag — then **continue to the next area**,
+not to verdict.
+
+## Before verdict
+
+All seven boxes must be checked (visited with at least one substantive question each).
+Unsettled areas stay **open** in the verdict Caveats and Dimensions sections.

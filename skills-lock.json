@@ -13,6 +13,11 @@
       "skillPath": "skills/neon-postgres/SKILL.md",
       "computedHash": "3c53df29c959dc0a7f724ff8620063b20fabd2b1fa702ec97e3f17e6a23d5a1c"
     },
+    "polytik-party": {
+      "source": "/Users/jason/dev/polytik/skills/polytik-party",
+      "sourceType": "local",
+      "computedHash": "50774722a335fd085f72ec2e7b9502d0998e5a9c55f56f15761b798446c02c57"
+    },
     "prisma-cli": {
       "source": "prisma/skills",
       "sourceType": "github",

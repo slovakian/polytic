@@ -2,7 +2,7 @@
 
 **Understand your politics in high resolution** — not with a compass or a quiz, but through a conversation.
 
-Install this skill in your AI agent (Claude, Cursor, ChatGPT with skills, etc.). It interviews you across political dimensions, challenges inconsistencies without pushing any ideology, and delivers an evidence-backed verdict using established political vocabulary.
+Install this skill in your AI agent (Claude, Cursor, ChatGPT with skills, etc.). It runs a rapid cross-examination across political dimensions, probes vague answers, challenges inconsistencies without pushing any ideology, and delivers an evidence-backed verdict using established political vocabulary.
 
 ## Install
 
@@ -20,9 +20,14 @@ Then ask your agent: *"Grill me on my politics"* or *"Run Polytik."*
 
 ## What you get
 
-- A thorough Socratic interview across political dimensions
-- Pushback on contradictions — never nudged toward a side
-- A final verdict with recognized labels and a narrative that captures your nuance
+- A rapid-fire Socratic interview — short, pointed questions, not long lectures (expect
+  **many** turns across seven political dimensions before the verdict)
+- Pushback on vague or contradictory answers — never nudged toward a side
+- A final verdict with recognized labels and a narrative that captures your nuance — only
+  after a full skeleton sweep, not after a handful of questions
+
+**Tip:** Weaker or highly completion-biased models may still rush the verdict. Use a
+capable model for best results, or say *"keep grilling — not done yet"* if it stops early.
 
 ## Principles
 

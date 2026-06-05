@@ -82,6 +82,11 @@ npx skills add ./skills/polytik-party -y
 
 From monorepo root. Validates `SKILL.md` before you publish.
 
+## Homepage copy-paste preview
+
+The marketing site (`apps/web`) bundles `skills/polytik-party/SKILL.md` at build time for
+the copy-paste preview — edit the skill file only; do not duplicate it in the web app.
+
 ## Adding a second consumer skill later
 
 Two clean options:
