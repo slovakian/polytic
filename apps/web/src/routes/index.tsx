@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
+import { BuyMeACarousel } from "@/components/buy-me-a-carousel";
 import { CopyButton } from "@/components/copy-button";
 import { SkillPreview } from "@/components/skill-preview";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -113,6 +114,8 @@ function HomeComponent() {
           </p>
           <SkillPreview source={skillSource} />
         </section>
+
+        <BuyMeACarousel />
 
         {/* Footer */}
         <footer className="flex flex-col gap-2 border-t border-border/60 pt-6 text-sm text-muted-foreground">
