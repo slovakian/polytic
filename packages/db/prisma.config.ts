@@ -13,6 +13,10 @@ export default defineConfig({
     path: path.join("prisma", "migrations"),
   },
   datasource: {
-    url: env("DATABASE_URL"),
+    // The Prisma CLI (migrate dev/deploy, db push, studio) must talk to the
+    // direct, non-pooled connection — pgbouncer breaks migration advisory
+    // locks. The runtime client uses the pooled DATABASE_URL via the Neon
+    // adapter (see src/index.ts); this URL is CLI-only.
+    url: env("DATABASE_URL_DIRECT"),
   },
 });

@@ -1,0 +1,143 @@
+name: Deploy Application
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  STAGE: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.number) || (github.ref == 'refs/heads/main' && 'prod' || github.ref_name) }}
+
+jobs:
+  deploy:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      # Resolve the database URLs the rest of the job uses.
+      #   - prod (push to main): the long-lived production secrets.
+      #   - PR preview: an ephemeral Neon branch forked from the production
+      #     database's current state, so the preview app + migrations run
+      #     against a throwaway clone of real data. The branch is named after
+      #     the PR (pr-<number>), reused across pushes, and deleted by the
+      #     cleanup job when the PR closes.
+      # Two URLs land in the job env:
+      #   DATABASE_URL        — pooled endpoint, used by the runtime Worker.
+      #   DATABASE_URL_DIRECT — non-pooled endpoint, used by `migrate deploy`
+      #                         (Prisma needs a direct connection for advisory
+      #                         locks; pooled/pgbouncer breaks migrations).
+      - name: Resolve database URL
+        env:
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
+          PROD_DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          PROD_DATABASE_URL_DIRECT: ${{ secrets.DATABASE_URL_DIRECT }}
+          PR_NUMBER: ${{ github.event_name == 'pull_request' && github.event.number || '' }}
+        run: |
+          set -euo pipefail
+          if [ -n "$PR_NUMBER" ]; then
+            BRANCH="pr-${PR_NUMBER}"
+            echo "Ensuring Neon branch '$BRANCH' (forked from the default/prod branch)…"
+            # Create the branch; ignore the error if it already exists (re-push).
+            bunx neonctl@latest branches create \
+              --name "$BRANCH" \
+              --project-id "$NEON_PROJECT_ID" 2>/dev/null \
+              || echo "Branch '$BRANCH' already exists — reusing it."
+            # Pooled for the app, non-pooled (direct) for migrations.
+            DB_URL="$(bunx neonctl@latest connection-string "$BRANCH" --project-id "$NEON_PROJECT_ID" --pooled)"
+            DB_URL_DIRECT="$(bunx neonctl@latest connection-string "$BRANCH" --project-id "$NEON_PROJECT_ID")"
+          else
+            DB_URL="$PROD_DATABASE_URL"
+            DB_URL_DIRECT="$PROD_DATABASE_URL_DIRECT"
+          fi
+          # Keep credentials out of logs and hand them to later steps.
+          echo "::add-mask::$DB_URL"
+          echo "::add-mask::$DB_URL_DIRECT"
+          echo "DATABASE_URL=$DB_URL" >> "$GITHUB_ENV"
+          echo "DATABASE_URL_DIRECT=$DB_URL_DIRECT" >> "$GITHUB_ENV"
+
+      # Apply committed migrations before shipping new code so the schema is
+      # ready when the new Worker goes live. `migrate deploy` only plays forward
+      # already-committed migrations — it never generates, resets, or prompts.
+      # Uses the direct (non-pooled) URL.
+      - name: Migrate database
+        working-directory: packages/db
+        run: bun run db:deploy
+        env:
+          DATABASE_URL_DIRECT: ${{ env.DATABASE_URL_DIRECT }}
+
+      - name: Deploy
+        working-directory: packages/infra
+        run: bun alchemy deploy --stage ${{ env.STAGE }}
+        env:
+          ALCHEMY_PASSWORD: ${{ secrets.ALCHEMY_PASSWORD }}
+          ALCHEMY_STATE_TOKEN: ${{ secrets.ALCHEMY_STATE_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+          DATABASE_URL: ${{ env.DATABASE_URL }}
+          BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
+          PULL_REQUEST: ${{ github.event_name == 'pull_request' && github.event.number || '' }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  cleanup:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Safety Check
+        run: |
+          if [ "${{ env.STAGE }}" = "prod" ]; then
+            echo "ERROR: Cannot destroy prod environment in cleanup job"
+            exit 1
+          fi
+
+      - name: Destroy Preview Environment
+        working-directory: packages/infra
+        run: bun alchemy destroy --stage ${{ env.STAGE }}
+        env:
+          ALCHEMY_PASSWORD: ${{ secrets.ALCHEMY_PASSWORD }}
+          ALCHEMY_STATE_TOKEN: ${{ secrets.ALCHEMY_STATE_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+
+      # Tear down the ephemeral Neon branch created for this PR. Runs even if the
+      # destroy above fails, so a stuck Worker never orphans a database branch.
+      - name: Delete Neon preview branch
+        if: always()
+        env:
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          bunx neonctl@latest branches delete "pr-${PR_NUMBER}" \
+            --project-id "$NEON_PROJECT_ID" \
+            || echo "Neon branch 'pr-${PR_NUMBER}' already gone — nothing to delete."

@@ -49,6 +49,40 @@ When you change anything under `skills/polytik-party/`:
 
 Remote name: `polytik-party` → `git@github.com:slovakian/polytik-party.git`. Full maintainer notes: **`skills/README.md`**. Product behavior: **`docs/grilling-protocol.md`**.
 
+## Database migrations (mandatory)
+
+The schema lives in **`packages/db/prisma/schema/`**. Every deploy runs
+`prisma migrate deploy` in CI (see `.github/workflows/deploy.yml`), which **only
+replays committed migration files** — it never generates SQL from your schema and
+never resets. A schema change without a matching migration ships broken.
+
+Migrations run against the **direct, non-pooled** URL (`DATABASE_URL_DIRECT` on
+prod; the direct Neon branch URL on PR previews) — Prisma needs a direct connection
+for advisory locks. Each PR gets its own **ephemeral Neon branch** forked from prod
+state (`pr-<number>`), so preview migrations run against a throwaway clone and are
+torn down when the PR closes. Never point a migration at the pooled URL.
+
+**Whenever you modify any `*.prisma` schema, you MUST, in the same change:**
+
+1. **Generate the migration** — `bun run db:migrate` (`prisma migrate dev`)
+   creates a timestamped folder under `packages/db/prisma/migrations/` and updates
+   the client. Never hand-edit the schema and skip this step.
+2. **Read the generated SQL.** Open the new `migration.sql` and verify it does what
+   you intended. Reject anything that will fail or lose data in production:
+   - A new non-nullable column with no default on a populated table → add a default
+     or split into expand/backfill/contract steps.
+   - Dropped or renamed columns/tables → confirm intentional; Prisma renames are
+     drop+add and **destroy data** unless written by hand.
+   - Type changes that don't cast cleanly.
+3. **Keep migrations forward-only and additive where possible.** Production runs
+   `migrate deploy` against a shared database; design so a migration is safe to
+   apply *before* the new code is live (expand → migrate → contract).
+4. **Commit the migration files alongside the schema and code.** A PR that touches
+   `schema/` but adds nothing under `migrations/` is incomplete — do not open it.
+
+Run `bun run db:deploy` locally against a scratch database if you want to dry-run
+exactly what CI will execute.
+
 ## Inviolable principles
 
 These bind every feature, forever. If a change violates one, it's wrong.

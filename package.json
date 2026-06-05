@@ -31,6 +31,7 @@
     "db:studio": "bun run --filter @polytik/db db:studio",
     "db:generate": "bun run --filter @polytik/db db:generate",
     "db:migrate": "bun run --filter @polytik/db db:migrate",
+    "db:deploy": "bun run --filter @polytik/db db:deploy",
     "deploy": "bun run --filter @polytik/infra deploy",
     "destroy": "bun run --filter @polytik/infra destroy",
     "check": "oxlint && oxfmt --write",

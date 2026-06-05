@@ -1,5 +1,7 @@
 import alchemy from "alchemy";
 import { TanStackStart, Worker } from "alchemy/cloudflare";
+import { GitHubComment } from "alchemy/github";
+import { CloudflareStateStore } from "alchemy/state";
 import { config } from "dotenv";
 
 config({ path: "./.env" });
@@ -17,7 +19,9 @@ function resolveAppUrl(stage: string): string | Worker.DevUrl {
   return LOCAL_URL;
 }
 
-const app = await alchemy("polytik");
+const app = await alchemy("polytik", {
+  stateStore: (scope) => new CloudflareStateStore(scope),
+});
 
 const appUrl = resolveAppUrl(app.stage);
 
@@ -31,5 +35,23 @@ export const web = await TanStackStart("web", {
 });
 
 console.log(`Web    -> ${web.url}`);
+
+if (process.env.PULL_REQUEST) {
+  await GitHubComment("preview-comment", {
+    owner: "slovakian",
+    repository: "polytik",
+    issueNumber: Number(process.env.PULL_REQUEST),
+    body: `## Preview deployed
+
+Your changes have been deployed to a preview environment:
+
+**Website:** ${web.url}
+
+Built from commit ${process.env.GITHUB_SHA?.slice(0, 7)}
+
+---
+<sub>This comment updates automatically with each push.</sub>`,
+  });
+}
 
 await app.finalize();
