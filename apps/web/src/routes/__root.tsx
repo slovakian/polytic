@@ -15,12 +15,12 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Polytik — Understand your politics in high resolution",
+        title: "Polytik",
       },
       {
         name: "description",
         content:
-          "Polytik is a resource that helps you understand your own politics in high resolution. Install the grilling skill into any AI agent and get interviewed across political dimensions — then handed an evidence-backed verdict.",
+          "A skill that helps you talk through your politics. Install it in an AI agent, answer questions, and get a summary at the end.",
       },
     ],
     links: [
