@@ -1,5 +1,7 @@
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 import appCss from "../index.css?url";
 
 export interface RouterAppContext {}
@@ -36,12 +38,14 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
 
 function RootDocument() {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
-        <Outlet />
+        <ThemeProvider defaultTheme="system" storageKey="theme">
+          <Outlet />
+        </ThemeProvider>
         <Scripts />
       </body>
     </html>

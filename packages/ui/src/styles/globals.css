@@ -131,3 +131,15 @@
     @apply font-sans;
   }
 }
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+/* AnimatedThemeToggler drives the clip-path reveal via JS and sets this custom
+   property; without it the view-transition group falls back to the default
+   ~0.25s and clips the triangle animation short. */
+html[data-magicui-theme-vt="active"]::view-transition-group(root) {
+    animation-duration: var(--magicui-theme-toggle-vt-duration);
+}
