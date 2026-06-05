@@ -1,0 +1,3 @@
+{
+  "extends": "@polytik/config/tsconfig.base.json"
+}
