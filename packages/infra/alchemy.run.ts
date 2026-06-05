@@ -27,6 +27,7 @@ const appUrl = resolveAppUrl(app.stage);
 
 export const web = await TanStackStart("web", {
   cwd: "../../apps/web",
+  domains: app.stage === "prod" ? ["polytik.party"] : undefined,
   bindings: {
     DATABASE_URL: alchemy.secret.env.DATABASE_URL!,
     BETTER_AUTH_SECRET: alchemy.secret.env.BETTER_AUTH_SECRET!,
