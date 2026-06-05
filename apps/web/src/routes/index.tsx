@@ -212,7 +212,7 @@ function HomeComponent() {
             >
               Jason Procka
             </a>
-            . Non-partisan. Open source.
+            .
           </p>
           <a
             href={REPO_URL}
