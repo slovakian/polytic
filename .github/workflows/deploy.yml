@@ -26,10 +26,8 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-
-      # Resolve the database URLs the rest of the job uses.
+      # Resolve database URLs before `bun install`: @polytik/db postinstall runs
+      # `prisma generate`, and prisma.config.ts requires DATABASE_URL_DIRECT.
       #   - prod (push to main): the long-lived production secrets.
       #   - PR preview: an ephemeral Neon branch forked from the production
       #     database's current state, so the preview app + migrations run
@@ -71,6 +69,9 @@ jobs:
           echo "DATABASE_URL=$DB_URL" >> "$GITHUB_ENV"
           echo "DATABASE_URL_DIRECT=$DB_URL_DIRECT" >> "$GITHUB_ENV"
 
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
       # Apply committed migrations before shipping new code so the schema is
       # ready when the new Worker goes live. `migrate deploy` only plays forward
       # already-committed migrations — it never generates, resets, or prompts.
@@ -109,8 +110,10 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
+      # No database access in cleanup; skip postinstall (prisma generate needs
+      # DATABASE_URL_DIRECT from prisma.config.ts).
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: bun install --frozen-lockfile --ignore-scripts
 
       - name: Safety Check
         run: |
