@@ -83,7 +83,7 @@ function HomeComponent() {
             tik
           </h1>
           <p className="text-balance text-xl text-foreground sm:text-2xl">
-            Understand your politics in high resolution.
+            Understand your political philosophy in a higher resolution.
           </p>
           <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
             <p>
