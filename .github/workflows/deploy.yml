@@ -26,62 +26,11 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      # Resolve database URLs before `bun install`: @polytic/db postinstall runs
-      # `prisma generate`, and prisma.config.ts reads the database URLs.
-      #   - prod (push to main): the long-lived production secrets.
-      #   - PR preview: an ephemeral Neon branch forked from the production
-      #     database's current state, so the preview app + migrations run
-      #     against a throwaway clone of real data. The branch is named after
-      #     the PR (pr-<number>), reused across pushes, and deleted by the
-      #     cleanup job when the PR closes.
-      # Two URLs land in the job env:
-      #   DATABASE_URL        — pooled endpoint, used by the runtime Worker.
-      #   DATABASE_URL_DIRECT — non-pooled endpoint, used by `migrate deploy`
-      #                         (Prisma needs a direct connection for advisory
-      #                         locks; pooled/pgbouncer breaks migrations).
-      - name: Resolve database URL
-        env:
-          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
-          NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
-          PROD_DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          PROD_DATABASE_URL_DIRECT: ${{ secrets.DATABASE_URL_DIRECT }}
-          PR_NUMBER: ${{ github.event_name == 'pull_request' && github.event.number || '' }}
-        run: |
-          set -euo pipefail
-          if [ -n "$PR_NUMBER" ]; then
-            BRANCH="pr-${PR_NUMBER}"
-            echo "Ensuring Neon branch '$BRANCH' (forked from the default/prod branch)…"
-            # Create the branch; ignore the error if it already exists (re-push).
-            bunx neonctl@latest branches create \
-              --name "$BRANCH" \
-              --project-id "$NEON_PROJECT_ID" 2>/dev/null \
-              || echo "Branch '$BRANCH' already exists — reusing it."
-            # Pooled for the app, non-pooled (direct) for migrations.
-            DB_URL="$(bunx neonctl@latest connection-string "$BRANCH" --project-id "$NEON_PROJECT_ID" --pooled)"
-            DB_URL_DIRECT="$(bunx neonctl@latest connection-string "$BRANCH" --project-id "$NEON_PROJECT_ID")"
-          else
-            DB_URL="$PROD_DATABASE_URL"
-            DB_URL_DIRECT="$PROD_DATABASE_URL_DIRECT"
-          fi
-          # Keep credentials out of logs and hand them to later steps.
-          echo "::add-mask::$DB_URL"
-          echo "::add-mask::$DB_URL_DIRECT"
-          echo "DATABASE_URL=$DB_URL" >> "$GITHUB_ENV"
-          echo "DATABASE_URL_DIRECT=$DB_URL_DIRECT" >> "$GITHUB_ENV"
-
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      # Apply committed migrations before shipping new code so the schema is
-      # ready when the new Worker goes live. `migrate deploy` only plays forward
-      # already-committed migrations — it never generates, resets, or prompts.
-      # Uses the direct (non-pooled) URL.
-      - name: Migrate database
-        working-directory: packages/db
-        run: bun run db:deploy
-        env:
-          DATABASE_URL_DIRECT: ${{ env.DATABASE_URL_DIRECT }}
-
+      # Alchemy provisions the stage's Neon project, runs `prisma migrate deploy`
+      # against it, then deploys the Worker bound to the new database.
       - name: Deploy
         working-directory: packages/infra
         run: bun run deploy --stage ${{ env.STAGE }} --yes
@@ -91,7 +40,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
-          DATABASE_URL: ${{ env.DATABASE_URL }}
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           PULL_REQUEST: ${{ github.event_name == 'pull_request' && github.event.number || '' }}
           GITHUB_SHA: ${{ github.sha }}
@@ -110,8 +59,6 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      # No database access in cleanup; skip postinstall (prisma generate needs
-      # DATABASE_URL_DIRECT from prisma.config.ts).
       - name: Install dependencies
         run: bun install --frozen-lockfile --ignore-scripts
 
@@ -122,6 +69,7 @@ jobs:
             exit 1
           fi
 
+      # Destroys the preview Worker and the PR's Neon project together.
       - name: Destroy Preview Environment
         working-directory: packages/infra
         run: bun run destroy --stage ${{ env.STAGE }} --yes
@@ -131,16 +79,5 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
-
-      # Tear down the ephemeral Neon branch created for this PR. Runs even if the
-      # destroy above fails, so a stuck Worker never orphans a database branch.
-      - name: Delete Neon preview branch
-        if: always()
-        env:
           NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
-          NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
-          PR_NUMBER: ${{ github.event.number }}
-        run: |
-          bunx neonctl@latest branches delete "pr-${PR_NUMBER}" \
-            --project-id "$NEON_PROJECT_ID" \
-            || echo "Neon branch 'pr-${PR_NUMBER}' already gone — nothing to delete."
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
