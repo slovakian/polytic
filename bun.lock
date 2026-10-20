@@ -93,14 +93,6 @@
         "varlock": "catalog:",
       },
     },
-    "packages/skills": {
-      "name": "@polytic/skills",
-      "version": "0.1.0",
-      "devDependencies": {
-        "@polytic/config": "workspace:*",
-        "typescript": "catalog:",
-      },
-    },
     "packages/ui": {
       "name": "@polytic/ui",
       "version": "0.0.0",
@@ -124,6 +116,14 @@
         "@types/react": "^19.2.18",
         "@types/react-dom": "^19.2.7",
         "tailwindcss": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
+    "skills": {
+      "name": "@polytic/skills",
+      "version": "0.1.0",
+      "devDependencies": {
+        "@polytic/config": "workspace:*",
         "typescript": "catalog:",
       },
     },
@@ -584,7 +584,7 @@
 
     "@polytic/infra": ["@polytic/infra@workspace:packages/infra"],
 
-    "@polytic/skills": ["@polytic/skills@workspace:packages/skills"],
+    "@polytic/skills": ["@polytic/skills@workspace:skills"],
 
     "@polytic/ui": ["@polytic/ui@workspace:packages/ui"],
 

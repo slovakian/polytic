@@ -6,7 +6,7 @@ status: accepted
 
 The skill and the chat app must run the same framework (protocol rules, dimension
 taxonomy, label library), or "Polytic" means different things depending on where you use
-it. **For now the skill's references (`packages/skills/polytic-party/references/`) are
+it. **For now the skill's references (`skills/polytic-party/references/`) are
 canonical**, and the app builds its prompts from them.
 
 Once the taxonomy is authored as real, structured dimensions (`docs/framework.md`), the

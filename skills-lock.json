@@ -26,9 +26,9 @@
       "computedHash": "3c53df29c959dc0a7f724ff8620063b20fabd2b1fa702ec97e3f17e6a23d5a1c"
     },
     "polytic-party": {
-      "source": "./packages/skills/polytic-party",
+      "source": "./skills/polytic-party",
       "sourceType": "local",
-      "computedHash": "b1412d70ebc4e15cb333de42b70620065d5bf5b4e84682c41954f7148f3980ab"
+      "computedHash": "3cb6666192e36b66f249329dadb3cb54803edbc72f295aa54809d5254d193496"
     },
     "prisma-cli": {
       "source": "prisma/skills",

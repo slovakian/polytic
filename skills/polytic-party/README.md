@@ -7,13 +7,13 @@ Install this skill in your AI agent (Claude, Cursor, ChatGPT with skills, etc.).
 ## Install
 
 ```bash
-npx skills add slovakian/polytic-party
+npx skills add slovakian/polytic
 ```
 
 Non-interactive:
 
 ```bash
-npx skills add slovakian/polytic-party -y
+npx skills add slovakian/polytic -y
 ```
 
 Then ask your agent: _"Grill me on my politics"_ or _"Run Polytic."_

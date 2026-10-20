@@ -7,10 +7,8 @@ delivers a verdict on their politics. This doc describes how it should behave.
 
 ## Install
 
-Published from the public skills repo (not this private app repo):
-
 ```bash
-npx skills add slovakian/polytic-party
+npx skills add slovakian/polytic
 ```
 
 Source in this monorepo: `skills/polytic-party/`. Maintainer notes: `skills/README.md`.

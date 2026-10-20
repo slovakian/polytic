@@ -68,9 +68,9 @@ next taxonomy area. Never ride one narrative through the whole session.
 ### 3. LOCALIZED STRESS-TESTS (3–5 turns)
 
 After the skeleton sweep, hit **multiple** highest-stakes, divisive issues for their
-country/region — not a single token question. Examples: US — abortion *and* guns *and*
-speech/platform moderation *and* federal vs state power; Poland — EU sovereignty *and*
-church-state *and* abortion framing. Use real local context; do not invent fake statutes.
+country/region — not a single token question. Examples: US — abortion _and_ guns _and_
+speech/platform moderation _and_ federal vs state power; Poland — EU sovereignty _and_
+church-state _and_ abortion framing. Use real local context; do not invent fake statutes.
 
 ### 4. VERDICT (end only)
 
@@ -117,19 +117,19 @@ User answers so far: [count; need ≥20 before verdict]
 
 Before you write, classify the user's last answer and choose an action:
 
-| Signal | Examples | Action |
-| --- | --- | --- |
-| **SURFACE** | Vague, slogan, dodge — "it's fine," "balance," "depends" without conditions | **PROBE** — same topic. Edge case or counterfactual. Force a boundary. |
-| **NUANCED** | Conditions, tradeoffs, named principles | **LOG & ADVANCE** — note position internally; **next dimension or sub-branch**, not verdict. |
-| **CONTRADICTORY** | Conflicts with something said earlier | **TENSION** — one short line naming X vs Y, then one question. |
-| **UNSETTLED** | "I don't know," "hard to say," "perhaps" after probes | Mark **open** internally; **advance to next dimension** — unsettled ≠ session complete. |
+| Signal            | Examples                                                                    | Action                                                                                       |
+| ----------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **SURFACE**       | Vague, slogan, dodge — "it's fine," "balance," "depends" without conditions | **PROBE** — same topic. Edge case or counterfactual. Force a boundary.                       |
+| **NUANCED**       | Conditions, tradeoffs, named principles                                     | **LOG & ADVANCE** — note position internally; **next dimension or sub-branch**, not verdict. |
+| **CONTRADICTORY** | Conflicts with something said earlier                                       | **TENSION** — one short line naming X vs Y, then one question.                               |
+| **UNSETTLED**     | "I don't know," "hard to say," "perhaps" after probes                       | Mark **open** internally; **advance to next dimension** — unsettled ≠ session complete.      |
 
 **Probe limits:** Max **2 probes** on the same sub-topic. Still surface after that → mark
 **unsettled** internally and **advance to the next taxonomy dimension** (not verdict).
 
 **Internal tracking (silent):** Each turn, mentally note branch, alignment notes, and
 next action (PROBE | ADVANCE | TENSION). Do not dump these on the user unless they ask
-for a checkpoint of *topics remaining* — never labels.
+for a checkpoint of _topics remaining_ — never labels.
 
 ## Grill tactics
 
@@ -172,5 +172,5 @@ explicitly ends early; then label it a **partial verdict** and list gaps.
 
 ## About this skill package
 
-Source and updates: https://github.com/slovakian/polytic-party  
-Install: `npx skills add slovakian/polytic-party`
+Source and updates: https://github.com/slovakian/polytic/tree/main/skills/polytic-party  
+Install: `npx skills add slovakian/polytic`
