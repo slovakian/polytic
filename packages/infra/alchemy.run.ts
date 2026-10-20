@@ -94,7 +94,7 @@ export default Alchemy.Stack(
           | ☁️ | Cloudflare Worker \`${web.workerName}\` | [Dashboard](https://dash.cloudflare.com/${web.accountId}/workers/services/view/${web.workerName}/production) |
           | 🐘 | Neon database \`${project.projectName}\` | [Console](https://console.neon.tech/app/projects/${project.projectId}) |
 
-          🔁 Built from \`${commit.slice(0, 7)}\`. Updates on every push. 🧹 Torn down when this PR closes.
+          🔁 Built from [\`${commit.slice(0, 7)}\`](https://github.com/slovakian/polytic/commit/${commit}). Updates on every push. 🧹 Torn down when this PR closes.
         `,
       });
     }
