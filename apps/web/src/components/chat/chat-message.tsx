@@ -2,21 +2,14 @@ import { Bubble, BubbleContent } from "@polytic/ui/components/bubble";
 import { Button } from "@polytic/ui/components/button";
 import { Confirmation } from "@polytic/ui/components/confirmation";
 import { Message, MessageContent, MessageFooter } from "@polytic/ui/components/message";
+import { Reasoning, ReasoningLine } from "@polytic/ui/components/reasoning";
 import { Sources } from "@polytic/ui/components/sources";
 import { Tool } from "@polytic/ui/components/tool";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@polytic/ui/components/tooltip";
-import {
-  Trace,
-  TraceCollapsible,
-  TraceCollapsibleContent,
-  TraceCollapsibleTrigger,
-  TraceIcon,
-  TraceLine,
-  TraceTitle,
-} from "@polytic/ui/components/trace";
+import { Trace } from "@polytic/ui/components/trace";
 import type { UIMessage } from "@tanstack/ai-react";
 import { TextPart } from "@tanstack/ai-react/ui";
-import { BrainIcon, CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
+import { CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
 import { type ComponentProps, useEffect, useState } from "react";
 
 import { parseMessageSuggestions } from "../../lib/suggestions";
@@ -70,6 +63,26 @@ export function AssistantMessage({
     (part) => part.type === "text" && parseMessageSuggestions(part.content).text,
   );
 
+  const hasVisibleParts = message.parts.some(
+    (part) =>
+      (part.type === "thinking" && part.content) ||
+      (part.type === "text" && part.content) ||
+      part.type === "tool-call" ||
+      part.type === "tool-result",
+  );
+
+  if (streaming && !hasVisibleParts) {
+    return (
+      <Message>
+        <MessageContent className="gap-3">
+          <Trace>
+            <ReasoningLine running />
+          </Trace>
+        </MessageContent>
+      </Message>
+    );
+  }
+
   const toolResults = new Map<string, { output?: unknown; errorText?: string; state?: string }>();
 
   for (const part of message.parts) {
@@ -106,10 +119,11 @@ export function AssistantMessage({
 
         {message.parts.map((part, index) => {
           if (part.type === "thinking") {
+            const hasNextParts = index < message.parts.length - 1;
+            const isRunning = streaming && !textStarted && !hasNextParts;
+
             return (
-              <Trace key={index}>
-                <ReasoningRow text={part.content} running={streaming && !textStarted} />
-              </Trace>
+              <Reasoning key={index} text={part.content} running={isRunning} defaultOpen={false} />
             );
           }
 
@@ -203,40 +217,10 @@ export function PendingMessage() {
     <Message>
       <MessageContent>
         <Trace>
-          <ThinkingLine running />
+          <ReasoningLine running />
         </Trace>
       </MessageContent>
     </Message>
-  );
-}
-
-function ThinkingLine({ running }: { running: boolean }) {
-  return (
-    <TraceLine status={running ? "running" : undefined}>
-      <TraceIcon>
-        <BrainIcon className="text-(--hue-5)" />
-      </TraceIcon>
-      <TraceTitle>{running ? "Thinking" : "Thought"}</TraceTitle>
-    </TraceLine>
-  );
-}
-
-function ReasoningRow({ text, running }: { text: string; running: boolean }) {
-  const [open, setOpen] = useState<boolean>();
-
-  if (!text) {
-    return <ThinkingLine running={running} />;
-  }
-
-  return (
-    <TraceCollapsible open={open ?? running} onOpenChange={setOpen}>
-      <TraceCollapsibleTrigger>
-        <ThinkingLine running={running} />
-      </TraceCollapsibleTrigger>
-      <TraceCollapsibleContent className="text-muted-foreground max-h-72 overflow-y-auto whitespace-pre-wrap">
-        {text}
-      </TraceCollapsibleContent>
-    </TraceCollapsible>
   );
 }
 
