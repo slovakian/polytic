@@ -10,6 +10,7 @@ describe("SYSTEM_PROMPT", () => {
 
   it("identifies Pauly as resident political agent at Polytic Party", () => {
     expect(SYSTEM_PROMPT).toContain("resident political agent at Polytic Party");
+    expect(SYSTEM_PROMPT).not.toContain("Paulytic");
   });
 
   it("identifies Jason Procka as creator of Pauly and Polytic Party", () => {
