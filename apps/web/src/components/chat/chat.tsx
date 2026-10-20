@@ -21,7 +21,9 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
 } from "@polytic/ui/components/message-scroller";
+import { Queue } from "@polytic/ui/components/queue";
 import { Skeleton } from "@polytic/ui/components/skeleton";
+import { Suggestion, Suggestions } from "@polytic/ui/components/suggestion";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@polytic/ui/components/tooltip";
 import { fetchServerSentEvents, localStoragePersistence, useChat } from "@tanstack/ai-react";
 import {
@@ -61,7 +63,19 @@ export function Chat() {
   const formRef = useRef<HTMLFormElement>(null);
   const body = useMemo(() => ({ model }), [model]);
 
-  const { messages, sendMessage, stop, reload, clear, error, status, isHydrating } = useChat({
+  const {
+    messages,
+    sendMessage,
+    stop,
+    reload,
+    clear,
+    error,
+    status,
+    isHydrating,
+    queue,
+    cancelQueued,
+    addToolApprovalResponse,
+  } = useChat({
     threadId: "polytic-chat",
     connection,
     persistence,
@@ -187,9 +201,9 @@ export function Chat() {
             </EmptyHeader>
           </Empty>
           {composer}
-          <div className="flex flex-wrap justify-center gap-2">
+          <Suggestions className="w-full justify-center">
             {STARTERS.map((starter) => (
-              <Button
+              <Suggestion
                 key={starter.text}
                 variant="outline"
                 size="sm"
@@ -197,9 +211,9 @@ export function Chat() {
               >
                 <starter.icon data-icon="inline-start" className={starter.hue} />
                 {starter.text}
-              </Button>
+              </Suggestion>
             ))}
-          </div>
+          </Suggestions>
         </div>
       </div>
     );
@@ -227,6 +241,9 @@ export function Chat() {
                       message={message}
                       streaming={busy && message === last}
                       onRetry={message === last ? () => void reload() : undefined}
+                      onToolApproval={(id, approved) =>
+                        void addToolApprovalResponse({ id, approved })
+                      }
                     />
                   )}
                 </MessageScrollerItem>
@@ -241,6 +258,19 @@ export function Chat() {
           <MessageScrollerButton />
         </MessageScroller>
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-3 px-4 pb-4">
+          {queue.length > 0 ? (
+            <Queue
+              items={queue.map((item) => ({
+                id: item.id,
+                text:
+                  Object.prototype.toString.call(item.content) === "[object String]"
+                    ? String(item.content)
+                    : "Queued message",
+                status: "pending",
+              }))}
+              onCancel={cancelQueued}
+            />
+          ) : null}
           {error ? (
             <Alert variant="destructive">
               <TriangleAlertIcon />
