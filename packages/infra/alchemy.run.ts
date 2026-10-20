@@ -17,6 +17,7 @@ export const web = Cloudflare.Website.Vite(
       },
       env: {
         DATABASE_URL: Config.Redacted("DATABASE_URL"),
+        OPENROUTER_API_KEY: Config.Redacted("OPENROUTER_API_KEY"),
       },
       dev: {
         port: 3001,
