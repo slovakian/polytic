@@ -1,7 +1,7 @@
 # polytik
 
 **Polytik** helps people understand their own politics in high resolution — an AI that
-*grills* you and delivers a nuanced verdict, not a crude compass score.
+_grills_ you and delivers a nuanced verdict, not a crude compass score.
 
 This repo is the **Phase 0 showcase app** (private). The distributable grilling skill is
 published separately:
@@ -10,22 +10,22 @@ published separately:
 npx skills add slovakian/polytik-party
 ```
 
-See `AGENTS.md`, `docs/`, and `skills/README.md` for product detail and maintainer workflow.
+See `AGENTS.md`, `docs/`, and `packages/skills/README.md` for product detail and maintainer workflow.
 
 ---
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React, TanStack Start, Self, and more.
+This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack powered by Vite+ (`vp`).
 
 ## Features
 
 - **TypeScript** - For type safety and improved developer experience
-- **TanStack Start** - SSR framework with TanStack Router
+- **Vite+** - Unified VoidZero toolchain (`vp`) with Rolldown, tsdown, Oxlint, and Oxfmt
+- **TanStack Start** - Full-stack React framework with SSR and TanStack Router
 - **TailwindCSS** - Utility-first CSS for rapid UI development
 - **Shared UI package** - shadcn/ui primitives live in `packages/ui`
-- **Prisma** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Authentication** - Better-Auth
-- **Oxlint** - Oxlint + Oxfmt (linting & formatting)
+- **Skills package** - Consumer-facing AI skills live in `packages/skills`
+- **Prisma** - TypeScript-first ORM with Neon serverless Postgres
+- **Oxlint & Oxfmt** - Fast Rust-based linting and formatting with anti-slop rules
 
 ## Getting Started
 

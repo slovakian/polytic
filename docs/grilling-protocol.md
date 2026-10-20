@@ -16,7 +16,7 @@ Source in this monorepo: `skills/polytik-party/`. Maintainer notes: `skills/READ
 
 ## Shape
 
-- **Full sweep, then verdict.** The skill grills across the dimensions, *then*
+- **Full sweep, then verdict.** The skill grills across the dimensions, _then_
   delivers the verdict at the end. It does **not** announce "you fall into this camp"
   between rounds — the payoff is the considered verdict after the user has been
   properly examined. (See open questions for why this might change.)
@@ -66,12 +66,12 @@ The full gate and anti-patterns (thread-chasing, weak-model rush to verdict) liv
 
 Before each agent reply, classify the user's answer:
 
-| Signal | Action |
-| --- | --- |
-| Surface (vague, slogan, dodge) | **Probe** — same topic, edge case or counterfactual. Max 2 probes, then mark unsettled and advance. |
-| Nuanced (conditions, principles) | **Log & advance** — note internally, next question. |
-| Contradictory with prior answers | **Tension** — name the conflict in one line, one follow-up question. |
-| Unsettled after probes | Mark **open** internally; **advance to next dimension** — not verdict. |
+| Signal                           | Action                                                                                              |
+| -------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Surface (vague, slogan, dodge)   | **Probe** — same topic, edge case or counterfactual. Max 2 probes, then mark unsettled and advance. |
+| Nuanced (conditions, principles) | **Log & advance** — note internally, next question.                                                 |
+| Contradictory with prior answers | **Tension** — name the conflict in one line, one follow-up question.                                |
+| Unsettled after probes           | Mark **open** internally; **advance to next dimension** — not verdict.                              |
 
 This prevents the common failure mode: accepting "it's fine" and moving on, or padding
 every turn with validation and recap.
@@ -104,5 +104,5 @@ settled:
 ## How this connects forward
 
 On the future platform (`roadmap.md`), grilling moves in-app and gains memory: each
-user accumulates a store of their raw answers *and* the AI's interpretations of those
+user accumulates a store of their raw answers _and_ the AI's interpretations of those
 answers, which the AI retrieves to refine their profile over time.

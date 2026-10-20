@@ -53,8 +53,12 @@ next-env.d.ts
 
 # Other
 dev-dist
+src/routeTree.gen.ts
 
 .wrangler
 .dev.vars*
 
 .open-next
+
+!.env.schema
+/src/env.ts

@@ -1,19 +1,14 @@
+import { Toaster } from "@polytik/ui/components/sonner";
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
-import { ThemeProvider } from "@/components/theme-provider";
-import { getServerSeed } from "@/server/get-server-seed";
+import Header from "../components/header";
 
 import appCss from "../index.css?url";
 
-export interface RouterAppContext {
-  serverSeed: number;
-}
+export interface RouterAppContext {}
 
 export const Route = createRootRouteWithContext<RouterAppContext>()({
-  beforeLoad: async () => {
-    const serverSeed = await getServerSeed();
-    return { serverSeed };
-  },
   head: () => ({
     meta: [
       {
@@ -25,11 +20,6 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
       },
       {
         title: "Polytik",
-      },
-      {
-        name: "description",
-        content:
-          "A skill that helps you talk through your politics. Install it in an AI agent, answer questions, and get a summary at the end.",
       },
     ],
     links: [
@@ -45,14 +35,17 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
 
 function RootDocument() {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>
       <body>
-        <ThemeProvider defaultTheme="system" storageKey="theme">
+        <div className="grid h-svh grid-rows-[auto_1fr]">
+          <Header />
           <Outlet />
-        </ThemeProvider>
+        </div>
+        <Toaster richColors />
+        <TanStackRouterDevtools position="bottom-left" />
         <Scripts />
       </body>
     </html>

@@ -12,11 +12,11 @@ and a vibe. They afford no nuance, and so they are not deep.
 
 ## The bet
 
-AI changes what's possible. A capable model can *grill* you — interview you,
+AI changes what's possible. A capable model can _grill_ you — interview you,
 challenge the coherence of your answers, reason with you about edge cases — and from
 that conversation put words to your politics with a fidelity no static quiz can reach.
 For the first time, someone can sit with an agent and have it genuinely articulate
-*what they actually believe*, then hand them the established vocabulary that describes
+_what they actually believe_, then hand them the established vocabulary that describes
 it.
 
 Polytik replaces "pick your quadrant" with a guided act of self-understanding.
@@ -24,7 +24,7 @@ Polytik replaces "pick your quadrant" with a guided act of self-understanding.
 ## What a user gets
 
 You answer a battery of probing questions across a deliberately-authored set of
-political dimensions. The AI challenges weak spots — *"why this and not that?"* — and
+political dimensions. The AI challenges weak spots — _"why this and not that?"_ — and
 together you converge on a picture. At the end it delivers a **verdict**: the
 political labels that best describe you (drawn from the long tradition of
 political-science terminology), plus a narrative that captures the nuance those labels

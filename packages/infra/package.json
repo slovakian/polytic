@@ -3,17 +3,21 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "check-types": "tsc --noEmit",
     "dev": "alchemy dev",
     "deploy": "alchemy deploy",
     "destroy": "alchemy destroy"
   },
   "dependencies": {
-    "dotenv": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@effect/platform-bun": "4.0.5",
+    "@effect/platform-node": "4.0.5",
     "@polytik/config": "workspace:*",
-    "alchemy": "catalog:",
-    "typescript": "catalog:"
+    "alchemy": "2.0.0-beta.83",
+    "effect": "4.0.5",
+    "typescript": "catalog:",
+    "varlock": "catalog:"
   }
 }

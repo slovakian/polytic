@@ -13,7 +13,7 @@ the whole foundation, and partisanship of any direction destroys it.
 
 ## 2. Map, don't grade
 
-Polytik describes *where a person is*. It never tells them where they *should* be,
+Polytik describes _where a person is_. It never tells them where they _should_ be,
 never scores a view as better or worse, never congratulates or scolds. The product is
 a mirror and a cartographer, not a judge.
 
@@ -25,7 +25,7 @@ favor X here but Y there; how do you reconcile them?" is in bounds. Nudging some
 a position because the model disagrees with it is not.
 
 > Optional later: an **intensity dial** (e.g. "grill me hard") may vary how
-> *forcefully* coherence is challenged. The neutrality of *direction* is never
+> _forcefully_ coherence is challenged. The neutrality of _direction_ is never
 > negotiable — only the intensity of the Socratic pressure.
 
 ## 4. Nuance over reduction
@@ -33,4 +33,4 @@ a position because the model disagrees with it is not.
 Polytik exists because crude axes fail people. We add dimensions and resolution; we
 never collapse a person into a single number or quadrant. When a verdict must
 simplify, it does so transparently and preserves the texture underneath (this is why
-verdicts are *library-anchored but narrative-flexible* — see `label-library.md`).
+verdicts are _library-anchored but narrative-flexible_ — see `label-library.md`).

@@ -1,58 +1,66 @@
-import alchemy from "alchemy";
-import { TanStackStart, Worker } from "alchemy/cloudflare";
-import { GitHubComment } from "alchemy/github";
-import { CloudflareStateStore } from "alchemy/state";
-import { config } from "dotenv";
+import * as Alchemy from "alchemy";
+import * as Cloudflare from "alchemy/Cloudflare";
+import * as Command from "alchemy/Command";
+import * as Neon from "alchemy/Neon";
+import * as Output from "alchemy/Output";
+import * as Effect from "effect/Effect";
+import * as Layer from "effect/Layer";
+import * as Redacted from "effect/Redacted";
+import "varlock/auto-load";
 
-config({ path: "./.env" });
-config({ path: "../../apps/web/.env" });
+const managedDatabase = Effect.gen(function* () {
+  const database = yield* Neon.Project("database", {});
+  const runtimeUrl = database.pooledConnectionUri.pipe(Output.map(Redacted.make));
+  const migrationUrl = database.connectionUri.pipe(Output.map(Redacted.make));
 
-const PROD_URL = "https://polytik.party";
-const LOCAL_URL = "http://localhost:3001";
+  yield* Command.Exec("database-migrations", {
+    command: "bun run db:migrate:deploy",
+    cwd: "../../packages/db",
+    env: { DATABASE_URL: migrationUrl },
+    memo: {
+      include: ["prisma/migrations/**", "prisma/schema/**"],
+    },
+  });
 
-// Returns the canonical app URL for the given stage.
-// Worker.DevUrl is an Alchemy sentinel resolved at deploy-time to the
-// worker's own *.workers.dev URL — not a string we can compute here.
-function resolveAppUrl(stage: string): string | Worker.DevUrl {
-  if (stage === "prod") return PROD_URL;
-  if (stage.startsWith("pr-")) return Worker.DevUrl;
-  return LOCAL_URL;
-}
-
-const app = await alchemy("polytik", {
-  stateStore: (scope) => new CloudflareStateStore(scope),
+  return {
+    runtimeEnv: { DATABASE_URL: runtimeUrl },
+  };
 });
 
-const appUrl = resolveAppUrl(app.stage);
+export const databaseEnv = managedDatabase.pipe(Effect.map(({ runtimeEnv }) => runtimeEnv));
 
-export const web = await TanStackStart("web", {
-  cwd: "../../apps/web",
-  domains: app.stage === "prod" ? ["polytik.party"] : undefined,
-  bindings: {
-    DATABASE_URL: alchemy.secret.env.DATABASE_URL!,
-    BETTER_AUTH_SECRET: alchemy.secret.env.BETTER_AUTH_SECRET!,
-    APP_URL: appUrl,
+export const databaseBindings = {
+  DATABASE_URL: databaseEnv.pipe(Effect.map(({ DATABASE_URL }) => DATABASE_URL)),
+};
+
+export const databaseProviders = Layer.mergeAll(Command.providers(), Neon.providers());
+
+export const web = Cloudflare.Website.Vite("web", {
+  rootDir: "../../apps/web",
+  compatibility: {
+    flags: ["nodejs_compat"],
+  },
+  env: {
+    ...databaseBindings,
+  },
+  dev: {
+    port: 3001,
   },
 });
 
-console.log(`Web    -> ${web.url}`);
+export type WebEnv = Cloudflare.InferEnv<typeof web>;
 
-if (process.env.PULL_REQUEST) {
-  await GitHubComment("preview-comment", {
-    owner: "slovakian",
-    repository: "polytik",
-    issueNumber: Number(process.env.PULL_REQUEST),
-    body: `## Preview deployed
+export default Alchemy.Stack(
+  "polytik",
+  {
+    providers: Layer.mergeAll(Cloudflare.providers(), databaseProviders),
+    state: Cloudflare.state(),
+  },
+  Effect.gen(function* () {
+    const webWorker = yield* web;
 
-Your changes have been deployed to a preview environment:
-
-**Website:** ${web.url}
-
-Built from commit ${process.env.GITHUB_SHA?.slice(0, 7)}
-
----
-<sub>This comment updates automatically with each push.</sub>`,
-  });
-}
-
-await app.finalize();
+    return {
+      web: webWorker.url,
+    };
+  }),
+);
