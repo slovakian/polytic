@@ -16,6 +16,8 @@ import { TextPart } from "@tanstack/ai-react/ui";
 import { BrainIcon, CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
 import { type ComponentProps, useEffect, useState } from "react";
 
+import { fadeMarkdownComponents } from "./fade-markdown";
+
 function messageText(message: UIMessage) {
   return message.parts.flatMap((part) => (part.type === "text" ? [part.content] : [])).join("\n\n");
 }
@@ -57,7 +59,14 @@ export function AssistantMessage({
           }
 
           if (part.type === "text" && part.content) {
-            return <TextPart key={index} content={part.content} className="chat-markdown" />;
+            return (
+              <TextPart
+                key={index}
+                content={part.content}
+                className="chat-markdown"
+                components={streaming ? fadeMarkdownComponents : undefined}
+              />
+            );
           }
 
           return null;

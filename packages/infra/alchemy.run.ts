@@ -1,6 +1,7 @@
 import * as Alchemy from "alchemy";
 import * as Cloudflare from "alchemy/Cloudflare";
 import * as Command from "alchemy/Command";
+import * as GitHub from "alchemy/GitHub";
 import * as Neon from "alchemy/Neon";
 import * as Output from "alchemy/Output";
 import * as Config from "effect/Config";
@@ -11,7 +12,7 @@ import "varlock/auto-load";
 
 // One Neon project per stage. Migrations need the direct (non-pooled) URL for
 // Prisma's advisory locks; the Worker uses the pooled one.
-const databaseUrl = Effect.gen(function* () {
+const database = Effect.gen(function* () {
   const project = yield* Neon.Project("database", { region: "aws-us-east-1" });
   const directUrl = project.connectionUri.pipe(Output.map(Redacted.make));
 
@@ -29,46 +30,77 @@ const databaseUrl = Effect.gen(function* () {
   });
 
   // Reading the migration hash makes the Worker deploy only after migrations apply.
-  return Output.all(project.pooledConnectionUri, migrations.hash).pipe(
-    Output.map(([pooledUrl]) => Redacted.make(pooledUrl)),
+  const pooledUrl = Output.all(project.pooledConnectionUri, migrations.hash).pipe(
+    Output.map(([url]) => Redacted.make(url)),
   );
+
+  return { project, pooledUrl };
 });
 
-export const web = Cloudflare.Website.Vite(
-  "web",
-  Effect.gen(function* () {
-    const stage = yield* Alchemy.Stage;
+const website = (databaseUrl: Output.Output<Redacted.Redacted<string>>) =>
+  Cloudflare.Website.Vite(
+    "web",
+    Effect.gen(function* () {
+      const stage = yield* Alchemy.Stage;
 
-    return {
-      rootDir: "../../apps/web",
-      domain: stage === "prod" ? "polytic.party" : undefined,
-      compatibility: {
-        flags: ["nodejs_compat"],
-      },
-      env: {
-        DATABASE_URL: yield* databaseUrl,
-        OPENROUTER_API_KEY: Config.Redacted("OPENROUTER_API_KEY"),
-      },
-      dev: {
-        port: 3001,
-      },
-    };
-  }),
-);
+      return {
+        rootDir: "../../apps/web",
+        domain: stage === "prod" ? "polytic.party" : undefined,
+        compatibility: {
+          flags: ["nodejs_compat"],
+        },
+        env: {
+          DATABASE_URL: databaseUrl,
+          OPENROUTER_API_KEY: Config.Redacted("OPENROUTER_API_KEY"),
+        },
+        dev: {
+          port: 3001,
+        },
+      };
+    }),
+  );
 
-export type WebEnv = Cloudflare.InferEnv<typeof web>;
+export type WebEnv = Cloudflare.InferEnv<ReturnType<typeof website>>;
 
 export default Alchemy.Stack(
   "polytic",
   {
-    providers: Layer.mergeAll(Cloudflare.providers(), Command.providers(), Neon.providers()),
+    providers: Layer.mergeAll(
+      Cloudflare.providers(),
+      Command.providers(),
+      GitHub.providers(),
+      Neon.providers(),
+    ),
     state: Cloudflare.state(),
   },
   Effect.gen(function* () {
-    const webWorker = yield* web;
+    const { project, pooledUrl } = yield* database;
+    const web = yield* website(pooledUrl);
+    const pullRequest = yield* Config.String("PULL_REQUEST").pipe(Config.withDefault(""));
+
+    if (pullRequest !== "") {
+      const commit = yield* Config.String("COMMIT_SHA").pipe(Config.withDefault("unknown"));
+
+      yield* GitHub.Comment("preview-comment", {
+        owner: "slovakian",
+        repository: "polytic",
+        issueNumber: Number(pullRequest),
+        body: Output.interpolate`
+          ## 🌈 Preview is live!
+
+          | | Resource | Link |
+          | --- | --- | --- |
+          | 🚀 | Website | ${web.url} |
+          | ☁️ | Cloudflare Worker \`${web.workerName}\` | [Dashboard](https://dash.cloudflare.com/${web.accountId}/workers/services/view/${web.workerName}/production) |
+          | 🐘 | Neon database \`${project.projectName}\` | [Console](https://console.neon.tech/app/projects/${project.projectId}) |
+
+          🔁 Built from [\`${commit.slice(0, 7)}\`](https://github.com/slovakian/polytic/commit/${commit}). Updates on every push. 🧹 Torn down when this PR closes.
+        `,
+      });
+    }
 
     return {
-      web: webWorker.url,
+      web: web.url,
     };
   }),
 );
