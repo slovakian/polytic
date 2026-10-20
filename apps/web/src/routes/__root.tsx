@@ -41,7 +41,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
 
 function RootDocument() {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark antialiased">
       <head>
         <HeadContent />
       </head>
