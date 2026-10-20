@@ -59,6 +59,20 @@
   filter: blur(48px);
 }
 
+@keyframes fade-segment {
+  from {
+    opacity: 0;
+  }
+}
+
+.fade-segment {
+  animation: fade-segment 225ms ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
 .chat-markdown {
   font-size: var(--text-sm);
   line-height: 1.7;
