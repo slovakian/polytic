@@ -12,10 +12,14 @@ import { TextPart } from "@tanstack/ai-react/ui";
 import { CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
 import { type ComponentProps, useEffect, useState } from "react";
 
+import { parseMessageSuggestions } from "../../lib/suggestions";
+
 import { fadeMarkdownComponents } from "./fade-markdown";
 
 function messageText(message: UIMessage) {
-  return message.parts.flatMap((part) => (part.type === "text" ? [part.content] : [])).join("\n\n");
+  return message.parts
+    .flatMap((part) => (part.type === "text" ? [parseMessageSuggestions(part.content).text] : []))
+    .join("\n\n");
 }
 
 function safeParse(text?: string) {
@@ -54,7 +58,10 @@ export function AssistantMessage({
   onToolApproval?: (id: string, approved: boolean) => void;
 }) {
   const text = messageText(message);
-  const textStarted = message.parts.some((part) => part.type === "text" && part.content);
+
+  const textStarted = message.parts.some(
+    (part) => part.type === "text" && parseMessageSuggestions(part.content).text,
+  );
 
   const hasVisibleParts = message.parts.some(
     (part) =>
@@ -172,10 +179,16 @@ export function AssistantMessage({
           }
 
           if (part.type === "text" && part.content) {
+            const cleanContent = parseMessageSuggestions(part.content).text;
+
+            if (!cleanContent) {
+              return null;
+            }
+
             return (
               <TextPart
                 key={index}
-                content={part.content}
+                content={cleanContent}
                 className="chat-markdown"
                 components={streaming ? fadeMarkdownComponents : undefined}
               />
@@ -185,7 +198,7 @@ export function AssistantMessage({
           return null;
         })}
         {!streaming && text ? (
-          <MessageFooter className="-ms-2 px-0">
+          <MessageFooter className="px-0">
             <CopyAction text={text} />
             {onRetry ? (
               <MessageAction label="Retry" onClick={onRetry}>

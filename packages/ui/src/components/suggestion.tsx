@@ -5,14 +5,21 @@ import { cn } from "@polytic/ui/lib/utils";
 
 import { Button } from "@polytic/ui/components/button";
 
-export interface SuggestionsProps extends React.ComponentProps<"div"> {}
+export interface SuggestionsProps extends React.ComponentProps<"div"> {
+  wrap?: boolean;
+}
 
-export function Suggestions({ className, ...props }: SuggestionsProps) {
+export function Suggestions({ className, wrap, ...props }: SuggestionsProps) {
+  const isWrapped = wrap ?? className?.includes("flex-wrap");
+
   return (
     <div
       data-slot="suggestions"
       className={cn(
-        "flex scrollbar-none gap-2 overflow-x-auto overscroll-x-contain py-1",
+        "flex gap-2 py-1",
+        isWrapped
+          ? "flex-wrap items-center"
+          : "min-w-0 scroll-fade-x scrollbar-none overflow-x-auto overscroll-x-contain",
         className,
       )}
       {...props}

@@ -39,6 +39,7 @@ import {
 import { type FormEvent, useMemo, useRef, useState } from "react";
 
 import { type ChatModelId, DEFAULT_CHAT_MODEL } from "@/lib/models";
+import { parseMessageSuggestions } from "@/lib/suggestions";
 
 import { AssistantMessage, PendingMessage, UserMessage } from "./chat-message";
 import { ModelPicker } from "./model-picker";
@@ -85,6 +86,18 @@ export function Chat() {
   const busy = status === "submitted" || status === "streaming";
   const canSend = draft.trim().length > 0 && !busy;
   const last = messages.at(-1);
+
+  const latestSuggestions = useMemo(() => {
+    if (!last || last.role !== "assistant" || busy) {
+      return [];
+    }
+
+    const raw = last.parts
+      .flatMap((part) => (part.type === "text" ? [part.content] : []))
+      .join("\n\n");
+
+    return parseMessageSuggestions(raw).suggestions;
+  }, [last, busy]);
 
   function send(text: string) {
     void sendMessage(text);
@@ -180,12 +193,12 @@ export function Chat() {
 
   if (messages.length === 0) {
     return (
-      <div className="relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-4 py-10">
+      <div className="relative flex min-h-0 min-w-0 flex-1 flex-col items-center justify-center overflow-hidden px-4 py-10">
         <div
           aria-hidden
           className="bg-aurora pointer-events-none absolute inset-x-0 top-0 h-2/3 opacity-60"
         />
-        <div className="relative flex w-full max-w-2xl flex-col items-center gap-8">
+        <div className="relative flex w-full max-w-2xl min-w-0 flex-col items-center gap-8">
           <Empty className="p-0">
             <EmptyHeader className="max-w-md">
               <EmptyMedia variant="icon" className="bg-spectrum text-background">
@@ -201,7 +214,7 @@ export function Chat() {
             </EmptyHeader>
           </Empty>
           {composer}
-          <Suggestions className="w-full justify-center">
+          <Suggestions wrap className="w-full justify-center">
             {STARTERS.map((starter) => (
               <Suggestion
                 key={starter.text}
@@ -221,7 +234,7 @@ export function Chat() {
 
   return (
     <MessageScrollerProvider autoScroll>
-      <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
         <MessageScroller className="flex-1">
           <MessageScrollerViewport>
             <MessageScrollerContent
@@ -257,7 +270,7 @@ export function Chat() {
           </MessageScrollerViewport>
           <MessageScrollerButton />
         </MessageScroller>
-        <div className="mx-auto flex w-full max-w-3xl flex-col gap-3 px-4 pb-4">
+        <div className="mx-auto flex w-full max-w-3xl min-w-0 flex-col gap-3 px-4 pb-4">
           {queue.length > 0 ? (
             <Queue
               items={queue.map((item) => ({
@@ -284,6 +297,20 @@ export function Chat() {
                 </Button>
               </AlertAction>
             </Alert>
+          ) : null}
+          {latestSuggestions.length > 0 ? (
+            <Suggestions className="w-full">
+              {latestSuggestions.map((suggestion) => (
+                <Suggestion
+                  key={suggestion}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => send(suggestion)}
+                >
+                  {suggestion}
+                </Suggestion>
+              ))}
+            </Suggestions>
           ) : null}
           {composer}
         </div>

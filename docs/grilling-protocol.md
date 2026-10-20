@@ -28,6 +28,18 @@ Source in this monorepo: `skills/polytic-party/`. Maintainer notes: `skills/READ
 - **Rapid-fire turns.** During the grill, agent replies stay to 1–2 sentences: one
   sharp question, no praise or answer summaries. Depth comes from many short probes,
   not long monologues. The verdict at the end is where length belongs.
+- **Suggestions ruleset.** Clickable prompt suggestions appear when helpful for
+  navigation and post-verdict exploration, but are strictly forbidden when they risk
+  turning the grill back into a multiple-choice quiz:
+  - **Inappropriate (never suggest):** Open-ended probing into what the user believes,
+    why, or what moral foundations justify their stance; pre-packaged compromises to
+    reconcile contradictions; mid-grill rapid-fire turns; any ideologically skewed or
+    leading framing.
+  - **Appropriate (use 2–4 short chips):** Directional branching between taxonomy
+    dimensions; post-verdict next steps and stress-tests; concrete thought experiments
+    with distinct neutral angles (including a meta-choice); session meta-navigation.
+  - **Format:** Emitted at the very end of the message inside a \`\`\`suggestions code
+    block; omitted completely when inappropriate.
 
 ## Interview engine (state machine)
 

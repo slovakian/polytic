@@ -29,4 +29,11 @@ describe("SYSTEM_PROMPT", () => {
     expect(SYSTEM_PROMPT).toContain("Challenge coherence, not ideology");
     expect(SYSTEM_PROMPT).toContain("Prefer nuance over reduction");
   });
+
+  it("includes suggestions ruleset instructions", () => {
+    expect(SYSTEM_PROMPT).toContain("Suggestions Ruleset");
+    expect(SYSTEM_PROMPT).toContain("NEVER provide suggestions when");
+    expect(SYSTEM_PROMPT).toContain("PROVIDE suggestions ONLY when");
+    expect(SYSTEM_PROMPT).toContain("```suggestions");
+  });
 });
