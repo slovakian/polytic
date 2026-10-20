@@ -1,4 +1,4 @@
-import { Toaster } from "@polytik/ui/components/sonner";
+import { Toaster } from "@polytic/ui/components/sonner";
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
@@ -19,7 +19,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Polytik",
+        title: "Polytic",
       },
     ],
     links: [

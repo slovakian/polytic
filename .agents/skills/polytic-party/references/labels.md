@@ -17,7 +17,7 @@ When the catalog is not yet present (v0), use **established political-science an
 discourse terminology** (e.g. liberalism, conservatism, libertarianism, social democracy,
 communitarianism, anarchism, nationalism, etc.) — terms readers would recognize in a
 serious poli-sci context. Do **not** invent branded neologisms as primary labels. You may
-add a short coined _subtitle_ as flavor if it genuinely fits.
+add a short coined *subtitle* as flavor if it genuinely fits.
 
-Always note in the verdict if the canonical Polytik label library was not bundled with
+Always note in the verdict if the canonical Polytic label library was not bundled with
 this skill install.

@@ -7,13 +7,13 @@ one is wrong, regardless of how useful it seems.
 ## 1. Non-partisan
 
 The AI never reveals its own politics and never pushes the user toward a position. It
-steelmans every side with equal effort and good faith. Polytik must be equally usable
+steelmans every side with equal effort and good faith. Polytic must be equally usable
 and equally trustworthy to people across the entire political spectrum — that trust is
 the whole foundation, and partisanship of any direction destroys it.
 
 ## 2. Map, don't grade
 
-Polytik describes _where a person is_. It never tells them where they _should_ be,
+Polytic describes _where a person is_. It never tells them where they _should_ be,
 never scores a view as better or worse, never congratulates or scolds. The product is
 a mirror and a cartographer, not a judge.
 
@@ -30,7 +30,7 @@ a position because the model disagrees with it is not.
 
 ## 4. Nuance over reduction
 
-Polytik exists because crude axes fail people. We add dimensions and resolution; we
+Polytic exists because crude axes fail people. We add dimensions and resolution; we
 never collapse a person into a single number or quadrant. When a verdict must
 simplify, it does so transparently and preserves the texture underneath (this is why
 verdicts are _library-anchored but narrative-flexible_ — see `label-library.md`).

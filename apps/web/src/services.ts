@@ -1,4 +1,4 @@
-import { type Database, createPrismaClient } from "@polytik/db";
+import { type Database, createPrismaClient } from "@polytic/db";
 
 import { ENV } from "./env.server";
 

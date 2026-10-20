@@ -24,7 +24,7 @@ Each phase is roughly a prerequisite for the next.
 
 - Tag thinkers, politicians, and online personalities using the same label library.
 - Show how closely a user's profile aligns with them on shared vocabulary.
-- This is the highest-value, most viral demonstration of why Polytik beats the compass
+- This is the highest-value, most viral demonstration of why Polytic beats the compass
   — intentionally ahead of the heavier social/community work.
 
 ## Phase 3 — Social layer

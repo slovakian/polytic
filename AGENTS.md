@@ -1,9 +1,9 @@
-# Polytik
+# Polytic
 
-**Polytik helps people understand their own politics in high resolution.**
+**Polytic helps people understand their own politics in high resolution.**
 
 The political compass is too crude and left-vs-right is cruder still. Statistical
-questionnaires are shallow and allow no nuance. Polytik's bet: an AI that _grills_
+questionnaires are shallow and allow no nuance. Polytic's bet: an AI that _grills_
 you — asks, challenges, and reasons with you — can put words to your politics far
 more accurately than any fixed quiz, and place you in a rich, multi-dimensional
 landscape using the language political thinkers have built over centuries.
@@ -17,19 +17,19 @@ landscape using the language political thinkers have built over centuries.
    out the skill. First-party in-app grilling, profiles, and alignment scoring come
    later — see `docs/roadmap.md`. **Do not build ahead of Phase 0.**
 
-## Polytik Party skill (public install)
+## Polytic Party skill (public install)
 
-The distributable skill lives in **`packages/skills/polytik-party/`** and publishes to
-**[`slovakian/polytik-party`](https://github.com/slovakian/polytik-party)** via git subtree.
+The distributable skill lives in **`packages/skills/polytic-party/`** and publishes to
+**[`slovakian/polytic-party`](https://github.com/slovakian/polytic-party)** via git subtree.
 This private repo is the **source of truth**; the public repo is a read-only mirror.
 
 ```bash
-npx skills add slovakian/polytik-party
+npx skills add slovakian/polytic-party
 ```
 
 ### Keeping the public repo in sync (agents)
 
-When you change anything under `packages/skills/polytik-party/`:
+When you change anything under `packages/skills/polytic-party/`:
 
 1. **Edit only in the monorepo** — never treat the public repo as canonical.
 2. **Commit** skill changes in this private repo.
@@ -37,17 +37,17 @@ When you change anything under `packages/skills/polytik-party/`:
    ```bash
    bun run skills:publish
    ```
-   (runs `git subtree push --prefix=packages/skills/polytik-party polytik-party main`)
+   (runs `git subtree push --prefix=packages/skills/polytic-party polytic-party main`)
 4. If `subtree push` fails on first publish or after history rewrites, bootstrap once:
    ```bash
-   git subtree split --prefix=packages/skills/polytik-party -b publish/polytik-party
-   git push polytik-party publish/polytik-party:main
-   git branch -D publish/polytik-party
+   git subtree split --prefix=packages/skills/polytic-party -b publish/polytic-party
+   git push polytic-party publish/polytic-party:main
+   git branch -D publish/polytic-party
    ```
 5. **Rare reverse sync** (hotfix landed on GitHub):  
-   `git subtree pull --prefix=packages/skills/polytik-party polytik-party main --squash`
+   `git subtree pull --prefix=packages/skills/polytic-party polytic-party main --squash`
 
-Remote name: `polytik-party` → `git@github.com:slovakian/polytik-party.git`. Full maintainer notes: **`packages/skills/README.md`**. Product behavior: **`docs/grilling-protocol.md`**.
+Remote name: `polytic-party` → `git@github.com:slovakian/polytic-party.git`. Full maintainer notes: **`packages/skills/README.md`**. Product behavior: **`docs/grilling-protocol.md`**.
 
 ## Database migrations (mandatory)
 
@@ -89,7 +89,7 @@ These bind every feature, forever. If a change violates one, it's wrong.
 
 - **Non-partisan.** The AI never reveals or pushes its own politics. It steelmans
   every side equally.
-- **Map, don't grade.** Polytik describes where you are; it never judges where you
+- **Map, don't grade.** Polytic describes where you are; it never judges where you
   should be.
 - **Challenge coherence, not ideology.** Pushback tests the internal consistency of
   your views — never nudges you toward a position.
@@ -98,7 +98,7 @@ These bind every feature, forever. If a change violates one, it's wrong.
 
 ## Source-of-truth assets
 
-Two curated, versioned assets in `docs/` define Polytik's worldview and must stay
+Two curated, versioned assets in `docs/` define Polytic's worldview and must stay
 coherent: the **dimension taxonomy** (the axes we measure) and the **label library**
 (the established political vocabulary verdicts are anchored to). The grilling uses a
 _fixed skeleton, adaptive flesh_ model — fixed dimensions, free probing of issues —

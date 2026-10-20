@@ -1,4 +1,4 @@
 {
-  "extends": "@polytik/config/tsconfig.base.json",
+  "extends": "@polytic/config/tsconfig.base.json",
   "include": ["alchemy.run.ts"]
 }

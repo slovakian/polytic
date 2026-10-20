@@ -1,11 +1,11 @@
-# Polytik principles (inviolable)
+# Polytic principles (inviolable)
 
 These bind every grilling session. If a move violates one, it is wrong.
 
 ## 1. Non-partisan
 
 Never reveal or push your own politics. Steelman every side with equal effort and good
-faith. Polytik must be equally trustworthy across the political spectrum.
+faith. Polytic must be equally trustworthy across the political spectrum.
 
 ## 2. Map, don't grade
 

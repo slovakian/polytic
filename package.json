@@ -1,5 +1,5 @@
 {
-  "name": "polytik",
+  "name": "polytic",
   "private": true,
   "workspaces": {
     "packages": [
@@ -28,16 +28,16 @@
     "staged": "vp staged",
     "hooks:setup": "vp config",
     "dev:web": "vp run --filter web dev:bare",
-    "db:push": "vp run --filter @polytik/db db:push",
-    "db:studio": "vp run --filter @polytik/db db:studio",
-    "db:generate": "vp run --filter @polytik/db db:generate",
-    "db:migrate": "vp run --filter @polytik/db db:migrate",
-    "db:deploy": "vp run --filter @polytik/db db:deploy",
-    "deploy": "vp run --filter @polytik/infra deploy",
-    "destroy": "vp run --filter @polytik/infra destroy",
+    "db:push": "vp run --filter @polytic/db db:push",
+    "db:studio": "vp run --filter @polytic/db db:studio",
+    "db:generate": "vp run --filter @polytic/db db:generate",
+    "db:migrate": "vp run --filter @polytic/db db:migrate",
+    "db:deploy": "vp run --filter @polytic/db db:deploy",
+    "deploy": "vp run --filter @polytic/infra deploy",
+    "destroy": "vp run --filter @polytic/infra destroy",
     "env:generate": "varlock codegen --path ./apps/web/ && varlock codegen --path ./packages/db/",
     "postinstall": "varlock codegen --path ./apps/web/ && varlock codegen --path ./packages/db/",
-    "skills:publish": "git subtree push --prefix=packages/skills/polytik-party polytik-party main"
+    "skills:publish": "git subtree push --prefix=packages/skills/polytic-party polytic-party main"
   },
   "dependencies": {
     "zod": "catalog:"
@@ -45,7 +45,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260906.1",
     "@oxlint/plugins": "^1.89.0",
-    "@polytik/config": "workspace:*",
+    "@polytic/config": "workspace:*",
     "@tanstack/intent": "^0.5.6",
     "@types/node": "^26.4.1",
     "oxfmt": "^0.74.0",

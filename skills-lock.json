@@ -25,10 +25,10 @@
       "skillPath": "skills/neon-postgres/SKILL.md",
       "computedHash": "3c53df29c959dc0a7f724ff8620063b20fabd2b1fa702ec97e3f17e6a23d5a1c"
     },
-    "polytik-party": {
-      "source": "./packages/skills/polytik-party",
+    "polytic-party": {
+      "source": "./packages/skills/polytic-party",
       "sourceType": "local",
-      "computedHash": "50774722a335fd085f72ec2e7b9502d0998e5a9c55f56f15761b798446c02c57"
+      "computedHash": "b1412d70ebc4e15cb333de42b70620065d5bf5b4e84682c41954f7148f3980ab"
     },
     "prisma-cli": {
       "source": "prisma/skills",

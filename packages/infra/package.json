@@ -1,5 +1,5 @@
 {
-  "name": "@polytik/infra",
+  "name": "@polytic/infra",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,7 +14,7 @@
   "devDependencies": {
     "@effect/platform-bun": "4.0.5",
     "@effect/platform-node": "4.0.5",
-    "@polytik/config": "workspace:*",
+    "@polytic/config": "workspace:*",
     "alchemy": "2.0.0-beta.83",
     "effect": "4.0.5",
     "typescript": "catalog:",

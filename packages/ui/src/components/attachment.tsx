@@ -2,9 +2,9 @@ import * as React from "react";
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@polytik/ui/lib/utils";
+import { cn } from "@polytic/ui/lib/utils";
 
-import { Button } from "@polytik/ui/components/button";
+import { Button } from "@polytic/ui/components/button";
 
 const attachmentVariants = cva(
   "group/attachment relative flex w-fit max-w-full min-w-0 shrink-0 flex-wrap rounded-3xl border bg-card text-card-foreground transition-colors focus-within:ring-1 focus-within:ring-ring/30 has-[>a,>button]:hover:bg-muted/50 data-[state=error]:border-destructive/30 data-[state=idle]:border-dashed",

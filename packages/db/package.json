@@ -1,5 +1,5 @@
 {
-  "name": "@polytik/db",
+  "name": "@polytic/db",
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
@@ -21,7 +21,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@polytik/config": "workspace:*",
+    "@polytic/config": "workspace:*",
     "prisma": "^7.10.0",
     "typescript": "catalog:",
     "varlock": "catalog:"

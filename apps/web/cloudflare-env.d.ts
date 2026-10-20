@@ -1,4 +1,4 @@
-import type { WebEnv as ServerEnv } from "@polytik/infra/alchemy.run";
+import type { WebEnv as ServerEnv } from "@polytic/infra/alchemy.run";
 
 // This file infers types for the cloudflare:workers environment from your Alchemy Worker.
 // @see https://alchemy.run/cloudflare/compute/workers

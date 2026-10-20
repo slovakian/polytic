@@ -1,18 +1,18 @@
 {
-  "name": "@polytik/skills",
+  "name": "@polytic/skills",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./polytik-party": "./polytik-party/SKILL.md",
-    "./polytik-party/*": "./polytik-party/*"
+    "./polytic-party": "./polytic-party/SKILL.md",
+    "./polytic-party/*": "./polytic-party/*"
   },
   "scripts": {
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@polytik/config": "workspace:*",
+    "@polytic/config": "workspace:*",
     "typescript": "catalog:"
   }
 }

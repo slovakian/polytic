@@ -9,10 +9,10 @@ verdict on their politics. This doc describes how it should behave.
 Published from the public skills repo (not this private app repo):
 
 ```bash
-npx skills add slovakian/polytik-party
+npx skills add slovakian/polytic-party
 ```
 
-Source in this monorepo: `skills/polytik-party/`. Maintainer notes: `skills/README.md`.
+Source in this monorepo: `skills/polytic-party/`. Maintainer notes: `skills/README.md`.
 
 ## Shape
 
@@ -59,7 +59,7 @@ The skill must not output a verdict until **all** of the following hold:
    **open** or **mixed**, never **settled**.
 
 The full gate and anti-patterns (thread-chasing, weak-model rush to verdict) live in
-`skills/polytik-party/references/protocol.md`. Verdict markdown template lives in
+`skills/polytic-party/references/protocol.md`. Verdict markdown template lives in
 `references/verdict-format.md` and should be read only at the end.
 
 ### Micro-loop (every turn)

@@ -1,13 +1,13 @@
-# polytik
+# polytic
 
-**Polytik** helps people understand their own politics in high resolution — an AI that
+**Polytic** helps people understand their own politics in high resolution — an AI that
 _grills_ you and delivers a nuanced verdict, not a crude compass score.
 
 This repo is the **Phase 0 showcase app** (private). The distributable grilling skill is
 published separately:
 
 ```bash
-npx skills add slovakian/polytik-party
+npx skills add slovakian/polytic-party
 ```
 
 See `AGENTS.md`, `docs/`, and `packages/skills/README.md` for product detail and maintainer workflow.
@@ -75,7 +75,7 @@ npx shadcn@latest add accordion dialog popover sheet table -c packages/ui
 Import shared components like this:
 
 ```tsx
-import { Button } from "@polytik/ui/components/button";
+import { Button } from "@polytic/ui/components/button";
 ```
 
 ### Add app-specific blocks
@@ -98,7 +98,7 @@ For more details, see the guide on [Deploying to Cloudflare with Alchemy](https:
 ## Project Structure
 
 ```
-polytik/
+polytic/
 ├── apps/
 │   └── web/         # Fullstack application (React + TanStack Start)
 ├── packages/

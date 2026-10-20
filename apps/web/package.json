@@ -10,9 +10,9 @@
     "env:generate": "varlock codegen"
   },
   "dependencies": {
-    "@polytik/db": "workspace:*",
-    "@polytik/skills": "workspace:*",
-    "@polytik/ui": "workspace:*",
+    "@polytic/db": "workspace:*",
+    "@polytic/skills": "workspace:*",
+    "@polytic/ui": "workspace:*",
     "@prisma/client": "catalog:",
     "@tailwindcss/vite": "^4.3.3",
     "@tanstack/ai": "^0.70.0",
@@ -29,8 +29,8 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@polytik/config": "workspace:*",
-    "@polytik/infra": "workspace:*",
+    "@polytic/config": "workspace:*",
+    "@polytic/infra": "workspace:*",
     "@tanstack/react-router-devtools": "^1.167.2",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/react": "^16.3.3",

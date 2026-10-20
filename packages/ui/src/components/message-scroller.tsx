@@ -7,9 +7,9 @@ import {
   useMessageScrollerScrollable,
   useMessageScrollerVisibility,
 } from "@shadcn/react/message-scroller";
-import { cn } from "@polytik/ui/lib/utils";
+import { cn } from "@polytic/ui/lib/utils";
 
-import { Button } from "@polytik/ui/components/button";
+import { Button } from "@polytic/ui/components/button";
 import { ArrowDownIcon } from "lucide-react";
 
 function MessageScrollerProvider(

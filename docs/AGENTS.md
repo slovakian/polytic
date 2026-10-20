@@ -1,8 +1,8 @@
 # docs/ — how to use this folder
 
-This folder holds Polytik's **product vision, principles, and conceptual
+This folder holds Polytic's **product vision, principles, and conceptual
 source-of-truth assets**. It is the long-form companion to the brief root
-`AGENTS.md`. README owns setup/stack/commands; `docs/` owns _what Polytik is and
+`AGENTS.md`. README owns setup/stack/commands; `docs/` owns _what Polytic is and
 why_.
 
 ## Rules for agents
@@ -27,7 +27,7 @@ why_.
 | `vision.md`             | The thesis and north star, long form.                                       |
 | `principles.md`         | The inviolable design laws, expanded with rationale.                        |
 | `grilling-protocol.md`  | How the v1 grilling skill works, install command, open questions.           |
-| `dimension-taxonomy.md` | The model for Polytik's political axes (source-of-truth asset).             |
+| `dimension-taxonomy.md` | The model for Polytic's political axes (source-of-truth asset).             |
 | `label-library.md`      | The model for the label catalog verdicts anchor to (source-of-truth asset). |
 | `roadmap.md`            | Phases 0–4. v1 is Phase 0 only.                                             |
 

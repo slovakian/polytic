@@ -2,7 +2,7 @@
 
 The label library is the curated catalog of political labels that verdicts anchor to.
 Political thinkers have spent a very long time naming the many distinct kinds of
-politics; Polytik draws on that established vocabulary rather than reinventing it. It is
+politics; Polytic draws on that established vocabulary rather than reinventing it. It is
 authored intentionally and versioned in this repo, alongside `dimension-taxonomy.md`.
 
 ## The model: library-anchored, narrative-flexible

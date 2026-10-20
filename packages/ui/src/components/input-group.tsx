@@ -1,10 +1,10 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@polytik/ui/lib/utils";
+import { cn } from "@polytic/ui/lib/utils";
 
-import { Button } from "@polytik/ui/components/button";
-import { Input } from "@polytik/ui/components/input";
-import { Textarea } from "@polytik/ui/components/textarea";
+import { Button } from "@polytic/ui/components/button";
+import { Input } from "@polytic/ui/components/input";
+import { Textarea } from "@polytic/ui/components/textarea";
 
 function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (

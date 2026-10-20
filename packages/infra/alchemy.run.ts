@@ -35,23 +35,31 @@ export const databaseBindings = {
 
 export const databaseProviders = Layer.mergeAll(Command.providers(), Neon.providers());
 
-export const web = Cloudflare.Website.Vite("web", {
-  rootDir: "../../apps/web",
-  compatibility: {
-    flags: ["nodejs_compat"],
-  },
-  env: {
-    ...databaseBindings,
-  },
-  dev: {
-    port: 3001,
-  },
-});
+export const web = Cloudflare.Website.Vite(
+  "web",
+  Effect.gen(function* () {
+    const stage = yield* Alchemy.Stage;
+
+    return {
+      rootDir: "../../apps/web",
+      domain: stage === "prod" ? "polytic.party" : undefined,
+      compatibility: {
+        flags: ["nodejs_compat"],
+      },
+      env: {
+        ...databaseBindings,
+      },
+      dev: {
+        port: 3001,
+      },
+    };
+  }),
+);
 
 export type WebEnv = Cloudflare.InferEnv<typeof web>;
 
 export default Alchemy.Stack(
-  "polytik",
+  "polytic",
   {
     providers: Layer.mergeAll(Cloudflare.providers(), databaseProviders),
     state: Cloudflare.state(),

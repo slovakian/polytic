@@ -19,7 +19,7 @@ For the first time, someone can sit with an agent and have it genuinely articula
 _what they actually believe_, then hand them the established vocabulary that describes
 it.
 
-Polytik replaces "pick your quadrant" with a guided act of self-understanding.
+Polytic replaces "pick your quadrant" with a guided act of self-understanding.
 
 ## What a user gets
 
@@ -35,7 +35,7 @@ only half-had language for.
 
 ## North star
 
-Polytik grows from a personal tool into a social space for political
+Polytic grows from a personal tool into a social space for political
 self-understanding:
 
 - **Profiles** — save your verdict and the reasoning behind it.

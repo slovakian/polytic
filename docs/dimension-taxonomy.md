@@ -1,6 +1,6 @@
 # Dimension taxonomy (source-of-truth asset)
 
-The dimension taxonomy is Polytik's deliberate model of political space — the axes we
+The dimension taxonomy is Polytic's deliberate model of political space — the axes we
 measure people on. It is the direct answer to "the compass has too few, too crude
 axes." It is authored intentionally by the project owner and versioned in this repo;
 it powers the grilling skill, the future app, and eventually the alignment math.
@@ -25,7 +25,7 @@ it powers the grilling skill, the future app, and eventually the alignment math.
 ## Status: TODO — author the real dimensions
 
 The actual dimensions are **not yet written**. They must be authored by the project
-owner; agents should not invent Polytik's political axes. Candidate directions to
+owner; agents should not invent Polytic's political axes. Candidate directions to
 discuss (illustrative only, not decided): economic organization, social
 order/tradition, state authority vs. liberty, nationalism vs. cosmopolitanism, change
 tempo (reform ↔ revolution), epistemics/expertise, ecology.

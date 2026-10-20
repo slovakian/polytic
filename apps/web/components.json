@@ -13,8 +13,8 @@
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
-    "utils": "@polytik/ui/lib/utils",
-    "ui": "@polytik/ui/components",
+    "utils": "@polytic/ui/lib/utils",
+    "ui": "@polytic/ui/components",
     "lib": "@/lib",
     "hooks": "@/hooks"
   },

@@ -12,11 +12,11 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@polytik/ui/components",
-    "utils": "@polytik/ui/lib/utils",
-    "hooks": "@polytik/ui/hooks",
-    "lib": "@polytik/ui/lib",
-    "ui": "@polytik/ui/components"
+    "components": "@polytic/ui/components",
+    "utils": "@polytic/ui/lib/utils",
+    "hooks": "@polytic/ui/hooks",
+    "lib": "@polytic/ui/lib",
+    "ui": "@polytic/ui/components"
   },
   "menuColor": "default",
   "menuAccent": "subtle",

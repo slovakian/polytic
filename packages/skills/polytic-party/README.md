@@ -1,4 +1,4 @@
-# Polytik Party
+# Polytic Party
 
 **Understand your politics in high resolution** — not with a compass or a quiz, but through a conversation.
 
@@ -7,16 +7,16 @@ Install this skill in your AI agent (Claude, Cursor, ChatGPT with skills, etc.).
 ## Install
 
 ```bash
-npx skills add slovakian/polytik-party
+npx skills add slovakian/polytic-party
 ```
 
 Non-interactive:
 
 ```bash
-npx skills add slovakian/polytik-party -y
+npx skills add slovakian/polytic-party -y
 ```
 
-Then ask your agent: *"Grill me on my politics"* or *"Run Polytik."*
+Then ask your agent: _"Grill me on my politics"_ or _"Run Polytic."_
 
 ## What you get
 
@@ -27,8 +27,8 @@ Then ask your agent: *"Grill me on my politics"* or *"Run Polytik."*
   after a full skeleton sweep, not after a handful of questions
 
 **Tip:** Weaker or highly completion-biased models may still rush the verdict. Use a
-capable model for best results, or say *"keep grilling — not done yet"* if it stops early.
+capable model for best results, or say _"keep grilling — not done yet"_ if it stops early.
 
 ## Principles
 
-Polytik maps where you are; it never grades where you should be. The agent stays non-partisan and challenges coherence, not ideology.
+Polytic maps where you are; it never grades where you should be. The agent stays non-partisan and challenges coherence, not ideology.

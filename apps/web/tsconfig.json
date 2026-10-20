@@ -21,9 +21,9 @@
     "noUncheckedSideEffectImports": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@polytik/skills": ["../../packages/skills/src/index.ts"],
-      "@polytik/skills/*": ["../../packages/skills/*"],
-      "@polytik/ui/*": ["../../packages/ui/src/*"]
+      "@polytic/skills": ["../../packages/skills/src/index.ts"],
+      "@polytic/skills/*": ["../../packages/skills/*"],
+      "@polytic/ui/*": ["../../packages/ui/src/*"]
     }
   }
 }
