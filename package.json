@@ -37,7 +37,8 @@
     "deploy": "vp run --filter @polytic/infra deploy",
     "destroy": "vp run --filter @polytic/infra destroy",
     "env:generate": "varlock codegen --path ./apps/web/ && varlock codegen --path ./packages/db/",
-    "postinstall": "varlock codegen --path ./apps/web/ && varlock codegen --path ./packages/db/"
+    "postinstall": "varlock codegen --path ./apps/web/ && varlock codegen --path ./packages/db/",
+    "prepare": "vp config --no-agent"
   },
   "dependencies": {
     "zod": "catalog:"

@@ -85,6 +85,7 @@ export default defineConfig({
     sortPackageJson: true,
   },
   staged: {
+    "*": "node tools/hooks/check-file-tokens.ts",
     "*.{js,ts,jsx,tsx,vue,svelte,json,jsonc,css,md}": "vp check --fix",
   },
 });
