@@ -8,14 +8,18 @@ you — asks, challenges, and reasons with you — can put words to your politic
 more accurately than any fixed quiz, and place you in a rich, multi-dimensional
 landscape using the language political thinkers have built over centuries.
 
-## What we're building right now (v1 = Phase 0)
+## What we're building right now (v1)
 
-1. A distributable **grilling skill** — a prompt people install via the skills CLI
-   or copy-paste into any AI agent, which interviews them and delivers a verdict
-   on their politics.
-2. A **showcase/distribution site** (this repo) that explains the thesis and hands
-   out the skill. First-party in-app grilling, profiles, and alignment scoring come
-   later — see `docs/roadmap.md`. **Do not build ahead of Phase 0.**
+**Polytic Party** (Polytic for short) at polytic.party.
+
+1. A **simple in-app grilling chat** (this repo): free-text answers, a verdict at the
+   end, models via OpenRouter, no server-side transcripts. See `docs/adrs/0001`.
+2. The distributable **grilling skill**, kept alongside the app for people who want
+   to use their own AI agent.
+
+Profiles, live views, and alignment scoring come later; see `docs/roadmap.md`.
+**Do not build ahead of v1.** Architecture ideas in `docs/architecture.md` under
+"Direction under consideration" are not decisions.
 
 ## Polytic Party skill (public install)
 

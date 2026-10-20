@@ -29,6 +29,10 @@ why_.
 | `grilling-protocol.md`  | How the v1 grilling skill works, install command, open questions.           |
 | `dimension-taxonomy.md` | The model for Polytic's political axes (source-of-truth asset).             |
 | `label-library.md`      | The model for the label catalog verdicts anchor to (source-of-truth asset). |
-| `roadmap.md`            | Phases 0–4. v1 is Phase 0 only.                                             |
+| `roadmap.md`            | v1 (the chat) through Phase 4.                                              |
+| `framework.md`          | Research brief for the theory behind the method; open questions.            |
+| `architecture.md`       | How the chat works (mermaid diagrams), plus direction under consideration.  |
+| `glossary.md`           | Canonical terms (Polytic Party, Session, Finding, Verdict, …).              |
+| `adrs/`                 | Architecture decision records, `NNNN-slug.md`. Commitments only.            |
 
 If you add a doc, add a row here too.

@@ -3,7 +3,7 @@
 **Polytic** helps people understand their own politics in high resolution — an AI that
 _grills_ you and delivers a nuanced verdict, not a crude compass score.
 
-This repo is the **Phase 0 showcase app** (private). The distributable grilling skill is
+This repo is the **Polytic Party chat app** (private). The distributable grilling skill is
 published separately:
 
 ```bash

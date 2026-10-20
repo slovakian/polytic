@@ -1,8 +1,9 @@
 # The grilling protocol (v1)
 
-The v1 product is a **distributable grilling skill**: a prompt installed via the
-skills CLI or copy-pasted into any AI agent. It interviews the user and delivers a
-verdict on their politics. This doc describes how it should behave.
+The grill runs in two places: the **in-app chat** (v1, ADR-0001) and the
+**distributable grilling skill**, a prompt installed via the skills CLI or copy-pasted
+into any AI agent. Both follow this protocol (ADR-0005). It interviews the user and
+delivers a verdict on their politics. This doc describes how it should behave.
 
 ## Install
 
