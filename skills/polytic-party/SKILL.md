@@ -172,5 +172,5 @@ explicitly ends early; then label it a **partial verdict** and list gaps.
 
 ## About this skill package
 
-Source and updates: https://github.com/slovakian/polytic-party  
-Install: `npx skills add slovakian/polytic-party`
+Source and updates: https://github.com/slovakian/polytic/tree/main/skills/polytic-party  
+Install: `npx skills add slovakian/polytic`

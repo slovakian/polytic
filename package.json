@@ -4,7 +4,8 @@
   "workspaces": {
     "packages": [
       "apps/*",
-      "packages/*"
+      "packages/*",
+      "skills"
     ],
     "catalog": {
       "zod": "^4.5.4",
@@ -36,8 +37,7 @@
     "deploy": "vp run --filter @polytic/infra deploy",
     "destroy": "vp run --filter @polytic/infra destroy",
     "env:generate": "varlock codegen --path ./apps/web/ && varlock codegen --path ./packages/db/",
-    "postinstall": "varlock codegen --path ./apps/web/ && varlock codegen --path ./packages/db/",
-    "skills:publish": "git subtree push --prefix=packages/skills/polytic-party polytic-party main"
+    "postinstall": "varlock codegen --path ./apps/web/ && varlock codegen --path ./packages/db/"
   },
   "dependencies": {
     "zod": "catalog:"

@@ -23,35 +23,17 @@ Profiles, live views, and alignment scoring come later; see `docs/roadmap.md`.
 
 ## Polytic Party skill (public install)
 
-The distributable skill lives in **`packages/skills/polytic-party/`** and publishes to
-**[`slovakian/polytic-party`](https://github.com/slovakian/polytic-party)** via git subtree.
-This private repo is the **source of truth**; the public repo is a read-only mirror.
+The distributable skill lives in **`skills/polytic-party/`** and users install it straight
+from this repo:
 
 ```bash
-npx skills add slovakian/polytic-party
+npx skills add slovakian/polytic
 ```
 
-### Keeping the public repo in sync (agents)
-
-When you change anything under `packages/skills/polytic-party/`:
-
-1. **Edit only in the monorepo** — never treat the public repo as canonical.
-2. **Commit** skill changes in this private repo.
-3. **Publish** to the public mirror:
-   ```bash
-   bun run skills:publish
-   ```
-   (runs `git subtree push --prefix=packages/skills/polytic-party polytic-party main`)
-4. If `subtree push` fails on first publish or after history rewrites, bootstrap once:
-   ```bash
-   git subtree split --prefix=packages/skills/polytic-party -b publish/polytic-party
-   git push polytic-party publish/polytic-party:main
-   git branch -D publish/polytic-party
-   ```
-5. **Rare reverse sync** (hotfix landed on GitHub):  
-   `git subtree pull --prefix=packages/skills/polytic-party polytic-party main --squash`
-
-Remote name: `polytic-party` → `git@github.com:slovakian/polytic-party.git`. Full maintainer notes: **`packages/skills/README.md`**. Product behavior: **`docs/grilling-protocol.md`**.
+Changes reach users once they're merged to `main`; there is no separate publish step.
+`skills/` is the first place the skills CLI looks, so keep `polytic-party` the only skill in
+it — anything else added there shows up in every user's install picker. Full maintainer
+notes: **`skills/README.md`**. Product behavior: **`docs/grilling-protocol.md`**.
 
 ## Database migrations (mandatory)
 

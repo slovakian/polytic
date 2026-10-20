@@ -3,14 +3,14 @@
 **Polytic** helps people understand their own politics in high resolution — an AI that
 _grills_ you and delivers a nuanced verdict, not a crude compass score.
 
-This repo is the **Polytic Party chat app** (private). The distributable grilling skill is
-published separately:
+This repo is the **Polytic Party chat app**. It also hosts the distributable grilling skill
+in `skills/polytic-party/`:
 
 ```bash
-npx skills add slovakian/polytic-party
+npx skills add slovakian/polytic
 ```
 
-See `AGENTS.md`, `docs/`, and `packages/skills/README.md` for product detail and maintainer workflow.
+See `AGENTS.md`, `docs/`, and `skills/README.md` for product detail and maintainer workflow.
 
 ---
 
@@ -23,7 +23,7 @@ This project was created with [Better-T-Stack](https://github.com/AmanVarshney01
 - **TanStack Start** - Full-stack React framework with SSR and TanStack Router
 - **TailwindCSS** - Utility-first CSS for rapid UI development
 - **Shared UI package** - shadcn/ui primitives live in `packages/ui`
-- **Skills package** - Consumer-facing AI skills live in `packages/skills`
+- **Skills package** - Consumer-facing AI skills live in `skills`
 - **Prisma** - TypeScript-first ORM with Neon serverless Postgres
 - **Oxlint & Oxfmt** - Fast Rust-based linting and formatting with anti-slop rules
 
