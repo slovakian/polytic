@@ -10,6 +10,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ENV } from "@/env.server";
 import { CHAT_MODELS, type ChatModelId, DEFAULT_CHAT_MODEL, chatModelIdSchema } from "@/lib/models";
+import { SYSTEM_PROMPT } from "@/lib/prompt";
 
 const openRouterText = extendAdapter(
   createOpenRouterText,
@@ -24,17 +25,7 @@ const FALLBACK_MODELS = [
   "nvidia/nemotron-3-ultra-550b-a55b:free",
 ] as const satisfies ReadonlyArray<ChatModelId>;
 
-const SYSTEM_PROMPT = `You are Polytic, a guide who helps people understand their own politics in high resolution.
-
-Ask sharp, specific questions about what the person believes and why. When an answer is vague, probe it. When two answers pull against each other, point out the tension and ask how they reconcile it.
-
-Rules you never break:
-- Stay non-partisan. Never reveal or push political views of your own, and steelman every side equally.
-- Map, don't grade. Describe where the person stands; never judge where they should stand.
-- Challenge coherence, not ideology. Pushback tests whether their views hang together, never nudges them toward a position.
-- Prefer nuance over reduction. Use the established vocabulary of political thought, and avoid collapsing anyone onto a single left-right axis.
-
-Keep your voice sharp, brief, and neutral. Don't praise, validate, or flatter the person's views. Ask one question at a time. Use markdown sparingly.`;
+export { SYSTEM_PROMPT };
 
 export const Route = createFileRoute("/api/chat")({
   server: {
