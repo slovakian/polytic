@@ -37,16 +37,18 @@ notes: **`skills/README.md`**. Product behavior: **`docs/grilling-protocol.md`**
 
 ## Database migrations (mandatory)
 
-The schema lives in **`packages/db/prisma/schema/`**. Every deploy runs
-`prisma migrate deploy` in CI (see `.github/workflows/deploy.yml`), which **only
-replays committed migration files** — it never generates SQL from your schema and
-never resets. A schema change without a matching migration ships broken.
+The schema lives in **`packages/db/prisma/schema/`**. Alchemy owns the database:
+`packages/infra/alchemy.run.ts` creates a **Neon project per stage** (prod, each PR
+preview, each developer's `alchemy dev`), runs `prisma migrate deploy` against it,
+then deploys the Worker bound to its pooled URL. `alchemy destroy` (run when a PR
+closes) deletes that stage's project. `migrate deploy` **only replays committed
+migration files** — it never generates SQL from your schema and never resets. A
+schema change without a matching migration ships broken.
 
-Migrations run against the **direct, non-pooled** URL (`DATABASE_URL_DIRECT` on
-prod; the direct Neon branch URL on PR previews) — Prisma needs a direct connection
-for advisory locks. Each PR gets its own **ephemeral Neon branch** forked from prod
-state (`pr-<number>`), so preview migrations run against a throwaway clone and are
-torn down when the PR closes. Never point a migration at the pooled URL.
+Migrations run against the project's **direct, non-pooled** URL, because Prisma
+needs a direct connection for advisory locks. Never point a migration at the pooled
+URL. Deploying needs `NEON_API_KEY` (a GitHub secret in CI, `packages/infra/.env`
+locally).
 
 **Whenever you modify any `*.prisma` schema, you MUST, in the same change:**
 
@@ -66,8 +68,8 @@ torn down when the PR closes. Never point a migration at the pooled URL.
 4. **Commit the migration files alongside the schema and code.** A PR that touches
    `schema/` but adds nothing under `migrations/` is incomplete — do not open it.
 
-Run `bun run db:deploy` locally against a scratch database if you want to dry-run
-exactly what CI will execute.
+`bun run dev` applies your migrations to your own dev stage's Neon project, which is
+the dry run for what deploy will execute.
 
 ## Inviolable principles
 
