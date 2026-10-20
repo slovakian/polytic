@@ -1,4 +1,5 @@
 import { Toaster } from "@polytic/ui/components/sonner";
+import { TooltipProvider } from "@polytic/ui/components/tooltip";
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
@@ -19,13 +20,18 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Polytic",
+        title: "Polytic Party",
       },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/favicon.svg",
       },
     ],
   }),
@@ -40,10 +46,12 @@ function RootDocument() {
         <HeadContent />
       </head>
       <body>
-        <div className="grid h-svh grid-rows-[auto_1fr]">
-          <Header />
-          <Outlet />
-        </div>
+        <TooltipProvider>
+          <div className="grid h-svh grid-rows-[auto_1fr]">
+            <Header />
+            <Outlet />
+          </div>
+        </TooltipProvider>
         <Toaster richColors />
         <TanStackRouterDevtools position="bottom-left" />
         <Scripts />
