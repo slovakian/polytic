@@ -19,7 +19,7 @@ import { TextPart } from "@tanstack/ai-react/ui";
 import { BrainIcon, CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
 import { type ComponentProps, useEffect, useState } from "react";
 
-import { parseMessageSuggestions } from "@/lib/suggestions";
+import { parseMessageSuggestions } from "../../lib/suggestions";
 
 import { fadeMarkdownComponents } from "./fade-markdown";
 

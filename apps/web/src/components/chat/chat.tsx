@@ -214,7 +214,7 @@ export function Chat() {
             </EmptyHeader>
           </Empty>
           {composer}
-          <Suggestions className="w-full justify-center">
+          <Suggestions wrap className="w-full justify-center">
             {STARTERS.map((starter) => (
               <Suggestion
                 key={starter.text}
