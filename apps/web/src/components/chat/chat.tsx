@@ -39,6 +39,7 @@ import {
 import { type FormEvent, useMemo, useRef, useState } from "react";
 
 import { type ChatModelId, DEFAULT_CHAT_MODEL } from "@/lib/models";
+import { parseMessageSuggestions } from "@/lib/suggestions";
 
 import { AssistantMessage, PendingMessage, UserMessage } from "./chat-message";
 import { ModelPicker } from "./model-picker";
@@ -85,6 +86,18 @@ export function Chat() {
   const busy = status === "submitted" || status === "streaming";
   const canSend = draft.trim().length > 0 && !busy;
   const last = messages.at(-1);
+
+  const latestSuggestions = useMemo(() => {
+    if (!last || last.role !== "assistant" || busy) {
+      return [];
+    }
+
+    const raw = last.parts
+      .flatMap((part) => (part.type === "text" ? [part.content] : []))
+      .join("\n\n");
+
+    return parseMessageSuggestions(raw).suggestions;
+  }, [last, busy]);
 
   function send(text: string) {
     void sendMessage(text);
@@ -284,6 +297,20 @@ export function Chat() {
                 </Button>
               </AlertAction>
             </Alert>
+          ) : null}
+          {latestSuggestions.length > 0 ? (
+            <Suggestions className="w-full">
+              {latestSuggestions.map((suggestion) => (
+                <Suggestion
+                  key={suggestion}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => send(suggestion)}
+                >
+                  {suggestion}
+                </Suggestion>
+              ))}
+            </Suggestions>
           ) : null}
           {composer}
         </div>

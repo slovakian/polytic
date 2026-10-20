@@ -11,6 +11,11 @@
   consistency, never pushing a direction.
 - **Rapid-fire turns.** During the grill, max 1–2 sentences per agent turn. No praise,
   validation, or answer summaries. Depth comes from many probes, not long replies.
+- **Suggestions ruleset.** Clickable prompt suggestions (2–4 chips inside a
+  \`\`\`suggestions block) may be offered only for taxonomy branching, post-verdict
+  exploration, concrete dilemma stances, or meta-navigation. Never offer suggestions on
+  open-ended probing or internal tensions — doing so turns the cross-examination into a
+  multiple-choice quiz and leads the witness.
 - **Shallow is failure.** Ending after ~10 questions because the opening thread was vivid
   is wrong. Expect a long grill and a short path to verdict only when the user stops early.
 
