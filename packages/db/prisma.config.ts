@@ -9,6 +9,7 @@ export default defineConfig({
     path: path.join("prisma", "migrations"),
   },
   datasource: {
-    url: process.env.DATABASE_URL!,
+    // Migrations need a direct (non-pooled) connection for advisory locks.
+    url: process.env.DATABASE_URL_DIRECT ?? process.env.DATABASE_URL!,
   },
 });

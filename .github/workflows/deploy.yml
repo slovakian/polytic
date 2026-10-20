@@ -27,7 +27,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       # Resolve database URLs before `bun install`: @polytic/db postinstall runs
-      # `prisma generate`, and prisma.config.ts requires DATABASE_URL_DIRECT.
+      # `prisma generate`, and prisma.config.ts reads the database URLs.
       #   - prod (push to main): the long-lived production secrets.
       #   - PR preview: an ephemeral Neon branch forked from the production
       #     database's current state, so the preview app + migrations run
