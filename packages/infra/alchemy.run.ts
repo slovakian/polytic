@@ -18,7 +18,13 @@ const databaseUrl = Effect.gen(function* () {
   const migrations = yield* Command.Exec("database-migrations", {
     command: "bun run db:deploy",
     cwd: "../../packages/db",
-    env: { DATABASE_URL: directUrl, DATABASE_URL_DIRECT: directUrl },
+    env: {
+      // Without clearing it, the child's varlock reuses this process's resolved env
+      // and ignores these URLs, migrating whatever database apps/web/.env names.
+      __VARLOCK_ENV: "",
+      DATABASE_URL: directUrl,
+      DATABASE_URL_DIRECT: directUrl,
+    },
     memo: { include: ["prisma/migrations/**", "prisma/schema/**"] },
   });
 
