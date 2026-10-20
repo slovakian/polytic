@@ -79,7 +79,7 @@ export default Alchemy.Stack(
     const pullRequest = yield* Config.String("PULL_REQUEST").pipe(Config.withDefault(""));
 
     if (pullRequest !== "") {
-      const commit = yield* Config.String("GITHUB_SHA").pipe(Config.withDefault("unknown"));
+      const commit = yield* Config.String("COMMIT_SHA").pipe(Config.withDefault("unknown"));
 
       yield* GitHub.Comment("preview-comment", {
         owner: "slovakian",
