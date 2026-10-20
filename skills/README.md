@@ -4,10 +4,10 @@ Consumer-facing agent skills for Polytic. These are **for everyone** — not dev
 
 ## Install
 
-|                  |                                                                                                   |
-| ---------------- | ------------------------------------------------------------------------------------------------- |
-| **GitHub**       | [`slovakian/polytic/skills/polytic-party`](https://github.com/slovakian/polytic/tree/main/skills/polytic-party) |
-| **Skill name**   | `polytic-party` — the product name, not `*-skills`                                                |
+|                |                                                                                                                 |
+| -------------- | --------------------------------------------------------------------------------------------------------------- |
+| **GitHub**     | [`slovakian/polytic/skills/polytic-party`](https://github.com/slovakian/polytic/tree/main/skills/polytic-party) |
+| **Skill name** | `polytic-party` — the product name, not `*-skills`                                                              |
 
 ### User install (copy this everywhere)
 
