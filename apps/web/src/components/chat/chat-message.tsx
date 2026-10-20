@@ -184,7 +184,7 @@ export function AssistantMessage({
           return null;
         })}
         {!streaming && text ? (
-          <MessageFooter className="-ms-2 px-0">
+          <MessageFooter className="px-0">
             <CopyAction text={text} />
             {onRetry ? (
               <MessageAction label="Retry" onClick={onRetry}>

@@ -12,7 +12,7 @@ export function Suggestions({ className, ...props }: SuggestionsProps) {
     <div
       data-slot="suggestions"
       className={cn(
-        "flex scrollbar-none gap-2 overflow-x-auto overscroll-x-contain py-1",
+        "flex min-w-0 scroll-fade-x scrollbar-none gap-2 overflow-x-auto overscroll-x-contain py-1",
         className,
       )}
       {...props}

@@ -193,12 +193,12 @@ export function Chat() {
 
   if (messages.length === 0) {
     return (
-      <div className="relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-4 py-10">
+      <div className="relative flex min-h-0 min-w-0 flex-1 flex-col items-center justify-center overflow-hidden px-4 py-10">
         <div
           aria-hidden
           className="bg-aurora pointer-events-none absolute inset-x-0 top-0 h-2/3 opacity-60"
         />
-        <div className="relative flex w-full max-w-2xl flex-col items-center gap-8">
+        <div className="relative flex w-full max-w-2xl min-w-0 flex-col items-center gap-8">
           <Empty className="p-0">
             <EmptyHeader className="max-w-md">
               <EmptyMedia variant="icon" className="bg-spectrum text-background">
@@ -234,7 +234,7 @@ export function Chat() {
 
   return (
     <MessageScrollerProvider autoScroll>
-      <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
         <MessageScroller className="flex-1">
           <MessageScrollerViewport>
             <MessageScrollerContent
@@ -270,7 +270,7 @@ export function Chat() {
           </MessageScrollerViewport>
           <MessageScrollerButton />
         </MessageScroller>
-        <div className="mx-auto flex w-full max-w-3xl flex-col gap-3 px-4 pb-4">
+        <div className="mx-auto flex w-full max-w-3xl min-w-0 flex-col gap-3 px-4 pb-4">
           {queue.length > 0 ? (
             <Queue
               items={queue.map((item) => ({
