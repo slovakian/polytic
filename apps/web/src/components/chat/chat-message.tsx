@@ -1,5 +1,10 @@
 import { Bubble, BubbleContent } from "@polytic/ui/components/bubble";
 import { Button } from "@polytic/ui/components/button";
+import {
+  Compaction,
+  CompactionLine,
+  type CompactionDetails,
+} from "@polytic/ui/components/compaction";
 import { Confirmation } from "@polytic/ui/components/confirmation";
 import { Message, MessageContent, MessageFooter } from "@polytic/ui/components/message";
 import { Reasoning, ReasoningLine } from "@polytic/ui/components/reasoning";
@@ -46,16 +51,23 @@ export function UserMessage({ message }: { message: UIMessage }) {
   );
 }
 
+export interface MessageCompactionState extends CompactionDetails {
+  status: "idle" | "running" | "done";
+  tokensSaved?: number;
+}
+
 export function AssistantMessage({
   message,
   streaming,
   onRetry,
   onToolApproval,
+  compaction,
 }: {
   message: UIMessage;
   streaming: boolean;
   onRetry?: () => void;
   onToolApproval?: (id: string, approved: boolean) => void;
+  compaction?: MessageCompactionState;
 }) {
   const text = messageText(message);
 
@@ -76,7 +88,11 @@ export function AssistantMessage({
       <Message>
         <MessageContent className="gap-3">
           <Trace>
-            <ReasoningLine running />
+            {compaction?.status === "running" ? (
+              <CompactionLine running />
+            ) : (
+              <ReasoningLine running />
+            )}
           </Trace>
         </MessageContent>
       </Message>
@@ -115,6 +131,13 @@ export function AssistantMessage({
   return (
     <Message>
       <MessageContent className="gap-3">
+        {compaction && compaction.status !== "idle" ? (
+          <Compaction
+            running={compaction.status === "running"}
+            details={compaction}
+            tokensSaved={compaction.tokensSaved}
+          />
+        ) : null}
         {sources.length > 0 ? <Sources sources={sources} /> : null}
 
         {message.parts.map((part, index) => {
@@ -212,13 +235,11 @@ export function AssistantMessage({
   );
 }
 
-export function PendingMessage() {
+export function PendingMessage({ isCompacting = false }: { isCompacting?: boolean }) {
   return (
     <Message>
       <MessageContent>
-        <Trace>
-          <ReasoningLine running />
-        </Trace>
+        <Trace>{isCompacting ? <CompactionLine running /> : <ReasoningLine running />}</Trace>
       </MessageContent>
     </Message>
   );

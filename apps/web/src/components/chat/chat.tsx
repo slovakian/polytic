@@ -1,5 +1,6 @@
 import { Alert, AlertAction, AlertDescription, AlertTitle } from "@polytic/ui/components/alert";
 import { Button } from "@polytic/ui/components/button";
+import { CompactionMarker } from "@polytic/ui/components/compaction";
 import {
   Empty,
   EmptyDescription,
@@ -38,10 +39,20 @@ import {
 } from "lucide-react";
 import { type FormEvent, useMemo, useRef, useState } from "react";
 
+import {
+  compactionEndedSchema,
+  compactionStartedSchema,
+  compactionStateSchema,
+} from "@/lib/compaction";
 import { type ChatModelId, DEFAULT_CHAT_MODEL } from "@/lib/models";
 import { parseMessageSuggestions } from "@/lib/suggestions";
 
-import { AssistantMessage, PendingMessage, UserMessage } from "./chat-message";
+import {
+  AssistantMessage,
+  type MessageCompactionState,
+  PendingMessage,
+  UserMessage,
+} from "./chat-message";
 import { ModelPicker } from "./model-picker";
 
 const connection = fetchServerSentEvents("/api/chat");
@@ -61,6 +72,11 @@ const STARTERS = [
 export function Chat() {
   const [model, setModel] = useState<ChatModelId>(DEFAULT_CHAT_MODEL);
   const [draft, setDraft] = useState("");
+
+  const [compactionState, setCompactionState] = useState<MessageCompactionState>({
+    status: "idle",
+  });
+
   const formRef = useRef<HTMLFormElement>(null);
   const body = useMemo(() => ({ model }), [model]);
 
@@ -68,8 +84,8 @@ export function Chat() {
     messages,
     sendMessage,
     stop,
-    reload,
-    clear,
+    reload: baseReload,
+    clear: baseClear,
     error,
     status,
     isHydrating,
@@ -81,7 +97,81 @@ export function Chat() {
     connection,
     persistence,
     body,
+    onCustomEvent: (eventType, data) => {
+      if (eventType === "compaction:started") {
+        const parsed = compactionStartedSchema.safeParse(data);
+
+        if (parsed.success) {
+          const payload = parsed.data;
+
+          setCompactionState({
+            status: "running",
+            before: payload.before,
+            messagesBefore: payload.messagesBefore,
+            maxTokens: payload.maxTokens,
+            strategyKey: payload.strategyKey,
+            reason: payload.reason,
+          });
+        }
+      } else if (eventType === "compaction:state") {
+        const parsed = compactionStateSchema.safeParse(data);
+
+        if (parsed.success) {
+          const payload = parsed.data;
+
+          setCompactionState((prev) => {
+            const before = payload.before ?? prev.before;
+            const after = payload.after ?? prev.after;
+
+            return {
+              ...prev,
+              status: "running",
+              before,
+              after,
+              messagesBefore: payload.messagesBefore ?? prev.messagesBefore,
+              messagesAfter: payload.messagesAfter ?? prev.messagesAfter,
+              maxTokens: payload.maxTokens ?? prev.maxTokens,
+              strategyKey: payload.strategyKey ?? prev.strategyKey,
+              tokensSaved: before !== undefined && after !== undefined ? before - after : undefined,
+            };
+          });
+        }
+      } else if (eventType === "compaction:ended") {
+        const parsed = compactionEndedSchema.safeParse(data);
+
+        if (parsed.success) {
+          const payload = parsed.data;
+
+          setCompactionState((prev) => {
+            const after = payload.after ?? prev.after;
+            const before = prev.before;
+
+            return {
+              ...prev,
+              status: "done",
+              after,
+              messagesAfter: payload.messagesAfter ?? prev.messagesAfter,
+              durationMs: payload.durationMs ?? prev.durationMs,
+              strategyKey: payload.strategyKey ?? prev.strategyKey,
+              reason: payload.reason ?? prev.reason,
+              tokensSaved: before !== undefined && after !== undefined ? before - after : undefined,
+            };
+          });
+        }
+      }
+    },
   });
+
+  function clear() {
+    setCompactionState({ status: "idle" });
+    baseClear();
+  }
+
+  function reload() {
+    setCompactionState({ status: "idle" });
+
+    return baseReload();
+  }
 
   const busy = status === "submitted" || status === "streaming";
   const canSend = draft.trim().length > 0 && !busy;
@@ -100,6 +190,7 @@ export function Chat() {
   }, [last, busy]);
 
   function send(text: string) {
+    setCompactionState({ status: "idle" });
     void sendMessage(text);
     setDraft("");
   }
@@ -241,6 +332,15 @@ export function Chat() {
               aria-busy={busy}
               className="mx-auto w-full max-w-3xl gap-8 px-4 py-10"
             >
+              {compactionState.messagesBefore !== undefined &&
+              compactionState.messagesAfter !== undefined &&
+              compactionState.messagesBefore > compactionState.messagesAfter ? (
+                <MessageScrollerItem messageId="compaction-marker">
+                  <CompactionMarker
+                    label={`Earlier history (${compactionState.messagesBefore - compactionState.messagesAfter} messages) compacted to fit model context`}
+                  />
+                </MessageScrollerItem>
+              ) : null}
               {messages.map((message) => (
                 <MessageScrollerItem
                   key={message.id}
@@ -253,6 +353,7 @@ export function Chat() {
                     <AssistantMessage
                       message={message}
                       streaming={busy && message === last}
+                      compaction={message === last ? compactionState : undefined}
                       onRetry={message === last ? () => void reload() : undefined}
                       onToolApproval={(id, approved) =>
                         void addToolApprovalResponse({ id, approved })
@@ -263,7 +364,7 @@ export function Chat() {
               ))}
               {status === "submitted" && last?.role === "user" ? (
                 <MessageScrollerItem messageId="pending">
-                  <PendingMessage />
+                  <PendingMessage isCompacting={compactionState.status === "running"} />
                 </MessageScrollerItem>
               ) : null}
             </MessageScrollerContent>

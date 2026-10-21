@@ -31,6 +31,7 @@
         "@prisma/client": "catalog:",
         "@tailwindcss/vite": "^4.3.3",
         "@tanstack/ai": "^0.70.0",
+        "@tanstack/ai-compaction": "^0.3.0",
         "@tanstack/ai-openrouter": "^0.23.0",
         "@tanstack/ai-react": "^0.31.0",
         "@tanstack/react-query": "^5.104.2",
@@ -725,6 +726,8 @@
     "@tanstack/ai": ["@tanstack/ai@0.70.0", "", { "dependencies": { "@ag-ui/core": "1.0.0", "@cfworker/json-schema": "^4.1.1", "@standard-schema/spec": "^1.1.0", "@tanstack/ai-event-client": "^0.13.1", "@tanstack/ai-utils": "^0.5.0", "fast-json-patch": "^3.1.1", "partial-json": "^0.1.7" }, "peerDependencies": { "@opentelemetry/api": ">=1.9.0" }, "optionalPeers": ["@opentelemetry/api"] }, "sha512-8GVrbtmoiIQhhQ4RStu1F5hEYE1GV2ju7fjeSswTe+ru9wmWW1ZwHcGkoxqV/5KqBrSV44sqj5hLAAQqRGxx6A=="],
 
     "@tanstack/ai-client": ["@tanstack/ai-client@0.40.0", "", { "dependencies": { "@tanstack/ai": "^0.70.0", "@tanstack/ai-event-client": "^0.13.1", "@tanstack/ai-utils": "^0.5.0", "@tanstack/store": "^0.11.1" } }, "sha512-gIBMsz3SbuFGRaPtbtIN4mCFHvkPklA+ZG/t6AI7GscXGyIEECWlFJBAU+vYKHvmxZyI46Yhu6vdGNxKx05A+Q=="],
+
+    "@tanstack/ai-compaction": ["@tanstack/ai-compaction@0.3.0", "", { "peerDependencies": { "@tanstack/ai": "^0.70.0" } }, "sha512-9Y1DUVmTrH4LABFK+yOksbfQI7p/RWaoxVXgJ4miFDjgv93nwyR5fJ9cveg3wP5q9PFd6pZhku4oY5nEvjvYLw=="],
 
     "@tanstack/ai-event-client": ["@tanstack/ai-event-client@0.13.1", "", { "dependencies": { "@tanstack/devtools-event-client": "^0.4.1" } }, "sha512-lCPcshu6Sd4tFNeMSr+HXgdqCGupYU2cpJZVUent4GkFx41dXzrBaKkwOgkji6olDBT99OBagWCce1NZ15XeJA=="],
 
