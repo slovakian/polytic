@@ -5,11 +5,23 @@ import {
   extendAdapter,
   toServerSentEventsResponse,
 } from "@tanstack/ai";
+import {
+  clearToolResults,
+  composeStrategies,
+  evictOldest,
+  withCompaction,
+} from "@tanstack/ai-compaction";
 import { createOpenRouterText } from "@tanstack/ai-openrouter";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ENV } from "@/env.server";
-import { CHAT_MODELS, type ChatModelId, DEFAULT_CHAT_MODEL, chatModelIdSchema } from "@/lib/models";
+import {
+  CHAT_MODELS,
+  type ChatModelId,
+  DEFAULT_CHAT_MODEL,
+  chatModelIdSchema,
+  getModelCompactionConfig,
+} from "@/lib/models";
 import { SYSTEM_PROMPT } from "@/lib/prompt";
 
 const openRouterText = extendAdapter(
@@ -40,6 +52,7 @@ export const Route = createFileRoute("/api/chat")({
         const fallbacks = FALLBACK_MODELS.filter((candidate) => candidate !== model).slice(0, 2);
 
         const abortController = new AbortController();
+        const { maxTokens, keepRecentTokens } = getModelCompactionConfig(model);
 
         const stream = chat({
           adapter: openRouterText(model, ENV.OPENROUTER_API_KEY),
@@ -49,6 +62,20 @@ export const Route = createFileRoute("/api/chat")({
           threadId: params.threadId,
           runId: params.runId,
           abortController,
+          middleware: [
+            withCompaction({
+              maxTokens,
+              strategy: composeStrategies(
+                clearToolResults({ keepRecentToolResults: 2 }),
+                evictOldest({
+                  keepRecentTokens,
+                  marker: (droppedCount) =>
+                    `[System notice: ${droppedCount} older messages were compacted to keep context within model limits.]`,
+                }),
+              ),
+              continueOnError: true,
+            }),
+          ],
         });
 
         return toServerSentEventsResponse(stream, { abortController });
