@@ -8,10 +8,16 @@ export const creatorCategorySchema = z
   .default("all")
   .describe("The specific category of facts about Jason Procka to retrieve.");
 
+export const CREATOR_TOOL_NAME = "get_creator_info";
+export const CREATOR_TOOL_LABEL = "creator info";
+
 export const creatorTool = toolDefinition({
-  name: "get_creator_info",
+  name: CREATOR_TOOL_NAME,
   description:
     "Retrieve verified, plain, static facts about Jason Procka (the creator of Polytic Party and Pauly). Includes his background, role, software projects, reasons for creating Polytic Party, philosophy on politics and human creativity, hobbies, and public contact information.",
+  metadata: {
+    label: CREATOR_TOOL_LABEL,
+  },
   inputSchema: z.object({
     category: creatorCategorySchema,
   }),

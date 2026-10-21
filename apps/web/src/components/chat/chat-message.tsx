@@ -18,6 +18,7 @@ import { CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
 import { type ComponentProps, useEffect, useState } from "react";
 
 import { parseMessageSuggestions } from "../../lib/suggestions";
+import { getToolLabel } from "../../lib/tool-labels";
 
 import { fadeMarkdownComponents } from "./fade-markdown";
 
@@ -155,6 +156,7 @@ export function AssistantMessage({
             const approval = "approval" in part ? part.approval : undefined;
             const needsApproval = approval?.needsApproval;
             const approvalState = approval?.approved;
+            const label = getToolLabel(part.name);
 
             // If approval is requested and not yet answered, render Confirmation prompt
             if (needsApproval && approvalState === undefined) {
@@ -162,6 +164,7 @@ export function AssistantMessage({
                 <Confirmation
                   key={part.id || index}
                   toolName={part.name}
+                  toolLabel={label}
                   status="pending"
                   onApprove={onToolApproval ? () => onToolApproval(approval.id, true) : undefined}
                   onDeny={onToolApproval ? () => onToolApproval(approval.id, false) : undefined}
@@ -171,7 +174,14 @@ export function AssistantMessage({
 
             // If approval was denied, render denied confirmation trace
             if (needsApproval && approvalState === false) {
-              return <Confirmation key={part.id || index} toolName={part.name} status="denied" />;
+              return (
+                <Confirmation
+                  key={part.id || index}
+                  toolName={part.name}
+                  toolLabel={label}
+                  status="denied"
+                />
+              );
             }
 
             const input = part.input ?? safeParse(part.arguments);
@@ -185,6 +195,7 @@ export function AssistantMessage({
               <Tool
                 key={part.id || index}
                 name={part.name}
+                label={label}
                 input={input}
                 output={output}
                 errorText={errorText}

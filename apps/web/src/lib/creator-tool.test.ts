@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vite-plus/test";
 
 import { CREATOR_FACTS, getCreatorFacts } from "./creator-facts";
-import { creatorCategorySchema, creatorTool } from "./creator-tool";
+import {
+  CREATOR_TOOL_LABEL,
+  CREATOR_TOOL_NAME,
+  creatorCategorySchema,
+  creatorTool,
+} from "./creator-tool";
 
 describe("CREATOR_FACTS", () => {
   it("contains accurate overview information", () => {
@@ -106,10 +111,13 @@ describe("getCreatorFacts", () => {
 });
 
 describe("creatorTool", () => {
-  it("is defined as a server tool with name get_creator_info", () => {
+  it("is defined as a server tool with name get_creator_info and custom label metadata", () => {
+    expect(CREATOR_TOOL_NAME).toBe("get_creator_info");
+    expect(CREATOR_TOOL_LABEL).toBe("creator info");
     expect(creatorTool.name).toBe("get_creator_info");
     expect(creatorTool.description).toContain("Jason Procka");
     expect(creatorTool.__toolSide).toBe("server");
+    expect(creatorTool.metadata).toEqual({ label: "creator info" });
   });
 
   it("parses valid category in schema with default to 'all'", () => {
