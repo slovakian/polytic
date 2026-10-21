@@ -36,8 +36,17 @@ export type ToolJsonArray = ToolJsonValue[];
 
 export type ToolJsonValue = ToolJsonPrimitive | ToolJsonObject | ToolJsonArray;
 
+export function formatToolName(name: string): string {
+  return name
+    .replace(/[_-]+/g, " ")
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .toLowerCase()
+    .trim();
+}
+
 export interface ToolProps extends React.ComponentProps<typeof Trace> {
   name: string;
+  label?: string;
   state?: ToolState;
   input?: ToolJsonValue;
   output?: ToolJsonValue;
@@ -64,6 +73,7 @@ function formatPayload(value: ToolJsonValue): string {
 
 export function Tool({
   name,
+  label,
   state = "output-available",
   input,
   output,
@@ -81,6 +91,7 @@ export function Tool({
   const formattedOutput = isError ? errorText : formatPayload(output);
 
   const statusLabel = isRunning ? "Running" : isError ? "Failed" : isDenied ? "Denied" : "Ran";
+  const displayLabel = label ?? formatToolName(name);
 
   const statusType: "running" | "error" | undefined = isRunning
     ? "running"
@@ -104,7 +115,7 @@ export function Tool({
         <TraceLine status={statusType}>
           <TraceIcon>{icon ?? defaultIcon}</TraceIcon>
           <TraceTitle>
-            {statusLabel} {name}
+            {statusLabel} {displayLabel}
           </TraceTitle>
         </TraceLine>
       </Trace>
@@ -118,7 +129,7 @@ export function Tool({
           <TraceLine status={statusType}>
             <TraceIcon>{icon ?? defaultIcon}</TraceIcon>
             <TraceTitle>
-              {statusLabel} {name}
+              {statusLabel} {displayLabel}
             </TraceTitle>
           </TraceLine>
         </TraceCollapsibleTrigger>

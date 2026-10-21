@@ -99,3 +99,95 @@ test("PendingMessage switches to compaction line when compacting", () => {
   rerender(<PendingMessage isCompacting={false} />);
   expect(container.querySelector("[data-slot=trace-title]")?.textContent).toBe("Thinking…");
 });
+
+test("AssistantMessage renders custom succinct label for get_creator_info tool call", () => {
+  const message: UIMessage = {
+    id: "msg-5",
+    role: "assistant",
+    parts: [
+      {
+        type: "tool-call",
+        id: "call-1",
+        name: "get_creator_info",
+        arguments: JSON.stringify({ category: "overview" }),
+        state: "complete",
+      },
+    ],
+  };
+
+  const { container } = render(<AssistantMessage message={message} streaming={false} />);
+
+  expect(container.textContent).toContain("Ran creator info");
+  expect(container.textContent).not.toContain("get_creator_info");
+});
+
+test("AssistantMessage renders running status with custom label while streaming tool call", () => {
+  const message: UIMessage = {
+    id: "msg-6",
+    role: "assistant",
+    parts: [
+      {
+        type: "tool-call",
+        id: "call-2",
+        name: "get_creator_info",
+        arguments: "{}",
+        state: "input-complete",
+      },
+    ],
+  };
+
+  const { container } = render(<AssistantMessage message={message} streaming={true} />);
+
+  expect(container.textContent).toContain("Running creator info");
+  expect(container.textContent).not.toContain("get_creator_info");
+});
+
+test("AssistantMessage formats fallback tool name without underscores", () => {
+  const message: UIMessage = {
+    id: "msg-7",
+    role: "assistant",
+    parts: [
+      {
+        type: "tool-call",
+        id: "call-3",
+        name: "search_public_records",
+        arguments: "{}",
+        state: "complete",
+      },
+    ],
+  };
+
+  const { container } = render(<AssistantMessage message={message} streaming={false} />);
+
+  expect(container.textContent).toContain("Ran search public records");
+  expect(container.textContent).not.toContain("search_public_records");
+});
+
+test("AssistantMessage renders approval confirmation with user-friendly tool label", () => {
+  const message: UIMessage = {
+    id: "msg-8",
+    role: "assistant",
+    parts: [
+      {
+        type: "tool-call",
+        id: "call-4",
+        name: "get_creator_info",
+        arguments: "{}",
+        state: "approval-requested",
+        approval: {
+          id: "appr-1",
+          needsApproval: true,
+          approved: undefined,
+        },
+      },
+    ],
+  };
+
+  const { container } = render(<AssistantMessage message={message} streaming={false} />);
+
+  expect(container.textContent).toContain("Run creator info?");
+  expect(container.textContent).toContain(
+    'The tool "creator info" requires your confirmation to execute.',
+  );
+  expect(container.textContent).not.toContain("get_creator_info");
+});

@@ -5,6 +5,7 @@ import { CheckIcon, ShieldAlertIcon, XIcon } from "lucide-react";
 import { cn } from "@polytic/ui/lib/utils";
 
 import { Button } from "@polytic/ui/components/button";
+import { formatToolName } from "@polytic/ui/components/tool";
 import {
   Item,
   ItemActions,
@@ -21,6 +22,7 @@ export interface ConfirmationProps extends Omit<React.ComponentProps<typeof Item
   title?: React.ReactNode;
   description?: React.ReactNode;
   toolName?: string;
+  toolLabel?: string;
   status?: ConfirmationStatus;
   onApprove?: () => void;
   onDeny?: () => void;
@@ -33,6 +35,7 @@ export function Confirmation({
   title,
   description,
   toolName,
+  toolLabel,
   status = "pending",
   onApprove,
   onDeny,
@@ -42,11 +45,12 @@ export function Confirmation({
   className,
   ...props
 }: ConfirmationProps) {
-  const displayTitle = title ?? (toolName ? `Run ${toolName}?` : "Approval requested");
+  const displayName = toolLabel ?? (toolName ? formatToolName(toolName) : undefined);
+  const displayTitle = title ?? (displayName ? `Run ${displayName}?` : "Approval requested");
 
   const displayDescription =
     description ??
-    (toolName ? `The tool "${toolName}" requires your confirmation to execute.` : undefined);
+    (displayName ? `The tool "${displayName}" requires your confirmation to execute.` : undefined);
 
   if (status === "approved" || status === "denied") {
     const isApproved = status === "approved";
@@ -62,7 +66,7 @@ export function Confirmation({
             )}
           </TraceIcon>
           <TraceTitle>
-            {isApproved ? "Approved" : "Denied"} {toolName ?? "action"}
+            {isApproved ? "Approved" : "Denied"} {displayName ?? "action"}
           </TraceTitle>
         </TraceLine>
       </Trace>

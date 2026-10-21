@@ -30,6 +30,11 @@ describe("SYSTEM_PROMPT", () => {
     expect(SYSTEM_PROMPT).toContain("Prefer nuance over reduction");
   });
 
+  it("instructs Pauly to use get_creator_info tool for creator queries", () => {
+    expect(SYSTEM_PROMPT).toContain("get_creator_info");
+    expect(SYSTEM_PROMPT).toContain("jasonprocka@gmail.com");
+  });
+
   it("includes suggestions ruleset instructions", () => {
     expect(SYSTEM_PROMPT).toContain("Suggestions Ruleset");
     expect(SYSTEM_PROMPT).toContain("NEVER provide suggestions when");

@@ -15,6 +15,7 @@ import { createOpenRouterText } from "@tanstack/ai-openrouter";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ENV } from "@/env.server";
+import { creatorTool } from "@/lib/creator-tool";
 import {
   CHAT_MODELS,
   type ChatModelId,
@@ -59,6 +60,7 @@ export const Route = createFileRoute("/api/chat")({
           messages: params.messages,
           modelOptions: { models: fallbacks },
           systemPrompts: [SYSTEM_PROMPT],
+          tools: [creatorTool],
           threadId: params.threadId,
           runId: params.runId,
           abortController,
