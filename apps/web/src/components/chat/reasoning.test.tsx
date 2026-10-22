@@ -33,13 +33,16 @@ test("Reasoning is collapsed by default when not running", () => {
   expect(panel === null || panel.hasAttribute("hidden")).toBe(true);
 });
 
-test("Reasoning shows in expanded state while running and auto-collapses after completion", () => {
+test("Reasoning is collapsed by default while running and remains collapsed after completion", () => {
   const { container, rerender } = render(
     <Reasoning text="Thinking about economic policies..." running={true} />,
   );
 
   const trigger = container.querySelector("[data-slot=trace-collapsible-trigger]");
-  expect(trigger?.getAttribute("aria-expanded")).toBe("true");
+  expect(trigger?.getAttribute("aria-expanded")).toBe("false");
+
+  const panel = container.querySelector("[data-slot=trace-collapsible-content]");
+  expect(panel === null || panel.hasAttribute("hidden")).toBe(true);
 
   const title = container.querySelector("[data-slot=trace-title]");
   expect(title?.textContent).toBe("Thinking…");
@@ -53,13 +56,30 @@ test("Reasoning shows in expanded state while running and auto-collapses after c
   expect(title?.classList.contains("shimmer")).toBe(false);
 });
 
-test("Reasoning can be toggled manually after auto-collapsing", () => {
-  const { container, rerender } = render(
+test("Reasoning can be expanded manually while running", () => {
+  const { container } = render(
     <Reasoning text="Thinking about economic policies..." running={true} />,
   );
 
-  // Auto-collapses when done
-  rerender(<Reasoning text="Thinking about economic policies..." running={false} />);
+  const trigger = container.querySelector("[data-slot=trace-collapsible-trigger]");
+  expect(trigger?.getAttribute("aria-expanded")).toBe("false");
+
+  // User clicks to expand while still thinking
+  fireEvent.click(trigger!);
+  expect(trigger?.getAttribute("aria-expanded")).toBe("true");
+
+  const panel = container.querySelector("[data-slot=trace-collapsible-content]");
+  expect(panel?.textContent).toContain("Thinking about economic policies...");
+
+  // User clicks to collapse
+  fireEvent.click(trigger!);
+  expect(trigger?.getAttribute("aria-expanded")).toBe("false");
+});
+
+test("Reasoning can be toggled manually after completion", () => {
+  const { container } = render(
+    <Reasoning text="Thinking about economic policies..." running={false} />,
+  );
 
   const trigger = container.querySelector("[data-slot=trace-collapsible-trigger]");
 
@@ -73,4 +93,13 @@ test("Reasoning can be toggled manually after auto-collapsing", () => {
   // User clicks to collapse
   fireEvent.click(trigger!);
   expect(trigger?.getAttribute("aria-expanded")).toBe("false");
+});
+
+test("Reasoning respects defaultOpen={true}", () => {
+  const { container } = render(
+    <Reasoning text="Thinking about economic policies..." running={true} defaultOpen={true} />,
+  );
+
+  const trigger = container.querySelector("[data-slot=trace-collapsible-trigger]");
+  expect(trigger?.getAttribute("aria-expanded")).toBe("true");
 });

@@ -65,25 +65,7 @@ export function Reasoning({
   className,
   ...props
 }: ReasoningProps) {
-  const [internalOpen, setInternalOpen] = React.useState<boolean | undefined>(
-    running ? true : defaultOpen,
-  );
-
-  const prevRunningRef = React.useRef(running);
-
-  // Sync open state with running lifecycle:
-  // Show expanded while reasoning, then collapse when reasoning finishes.
-  React.useEffect(() => {
-    if (prevRunningRef.current && !running) {
-      setInternalOpen(false);
-      setControlledOpen?.(false);
-    } else if (!prevRunningRef.current && running) {
-      setInternalOpen(true);
-      setControlledOpen?.(true);
-    }
-
-    prevRunningRef.current = running;
-  }, [running, setControlledOpen]);
+  const [internalOpen, setInternalOpen] = React.useState<boolean>(defaultOpen);
 
   const handleOpenChange = React.useCallback(
     (nextOpen: boolean) => {
@@ -93,7 +75,7 @@ export function Reasoning({
     [setControlledOpen],
   );
 
-  const isOpen = controlledOpen ?? internalOpen ?? (running ? true : defaultOpen);
+  const isOpen = controlledOpen ?? internalOpen;
 
   const line = <ReasoningLine running={running} duration={duration} icon={icon} title={title} />;
 
