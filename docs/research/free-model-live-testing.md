@@ -12,11 +12,11 @@ Live empirical testing was conducted against OpenRouter's live API using an auth
 
 ### Key Findings
 
-1. **Top Recommendation for v1: `nvidia/nemotron-3.5-lightning:free` with Reasoning OFF (`reasoning: { effort: "none" }`).**
+1. **Top Recommendation for v1: `nvidia/nemotron-3.5-lightning:free` with Reasoning ON (`reasoning: { effort: "medium" }`).**
    - **Reliability:** 100% success rate on tool calling (`tool_choice: auto` and forced function choice) and strict schema adherence (`response_format: json_schema`).
    - **Zero Upstream 429 Throttle:** Routed via Nvidia's `nvfp4` hardware endpoint. It processed sustained rapid burst traffic (40 concurrent requests) with zero rate limits or drops.
    - **Even-Handedness under Clinical Agnosticism:** Completely dropped all patronizing preambles, moralizing disclaimers, and lecturing. Delivered clinical, rigorous, symmetrical steelmanning of opposing positions (e.g., corrective justice vs. individual procedural fairness on affirmative action).
-   - **Reasoning Warning:** When `reasoning: { effort: "medium" }` is enabled, Nemotron consumes 1,000+ internal reasoning tokens before generating user-visible output. If `max_tokens` is under 1,500, it burns the budget on internal monologue and returns `content: null`. Reasoning **must** remain disabled or `max_tokens` raised significantly.
+   - **Reasoning Configuration Requirement:** Reasoning is kept **ON** to provide deliberation bandwidth for complex diagnostic and tension-probing dynamics. However, Nemotron consumes 500–1,000+ internal reasoning tokens before generating output. Therefore, the engine **must configure `max_tokens >= 2500`** (or leave uncapped up to the context budget); configuring a low `max_tokens` (e.g. 1,000) causes premature cutoff with empty output.
 
 2. **Google Gemma Tier (`google/gemma-4-31b-it:free` & `google/gemma-4-26b-a4b-it:free`): Unviable as Primary due to Upstream 429 Saturation.**
    - While Gemma models execute high-quality steelmanning and valid tool calls when a slot opens, the upstream `Google AI Studio` shared pool on OpenRouter is perpetually saturated (`HTTP 429: limit_source: upstream_provider_shared_pool`).
@@ -107,7 +107,8 @@ Inspection of OpenRouter endpoint configurations and account settings:
 Based on empirical live testing, the recommendation from research ticket #31 is updated as follows:
 
 1. **Primary Model:** `nvidia/nemotron-3.5-lightning:free`
-   - Set `reasoning: { effort: "none" }`.
+   - Set reasoning **ON** (`reasoning: { effort: "medium" }`).
+   - Configure `max_tokens >= 2500` so internal thinking tokens do not crowd out visible responses.
    - Excellent latency (p50 ~530ms), zero upstream 429 throttling, 100% reliable tool calling and JSON formatting.
 2. **First Fallback:** `google/gemma-4-31b-it:free`
    - Use when Nemotron is unavailable or down.
