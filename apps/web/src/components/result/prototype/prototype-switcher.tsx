@@ -32,8 +32,8 @@ const VARIANTS: { key: VariantKey; label: string; desc: string }[] = [
   },
   {
     key: "C",
-    label: "C: Cartesian Radar",
-    desc: "Analytical cockpit, 2D proximity radar, sonar scan reveal",
+    label: "C: Cartesian Plot",
+    desc: "Clean Cartesian 2D comparison plot, reordered hierarchy, coordinate calibration reveal",
   },
 ];
 

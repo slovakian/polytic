@@ -97,7 +97,7 @@ describe("Result Prototype Variants", () => {
     ).toBeGreaterThanOrEqual(1);
   });
 
-  test("renders Variant C (Cartesian Radar) with coordinate views", () => {
+  test("renders Variant C (Cartesian Plot) with coordinate views", () => {
     const handleContinueGrilling = vi.fn();
     const handleBackToChat = vi.fn();
 
@@ -115,15 +115,15 @@ describe("Result Prototype Variants", () => {
     ).toBeDefined();
     expect(screen.getByText("John Rawls")).toBeDefined();
 
-    // Switch to Constellation tab
-    const constellationTab = screen.getByRole("button", {
-      name: "Constellation",
+    // Switch axis pairing mode
+    const axisToggle = screen.getByRole("button", {
+      name: "Top 2 Pulls",
     });
 
-    fireEvent.click(constellationTab);
+    fireEvent.click(axisToggle);
 
     expect(
-      screen.getByText("2D Thinker & Tension Constellation"),
+      screen.getByText("2D Worldview Comparison Plot"),
     ).toBeDefined();
   });
 
@@ -169,5 +169,19 @@ describe("Result Prototype Variants", () => {
     );
 
     expect(screen.getByText("B: Bento Dossier")).toBeDefined();
+
+    // Rerender with C
+    rerender(
+      <PrototypeSwitcher
+        currentVariant="C"
+        onVariantChange={handleVariantChange}
+        currentPersona="left-libertarian"
+        onPersonaChange={handlePersonaChange}
+        onReplayReveal={handleReplayReveal}
+        onSaveImage={handleSaveImage}
+      />,
+    );
+
+    expect(screen.getByText("C: Cartesian Plot")).toBeDefined();
   });
 });
