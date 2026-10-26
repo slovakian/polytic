@@ -32,7 +32,7 @@ export function Sources({ sources, defaultOpen = false, className, ...props }: S
         <TraceCollapsibleTrigger>
           <TraceLine>
             <TraceIcon>
-              <GlobeIcon className="text-(--hue-3)" />
+              <GlobeIcon className="text-muted-foreground" />
             </TraceIcon>
             <TraceTitle>
               Used {sources.length} {sources.length === 1 ? "source" : "sources"}

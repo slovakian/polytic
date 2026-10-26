@@ -25,7 +25,7 @@ import {
 import { Queue } from "@polytic/ui/components/queue";
 import { Skeleton } from "@polytic/ui/components/skeleton";
 import { Suggestion, Suggestions } from "@polytic/ui/components/suggestion";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@polytic/ui/components/tooltip";
+import { cn } from "@polytic/ui/lib/utils";
 import { fetchServerSentEvents, localStoragePersistence, useChat } from "@tanstack/ai-react";
 import {
   ArrowUpIcon,
@@ -33,11 +33,10 @@ import {
   MessageCircleQuestionIcon,
   ScaleIcon,
   SquareIcon,
-  SquarePenIcon,
   SwordsIcon,
   TriangleAlertIcon,
 } from "lucide-react";
-import { type FormEvent, useMemo, useRef, useState } from "react";
+import { type FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   compactionEndedSchema,
@@ -47,6 +46,7 @@ import {
 import { type ChatModelId, DEFAULT_CHAT_MODEL } from "@/lib/models";
 import { parseMessageSuggestions } from "@/lib/suggestions";
 
+import { chatStore } from "./chat-context";
 import {
   AssistantMessage,
   type MessageCompactionState,
@@ -59,12 +59,11 @@ const connection = fetchServerSentEvents("/api/chat");
 const persistence = localStoragePersistence();
 
 const STARTERS = [
-  { icon: SwordsIcon, hue: "text-(--hue-1)", text: "Grill me on my politics" },
-  { icon: CompassIcon, hue: "text-(--hue-3)", text: "Where do I fit beyond left and right?" },
-  { icon: ScaleIcon, hue: "text-(--hue-4)", text: "Steelman the view I disagree with most" },
+  { icon: SwordsIcon, text: "Grill me on my politics" },
+  { icon: CompassIcon, text: "Where do I fit beyond left and right?" },
+  { icon: ScaleIcon, text: "Steelman the view I disagree with most" },
   {
     icon: MessageCircleQuestionIcon,
-    hue: "text-(--hue-6)",
     text: "What separates a liberal from a libertarian?",
   },
 ];
@@ -162,10 +161,10 @@ export function Chat() {
     },
   });
 
-  function clear() {
+  const clear = useCallback(() => {
     setCompactionState({ status: "idle" });
     baseClear();
-  }
+  }, [baseClear]);
 
   function reload() {
     setCompactionState({ status: "idle" });
@@ -174,8 +173,27 @@ export function Chat() {
   }
 
   const busy = status === "submitted" || status === "streaming";
-  const canSend = draft.trim().length > 0 && !busy;
+  const hasText = draft.trim().length > 0;
+  const canSend = hasText && !busy;
   const last = messages.at(-1);
+
+  useEffect(() => {
+    chatStore.setActions({
+      canReset: messages.length > 0,
+      busy,
+      reset: clear,
+    });
+  }, [messages.length, busy, clear]);
+
+  useEffect(() => {
+    return () => {
+      chatStore.setActions({
+        canReset: false,
+        busy: false,
+        reset: () => {},
+      });
+    };
+  }, []);
 
   const latestSuggestions = useMemo(() => {
     if (!last || last.role !== "assistant" || busy) {
@@ -205,13 +223,18 @@ export function Chat() {
 
   const composer = (
     <form ref={formRef} onSubmit={onSubmit} className="flex w-full flex-col gap-2">
-      <InputGroup className="bg-card shadow-lg shadow-black/20">
+      <InputGroup variant="ghost" className="font-serif pt-3 sm:pt-4">
         <InputGroupTextarea
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           placeholder="Say what you believe, or ask to be grilled…"
           aria-label="Message"
-          className="max-h-48 min-h-14 p-4"
+          className={cn(
+            "font-serif text-base md:text-base leading-relaxed max-h-48 min-h-14 p-0 placeholder:font-serif placeholder:text-muted-foreground/50 focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0",
+            "transition-opacity duration-200 motion-reduce:transition-none",
+            "group-hover/input-group:opacity-100 group-focus-within/input-group:opacity-100 group-has-[:focus-visible]/input-group:opacity-100 focus:opacity-100 focus-visible:opacity-100",
+            hasText ? "opacity-100" : "opacity-60",
+          )}
           onKeyDown={(event) => {
             if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
               event.preventDefault();
@@ -219,57 +242,40 @@ export function Chat() {
             }
           }}
         />
-        <InputGroupAddon align="block-end" className="pt-1">
-          {messages.length > 0 ? (
-            <Tooltip>
-              <TooltipTrigger
-                render={
-                  <InputGroupButton
-                    type="button"
-                    size="icon-sm"
-                    aria-label="New chat"
-                    disabled={busy}
-                    onClick={clear}
-                  />
-                }
+        <InputGroupAddon
+          align="block-end"
+          className="relative flex w-full items-center justify-between px-0 pt-2 pb-0"
+        >
+          <div className="flex-1 min-w-0" aria-hidden="true" />
+          <div className="flex shrink-0 items-center justify-center">
+            <ModelPicker value={model} onValueChange={setModel} />
+          </div>
+          <div className="flex flex-1 items-center justify-end min-w-0">
+            {busy ? (
+              <InputGroupButton
+                type="button"
+                variant="ghost"
+                size="icon-sm"
+                aria-label="Stop"
+                onClick={stop}
               >
-                <SquarePenIcon />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>New chat</p>
-              </TooltipContent>
-            </Tooltip>
-          ) : null}
-          <ModelPicker value={model} onValueChange={setModel} />
-          {busy ? (
-            <InputGroupButton
-              type="button"
-              variant="secondary"
-              size="icon-sm"
-              className="ml-auto"
-              aria-label="Stop"
-              onClick={stop}
-            >
-              <SquareIcon className="fill-current" />
-            </InputGroupButton>
-          ) : (
-            <InputGroupButton
-              type="submit"
-              variant="default"
-              size="icon-sm"
-              className="ml-auto"
-              aria-label="Send"
-              disabled={!canSend}
-            >
-              <ArrowUpIcon />
-            </InputGroupButton>
-          )}
+                <SquareIcon className="fill-current" />
+              </InputGroupButton>
+            ) : hasText ? (
+              <InputGroupButton
+                type="submit"
+                variant="ghost"
+                size="icon-sm"
+                aria-label="Send"
+                disabled={!canSend}
+                className="transition-opacity duration-150 animate-in fade-in-0"
+              >
+                <ArrowUpIcon />
+              </InputGroupButton>
+            ) : null}
+          </div>
         </InputGroupAddon>
       </InputGroup>
-      <p className="text-muted-foreground px-2 text-center text-xs">
-        Polytic doesn&apos;t store your chats. Messages go to free third-party AI models, some of
-        which may log them.
-      </p>
     </form>
   );
 
@@ -285,20 +291,16 @@ export function Chat() {
   if (messages.length === 0) {
     return (
       <div className="relative flex min-h-0 min-w-0 flex-1 flex-col items-center justify-center overflow-hidden px-4 py-10">
-        <div
-          aria-hidden
-          className="bg-aurora pointer-events-none absolute inset-x-0 top-0 h-2/3 opacity-60"
-        />
         <div className="relative flex w-full max-w-2xl min-w-0 flex-col items-center gap-8">
           <Empty className="p-0">
             <EmptyHeader className="max-w-md">
-              <EmptyMedia variant="icon" className="bg-spectrum text-background">
+              <EmptyMedia variant="icon" className="bg-muted text-foreground">
                 <CompassIcon />
               </EmptyMedia>
-              <EmptyTitle className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                What do you <span className="text-spectrum">actually</span> believe?
+              <EmptyTitle className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+                What do you actually believe?
               </EmptyTitle>
-              <EmptyDescription className="text-base">
+              <EmptyDescription className="font-serif text-base">
                 Polytic asks, challenges, and reasons with you until your politics have words. It
                 maps where you stand and never tells you where to stand.
               </EmptyDescription>
@@ -311,9 +313,10 @@ export function Chat() {
                 key={starter.text}
                 variant="outline"
                 size="sm"
+                className="font-serif"
                 onClick={() => send(starter.text)}
               >
-                <starter.icon data-icon="inline-start" className={starter.hue} />
+                <starter.icon data-icon="inline-start" className="text-muted-foreground" />
                 {starter.text}
               </Suggestion>
             ))}
@@ -406,6 +409,7 @@ export function Chat() {
                   key={suggestion}
                   variant="outline"
                   size="sm"
+                  className="font-serif"
                   onClick={() => send(suggestion)}
                 >
                   {suggestion}

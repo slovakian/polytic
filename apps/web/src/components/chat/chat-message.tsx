@@ -1,4 +1,3 @@
-import { Bubble, BubbleContent } from "@polytic/ui/components/bubble";
 import { Button } from "@polytic/ui/components/button";
 import {
   Compaction,
@@ -41,12 +40,17 @@ function safeParse(text?: string) {
 }
 
 export function UserMessage({ message }: { message: UIMessage }) {
+  const text = messageText(message);
+
   return (
     <Message align="end">
-      <MessageContent>
-        <Bubble align="end" variant="muted">
-          <BubbleContent className="whitespace-pre-wrap">{messageText(message)}</BubbleContent>
-        </Bubble>
+      <MessageContent className="items-end">
+        <div
+          title={text}
+          className="user-message-clamped font-serif max-w-xl text-right text-base leading-relaxed text-foreground"
+        >
+          {text}
+        </div>
       </MessageContent>
     </Message>
   );
@@ -223,7 +227,7 @@ export function AssistantMessage({
               <TextPart
                 key={index}
                 content={cleanContent}
-                className="chat-markdown"
+                className="chat-markdown typeset"
                 components={streaming ? fadeMarkdownComponents : undefined}
               />
             );
