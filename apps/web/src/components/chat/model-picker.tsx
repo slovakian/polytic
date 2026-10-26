@@ -15,9 +15,11 @@ import { CHAT_MODELS, type ChatModelId, chatModelIdSchema } from "@/lib/models";
 export function ModelPicker({
   value,
   onValueChange,
+  className,
 }: {
   value: ChatModelId;
   onValueChange: (value: ChatModelId) => void;
+  className?: string;
 }) {
   const current = CHAT_MODELS.find((model) => model.id === value) ?? CHAT_MODELS[0];
 
@@ -25,14 +27,19 @@ export function ModelPicker({
     <DropdownMenu>
       <DropdownMenuTrigger
         render={
-          <InputGroupButton size="sm" variant="ghost" aria-label={`Model: ${current.name}`} />
+          <InputGroupButton
+            size="sm"
+            variant="ghost"
+            aria-label={`Model: ${current.name}`}
+            className={className}
+          />
         }
       >
         <SparklesIcon className="text-muted-foreground" />
         {current.name}
         <ChevronDownIcon className="text-muted-foreground" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" side="top" className="w-72">
+      <DropdownMenuContent align="center" side="top" className="w-72">
         <DropdownMenuGroup>
           <DropdownMenuLabel>Free models</DropdownMenuLabel>
           <DropdownMenuRadioGroup

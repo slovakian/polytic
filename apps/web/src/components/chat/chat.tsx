@@ -26,6 +26,7 @@ import { Queue } from "@polytic/ui/components/queue";
 import { Skeleton } from "@polytic/ui/components/skeleton";
 import { Suggestion, Suggestions } from "@polytic/ui/components/suggestion";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@polytic/ui/components/tooltip";
+import { cn } from "@polytic/ui/lib/utils";
 import { fetchServerSentEvents, localStoragePersistence, useChat } from "@tanstack/ai-react";
 import {
   ArrowUpIcon,
@@ -174,6 +175,9 @@ export function Chat() {
 
   const busy = status === "submitted" || status === "streaming";
   const canSend = draft.trim().length > 0 && !busy;
+  const hasText = draft.trim().length > 0;
+  const showSendButton = hasText;
+  const showAddon = messages.length > 0 || hasText || busy;
   const last = messages.at(-1);
 
   const latestSuggestions = useMemo(() => {
@@ -210,7 +214,7 @@ export function Chat() {
           onChange={(event) => setDraft(event.target.value)}
           placeholder="Say what you believe, or ask to be grilled…"
           aria-label="Message"
-          className="font-serif text-base max-h-48 min-h-14 p-0 placeholder:font-serif placeholder:text-muted-foreground/50 focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0"
+          className="font-serif text-base md:text-base leading-relaxed max-h-48 min-h-14 p-0 placeholder:font-serif placeholder:text-muted-foreground/50 focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0"
           onKeyDown={(event) => {
             if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
               event.preventDefault();
@@ -218,51 +222,67 @@ export function Chat() {
             }
           }}
         />
-        <InputGroupAddon align="block-end" className="px-0 pt-2 pb-0">
-          {messages.length > 0 ? (
-            <Tooltip>
-              <TooltipTrigger
-                render={
-                  <InputGroupButton
-                    type="button"
-                    size="icon-sm"
-                    aria-label="New chat"
-                    disabled={busy}
-                    onClick={clear}
-                  />
-                }
-              >
-                <SquarePenIcon />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>New chat</p>
-              </TooltipContent>
-            </Tooltip>
-          ) : null}
-          <ModelPicker value={model} onValueChange={setModel} />
-          {busy ? (
-            <InputGroupButton
-              type="button"
-              variant="secondary"
-              size="icon-sm"
-              className="ml-auto"
-              aria-label="Stop"
-              onClick={stop}
-            >
-              <SquareIcon className="fill-current" />
-            </InputGroupButton>
-          ) : (
-            <InputGroupButton
-              type="submit"
-              variant="default"
-              size="icon-sm"
-              className="ml-auto"
-              aria-label="Send"
-              disabled={!canSend}
-            >
-              <ArrowUpIcon />
-            </InputGroupButton>
+        <InputGroupAddon
+          align="block-end"
+          className={cn(
+            "relative flex w-full items-center justify-between px-0",
+            showAddon ? "min-h-8 pt-2 pb-0" : "h-0 p-0 overflow-hidden",
           )}
+        >
+          <div className="flex flex-1 items-center justify-start min-w-0">
+            {messages.length > 0 ? (
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <InputGroupButton
+                      type="button"
+                      size="icon-sm"
+                      aria-label="New chat"
+                      disabled={busy}
+                      onClick={clear}
+                    />
+                  }
+                >
+                  <SquarePenIcon />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>New chat</p>
+                </TooltipContent>
+              </Tooltip>
+            ) : null}
+          </div>
+          <div className="flex shrink-0 items-center justify-center">
+            {hasText ? (
+              <ModelPicker
+                value={model}
+                onValueChange={setModel}
+                className="opacity-50 transition-opacity duration-150 hover:opacity-100 focus-visible:opacity-100 group-hover/input-group:opacity-100 group-focus-within/input-group:opacity-100 aria-expanded:opacity-100 data-popup-open:opacity-100"
+              />
+            ) : null}
+          </div>
+          <div className="flex flex-1 items-center justify-end min-w-0">
+            {busy ? (
+              <InputGroupButton
+                type="button"
+                variant="secondary"
+                size="icon-sm"
+                aria-label="Stop"
+                onClick={stop}
+              >
+                <SquareIcon className="fill-current" />
+              </InputGroupButton>
+            ) : showSendButton ? (
+              <InputGroupButton
+                type="submit"
+                variant="default"
+                size="icon-sm"
+                aria-label="Send"
+                disabled={!canSend}
+              >
+                <ArrowUpIcon />
+              </InputGroupButton>
+            ) : null}
+          </div>
         </InputGroupAddon>
       </InputGroup>
       <p className="text-muted-foreground font-serif px-2 text-center text-xs opacity-70">
