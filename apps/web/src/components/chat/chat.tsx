@@ -176,8 +176,6 @@ export function Chat() {
   const busy = status === "submitted" || status === "streaming";
   const canSend = draft.trim().length > 0 && !busy;
   const hasText = draft.trim().length > 0;
-  const showSendButton = hasText;
-  const showAddon = messages.length > 0 || hasText || busy;
   const last = messages.at(-1);
 
   const latestSuggestions = useMemo(() => {
@@ -224,64 +222,79 @@ export function Chat() {
         />
         <InputGroupAddon
           align="block-end"
-          className={cn(
-            "relative flex w-full items-center justify-between px-0",
-            showAddon ? "min-h-8 pt-2 pb-0" : "h-0 p-0 overflow-hidden",
-          )}
+          className="relative flex w-full items-center justify-between px-0 pt-2 pb-0"
         >
           <div className="flex flex-1 items-center justify-start min-w-0">
-            {messages.length > 0 ? (
-              <Tooltip>
-                <TooltipTrigger
-                  render={
-                    <InputGroupButton
-                      type="button"
-                      size="icon-sm"
-                      aria-label="New chat"
-                      disabled={busy}
-                      onClick={clear}
-                    />
-                  }
-                >
-                  <SquarePenIcon />
-                </TooltipTrigger>
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <InputGroupButton
+                    type="button"
+                    variant="ghost"
+                    size="icon-sm"
+                    aria-label="New chat"
+                    disabled={busy || messages.length === 0}
+                    onClick={clear}
+                    tabIndex={messages.length > 0 ? 0 : -1}
+                    aria-hidden={messages.length === 0}
+                    className={cn(
+                      "transition-opacity duration-150",
+                      messages.length > 0
+                        ? "opacity-100"
+                        : "opacity-0 pointer-events-none select-none",
+                    )}
+                  />
+                }
+              >
+                <SquarePenIcon />
+              </TooltipTrigger>
+              {messages.length > 0 ? (
                 <TooltipContent>
                   <p>New chat</p>
                 </TooltipContent>
-              </Tooltip>
-            ) : null}
+              ) : null}
+            </Tooltip>
           </div>
           <div className="flex shrink-0 items-center justify-center">
-            {hasText ? (
-              <ModelPicker
-                value={model}
-                onValueChange={setModel}
-                className="opacity-50 transition-opacity duration-150 hover:opacity-100 focus-visible:opacity-100 group-hover/input-group:opacity-100 group-focus-within/input-group:opacity-100 aria-expanded:opacity-100 data-popup-open:opacity-100"
-              />
-            ) : null}
+            <ModelPicker
+              value={model}
+              onValueChange={setModel}
+              className={cn(
+                "transition-opacity duration-150",
+                hasText
+                  ? "opacity-100"
+                  : "opacity-50 hover:opacity-100 focus-visible:opacity-100 group-hover/input-group:opacity-100 group-focus-within/input-group:opacity-100 aria-expanded:opacity-100 data-popup-open:opacity-100",
+              )}
+            />
           </div>
           <div className="flex flex-1 items-center justify-end min-w-0">
             {busy ? (
               <InputGroupButton
                 type="button"
-                variant="secondary"
+                variant="ghost"
                 size="icon-sm"
                 aria-label="Stop"
                 onClick={stop}
               >
                 <SquareIcon className="fill-current" />
               </InputGroupButton>
-            ) : showSendButton ? (
+            ) : (
               <InputGroupButton
                 type="submit"
-                variant="default"
+                variant="ghost"
                 size="icon-sm"
                 aria-label="Send"
                 disabled={!canSend}
+                tabIndex={canSend ? 0 : -1}
+                aria-hidden={!canSend}
+                className={cn(
+                  "transition-opacity duration-150",
+                  canSend ? "opacity-100" : "opacity-0 pointer-events-none select-none",
+                )}
               >
                 <ArrowUpIcon />
               </InputGroupButton>
-            ) : null}
+            )}
           </div>
         </InputGroupAddon>
       </InputGroup>
