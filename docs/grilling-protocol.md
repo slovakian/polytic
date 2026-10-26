@@ -30,7 +30,7 @@ ANCHOR & HEAT → PRINCIPLE-BRIDGED SKELETON SWEEP → CHECKPOINT RESULT CARD �
    - Invite the user to start with a political question, frustration, or principle they care deeply about right now (or pick an opening thread).
 2. **Principle-Bridged Skeleton Sweep:**
    - Rather than marching down a numbered list of dimensions (`1 → 2 → 3...`) like a bureaucracy form, the AI extracts the core normative principle or rule the user relied on in their opening thread and **uses that principle as a bridge into the next dimension** (_"You argued that individual autonomy is sacred in healthcare — let's test whether that same rule holds when we look at economic regulation..."_).
-   - Under the hood, the system tracks coverage across the canonical dimension taxonomy so blind spots and cross-domain contradictions are systematically tested.
+   - Under the hood, the system tracks coverage across the canonical dimension taxonomy so blind spots and cross-domain contradictions are systematically tested. The sweep works through the taxonomy's **Core** Dimensions first; the rest are reached when the user raises them or deepens (`dimension-taxonomy.md`).
 3. **Explicit User Steering Valves:**
    - At any moment, the user controls the session's direction: they can ask the AI to unpack the trade-offs of an unfamiliar topic, ask to be pushed harder on the current topic, switch topics, or skip a topic they haven't thought about (which is immediately logged as **Open** rather than forcing a fabricated opinion).
 

@@ -46,8 +46,11 @@ Reasons and Labels; Converse and Zaller for Epistemic State and ambivalence.
 - **Global skeleton, local flesh.** Dimensions are globally portable; the dilemmas that
   probe them adapt to the person's country and context.
 
-Which Dimensions exist, in both layers, is **not yet decided**; it is authored with
-dedicated research (`dimension-taxonomy.md`).
+Which Dimensions exist is set in `dimension-taxonomy.md`: 27 Foundation and 50
+Political, with a **Core** of 7 and 12 that a first visit's skeleton sweep works
+through, so that any two maps share enough Dimensions to compare. A Belief holds one
+Position per Dimension, so where recognisable traditions answer two parts of a question
+differently, the parts are separate Dimensions rather than facets.
 
 ### "For me" vs. "for society"
 
@@ -180,7 +183,5 @@ where they are furthest apart. The exact formula is an implementation decision.
 
 ## Still open
 
-- The Foundation and Political Dimension sets, and each one's lineage
-  (`dimension-taxonomy.md`).
 - The label library and the Reference Figure catalog, which depend on the Dimensions.
 - How Beliefs, Tensions, and Labels are laid out on the Result and in a live view.
