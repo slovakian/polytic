@@ -2,14 +2,13 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@polytic/ui/components/dropdown-menu";
 import { InputGroupButton } from "@polytic/ui/components/input-group";
 import { cn } from "@polytic/ui/lib/utils";
-import { ChevronDownIcon, SparklesIcon } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 
 import { CHAT_MODELS, type ChatModelId, chatModelIdSchema } from "@/lib/models";
 
@@ -36,13 +35,11 @@ export function ModelPicker({
           />
         }
       >
-        <SparklesIcon className="text-muted-foreground" />
         <span className="font-sans">{current.name}</span>
         <ChevronDownIcon className="text-muted-foreground" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" side="top" className="w-72 font-sans">
+      <DropdownMenuContent align="center" side="top" className="w-72 font-sans">
         <DropdownMenuGroup className="font-sans">
-          <DropdownMenuLabel className="font-sans">Free models</DropdownMenuLabel>
           <DropdownMenuRadioGroup
             value={value}
             onValueChange={(next) => {

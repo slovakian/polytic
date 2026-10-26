@@ -173,7 +173,8 @@ export function Chat() {
   }
 
   const busy = status === "submitted" || status === "streaming";
-  const canSend = draft.trim().length > 0 && !busy;
+  const hasText = draft.trim().length > 0;
+  const canSend = hasText && !busy;
   const last = messages.at(-1);
 
   useEffect(() => {
@@ -232,7 +233,7 @@ export function Chat() {
             "font-serif text-base md:text-base leading-relaxed max-h-48 min-h-14 p-0 placeholder:font-serif placeholder:text-muted-foreground/50 focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0",
             "transition-opacity duration-200 motion-reduce:transition-none",
             "group-hover/input-group:opacity-100 group-focus-within/input-group:opacity-100 group-has-[:focus-visible]/input-group:opacity-100 focus:opacity-100 focus-visible:opacity-100",
-            draft.trim().length > 0 ? "opacity-100" : "opacity-60",
+            hasText ? "opacity-100" : "opacity-60",
           )}
           onKeyDown={(event) => {
             if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
@@ -245,8 +246,11 @@ export function Chat() {
           align="block-end"
           className="relative flex w-full items-center justify-between px-0 pt-2 pb-0"
         >
-          <ModelPicker value={model} onValueChange={setModel} />
-          <div className="ml-auto">
+          <div className="flex-1 min-w-0" aria-hidden="true" />
+          <div className="flex shrink-0 items-center justify-center">
+            <ModelPicker value={model} onValueChange={setModel} />
+          </div>
+          <div className="flex flex-1 items-center justify-end min-w-0">
             {busy ? (
               <InputGroupButton
                 type="button"
@@ -257,23 +261,18 @@ export function Chat() {
               >
                 <SquareIcon className="fill-current" />
               </InputGroupButton>
-            ) : (
+            ) : hasText ? (
               <InputGroupButton
                 type="submit"
                 variant="ghost"
                 size="icon-sm"
                 aria-label="Send"
                 disabled={!canSend}
-                tabIndex={canSend ? 0 : -1}
-                aria-hidden={!canSend}
-                className={cn(
-                  "transition-opacity duration-150",
-                  canSend ? "opacity-100" : "opacity-0 pointer-events-none select-none",
-                )}
+                className="transition-opacity duration-150 animate-in fade-in-0"
               >
                 <ArrowUpIcon />
               </InputGroupButton>
-            )}
+            ) : null}
           </div>
         </InputGroupAddon>
       </InputGroup>
