@@ -63,3 +63,8 @@ test("Header disables New chat button when busy is true", () => {
   expect(button).toBeDefined();
   expect(button.hasAttribute("disabled")).toBe(true);
 });
+
+test("Header does not render Use your own AI button", () => {
+  const { queryByText } = render(<Header />);
+  expect(queryByText("Use your own AI")).toBeNull();
+});

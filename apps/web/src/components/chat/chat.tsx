@@ -222,7 +222,7 @@ export function Chat() {
 
   const composer = (
     <form ref={formRef} onSubmit={onSubmit} className="flex w-full flex-col gap-2">
-      <InputGroup variant="ghost" className="font-serif pt-6 sm:pt-8">
+      <InputGroup variant="ghost" className="font-serif pt-3 sm:pt-4">
         <InputGroupTextarea
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
