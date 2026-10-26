@@ -15,7 +15,7 @@ Polytic strictly separates **what it knows/infers about a user's politics** from
 
 Polytic lives exclusively in the first-party web application (`polytic.party`).
 
-- **No distributable agent skill:** We do not maintain a standalone markdown skill (`skills/polytic-party`) for third-party chat clients. Owning the full delivery surface in the web app ensures complete control over model selection, RLHF de-biasing (**Clinical Agnosticism**), structured state tracking, TanStack AI suggestions, and interactive checkpoint **Result Cards**.
+- **No distributable agent skill:** We do not maintain a standalone markdown skill (`skills/polytic-party`) for third-party chat clients. Owning the full delivery surface in the web app ensures complete control over model selection, RLHF de-biasing (**Clinical Agnosticism**), structured state tracking, TanStack AI suggestions, and interactive checkpoint **Results**.
 
 ## 3. Session Flow & User Steering: "Follow the Heat, Then Bridge the Skeleton"
 
@@ -72,7 +72,7 @@ Instead of cutting off every topic after an arbitrary number of turns, the AI ev
 
 1. **Context & Unpacking:** `"Unpack the trade-offs here"`, `"Steelman both sides"`, `"Give me a concrete example"`
 2. **Epistemic Honesty & Skipping:** `"I'm genuinely torn on this"`, `"Haven't thought much about this — skip"`
-3. **Depth & Pacing Control:** `"Push me harder on this"`, `"Ready for the next topic"`, `"Give me my Result Card now"`
+3. **Depth & Pacing Control:** `"Push me harder on this"`, `"Ready for the next topic"`, `"Give me my Result now"`
 4. **Dimension & Post-Result-Card Branching:** Selecting which **Open** dimension or active **Tension** to explore next.
 
 ## 6. Pacing & Payoff: Micro-Mirrors and Stepped Checkpoints
@@ -82,7 +82,7 @@ Polytic avoids both the **25-question black-box marathon** (where users get zero
 1. **In-Session Feedback via `Micro-Mirrors` (Never Premature Labels):**
    - During the grill, Polytic never announces _"You sound like a Classical Liberal"_ or shows a live-updating ideological scoreboard.
    - Instead, when transitioning between topics, the AI delivers a **Micro-Mirror**: a single, surgical sentence reflecting the exact rule, trade-off priority, or tension the user just established (_"So for you, state intervention is justified to break monopolies, not to equalize outcomes — let's see if that rule holds on..."_). This delivers continuous proof of deep comprehension without anchoring the user to a camp.
-2. **Stepped Checkpoint `Result Card` (~10–12 Turns) + Opt-In Chapter Deepening:**
-   - After a focused initial pass (~10–12 turns covering the user's opening high-heat thread and core cross-cutting dilemmas), the user unlocks their initial **Result Card** (combining the **Personal Mirror** and **Intellectual Bridge**).
-   - The Result Card explicitly distinguishes **Settled** convictions, active **Tensions**, and **Open / Unexplored** dimensions.
-   - Directly from the Result Card, the user can click into any **Open** dimension (_"Grill me on foreign policy next"_) or any **Tension** (_"Stress-test this contradiction"_) to continue deepening their map in bite-sized chapters.
+2. **Stepped Checkpoint `Result` (~10–12 Turns) + Opt-In Chapter Deepening:**
+   - After a focused initial pass (~10–12 turns covering the user's opening high-heat thread and core cross-cutting dilemmas), the user unlocks their initial **Result** (combining the **Personal Mirror** and **Intellectual Bridge**).
+   - The Result explicitly distinguishes **Settled** convictions, active **Tensions**, and **Open / Unexplored** dimensions.
+   - Directly from the Result, the user can click into any **Open** dimension (_"Grill me on foreign policy next"_) or any **Tension** (_"Stress-test this contradiction"_) to continue deepening their map in bite-sized chapters.

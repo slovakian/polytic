@@ -12,12 +12,13 @@ landscape using the language political thinkers have built over centuries.
 
 **Polytic Party** (Polytic for short) at polytic.party.
 
-1. A **simple in-app grilling chat** (this repo): free-text answers, a verdict at the
-   end, models via OpenRouter, no server-side transcripts. See `docs/adrs/0001`.
-2. The distributable **grilling skill**, kept alongside the app for people who want
-   to use their own AI agent.
+v1 is the **anonymous first visit**: no login, a grilling chat on free models via
+OpenRouter, and an animated, screenshot-worthy **Result** page at the end. Nothing
+about the person is stored on our servers, and there are no share links. Full
+requirements: `docs/roadmap.md` ("v1: the first build"); decision: `docs/adrs/0009`.
 
-Profiles, live views, and alignment scoring come later; see `docs/roadmap.md`.
+The distributable skill below is being retired (`docs/adrs/0005`). Accounts, Living
+Profiles, return sessions, and share links come after v1; see `docs/roadmap.md`.
 **Do not build ahead of v1.** Architecture ideas in `docs/architecture.md` under
 "Direction under consideration" are not decisions.
 
@@ -88,9 +89,9 @@ These bind every feature, forever. If a change violates one, it's wrong.
 
 Two curated, versioned assets in `docs/` define Polytic's worldview and must stay
 coherent: the **dimension taxonomy** (the axes we measure) and the **label library**
-(the established political vocabulary verdicts are anchored to). The grilling uses a
+(the established political vocabulary Results are anchored to). The grilling uses a
 _fixed skeleton, adaptive flesh_ model — fixed dimensions, free probing of issues —
-and verdicts are _library-anchored but narrative-flexible_.
+and Results are _library-anchored but narrative-flexible_.
 
 ## Where to read more
 

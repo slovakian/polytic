@@ -117,7 +117,7 @@ the person's own words.
 However comprehensive the Dimensions, some views will fit none of them. Forcing them
 onto the nearest Dimension flattens them; inventing a Dimension for one person breaks
 comparability. Instead they are recorded as **Off-map Beliefs**, in the person's own
-words with Reasons and Evidence, shown on the Result Card (named when they are a known
+words with Reasons and Evidence, shown on the Result (named when they are a known
 tradition), and **excluded from comparison**. The Dimension set grows only by deliberate
 revision by the project owner, never on the fly.
 
@@ -151,14 +151,14 @@ is arithmetic; matching reasons is AI judgment against the Label's written defin
 A person carries a **small, scoped set** of Labels, never one forced onto them:
 
 - **Main**: fits their overall shape, only if one genuinely does. If none does, the
-  Result Card says so plainly; that is itself an insight.
+  Result says so plainly; that is itself an insight.
 - **Area**: fits one region of their map.
 - **Thin**: a thin-centered tradition (populism, nationalism, ecologism, feminism…)
   layered on a host.
 - **Foundation**: fits a Foundation Dimension (e.g. compatibilism, pragmatism).
 
 Which Labels exist is authored in `label-library.md`. How many appear and how they are
-laid out is a Result Card design question.
+laid out is a Result design question.
 
 ## Comparison
 
@@ -183,4 +183,4 @@ where they are furthest apart. The exact formula is an implementation decision.
 - The Foundation and Political Dimension sets, and each one's lineage
   (`dimension-taxonomy.md`).
 - The label library and the Reference Figure catalog, which depend on the Dimensions.
-- How Beliefs, Tensions, and Labels are laid out on the Result Card and in a live view.
+- How Beliefs, Tensions, and Labels are laid out on the Result and in a live view.
