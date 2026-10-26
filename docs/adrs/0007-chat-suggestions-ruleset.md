@@ -22,5 +22,6 @@ We resolve that tension with a strict ruleset rendered natively via TanStack AI'
 2. **Permitted (meta-steering, unpacking, and navigation):**
    - **Context & trade-off unpacking:** Requesting deeper context before answering (`"Unpack the trade-offs here"`, `"Steelman both sides"`, `"Give me a concrete example"`).
    - **Epistemic honesty & skipping:** Expressing genuine ambivalence or marking a topic as unformed (`"I'm genuinely torn on this"`, `"Haven't thought much about this — skip"`).
-   - **Depth & pacing control:** Adjusting how hard the AI probes (`"Push me harder on this"`, `"Ready for the next topic"`, `"Show my Result Card"`).
-   - **Dimension & post-Result-Card branching:** Choosing which **Open** dimension or active **Tension** to explore next from the Result Card or at a transition point.
+   - **Depth & pacing control:** Adjusting how hard the AI probes (`"Push me harder on this"`, `"Ready for the next topic"`, `"Show my Result"`).
+   - **Dimension & post-Result branching:** Choosing which **Open** dimension or active **Tension** to explore next from the Result or at a transition point.
+   - **Tension triage:** When the AI raises a **Tension**, the person may triage it in one click: _fits, because…_ (which opens free text for the reason, always in their own words), _I'm torn_, or _not now_. These record the Tension's status (`docs/framework.md`); they are never pre-packaged compromises, so they don't breach the rule above. Added in [Lock the v1 scope boundary and product requirements](https://github.com/slovakian/polytic/issues/18).

@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: superseded by 0009
 ---
 
 # The in-app chat is v1

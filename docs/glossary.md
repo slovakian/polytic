@@ -66,7 +66,7 @@ without assigning a premature ideological label.
 **Session**:
 A single grilling conversation — either an initial broad diagnostic or a focused
 follow-up deep dive — that probes the user's worldview and produces or updates their
-Result Card and Living Profile.
+Result and Living Profile.
 _Avoid_: Quiz attempt, survey run
 
 ## The Worldview Model
@@ -145,10 +145,12 @@ and in-practice readings of a Belief, or the two sides of a Reconciled Tension.
 
 ## Lifecycle & Artifacts
 
-**Result Card**:
-The shareable artifact delivered at the end of a session, presenting the user's
-anchored Labels, narrative synthesis, key Tensions, and Closest Thinkers.
-_Avoid_: Score report, badge
+**Result**:
+The page a person gets from a session: a striking, shareable picture of their
+Worldview built to be screenshotted, presenting their Labels, a short narrative,
+key Tensions, and Closest Thinkers. It is a highlight, not an exhaustive report. The
+first time it plays is "the reveal", which is a moment, not a separate thing.
+_Avoid_: Result Card, Verdict, score report, badge
 
 **Living Profile**:
 A user's persistent, evolving political map accumulated across sessions. It is claimed
@@ -184,7 +186,7 @@ agent-researched and expanded in later stages) so users can see their Closest Th
 _Avoid_: Celebrity match, mascot
 
 **Closest Thinkers**:
-The Reference Figures nearest a person, shown on the Result Card with why they align
+The Reference Figures nearest a person, shown on the Result with why they align
 and their Divergence.
 
 **Divergence**:
