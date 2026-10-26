@@ -58,6 +58,12 @@ instrument to stress-test where a user's abstract political principles hold or c
 in practice.
 _Avoid_: Quiz item, survey question, ballot endorsement
 
+**Issue**:
+A concrete, often country-specific topic (abortion, guns, drugs, youth gender medicine)
+where several Dimensions collide. Issues are probed with Diagnostic Dilemmas and
+recorded on the Dimensions they test; they are never Dimensions themselves.
+_Avoid_: Topic dimension, policy axis
+
 **Micro-Mirror**:
 A crisp, one-sentence reflection delivered as the AI transitions between topics,
 articulating the exact principle, dividing line, or tension the user just expressed
@@ -82,6 +88,12 @@ _Avoid_: Axis (in canonical text), scale, slider
 
 **Pole**:
 One end of a Dimension.
+
+**Core Dimension**:
+One of the small set of Dimensions a first visit's skeleton sweep works through, so that
+any two maps share enough Dimensions to compare. Every other Dimension is equally fixed
+and shared, reached when the person raises it or deepens.
+_Avoid_: Main Dimension, required question
 
 **Foundation Dimension**:
 A Dimension about the philosophy beneath politics (what the person takes to be real,
