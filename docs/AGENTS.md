@@ -34,6 +34,6 @@ why_.
 | `architecture.md`       | How the chat works (mermaid diagrams), plus direction under consideration.      |
 | `glossary.md`           | Canonical terms (Worldview, Dimension, Belief, Tension, Result Card, …).        |
 | `adrs/`                 | Architecture decision records, `NNNN-slug.md`. Commitments only.                |
-| `research/`             | Literature surveys behind decisions (findings, not decisions).                  |
+| `research/`             | Literature surveys feeding decisions. Input, not decisions.                     |
 
 If you add a doc, add a row here too.
