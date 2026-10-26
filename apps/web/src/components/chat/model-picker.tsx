@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@polytic/ui/components/dropdown-menu";
 import { InputGroupButton } from "@polytic/ui/components/input-group";
+import { cn } from "@polytic/ui/lib/utils";
 import { ChevronDownIcon, SparklesIcon } from "lucide-react";
 
 import { CHAT_MODELS, type ChatModelId, chatModelIdSchema } from "@/lib/models";
@@ -31,17 +32,17 @@ export function ModelPicker({
             size="sm"
             variant="ghost"
             aria-label={`Model: ${current.name}`}
-            className={className}
+            className={cn("font-sans", className)}
           />
         }
       >
         <SparklesIcon className="text-muted-foreground" />
-        {current.name}
+        <span className="font-sans">{current.name}</span>
         <ChevronDownIcon className="text-muted-foreground" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="center" side="top" className="w-72">
-        <DropdownMenuGroup>
-          <DropdownMenuLabel>Free models</DropdownMenuLabel>
+      <DropdownMenuContent align="start" side="top" className="w-72 font-sans">
+        <DropdownMenuGroup className="font-sans">
+          <DropdownMenuLabel className="font-sans">Free models</DropdownMenuLabel>
           <DropdownMenuRadioGroup
             value={value}
             onValueChange={(next) => {
@@ -53,9 +54,14 @@ export function ModelPicker({
             }}
           >
             {CHAT_MODELS.map((model) => (
-              <DropdownMenuRadioItem key={model.id} value={model.id} closeOnClick>
-                <div className="flex min-w-0 flex-col gap-0.5">
-                  <span>
+              <DropdownMenuRadioItem
+                key={model.id}
+                value={model.id}
+                closeOnClick
+                className="font-sans"
+              >
+                <div className="flex min-w-0 flex-col gap-0.5 font-sans">
+                  <span className="font-sans">
                     {model.name}
                     <span className="text-muted-foreground font-normal"> · {model.lab}</span>
                   </span>

@@ -25,7 +25,6 @@ import {
 import { Queue } from "@polytic/ui/components/queue";
 import { Skeleton } from "@polytic/ui/components/skeleton";
 import { Suggestion, Suggestions } from "@polytic/ui/components/suggestion";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@polytic/ui/components/tooltip";
 import { cn } from "@polytic/ui/lib/utils";
 import { fetchServerSentEvents, localStoragePersistence, useChat } from "@tanstack/ai-react";
 import {
@@ -34,11 +33,10 @@ import {
   MessageCircleQuestionIcon,
   ScaleIcon,
   SquareIcon,
-  SquarePenIcon,
   SwordsIcon,
   TriangleAlertIcon,
 } from "lucide-react";
-import { type FormEvent, useMemo, useRef, useState } from "react";
+import { type FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   compactionEndedSchema,
@@ -48,6 +46,7 @@ import {
 import { type ChatModelId, DEFAULT_CHAT_MODEL } from "@/lib/models";
 import { parseMessageSuggestions } from "@/lib/suggestions";
 
+import { chatStore } from "./chat-context";
 import {
   AssistantMessage,
   type MessageCompactionState,
@@ -162,10 +161,10 @@ export function Chat() {
     },
   });
 
-  function clear() {
+  const clear = useCallback(() => {
     setCompactionState({ status: "idle" });
     baseClear();
-  }
+  }, [baseClear]);
 
   function reload() {
     setCompactionState({ status: "idle" });
@@ -175,8 +174,25 @@ export function Chat() {
 
   const busy = status === "submitted" || status === "streaming";
   const canSend = draft.trim().length > 0 && !busy;
-  const hasText = draft.trim().length > 0;
   const last = messages.at(-1);
+
+  useEffect(() => {
+    chatStore.setActions({
+      canReset: messages.length > 0,
+      busy,
+      reset: clear,
+    });
+  }, [messages.length, busy, clear]);
+
+  useEffect(() => {
+    return () => {
+      chatStore.setActions({
+        canReset: false,
+        busy: false,
+        reset: () => {},
+      });
+    };
+  }, []);
 
   const latestSuggestions = useMemo(() => {
     if (!last || last.role !== "assistant" || busy) {
@@ -206,13 +222,18 @@ export function Chat() {
 
   const composer = (
     <form ref={formRef} onSubmit={onSubmit} className="flex w-full flex-col gap-2">
-      <InputGroup variant="ghost" className="font-serif">
+      <InputGroup variant="ghost" className="font-serif pt-6 sm:pt-8">
         <InputGroupTextarea
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           placeholder="Say what you believe, or ask to be grilled…"
           aria-label="Message"
-          className="font-serif text-base md:text-base leading-relaxed max-h-48 min-h-14 p-0 placeholder:font-serif placeholder:text-muted-foreground/50 focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0"
+          className={cn(
+            "font-serif text-base md:text-base leading-relaxed max-h-48 min-h-14 p-0 placeholder:font-serif placeholder:text-muted-foreground/50 focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0",
+            "transition-opacity duration-200 motion-reduce:transition-none",
+            "group-hover/input-group:opacity-100 group-focus-within/input-group:opacity-100 group-has-[:focus-visible]/input-group:opacity-100 focus:opacity-100 focus-visible:opacity-100",
+            draft.trim().length > 0 ? "opacity-100" : "opacity-60",
+          )}
           onKeyDown={(event) => {
             if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
               event.preventDefault();
@@ -224,50 +245,8 @@ export function Chat() {
           align="block-end"
           className="relative flex w-full items-center justify-between px-0 pt-2 pb-0"
         >
-          <div className="flex flex-1 items-center justify-start min-w-0">
-            <Tooltip>
-              <TooltipTrigger
-                render={
-                  <InputGroupButton
-                    type="button"
-                    variant="ghost"
-                    size="icon-sm"
-                    aria-label="New chat"
-                    disabled={busy || messages.length === 0}
-                    onClick={clear}
-                    tabIndex={messages.length > 0 ? 0 : -1}
-                    aria-hidden={messages.length === 0}
-                    className={cn(
-                      "transition-opacity duration-150",
-                      messages.length > 0
-                        ? "opacity-100"
-                        : "opacity-0 pointer-events-none select-none",
-                    )}
-                  />
-                }
-              >
-                <SquarePenIcon />
-              </TooltipTrigger>
-              {messages.length > 0 ? (
-                <TooltipContent>
-                  <p>New chat</p>
-                </TooltipContent>
-              ) : null}
-            </Tooltip>
-          </div>
-          <div className="flex shrink-0 items-center justify-center">
-            <ModelPicker
-              value={model}
-              onValueChange={setModel}
-              className={cn(
-                "transition-opacity duration-150",
-                hasText
-                  ? "opacity-100"
-                  : "opacity-50 hover:opacity-100 focus-visible:opacity-100 group-hover/input-group:opacity-100 group-focus-within/input-group:opacity-100 aria-expanded:opacity-100 data-popup-open:opacity-100",
-              )}
-            />
-          </div>
-          <div className="flex flex-1 items-center justify-end min-w-0">
+          <ModelPicker value={model} onValueChange={setModel} />
+          <div className="ml-auto">
             {busy ? (
               <InputGroupButton
                 type="button"
@@ -298,10 +277,6 @@ export function Chat() {
           </div>
         </InputGroupAddon>
       </InputGroup>
-      <p className="text-muted-foreground font-serif px-2 text-center text-xs opacity-70">
-        Polytic doesn&apos;t store your chats. Messages go to free third-party AI models, some of
-        which may log them.
-      </p>
     </form>
   );
 
