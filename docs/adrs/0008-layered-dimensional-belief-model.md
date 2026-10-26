@@ -6,7 +6,7 @@ status: accepted
 
 Polytic maps a person on a **fixed, shared, comprehensive set of Dimensions** in two
 layers, Foundation and Political, and records each placement as a **Belief** that
-carries a Position, a separate Pull for each Pole, the person's State, the session's
+carries a Position, a separate Pull for each Pole, the person's Epistemic State, the session's
 Coverage, Reasons, and Evidence. Labels are configurations of positions _and_ reasoning;
 Reference Figures are encoded with the same model. The full model is in
 `docs/framework.md`.

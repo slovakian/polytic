@@ -2,14 +2,11 @@
 status: accepted
 ---
 
-# One source of truth for the framework
+# First-party web app is the sole delivery surface; framework lives as structured data
 
-The skill and the chat app must run the same framework (protocol rules, dimension
-taxonomy, label library), or "Polytic" means different things depending on where you use
-it. **For now the skill's references (`skills/polytic-party/references/`) are
-canonical**, and the app builds its prompts from them.
+Earlier experimentation maintained both an in-app chat and a standalone distributable markdown skill (`skills/polytic-party`). Maintaining both forced the interaction design to accommodate a plain-text prompt runner with no UI controls, no structured state, and no control over the host model's RLHF safety hedging.
 
-Once the taxonomy is authored as real, structured dimensions (`docs/framework.md`), the
-source of truth moves to a **shared framework package holding structured data**, and the
-skill's markdown is generated from it at publish time. At that point the app needs the
-framework as data, not prose. Maintaining two hand-synced copies is ruled out.
+As resolved in [Determine the core user experience and interaction mechanics](https://github.com/slovakian/polytic/issues/15):
+
+1. **First-party web app only (`polytic.party`).** We are retiring the standalone distributable agent skill. Polytic lives exclusively in our first-party web application, where we control model orchestration, RLHF de-biasing (**Clinical Agnosticism**), TanStack AI suggestions, and interactive checkpoint **Result Cards**.
+2. **Framework as structured source of truth.** The dimension taxonomy and label library live as canonical, structured source-of-truth assets inside the monorepo rather than prose files synced into a skill folder.

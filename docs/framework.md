@@ -26,7 +26,7 @@ matters most to the person.
 
 This is the "layered morphological–spatial hybrid" the survey pointed to: spatial
 Dimensions (Downs, CHES, V-Dem, MARPOR) for comparability; Freeden's morphology for
-Reasons and Labels; Converse and Zaller for State and ambivalence.
+Reasons and Labels; Converse and Zaller for Epistemic State and ambivalence.
 
 ## Dimensions
 
@@ -62,14 +62,14 @@ precisely, without tagging every Belief with a level.
 
 Each Belief records:
 
-| Part         | What it captures                                                        |
-| ------------ | ----------------------------------------------------------------------- |
-| **Position** | Where the person lands when the two Poles collide.                      |
-| **Pull**     | How strongly each Pole draws them, recorded separately for each Pole.   |
-| **State**    | Settled, Torn, Indifferent, or Open — a fact about the person.          |
-| **Coverage** | Not asked, Thin, or Solid — a fact about the session, never the person. |
-| **Reasons**  | What they mean by the contested concepts, and which values win.         |
-| **Evidence** | What they actually said. No Evidence, no Belief.                        |
+| Part                | What it captures                                                        |
+| ------------------- | ----------------------------------------------------------------------- |
+| **Position**        | Where the person lands when the two Poles collide.                      |
+| **Pull**            | How strongly each Pole draws them, recorded separately for each Pole.   |
+| **Epistemic State** | Settled, Torn, Indifferent, or Open — a fact about the person.          |
+| **Coverage**        | Not asked, Thin, or Solid — a fact about the session, never the person. |
+| **Reasons**         | What they mean by the contested concepts, and which values win.         |
+| **Evidence**        | What they actually said. No Evidence, no Belief.                        |
 
 **Why Pull is separate from Position.** Two people can land at the same Position, one
 torn between two things they care about deeply and one indifferent to both. A single
@@ -78,7 +78,7 @@ slider makes them identical and averages real conflict into a fake centrist scor
 and negative evaluation as separate measures). How much a Dimension matters to someone
 is its Pull; there is no separate salience field.
 
-**Why State is separate from Coverage.** A faint mark can mean "this person is torn or
+**Why Epistemic State is separate from Coverage.** A faint mark can mean "this person is torn or
 indifferent" or "the session barely asked." Conflating them misrepresents the person in
 one direction or wastes a real finding in the other.
 
@@ -98,8 +98,8 @@ When two Beliefs appear to conflict, the AI records a Tension and puts it to the
 It ends in one of three states:
 
 - **Reconciled**: the person gave a Bridge. It is recorded, named if it is a known
-  position, and any objection the grill raised that went unanswered is noted without a
-  verdict.
+  position, and any objection the grill raised that went unanswered is noted without
+  judgment.
 - **Unresolved**: the person holds both and feels the pull. Recorded as a fact about
   them, never as a failure.
 - **Not yet discussed**: spotted, but not taken up (including when the person chose
