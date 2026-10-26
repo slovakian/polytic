@@ -15,6 +15,13 @@ export default function Header() {
         <span className="text-muted-foreground font-normal">Party</span>
       </Link>
       <div className="flex items-center gap-2">
+        <Link
+          to="/result"
+          search={{ variant: "A", persona: "left-libertarian" }}
+          className="text-xs font-mono rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/20 px-2.5 py-1 transition-colors"
+        >
+          Result Prototype →
+        </Link>
         {canReset ? (
           <Tooltip>
             <TooltipTrigger
