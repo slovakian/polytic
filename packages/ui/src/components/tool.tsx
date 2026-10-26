@@ -104,7 +104,7 @@ export function Tool({
   ) : isError ? (
     <AlertCircleIcon className="text-destructive" />
   ) : (
-    <WrenchIcon className="text-(--hue-4)" />
+    <WrenchIcon className="text-muted-foreground" />
   );
 
   const hasDetails = Boolean(formattedInput || formattedOutput);

@@ -28,7 +28,7 @@ export function ModelPicker({
           <InputGroupButton size="sm" variant="ghost" aria-label={`Model: ${current.name}`} />
         }
       >
-        <SparklesIcon className="text-(--hue-5)" />
+        <SparklesIcon className="text-muted-foreground" />
         {current.name}
         <ChevronDownIcon className="text-muted-foreground" />
       </DropdownMenuTrigger>

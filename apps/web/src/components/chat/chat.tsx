@@ -59,12 +59,11 @@ const connection = fetchServerSentEvents("/api/chat");
 const persistence = localStoragePersistence();
 
 const STARTERS = [
-  { icon: SwordsIcon, hue: "text-(--hue-1)", text: "Grill me on my politics" },
-  { icon: CompassIcon, hue: "text-(--hue-3)", text: "Where do I fit beyond left and right?" },
-  { icon: ScaleIcon, hue: "text-(--hue-4)", text: "Steelman the view I disagree with most" },
+  { icon: SwordsIcon, text: "Grill me on my politics" },
+  { icon: CompassIcon, text: "Where do I fit beyond left and right?" },
+  { icon: ScaleIcon, text: "Steelman the view I disagree with most" },
   {
     icon: MessageCircleQuestionIcon,
-    hue: "text-(--hue-6)",
     text: "What separates a liberal from a libertarian?",
   },
 ];
@@ -205,13 +204,13 @@ export function Chat() {
 
   const composer = (
     <form ref={formRef} onSubmit={onSubmit} className="flex w-full flex-col gap-2">
-      <InputGroup className="bg-card shadow-lg shadow-black/20">
+      <InputGroup variant="ghost" className="font-serif">
         <InputGroupTextarea
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           placeholder="Say what you believe, or ask to be grilled…"
           aria-label="Message"
-          className="max-h-48 min-h-14 p-4"
+          className="font-serif text-base max-h-48 min-h-14 p-0 placeholder:font-serif placeholder:text-muted-foreground/50 focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0"
           onKeyDown={(event) => {
             if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
               event.preventDefault();
@@ -219,7 +218,7 @@ export function Chat() {
             }
           }}
         />
-        <InputGroupAddon align="block-end" className="pt-1">
+        <InputGroupAddon align="block-end" className="px-0 pt-2 pb-0">
           {messages.length > 0 ? (
             <Tooltip>
               <TooltipTrigger
@@ -266,7 +265,7 @@ export function Chat() {
           )}
         </InputGroupAddon>
       </InputGroup>
-      <p className="text-muted-foreground px-2 text-center text-xs">
+      <p className="text-muted-foreground font-serif px-2 text-center text-xs opacity-70">
         Polytic doesn&apos;t store your chats. Messages go to free third-party AI models, some of
         which may log them.
       </p>
@@ -285,20 +284,16 @@ export function Chat() {
   if (messages.length === 0) {
     return (
       <div className="relative flex min-h-0 min-w-0 flex-1 flex-col items-center justify-center overflow-hidden px-4 py-10">
-        <div
-          aria-hidden
-          className="bg-aurora pointer-events-none absolute inset-x-0 top-0 h-2/3 opacity-60"
-        />
         <div className="relative flex w-full max-w-2xl min-w-0 flex-col items-center gap-8">
           <Empty className="p-0">
             <EmptyHeader className="max-w-md">
-              <EmptyMedia variant="icon" className="bg-spectrum text-background">
+              <EmptyMedia variant="icon" className="bg-muted text-foreground">
                 <CompassIcon />
               </EmptyMedia>
-              <EmptyTitle className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                What do you <span className="text-spectrum">actually</span> believe?
+              <EmptyTitle className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+                What do you actually believe?
               </EmptyTitle>
-              <EmptyDescription className="text-base">
+              <EmptyDescription className="font-serif text-base">
                 Polytic asks, challenges, and reasons with you until your politics have words. It
                 maps where you stand and never tells you where to stand.
               </EmptyDescription>
@@ -311,9 +306,10 @@ export function Chat() {
                 key={starter.text}
                 variant="outline"
                 size="sm"
+                className="font-serif"
                 onClick={() => send(starter.text)}
               >
-                <starter.icon data-icon="inline-start" className={starter.hue} />
+                <starter.icon data-icon="inline-start" className="text-muted-foreground" />
                 {starter.text}
               </Suggestion>
             ))}
@@ -406,6 +402,7 @@ export function Chat() {
                   key={suggestion}
                   variant="outline"
                   size="sm"
+                  className="font-serif"
                   onClick={() => send(suggestion)}
                 >
                   {suggestion}

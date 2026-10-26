@@ -7,11 +7,10 @@ import { toast } from "sonner";
 
 export default function Header() {
   return (
-    <header className="relative flex items-center justify-between px-4 py-3">
+    <header className="relative flex items-center justify-between border-b border-border px-4 py-3">
       <Link to="/" className="flex items-center gap-2 text-base font-semibold tracking-tight">
-        <span aria-hidden className="bg-spectrum size-3 rounded-full" />
         Polytic
-        <span className="text-spectrum">Party</span>
+        <span className="text-muted-foreground font-normal">Party</span>
       </Link>
       <Tooltip>
         <TooltipTrigger
@@ -36,7 +35,6 @@ export default function Header() {
           </p>
         </TooltipContent>
       </Tooltip>
-      <div aria-hidden className="bg-spectrum absolute inset-x-0 bottom-0 h-px opacity-40" />
     </header>
   );
 }

@@ -38,7 +38,7 @@ export function CompactionLine({
 
   return (
     <TraceLine status={running ? "running" : undefined} className={className} {...props}>
-      <TraceIcon>{icon ?? <FoldVerticalIcon className="text-(--hue-3)" />}</TraceIcon>
+      <TraceIcon>{icon ?? <FoldVerticalIcon className="text-muted-foreground" />}</TraceIcon>
       <TraceTitle className={cn(running && "shimmer")}>{displayTitle}</TraceTitle>
       {tokensSaved !== undefined && !running ? (
         <TraceDescription>{`-${tokensSaved.toLocaleString()} tokens`}</TraceDescription>
@@ -144,7 +144,7 @@ export function Compaction({
                   <span className="tabular-nums">
                     {details.before.toLocaleString()} → {details.after.toLocaleString()}{" "}
                     {calculatedTokensSaved && calculatedTokensSaved > 0 ? (
-                      <span className="font-semibold text-(--hue-4)">
+                      <span className="font-semibold text-foreground">
                         (-{calculatedTokensSaved.toLocaleString()})
                       </span>
                     ) : null}
@@ -183,7 +183,7 @@ export function CompactionMarker({
   return (
     <Marker variant="separator" className={className}>
       <MarkerIcon>
-        <FoldVerticalIcon className="text-(--hue-3)" />
+        <FoldVerticalIcon className="text-muted-foreground" />
       </MarkerIcon>
       <MarkerContent>{label}</MarkerContent>
     </Marker>

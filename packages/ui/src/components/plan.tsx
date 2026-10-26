@@ -44,7 +44,7 @@ export function Plan({
         <TraceCollapsibleTrigger>
           <TraceLine>
             <TraceIcon>
-              <RouteIcon className="text-(--hue-2)" />
+              <RouteIcon className="text-muted-foreground" />
             </TraceIcon>
             <TraceTitle>
               {title} ({completedCount}/{steps.length})

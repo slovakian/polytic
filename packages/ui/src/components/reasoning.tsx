@@ -35,7 +35,7 @@ export function ReasoningLine({
 
   return (
     <TraceLine status={running ? "running" : undefined} className={className} {...props}>
-      <TraceIcon>{icon ?? <BrainIcon className="text-(--hue-5)" />}</TraceIcon>
+      <TraceIcon>{icon ?? <BrainIcon className="text-muted-foreground" />}</TraceIcon>
       <TraceTitle className={cn(running && "shimmer")}>{displayTitle}</TraceTitle>
       {duration && !running ? <TraceDescription>{duration}</TraceDescription> : null}
     </TraceLine>
