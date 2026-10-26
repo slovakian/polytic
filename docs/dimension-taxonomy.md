@@ -17,18 +17,24 @@ it powers the grilling skill, the future app, and eventually the alignment math.
 
 ## Structure each dimension should carry
 
-- A name and a crisp definition of what the axis captures.
+What a Dimension is, and how Beliefs on it work, is defined in `framework.md`.
+
+- A name and a crisp definition of what the Dimension captures.
+- Its layer: **Foundation** or **Political**.
+- Its two Poles, framed as a genuine trade-off between them.
+- Its academic lineage: the literature it comes from.
 - Sub-topics / facets within it.
-- Seed issues the grilling can open with.
-- (Future) how positions on it map toward labels in `label-library.md`.
+- Seed dilemmas the grilling can open with (localized to the person's context).
 
 ## Status: TODO — author the real dimensions
 
-The actual dimensions are **not yet written**. They must be authored by the project
-owner; agents should not invent Polytic's political axes. Candidate directions to
-discuss (illustrative only, not decided): economic organization, social
-order/tradition, state authority vs. liberty, nationalism vs. cosmopolitanism, change
-tempo (reform ↔ revolution), epistemics/expertise, ecology.
+The actual dimensions are **not yet written**, in either layer. They must be authored
+by the project owner from dedicated research; agents should not invent Polytic's
+Dimensions. The set is meant to be **comprehensive**, not minimal (`framework.md`).
+Candidate directions to discuss (illustrative only, not decided): economic
+organization, social order/tradition, state authority vs. liberty, nationalism vs.
+cosmopolitanism, change tempo (reform ↔ revolution), epistemics/expertise, ecology,
+state neutrality vs. perfectionism, subsidiarity.
 
 When authored, this file (or a structured data file it points to) becomes the
 canonical source of truth.

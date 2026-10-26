@@ -1,119 +1,88 @@
-# The grilling protocol (v1)
+# Core User Experience & Grilling Protocol
 
-The grill runs in two places: the **in-app chat** (v1, ADR-0001) and the
-**distributable grilling skill**, a prompt installed via the skills CLI or copy-pasted
-into any AI agent. Both follow this protocol (ADR-0005). It interviews the user and
-delivers a verdict on their politics. This doc describes how it should behave.
+This document specifies Polytic's primary user experience and interaction mechanics, resolved in [Determine the core user experience and interaction mechanics](https://github.com/slovakian/polytic/issues/15).
 
-## Install
+## 1. Architectural Separation: Worldview Model vs. Elicitation Modes
 
-```bash
-npx skills add slovakian/polytic
-```
+Polytic strictly separates **what it knows/infers about a user's politics** from **how it draws that evidence out**:
 
-Source in this monorepo: `skills/polytic-party/`. Maintainer notes: `skills/README.md`.
+- **The Worldview Model (Underlying Brain):** Stores and updates the user's dimensional positions, conceptual definitions, value trade-offs, active **Tensions**, and **Epistemic States** (`Settled`, `Torn`, `Indifferent`, `Open`; see `framework.md`).
+- **Elicitation Modes (Interaction Formats):** Pluggable interaction mechanics that gather evidence and feed it into the shared Worldview Model.
+  - **Primary Mode (v1): Structured Socratic Grilling Anchored by Diagnostic Dilemmas.** A live, clinically neutral cross-examination where the AI drops the user into concrete dilemmas where values collide, probes _why_ they hold their stance, and tests internal coherence across dimensions.
+  - **Future Extensibility:** Because the Worldview Model is decoupled from chat transcripts, future elicitation modes (such as rapid dilemma decks, reacting to real-world claims/essays, or structured multi-person discourse) plug into the exact same underlying model without re-architecting the core.
 
-## Shape
+## 2. Delivery Surface: First-Party Web App Only
 
-- **Full sweep, then verdict.** The skill grills across the dimensions, _then_
-  delivers the verdict at the end. It does **not** announce "you fall into this camp"
-  between rounds — the payoff is the considered verdict after the user has been
-  properly examined. (See open questions for why this might change.)
-- **Fixed skeleton, adaptive flesh.** The skill walks the deliberate dimension
-  taxonomy (`dimension-taxonomy.md`) as its skeleton, but within each dimension it
-  probes whatever issues, edge-cases, and contradictions actually surface. The map is
-  shared and comparable across people; the conversation is bespoke.
-- **Challenge for coherence.** When answers conflict or stay vague, the AI probes —
-  testing consistency, never pushing a direction (see `principles.md`).
-- **Rapid-fire turns.** During the grill, agent replies stay to 1–2 sentences: one
-  sharp question, no praise or answer summaries. Depth comes from many short probes,
-  not long monologues. The verdict at the end is where length belongs.
-- **Suggestions ruleset.** Clickable prompt suggestions appear when helpful for
-  navigation and post-verdict exploration, but are strictly forbidden when they risk
-  turning the grill back into a multiple-choice quiz:
-  - **Inappropriate (never suggest):** Open-ended probing into what the user believes,
-    why, or what moral foundations justify their stance; pre-packaged compromises to
-    reconcile contradictions; mid-grill rapid-fire turns; any ideologically skewed or
-    leading framing.
-  - **Appropriate (use 2–4 short chips):** Directional branching between taxonomy
-    dimensions; post-verdict next steps and stress-tests; concrete thought experiments
-    with distinct neutral angles (including a meta-choice); session meta-navigation.
-  - **Format:** Emitted at the very end of the message inside a \`\`\`suggestions code
-    block; omitted completely when inappropriate.
+Polytic lives exclusively in the first-party web application (`polytic.party`).
 
-## Interview engine (state machine)
+- **No distributable agent skill:** We do not maintain a standalone markdown skill (`skills/polytic-party`) for third-party chat clients. Owning the full delivery surface in the web app ensures complete control over model selection, RLHF de-biasing (**Clinical Agnosticism**), structured state tracking, TanStack AI suggestions, and interactive checkpoint **Result Cards**.
 
-The skill treats the session as a tree, not a personality:
+## 3. Session Flow & User Steering: "Follow the Heat, Then Bridge the Skeleton"
+
+A grilling session balances **user energy** (starting where the user actually cares) with **structural completeness** (mapping across the full dimension taxonomy):
 
 ```
-ANCHOR → SKELETON SWEEP → LOCALIZED STRESS-TESTS → VERDICT
+ANCHOR & HEAT → PRINCIPLE-BRIDGED SKELETON SWEEP → CHECKPOINT RESULT CARD → OPT-IN DEEPENING
 ```
 
-1. **Anchor** — establish country/region (or where politics mainly apply) and a rough
-   worldview. Later questions filter through this lens.
-2. **Skeleton sweep** — walk the dimension taxonomy sequentially.
-3. **Localized stress-tests** — highest-stakes, country-specific divisive issues.
-4. **Verdict** — evidence-backed summary only at the end.
+1. **Anchor & Open with Heat (User-Seeded Entry):**
+   - Establish the user's country/political context (so **Diagnostic Dilemmas** use locally relevant institutions and flashpoints).
+   - Invite the user to start with a political question, frustration, or principle they care deeply about right now (or pick an opening thread).
+2. **Principle-Bridged Skeleton Sweep:**
+   - Rather than marching down a numbered list of dimensions (`1 → 2 → 3...`) like a bureaucracy form, the AI extracts the core normative principle or rule the user relied on in their opening thread and **uses that principle as a bridge into the next dimension** (_"You argued that individual autonomy is sacred in healthcare — let's test whether that same rule holds when we look at economic regulation..."_).
+   - Under the hood, the system tracks coverage across the canonical dimension taxonomy so blind spots and cross-domain contradictions are systematically tested.
+3. **Explicit User Steering Valves:**
+   - At any moment, the user controls the session's direction: they can ask the AI to unpack the trade-offs of an unfamiliar topic, ask to be pushed harder on the current topic, switch topics, or skip a topic they haven't thought about (which is immediately logged as **Open** rather than forcing a fabricated opinion).
 
-### Verdict gate (mandatory)
+## 4. The Micro-Loop: Turn Length, Tone, and Probing Depth
 
-The skill must not output a verdict until **all** of the following hold:
+### Turn Length Principle: "Zero Ceremony, Proportional Substance"
 
-1. Anchor complete (region + worldview).
-2. **Every** v0 scaffolding area in the skill's `taxonomy.md` visited in order (3–5 turns
-   per area unless unsettled after probes).
-3. Localized stress-tests: 3–5 turns across **several** country-specific flashpoints (not
-   one token question).
-4. At least **20 user answers** in the grill (unless the user explicitly stops early →
-   partial verdict).
-5. Confidence in the verdict matches the session — "I don't know" / unsettled topics are
-   **open** or **mixed**, never **settled**.
+- **Zero Ceremony (Always Banned):** The AI never praises the user (_"That's a thoughtful point!"_), never repeats or summarizes the user's answer back to them as filler, and never lectures or hedges.
+- **Proportional Substance:**
+  - **Default Fast Probe (1–3 sentences):** When the issue is clear and the user is moving briskly, keep turns short and surgical — pose the **Diagnostic Dilemma** or surface the **Tension**, and ask one sharp question.
+  - **Unpacking / Steelmanning Mode (1–2 paragraphs when needed or requested):** When a dilemma requires concrete context so it isn't a caricature, when the user asks _"Explain the trade-offs"_ or _"What's the argument for the other side?"_, or when the user writes a deep multi-paragraph reflection, the AI takes the space needed to steelman the competing sides in plain language before asking its question.
 
-The full gate and anti-patterns (thread-chasing, weak-model rush to verdict) live in
-`skills/polytic-party/references/protocol.md`. Verdict markdown template lives in
-`references/verdict-format.md` and should be read only at the end.
+### Probing Depth Principle: "Follow Diagnostic Yield & User Pull, Not a Fixed Counter"
 
-### Micro-loop (every turn)
+Instead of cutting off every topic after an arbitrary number of turns, the AI evaluates each turn across four response signals and continues only while **diagnostic yield** or **user pull** remains high:
 
-Before each agent reply, classify the user's answer:
+| User Answer Signal                              | AI Action                                                                                                                                                                                                                                                                   |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Surface / Slogan / Dodge**                    | **Probe with a Diagnostic Dilemma:** Introduce a concrete edge case or counterfactual where their stated slogan collides with another value.                                                                                                                                |
+| **Clear Principle + Justification**             | **Micro-Mirror & Bridge:** Articulate their dividing line in one crisp sentence and bridge to test that principle in a neighboring dimension.                                                                                                                               |
+| **Contradiction with Prior Stance (`Tension`)** | **Surface the Tension:** Place the two statements side-by-side neutrally (_"Earlier you held X as a rule, yet here you accept Y — what distinguishes the two for you?"_). Give the user room either to draw a principled distinction or to acknowledge genuine ambivalence. |
+| **Unformed / "I Don't Know" / Skip**            | **Mark `Open` & Advance:** Log the epistemic state as **Open** (or **Torn** if pulled between two principles) and move to the next dimension immediately without pressure.                                                                                                  |
 
-| Signal                           | Action                                                                                              |
-| -------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Surface (vague, slogan, dodge)   | **Probe** — same topic, edge case or counterfactual. Max 2 probes, then mark unsettled and advance. |
-| Nuanced (conditions, principles) | **Log & advance** — note internally, next question.                                                 |
-| Contradictory with prior answers | **Tension** — name the conflict in one line, one follow-up question.                                |
-| Unsettled after probes           | Mark **open** internally; **advance to next dimension** — not verdict.                              |
+- **When to move on fast (1–2 turns):** The user's underlying principle and dividing line are already clear, _or_ the user is **Open** (unsettled) and further probing would only manufacture a fake attitude.
+- **When to stay and go deeper:** Two cherished principles are actively colliding and another surgical question will clarify the fault line, _or_ the user is actively leaning in (asking questions back, requesting pushback, or working through a live tension).
 
-This prevents the common failure mode: accepting "it's fine" and moving on, or padding
-every turn with validation and recap.
+## 5. Input Mechanics & TanStack AI Suggestions Ruleset
 
-## The verdict
+- **Modality:** Text input in v1 (no voice input in v1).
+- **Core Rule:** Substantive political beliefs, values, and justifications must **always** be articulated in the user's own words. Suggestions exist to steer the interviewer and reduce navigation friction — never to put political opinions in the user's mouth.
 
-- **Library-anchored, narrative-flexible.** Primary labels are drawn from the curated
-  `label-library.md` so verdicts stay consistent and comparable. The surrounding
-  description is free prose, and the AI may coin phrasing that genuinely fits the
-  individual — as flavor, never replacing the canonical label.
-- **Evidence-backed.** The verdict should point to what the user actually said, so the
-  result feels earned rather than asserted.
+### Forbidden Suggestions (Never Render)
 
-## Open questions (not resolved for v1)
+- Pre-packaged political stances or multiple-choice answers to a dilemma (e.g., `"Prioritize free speech"`, `"Prioritize public safety"`).
+- Pre-baked compromises when confronting a **Tension** (e.g., `"Balance both case by case"`).
+- Ideologically leading or biased framings.
 
-These are real, unsolved, and recorded honestly so future work doesn't treat them as
-settled:
+### Permitted Suggestions (Rendered via TanStack AI)
 
-- **Long-session fragility.** Genuinely fleshing out someone's politics may take many
-  questions. Turn-based agents vary in how well they handle long, stateful
-  conversations — some may forget, truncate, or drop the thread. We have not yet
-  observed how target agents behave. This is the biggest v1 risk.
-- **Progressive verdicts.** Interim, resumable reads (dimension-by-dimension) could
-  defuse the long-session problem, but risk the "you're in this camp" anti-pattern the
-  owner wants to avoid. **Parked, not rejected** — revisit if length proves to bite.
-- **Structured output for the future app.** Eventually the verdict may need a
-  machine-readable form so the first-party platform can seed profiles from a session.
-  Not required in v1.
+1. **Context & Unpacking:** `"Unpack the trade-offs here"`, `"Steelman both sides"`, `"Give me a concrete example"`
+2. **Epistemic Honesty & Skipping:** `"I'm genuinely torn on this"`, `"Haven't thought much about this — skip"`
+3. **Depth & Pacing Control:** `"Push me harder on this"`, `"Ready for the next topic"`, `"Give me my Result Card now"`
+4. **Dimension & Post-Result-Card Branching:** Selecting which **Open** dimension or active **Tension** to explore next.
 
-## How this connects forward
+## 6. Pacing & Payoff: Micro-Mirrors and Stepped Checkpoints
 
-On the future platform (`roadmap.md`), grilling moves in-app and gains memory: each
-user accumulates a store of their raw answers _and_ the AI's interpretations of those
-answers, which the AI retrieves to refine their profile over time.
+Polytic avoids both the **25-question black-box marathon** (where users get zero feedback until the very end) and **premature camp-labeling** (where live-updating ideological labels bias how the user answers subsequent questions):
+
+1. **In-Session Feedback via `Micro-Mirrors` (Never Premature Labels):**
+   - During the grill, Polytic never announces _"You sound like a Classical Liberal"_ or shows a live-updating ideological scoreboard.
+   - Instead, when transitioning between topics, the AI delivers a **Micro-Mirror**: a single, surgical sentence reflecting the exact rule, trade-off priority, or tension the user just established (_"So for you, state intervention is justified to break monopolies, not to equalize outcomes — let's see if that rule holds on..."_). This delivers continuous proof of deep comprehension without anchoring the user to a camp.
+2. **Stepped Checkpoint `Result Card` (~10–12 Turns) + Opt-In Chapter Deepening:**
+   - After a focused initial pass (~10–12 turns covering the user's opening high-heat thread and core cross-cutting dilemmas), the user unlocks their initial **Result Card** (combining the **Personal Mirror** and **Intellectual Bridge**).
+   - The Result Card explicitly distinguishes **Settled** convictions, active **Tensions**, and **Open / Unexplored** dimensions.
+   - Directly from the Result Card, the user can click into any **Open** dimension (_"Grill me on foreign policy next"_) or any **Tension** (_"Stress-test this contradiction"_) to continue deepening their map in bite-sized chapters.

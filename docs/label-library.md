@@ -1,14 +1,14 @@
 # Label library (source-of-truth asset)
 
-The label library is the curated catalog of political labels that verdicts anchor to.
+The label library is the curated catalog of political labels that Result Cards anchor to.
 Political thinkers have spent a very long time naming the many distinct kinds of
 politics; Polytic draws on that established vocabulary rather than reinventing it. It is
 authored intentionally and versioned in this repo, alongside `dimension-taxonomy.md`.
 
 ## The model: library-anchored, narrative-flexible
 
-- **Anchored.** A verdict's _primary_ labels must come from this curated library, with
-  evidence from the user's answers. This keeps verdicts consistent across runs and
+- **Anchored.** A Result Card's _primary_ labels must come from this curated library, with
+  evidence from the user's answers. This keeps Result Cards consistent across runs and
   comparable across people.
 - **Flexible.** The surrounding description is free prose, and the AI may coin phrasing
   that best fits an individual — but only as flavor. Coined terms never replace the
@@ -19,8 +19,13 @@ authored intentionally and versioned in this repo, alongside `dimension-taxonomy
 
 ## What each label entry should carry
 
+What a Label is, and how a person is matched to it, is defined in `framework.md`.
+
 - The term and a clear definition.
-- The dimensions / positions it implies (links to `dimension-taxonomy.md`).
+- Whether it is thick, thin-centered, or a Foundation label.
+- Its Positions on the Dimensions it cares about (links to `dimension-taxonomy.md`).
+- Which of those Dimensions are central to it.
+- How it reasons: how it understands the contested concepts it relies on.
 - Relationships to neighboring labels (parent/child, adjacent, opposed).
 
 ## Status: TODO — compile the real catalog

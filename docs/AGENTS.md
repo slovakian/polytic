@@ -22,17 +22,17 @@ why_.
 
 ## Structure
 
-| File                    | Purpose                                                                     |
-| ----------------------- | --------------------------------------------------------------------------- |
-| `vision.md`             | The thesis and north star, long form.                                       |
-| `principles.md`         | The inviolable design laws, expanded with rationale.                        |
-| `grilling-protocol.md`  | How the v1 grilling skill works, install command, open questions.           |
-| `dimension-taxonomy.md` | The model for Polytic's political axes (source-of-truth asset).             |
-| `label-library.md`      | The model for the label catalog verdicts anchor to (source-of-truth asset). |
-| `roadmap.md`            | v1 (the chat) through Phase 4.                                              |
-| `framework.md`          | Research brief for the theory behind the method; open questions.            |
-| `architecture.md`       | How the chat works (mermaid diagrams), plus direction under consideration.  |
-| `glossary.md`           | Canonical terms (Polytic Party, Session, Finding, Verdict, …).              |
-| `adrs/`                 | Architecture decision records, `NNNN-slug.md`. Commitments only.            |
+| File                    | Purpose                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| `vision.md`             | The thesis and north star, long form.                                           |
+| `principles.md`         | The inviolable design laws, expanded with rationale.                            |
+| `grilling-protocol.md`  | The core user experience and the Socratic Grilling protocol.                    |
+| `dimension-taxonomy.md` | Polytic's Foundation and Political Dimensions (source-of-truth asset).          |
+| `label-library.md`      | The model for the label catalog Result Cards anchor to (source-of-truth asset). |
+| `roadmap.md`            | Stage 1 (current focus) through Stage 3.                                        |
+| `framework.md`          | The model of a belief system: Dimensions, Beliefs, Tensions, Labels.            |
+| `architecture.md`       | How the chat works (mermaid diagrams), plus direction under consideration.      |
+| `glossary.md`           | Canonical terms (Worldview, Dimension, Belief, Tension, Result Card, …).        |
+| `adrs/`                 | Architecture decision records, `NNNN-slug.md`. Commitments only.                |
 
 If you add a doc, add a row here too.

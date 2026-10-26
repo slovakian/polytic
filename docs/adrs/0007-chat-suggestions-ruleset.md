@@ -4,32 +4,23 @@ status: accepted
 
 # Chat suggestions and their ruleset
 
-In ADR-0001, we noted that while suggestions or predetermined options were wanted eventually,
-their design remained open because of the acute risk of collapsing the grilling experience back into
-a superficial multiple-choice quiz and leading the witness.
+While clickable suggestions in a chat interface reduce navigation friction, naive suggestions risk collapsing Socratic grilling back into a shallow multiple-choice quiz and anchoring the user's answers.
 
-We now resolve that design tension with a strict ruleset and an integrated parser:
+We resolve that tension with a strict ruleset rendered natively via TanStack AI's suggestions capability:
+
+## Core Principle
+
+**Substantive political beliefs, values, and justifications must always come from the user's own words.** Suggestions are used to **steer the interviewer** (unpacking context, controlling depth, skipping unformed areas, or branching between dimensions), never to answer a political question _for_ the user.
 
 ## The Ruleset
 
-Suggestions are permitted **only** when they aid conversational navigation or post-verdict exploration,
-and are **strictly forbidden** during the interrogation core of the grill:
+1. **Forbidden (never provide as suggestions):**
+   - **Pre-packaged political stances or dilemma choices:** Never offer multiple-choice positions on a policy or moral dilemma (e.g., `"Prioritize individual liberty"`, `"Prioritize social order"`).
+   - **Pre-packaged compromises on contradictions:** When confronting a **Tension** between two of the user's statements, never offer an easy out or synthetic middle ground.
+   - **Ideologically leading framing:** Suggestions must never nudge the user toward a political camp or label.
 
-1. **Forbidden (never provide suggestions):**
-   - **Open-ended probing:** When asking what the user believes, why they believe it, or what moral foundations justify their stance. Users must articulate beliefs in their own words.
-   - **Challenging coherence & contradictions:** When confronting a tension between two statements, the AI must not offer pre-packaged compromises.
-   - **Rapid-fire turns:** Standard 1–2 sentence probing turns must remain clean, direct questions.
-   - **Ideologically leading framing:** Suggestions must never nudge the user toward a specific political camp or label.
-
-2. **Permitted (2–4 short chips):**
-   - **Dimension & topic branching:** Transitioning between taxonomy areas or choosing policy flashpoints.
-   - **Post-verdict exploration:** Guiding the user on next steps after a verdict (stress-testing results, drilling into specific dimensions, steelmanning counter-positions).
-   - **Concrete dilemma angles:** Neutral distinct stances in a concrete thought experiment, including a meta-choice (rejecting the premise).
-   - **Session meta-navigation:** Pacing, steering, or topic skips.
-
-## Protocol and UI Implementation
-
-- **Protocol:** When appropriate, the agent emits 2–4 short suggestions at the very end of the response inside a ` ```suggestions ` block. If inappropriate, no block is emitted.
-- **Client Parsing:** `apps/web/src/lib/suggestions.ts` strips the suggestions block from the rendered markdown (preventing raw code fences from flashing during streaming or appearing in message copy) and extracts clean suggestion strings.
-- **UI Component:** Rendered using shadcn UI's `<Suggestions>` and `<Suggestion>` components (`@polytic/ui/components/suggestion`) placed directly above the composer in active chat when the assistant is the latest message and not busy.
-- **Interaction:** Clicking a suggestion chip immediately sends it, clearing the suggestions and advancing the chat state without leaving stale button artifacts in the conversation history.
+2. **Permitted (meta-steering, unpacking, and navigation):**
+   - **Context & trade-off unpacking:** Requesting deeper context before answering (`"Unpack the trade-offs here"`, `"Steelman both sides"`, `"Give me a concrete example"`).
+   - **Epistemic honesty & skipping:** Expressing genuine ambivalence or marking a topic as unformed (`"I'm genuinely torn on this"`, `"Haven't thought much about this — skip"`).
+   - **Depth & pacing control:** Adjusting how hard the AI probes (`"Push me harder on this"`, `"Ready for the next topic"`, `"Show my Result Card"`).
+   - **Dimension & post-Result-Card branching:** Choosing which **Open** dimension or active **Tension** to explore next from the Result Card or at a transition point.

@@ -1,42 +1,22 @@
 # Roadmap
 
-> **v1 is the in-app chat** (ADR-0001). It replaced the original Phase 0 of a
-> showcase-only site. Do not let later phases leak into v1 decisions. This roadmap is a
-> living document and will be reordered as the project develops. Treat it as direction,
-> not a contract.
+Polytic's evolution follows three concentric stages — moving from solo political self-understanding (with built-in thinker comparison and shareable results) to multiplayer comparison and structured discourse.
 
-Each phase is roughly a prerequisite for the next.
+**Our current focus is purely Stage 1.** Later stages are captured here to ensure Stage 1's domain model and Living Profile foundation never paint us into a corner.
 
-## v1: Simple chat + skill (build now)
+## Stage 1: Solo Diagnostic, Result Card & Living Profile (Current Focus)
 
-- An in-app **grilling chat** on polytic.party: free-text answers, verdict delivered at
-  the end, models via OpenRouter, no server-side transcripts (ADR-0001, 0003, 0004).
-- A home page that pitches Polytic Party and starts the chat. The distributable
-  **grilling skill** stays available as a secondary "use your own AI" option.
-- The **framework research** (`framework.md`) and the versioned **dimension taxonomy**
-  and **label library** assets.
+- **Zero-wall first session:** Anyone can start a grilling session immediately without logging in and receive a full **Result Card** at the end.
+- **Result Card with Closest Thinkers:** Delivers anchored political labels, narrative synthesis, key tensions, and a **Closest Thinkers** breakdown comparing the user against a comprehensive, hand-encoded catalog of **Reference Figures** (highlighting why they match and their #1 point of disagreement).
+- **Claimable Living Profile:** At the end of a session, users can create an account to save their session into a persistent **Living Profile**.
+- **Private by default, encouraged public:** Living Profiles are private by default to protect complete honesty during grilling, paired with a clear prompt encouraging users to make their profile public or share their Result Card link.
+- **Follow-up topic deep-dives & belief freshness:** Returning users pick up where they left off (zooming into specific topics, testing new real-world dilemmas, or challenging parts of their map). When a user's view shifts, the new position becomes the **Current Belief** while the superseded position is preserved as a **Stale Belief** (excluded by default when agents query active beliefs).
 
-## Phase 1: Structured sessions + profiles
+## Stage 2: Multiplayer Comparison & Automated Thinker Research (Later)
 
-- The direction in `architecture.md`: case file, code-enforced phases, tool groups.
-- A **live view** of what the AI has learned, shown to the user as they chat.
-- Login and saved **profiles** with the verdict and its reasoning.
-- The persistent **answer + interpretation store**: each user accumulates their raw
-  answers and the AI's interpretations, retrievable to refine their profile over time.
+- **1-on-1 and group profile comparison:** Compare your Living Profile directly with a friend's link or any public profile to see where your worldviews overlap and the exact root premises where you diverge.
+- **Agent-researched Reference Figure expansion:** Use research agents to routinely expand and update the catalog of historical and contemporary thinkers, politicians, and public figures on the shared framework.
 
-## Phase 2: Alignment
+## Stage 3: AI-Arbitrated Deliberative Discourse (Later)
 
-- Tag thinkers, politicians, and online personalities using the same label library.
-- Show how closely a user's profile aligns with them on shared vocabulary.
-- This is the highest-value, most viral demonstration of why Polytic beats the compass,
-  intentionally ahead of the heavier social/community work.
-
-## Phase 3: Social layer
-
-- Public, shareable profiles, shareable grilling sessions, public prompts people respond
-  to.
-
-## Phase 4: Discourse
-
-- AI-arbitrated asynchronous discussions coordinated by a neutral arbiter, eventually
-  formal and live debates. AIs may draw on these (Community tools, `architecture.md`).
+- **Structured cross-divide discussions and debates:** Two or more users with mapped profiles enter asynchronous or live discussions on a contested topic, moderated by Polytic's clinically neutral arbiter — which uses their mapped profiles to pinpoint root premise disagreements and keep discourse anchored to substance.
