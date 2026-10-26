@@ -30,7 +30,7 @@ why_.
 | `dimension-taxonomy.md` | The model for Polytic's political axes (source-of-truth asset).             |
 | `label-library.md`      | The model for the label catalog verdicts anchor to (source-of-truth asset). |
 | `roadmap.md`            | v1 (the chat) through Phase 4.                                              |
-| `framework.md`          | Research brief for the theory behind the method; open questions.            |
+| `framework.md`          | The model of a belief system: Dimensions, Beliefs, Tensions, Labels.        |
 | `architecture.md`       | How the chat works (mermaid diagrams), plus direction under consideration.  |
 | `glossary.md`           | Canonical terms (Polytic Party, Session, Finding, Verdict, …).              |
 | `adrs/`                 | Architecture decision records, `NNNN-slug.md`. Commitments only.            |

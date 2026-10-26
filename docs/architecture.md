@@ -67,13 +67,13 @@ here so later decisions can accept, change, or reject it explicitly (with an ADR
 ### The case file: notes recorded as tool calls
 
 Long sessions are the biggest risk: models forget and drop the thread. The idea: after
-each answer, the interviewer records what it learned through tools (`record_finding`,
+each answer, the interviewer records what it learned through tools (`record_belief`,
 `flag_tension`, …). Those tool calls live in the transcript, so **the notes are the
-transcript**. Replaying them rebuilds a **case file** (findings, tensions, open topics,
+transcript**. Replaying them rebuilds a **case file** (Beliefs, Tensions, Off-map Beliefs,
 coverage) without any database, which fits browser-only storage. A future live profile
 panel and saved profiles would display the same case file.
 
-What a finding contains depends on the framework theory (`framework.md`).
+What gets recorded is defined in `framework.md`.
 
 ```mermaid
 flowchart LR
@@ -95,7 +95,7 @@ verdict tool doesn't exist until the coverage gate is met.
 stateDiagram-v2
     [*] --> Anchor
     Anchor --> Sweep: region + worldview recorded
-    Sweep --> Sweep: advance_area (guard: area has a substantive finding)
+    Sweep --> Sweep: advance_area (guard: area has a substantive Belief)
     Sweep --> StressTests: all areas covered
     StressTests --> Verdict: gate met
     Anchor --> PartialVerdict: user ends early
@@ -112,7 +112,7 @@ declares its group, whether it reads or writes, and which phases it's available 
 
 | Group     | Purpose                                                 | When     |
 | --------- | ------------------------------------------------------- | -------- |
-| Record    | Write to the case file (findings, tensions, coverage)   | Proposed |
+| Record    | Write to the case file (Beliefs, Tensions, coverage)    | Proposed |
 | Reference | Read framework material on demand (dimensions, labels)  | Proposed |
 | Control   | Move between phases, end early, the gated verdict       | Proposed |
 | Profile   | Read a logged-in user's saved profile and past sessions | Future   |

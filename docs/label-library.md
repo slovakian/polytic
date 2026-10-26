@@ -19,8 +19,13 @@ authored intentionally and versioned in this repo, alongside `dimension-taxonomy
 
 ## What each label entry should carry
 
+What a Label is, and how a person is matched to it, is defined in `framework.md`.
+
 - The term and a clear definition.
-- The dimensions / positions it implies (links to `dimension-taxonomy.md`).
+- Whether it is thick, thin-centered, or a Foundation label.
+- Its Positions on the Dimensions it cares about (links to `dimension-taxonomy.md`).
+- Which of those Dimensions are central to it.
+- How it reasons: how it understands the contested concepts it relies on.
 - Relationships to neighboring labels (parent/child, adjacent, opposed).
 
 ## Status: TODO — compile the real catalog
