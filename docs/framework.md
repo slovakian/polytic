@@ -46,7 +46,7 @@ Reasons and Labels; Converse and Zaller for Epistemic State and ambivalence.
 - **Global skeleton, local flesh.** Dimensions are globally portable; the dilemmas that
   probe them adapt to the person's country and context.
 
-Which Dimensions exist is set in `dimension-taxonomy.md`: 27 Foundation and 50
+Which Dimensions exist is set in `dimension-taxonomy.md`: 28 Foundation and 50
 Political, with a **Core** of 7 and 12 that a first visit's skeleton sweep works
 through, so that any two maps share enough Dimensions to compare. A Belief holds one
 Position per Dimension, so where recognisable traditions answer two parts of a question

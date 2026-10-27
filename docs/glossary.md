@@ -185,11 +185,14 @@ _Avoid_: Deleted belief, overwritten answer
 
 **Label**:
 An established term from the label library, defined by its Positions on the Dimensions
-it cares about, which of those are central to it, and how it reasons. A person carries
-Labels of four kinds: **Main** (fits their overall shape, only if one genuinely does),
-**Area** (fits one region of their map), **Thin** (a thin-centered tradition layered on
-top), and **Foundation** (fits a Foundation Dimension).
-_Avoid_: Tag, type, quadrant
+it cares about, which of those are central to it, and how it reasons. Each Label has one
+fixed **type**: **Ideology** (a full tradition that can describe a whole map), **Thin** (a
+thin-centered tradition that rides on a host Ideology), or **Foundation** (a named
+position on Foundation Dimensions). On a person's Result an Ideology Label is held as
+**Main** (it fits their overall shape, only if one genuinely does) or **Area** (it fits
+one region of their map); that scope belongs to the match, not to the Label. Thin and
+Foundation Labels are never Main.
+_Avoid_: Tag, type (for Main/Area), quadrant, thick (say Ideology)
 
 **Unlisted Tradition**:
 An established political tradition the AI recognizes in a person but that is not in the
