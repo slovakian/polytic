@@ -46,7 +46,7 @@ Reasons and Labels; Converse and Zaller for Epistemic State and ambivalence.
 - **Global skeleton, local flesh.** Dimensions are globally portable; the dilemmas that
   probe them adapt to the person's country and context.
 
-Which Dimensions exist is set in `dimension-taxonomy.md`: 27 Foundation and 50
+Which Dimensions exist is set in `dimension-taxonomy.md`: 28 Foundation and 50
 Political, with a **Core** of 7 and 12 that a first visit's skeleton sweep works
 through, so that any two maps share enough Dimensions to compare. A Belief holds one
 Position per Dimension, so where recognisable traditions answer two parts of a question
@@ -160,8 +160,16 @@ A person carries a **small, scoped set** of Labels, never one forced onto them:
   layered on a host.
 - **Foundation**: fits a Foundation Dimension (e.g. compatibilism, pragmatism).
 
-Which Labels exist is authored in `label-library.md`. How many appear and how they are
-laid out is a Result design question.
+The first two are scopes of a match; the last two are types of Label. Each Label in the
+library has one fixed type (Ideology, Thin, or Foundation); whether an Ideology Label is
+someone's Main or an Area Label is decided when it is matched, so the same Label can be
+one person's Main and another's Area. Thin and Foundation Labels are never Main.
+
+Which Labels exist, and how each card records its Positions (ranges, with central
+Dimensions as dealbreakers) and Reasons, is set in `label-library.md`. When the AI
+recognizes an established tradition the library lacks, the narrative may name it as an
+**Unlisted Tradition**, never as a Label. How many Labels appear and how they are laid
+out is a Result design question.
 
 ## Comparison
 
@@ -183,5 +191,5 @@ where they are furthest apart. The exact formula is an implementation decision.
 
 ## Still open
 
-- The label library and the Reference Figure catalog, which depend on the Dimensions.
+- The Reference Figure catalog, and the cards for most Labels (`label-library.md`).
 - How Beliefs, Tensions, and Labels are laid out on the Result and in a live view.

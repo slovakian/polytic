@@ -1,6 +1,6 @@
 # Dimension taxonomy (source-of-truth asset)
 
-The canonical set of Dimensions Polytic maps people on: **27 Foundation** and **50
+The canonical set of Dimensions Polytic maps people on: **28 Foundation** and **50
 Political**, of which **7 Foundation and 12 Political are Core**. What a Dimension is,
 and how Beliefs on it work, is defined in `framework.md`; terms are in `glossary.md`.
 
@@ -81,7 +81,7 @@ Two are fixed here because the owner asked for them by name:
 
 ---
 
-## Foundation Dimensions (27)
+## Foundation Dimensions (28)
 
 The philosophy beneath politics: what the person takes to be real, knowable, and good,
 including their own ethic for living. Each earns its place by bearing on Political
@@ -229,6 +229,21 @@ Dimensions.
 - **Lineage:** Durkheim 1912; Eliade 1957; Kant (price vs. dignity); Tetlock 2003;
   Radin 1996; Sandel 2012 / Becker 1976.
 - **Bears on:** Moral limits of markets, Life and body, Land and natural resources.
+
+#### Self-interest or duty to others
+
+- **Poles:** Rational self-interest ↔ Owing yourself to others
+- **Definition:** Is pursuing your own flourishing the moral purpose of your life, or do
+  you fundamentally owe your life, at least in part, to serving others?
+- **Lineage:** Stirner 1844; Comte (coined "altruism"); Sidgwick 1874; Kropotkin 1902;
+  Rand 1964; Rachels 1971; Shaver, "Egoism" (_Stanford Encyclopedia of Philosophy_).
+- **Bears on:** Welfare and social insurance, Distribution, Reciprocity in support,
+  Citizenship: rights vs. duties.
+- **Note:** Added in
+  [Author the label library](https://github.com/slovakian/polytic/issues/27): without it
+  Objectivism and Stirnerian egoism are indistinguishable from other small-state
+  traditions. Kept apart from _Moral circle_, which asks whose interests count (near or
+  far), not whether your own life is your highest moral purpose.
 
 ### Who counts
 
@@ -407,11 +422,18 @@ What society should do, collectively or by law.
 
 - **Poles:** Public direction ↔ Market coordination
 - **Definition:** Should the economy be coordinated mainly through prices and
-  competition, or through deliberate public direction (ownership, planning, industrial
-  policy, heavy regulation)?
-- **Lineage:** Mises 1920; Lange 1936; Polanyi 1944; Hayek 1945; Hall & Soskice 2001.
+  competition, or through deliberate collective direction (ownership, planning,
+  industrial policy, heavy regulation), whether by the state or by councils, communes,
+  and federations?
+- **Lineage:** Mises 1920; Lange 1936; Polanyi 1944; Hayek 1945; Kropotkin 1892; Hall &
+  Soskice 2001.
 - **Facets:** Ownership of key sectors; industrial policy; price controls; regulatory
-  intensity; public vs. private delivery.
+  intensity; public vs. private delivery; non-state planning (councils, federated
+  communes).
+- **Note:** Whether the direction comes from a state is measured by _Political
+  authority_, so anarcho-communists and state socialists share this Pole and part on
+  that one (widened in
+  [Author the label library](https://github.com/slovakian/polytic/issues/27)).
 
 #### Property in capital and goods
 
@@ -686,7 +708,7 @@ What society should do, collectively or by law.
 - **Lineage:** Hobbes 1651 / Kropotkin 1892; Wolff 1970; Rothbard 1973; D. Friedman 1973;
   Simmons 1979; Huemer 2013.
 - **Facets:** Minimal state; market anarchism; communist anarchism; political
-  obligation.
+  obligation; exit and competing jurisdictions (charter cities, network states).
 - **Note:** Lets anarchists be described as a position, not as the far end of other
   Dimensions.
 
