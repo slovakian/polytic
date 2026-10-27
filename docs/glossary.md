@@ -191,6 +191,13 @@ Labels of four kinds: **Main** (fits their overall shape, only if one genuinely 
 top), and **Foundation** (fits a Foundation Dimension).
 _Avoid_: Tag, type, quadrant
 
+**Unlisted Tradition**:
+An established political tradition the AI recognizes in a person but that is not in the
+label library. The Result's narrative may name it, marked as the AI's suggestion rather
+than Polytic's. It is never shown as a Label and is excluded from comparison. It must be
+a real, established term, never a coinage presented as a tradition.
+_Avoid_: Custom label, coined label, AI label
+
 **Reference Figure**:
 A historical or contemporary political thinker, philosopher, or public figure whose
 worldview is encoded with the same Worldview Model as a user (hand-encoded in Stage 1,
