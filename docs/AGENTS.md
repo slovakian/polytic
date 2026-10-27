@@ -31,7 +31,7 @@ why_.
 | `label-library.md`      | The model for the label catalog Results anchor to (source-of-truth asset). |
 | `roadmap.md`            | Stage 1 (current focus) through Stage 3.                                   |
 | `framework.md`          | The model of a belief system: Dimensions, Beliefs, Tensions, Labels.       |
-| `architecture.md`       | How the chat works (mermaid diagrams), plus direction under consideration. |
+| `architecture.md`       | How a grilling session runs behind the scenes (mermaid diagrams).          |
 | `glossary.md`           | Canonical terms (Worldview, Dimension, Belief, Tension, Result, …).        |
 | `adrs/`                 | Architecture decision records, `NNNN-slug.md`. Commitments only.           |
 | `research/`             | Literature surveys feeding decisions. Input, not decisions.                |

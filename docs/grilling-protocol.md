@@ -15,7 +15,7 @@ Polytic strictly separates **what it knows/infers about a user's politics** from
 
 Polytic lives exclusively in the first-party web application (`polytic.party`).
 
-- **No distributable agent skill:** We do not maintain a standalone markdown skill (`skills/polytic-party`) for third-party chat clients. Owning the full delivery surface in the web app ensures complete control over model selection, RLHF de-biasing (**Clinical Agnosticism**), structured state tracking, TanStack AI suggestions, and interactive checkpoint **Results**.
+- **No distributable agent skill:** We do not maintain a standalone markdown skill (`skills/polytic-party`) for third-party chat clients. Owning the full delivery surface in the web app ensures complete control over model selection, RLHF de-biasing (**Clinical Agnosticism**), structured state tracking, steering suggestions, and interactive checkpoint **Results**.
 
 ## 3. Session Flow & User Steering: "Follow the Heat, Then Bridge the Skeleton"
 
@@ -57,7 +57,7 @@ Instead of cutting off every topic after an arbitrary number of turns, the AI ev
 - **When to move on fast (1–2 turns):** The user's underlying principle and dividing line are already clear, _or_ the user is **Open** (unsettled) and further probing would only manufacture a fake attitude.
 - **When to stay and go deeper:** Two cherished principles are actively colliding and another surgical question will clarify the fault line, _or_ the user is actively leaning in (asking questions back, requesting pushback, or working through a live tension).
 
-## 5. Input Mechanics & TanStack AI Suggestions Ruleset
+## 5. Input Mechanics & Suggestions Ruleset
 
 - **Modality:** Text input in v1 (no voice input in v1).
 - **Core Rule:** Substantive political beliefs, values, and justifications must **always** be articulated in the user's own words. Suggestions exist to steer the interviewer and reduce navigation friction — never to put political opinions in the user's mouth.
@@ -68,7 +68,7 @@ Instead of cutting off every topic after an arbitrary number of turns, the AI ev
 - Pre-baked compromises when confronting a **Tension** (e.g., `"Balance both case by case"`).
 - Ideologically leading or biased framings.
 
-### Permitted Suggestions (Rendered via TanStack AI)
+### Permitted Suggestions (a fixed list, chosen by code; see `architecture.md`)
 
 1. **Context & Unpacking:** `"Unpack the trade-offs here"`, `"Steelman both sides"`, `"Give me a concrete example"`
 2. **Epistemic Honesty & Skipping:** `"I'm genuinely torn on this"`, `"Haven't thought much about this — skip"`

@@ -6,7 +6,7 @@ status: accepted
 
 While clickable suggestions in a chat interface reduce navigation friction, naive suggestions risk collapsing Socratic grilling back into a shallow multiple-choice quiz and anchoring the user's answers.
 
-We resolve that tension with a strict ruleset rendered natively via TanStack AI's suggestions capability:
+We resolve that tension with a strict ruleset enforced by construction: every suggestion comes from a fixed list we write and review, chosen by code for the moment, never written by the AI ([Decide how a grilling session runs behind the scenes](https://github.com/slovakian/polytic/issues/32), `docs/architecture.md`):
 
 ## Core Principle
 
