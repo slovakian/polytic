@@ -64,6 +64,18 @@ where several Dimensions collide. Issues are probed with Diagnostic Dilemmas and
 recorded on the Dimensions they test; they are never Dimensions themselves.
 _Avoid_: Topic dimension, policy axis
 
+**Dilemma Skeleton**:
+The pre-written core of a Diagnostic Dilemma: the two Poles that collide, a scenario
+with no country attached, and the strongest case for each side, written evenly. The
+grill dresses it in the person's own country; it never changes the collision or either
+side's case.
+_Avoid_: Dilemma template, question bank
+
+**Turn Brief**:
+The single move the grill makes next (probe with a dilemma, mirror and bridge, raise a
+Tension, mark Open and advance, unpack, or offer the Result), with the Dimension or
+Tension it concerns.
+
 **Micro-Mirror**:
 A crisp, one-sentence reflection delivered as the AI transitions between topics,
 articulating the exact principle, dividing line, or tension the user just expressed
@@ -150,6 +162,12 @@ by Polytic without nudging the user toward a resolution. Its status is **Reconci
 (the person gave a Bridge), **Unresolved** (the person holds both and feels the
 conflict), or **Not yet discussed**.
 _Avoid_: Clash, contradiction, error, wrong answer, inconsistency penalty
+
+**Case File**:
+Everything the grill has recorded about a person so far: their Beliefs, Tensions,
+Off-map Beliefs, and Coverage. It is always rebuilt from what was recorded turn by turn,
+never kept as a separate record.
+_Avoid_: Profile (that is the Living Profile), scorecard
 
 **Bridge**:
 The person's reason that two things which look opposed fit together: the in-principle

@@ -1,131 +1,216 @@
 # Architecture
 
-How the Polytic Party chat works. The first part describes **v1 as decided**
-(`docs/adrs/`). The second part records **direction under consideration**: ideas we
-expect to need, written down so the thinking isn't lost, but **not committed and not
-built**. Terms are defined in `glossary.md`.
+How a v1 grilling session runs behind the scenes. Decided in
+[Decide how a grilling session runs behind the scenes](https://github.com/slovakian/polytic/issues/32);
+the core commitment is ADR-0010. Terms are defined in `glossary.md`; what is recorded
+about a person is defined in `framework.md`; the conversation's shape is in
+`grilling-protocol.md`.
 
-## v1: a simple chat
+## The idea in one paragraph
 
-One chat route in the TanStack Start app (`apps/web`), one server endpoint, one system
-prompt. TanStack AI handles the chat loop on the server (`chat()` streamed back as
-server-sent events) and the client (`useChat`). The transcript is persisted in the
-browser only (ADR-0004).
+Two small AIs share every turn, and **code directs**. A **Note-taker** reads the
+person's latest answer and records what it showed as a list of changes. Code replays
+those changes into the **Case File**, works out where the session stands, and checks
+the Note-taker's suggested next move against the moves it allows. An **Interviewer**
+then receives a one-line **Turn Brief** and only writes the words. Nothing is stored on
+our servers: the notes travel inside the conversation, which lives in the browser.
+
+The binding constraint is the shared free quota (1,000 model calls a day,
+`docs/research/free-model-live-testing.md`). Every model call is budgeted: about **2 per
+turn** and **2 per Result**, so roughly 26–30 per first visit and 33–38 first visits a
+day. Anything that adds a call per turn (model-chosen tool loops, skill loading, a
+per-turn checker) has to earn it.
+
+## One turn
 
 ```mermaid
 sequenceDiagram
-    actor U as User
-    participant B as Browser (useChat)
-    participant S as Server endpoint (chat())
-    participant O as OpenRouter
-    participant M as Model (from curated pool)
+    actor P as Person
+    participant B as Browser (useChat + session engine)
+    participant S as Server (chat() with subagents)
+    participant N as Note-taker
+    participant I as Interviewer
 
-    U->>B: types an answer
-    B->>B: save transcript to browser storage
-    B->>S: POST transcript
-    S->>S: build system prompt from skill references
-    S->>S: pick a model from the pool
-    S->>O: request
-    O->>M: route to provider
-    M-->>S: streamed reply
-    S-->>B: server-sent events
-    B-->>U: next question (or the verdict card)
+    P->>B: answers
+    B->>S: conversation (notes included)
+    S->>S: session engine replays notes → Case File, phase, allowed moves
+    S->>N: latest exchange + compact Case File + index of all Dimensions
+    N-->>S: changes + suggested move (structured output)
+    S->>S: check move is allowed, else default; build Turn Brief
+    S-->>B: changes (custom event)
+    S->>I: Turn Brief + last ~3 exchanges + referenced Case File items
+    I-->>B: reply (streamed)
+    B->>B: store changes in the conversation; show buttons for the new state
 ```
 
-- **System prompt.** Assembled from the skill's protocol, taxonomy, and label references,
-  which are the framework's source of truth (ADR-0005). The grill follows the same
-  protocol as the skill: anchor, skeleton sweep, stress-tests, then the verdict gate.
-- **Models.** A curated pool of free and very cheap reasoning models via OpenRouter, with
-  automatic selection from the pool (ADR-0003).
-- **Verdict.** Delivered as the final chat message in the skill's verdict format, rendered
-  as a distinct card with copy and download (ADR-0001).
-- **Storage.** None on our servers. The browser holds the session.
+- **Note-taker first, then Interviewer.** Protocol moves (raise a Tension, mark Open and
+  advance, bridge once a principle is clear) have to happen on the turn they arise.
+  A "thinking" indicator covers the 1–3 second wait.
+- **Clicks skip the Note-taker.** Every button maps to a known action ("Skip" records
+  Open and advances; "Push me harder" asks for a harder probe), so code builds the Turn
+  Brief directly and the turn costs one call.
 
-### Session lifecycle (v1)
+## Notes and the Case File
 
-```mermaid
-flowchart LR
-    Home[Home: pitch + disclosure] -->|Start| Chat[Chat route]
-    Chat -->|grill turns| Chat
-    Chat -->|gate met, or user ends early| Verdict[Verdict card]
-    Verdict --> Copy[Copy / download]
-    Verdict -->|start over| Chat
-```
+- The Note-taker writes **changes**, never a fresh copy of the notes: "add a Belief on
+  _Markets vs. planning_", "set Pull", "open a Tension between X and Y", "record an
+  Off-map Belief". A small model rewriting twenty Beliefs every turn would silently drop
+  one.
+- The changes are stored **inside the conversation**, attached to the turn that produced
+  them. The **Case File** (Beliefs, Tensions, Off-map Beliefs, Coverage) is never saved
+  on its own; it is always rebuilt by replaying the changes in order. One stored thing
+  cannot drift out of sync with another, deepening extends the same conversation,
+  dropping a turn drops its notes, and every Belief points back to the turn holding its
+  Evidence.
+- **Each AI sees a view built for its job**, never the whole conversation by default:
 
-### Open items for v1
+  | Role          | Sees                                                                                   |
+  | ------------- | -------------------------------------------------------------------------------------- |
+  | Note-taker    | Latest exchange, compact Case File, short index of all Dimensions, focus handbooks     |
+  | Interviewer   | Turn Brief, last ~3 exchanges verbatim, Case File items the brief names, its handbooks |
+  | Label Judge   | Shortlisted Label cards, the person's Reasons and Evidence                             |
+  | Result Writer | Chosen Labels, code's Closest Thinker results, Case File with the Evidence it needs    |
 
-- **Rate limiting and abuse control** for a login-free public chat. Undecided. Candidates
-  include a bot check at session start, per-IP limits, and per-session turn/token caps.
-- **Suggested answers.** v1 is free text only. How (and whether) to offer predetermined
-  answers without turning the grill into a quiz is open.
+  The Case File is the AIs' long-term memory, which keeps turn 30 as sharp as turn 3
+  and sends less of the person's text to third-party models. The browser still holds
+  and shows the full conversation.
 
-## Direction under consideration
+## Code directs: the session engine
 
-None of this is decided. It is the shape we currently expect the chat to grow into, kept
-here so later decisions can accept, change, or reject it explicitly (with an ADR).
+The **session engine** is one pure module, the same file in browser and server:
+notes → Case File → phase, allowed moves, buttons, Result unlock. Because it is a
+calculation over the conversation, there is nothing to store or sync, and browser and
+server cannot disagree. The server recomputes it from what the browser sends; forged
+notes could only change the forger's own Result.
 
-### The case file: notes recorded as tool calls
+**Phases**: Anchor → Sweep (Core first) → Result → Deepening, as in
+`grilling-protocol.md`.
 
-Long sessions are the biggest risk: models forget and drop the thread. The idea: after
-each answer, the interviewer records what it learned through tools (`record_belief`,
-`flag_tension`, …). Those tool calls live in the transcript, so **the notes are the
-transcript**. Replaying them rebuilds a **case file** (Beliefs, Tensions, Off-map Beliefs,
-coverage) without any database, which fits browser-only storage. A future live profile
-panel and saved profiles would display the same case file.
+**Moves** (one per turn): probe with a Diagnostic Dilemma; Micro-Mirror and bridge to a
+Dimension; raise a Tension; mark Open and advance; unpack or steelman on request; offer
+the Result. Code lists the allowed moves for the current state, the Note-taker suggests
+one (bridging needs judgement code can't make), code checks it and falls back to a
+default, and the Interviewer gets the resulting Turn Brief. Small models never hold the
+structure.
 
-What gets recorded is defined in `framework.md`.
+**Anchor**: the country comes from a searchable picker rendered in the chat flow, with
+"Prefer not to say" (dilemmas then stay generic). The opening thread is free text in the
+person's own words, with fixed topic-name buttons ("the economy", "immigration") as a
+fallback. The first model call happens after both.
 
-```mermaid
-flowchart LR
-    T[Transcript] -->|replay tool calls| CF[Case file]
-    CF --> P[Phase + coverage]
-    CF -.future.-> Live[Live profile panel]
-    CF -.future.-> Prof[Saved profile]
-```
+**Result unlock** (starting values, tuned on real sessions):
 
-### Code enforces structure, the model does the talking
+- unlocks at **≥ 10 turns and ≥ 8 of the 19 Core Dimensions at Solid Coverage**. A
+  Dimension where the person is Open still counts: Coverage measures the asking, not
+  whether they had a view;
+- **soft cap** around turn 16: the Result is offered even if coverage is short;
+- **"Give me my Result now"** always works, and the Result is honest about what was
+  not covered (Thin and Not asked are already excluded from Labels and Closest Thinkers).
 
-Prompt-only rules ("at least 20 answers, every area visited") are what cheap models
-break. The idea: a small state machine, computed from the case file by the same shared
-code in browser and server, decides the phase and which tools the model can see. The
-model **proposes** transitions through control tools; **guards in code decide**. The
-verdict tool doesn't exist until the coverage gate is met.
+**Deepening** runs for as long as the person wants. Once the chosen Dimension or Tension
+is covered, a "Back to my Result" button appears and the Interviewer offers it once.
+The Result rebuilds only on return.
 
-```mermaid
-stateDiagram-v2
-    [*] --> Anchor
-    Anchor --> Sweep: region + worldview recorded
-    Sweep --> Sweep: advance_area (guard: area has a substantive Belief)
-    Sweep --> StressTests: all areas covered
-    StressTests --> Verdict: gate met
-    Anchor --> PartialVerdict: user ends early
-    Sweep --> PartialVerdict: user ends early
-    StressTests --> PartialVerdict: user ends early
-    Verdict --> [*]
-    PartialVerdict --> [*]
-```
+**Screen state** is separate. What the person can do right now (type, wait, stream,
+choose-only for the picker or Tension triage, retry after an error) is event-driven, so
+it is an XState machine in the browser only, never part of the session engine.
 
-### Tool groups
+## Buttons
 
-A fixed set of groups so the toolset can grow without becoming a flat pile. Each tool
-declares its group, whether it reads or writes, and which phases it's available in.
+Every clickable control comes from a **fixed list we wrote and reviewed** (ADR-0007),
+chosen by the session engine from the phase and Turn Brief, with Dimension and Tension
+names filled in from the Case File. The AI never writes buttons, so ADR-0007's
+forbidden suggestions are impossible by construction and cost no calls. When the Turn
+Brief raises a Tension, the triage card (_fits, because…_ / _I'm torn_ / _not now_)
+replaces the usual buttons.
 
-| Group     | Purpose                                                 | When     |
-| --------- | ------------------------------------------------------- | -------- |
-| Record    | Write to the case file (Beliefs, Tensions, coverage)    | Proposed |
-| Reference | Read framework material on demand (dimensions, labels)  | Proposed |
-| Control   | Move between phases, end early, the gated verdict       | Proposed |
-| Profile   | Read a logged-in user's saved profile and past sessions | Future   |
-| Community | Discussions, summaries across users, formal debates     | Future   |
+## Reference material as skills
 
-### Verdict: same thread or its own call
+The Dimension taxonomy, protocol moves, tone rules, and Label cards are too large for a
+small model's prompt. Each is written **in skill format**: one handbook per Dimension,
+per move, per Label, and one for tone and Clinical Agnosticism. In v1 **code chooses**
+which handbooks to load from the Turn Brief, which costs no calls and can't be
+forgotten. Because they are real skills, any of them can later be handed to a model to
+open itself (`@tanstack/ai-skills`) without rewriting the content.
 
-Whether the verdict is written by the interviewer in the same thread or by a separate
-call (possibly a stronger model) over the transcript and case file is **open**. A single
-thread can likely do it once the gate is enforced. Either way the verdict is a distinct,
-gated step, so switching later is cheap. v1 uses the same thread.
+Each Dimension handbook carries 2–3 **Dilemma Skeletons**: the two Poles that collide,
+a country-free scenario, the strongest case for each side written evenly, and any
+special rules (_Force in domestic politics_ stays historical or abstract; the fixed
+abortion and medical-transition-for-minors dilemmas in the taxonomy are used as
+written). The Interviewer only localises a skeleton to the person's country; it never
+invents the collision or either side's best argument.
 
-### Privacy mode
+## The Result
 
-A user-selectable mode that restricts model selection to providers that don't train on
-or retain prompts (ADR-0004).
+| Part                         | Code                                                              | AI                                                                          |
+| ---------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Dimensions ordered by Pull   | All of it                                                         |                                                                             |
+| Labels                       | Score Positions, rule out central-Dimension misses, shortlist ~10 | **Label Judge**: do the Reasons fit? Main / Area / Thin / Foundation / none |
+| Closest Thinkers, Divergence | Pull-weighted closeness, top 2–3, each Divergence                 | Phrase why they align and the Divergence                                    |
+| Headline and narrative       |                                                                   | **Result Writer** (may name Unlisted Traditions)                            |
+| Tensions, Off-map Beliefs    | Read from the Case File                                           |                                                                             |
+
+The Label Judge runs before the Result Writer so the narrative describes the Labels
+actually chosen. The two-step Label funnel is the one `label-library.md` is built for.
+The same pipeline reruns after each round of deepening.
+
+## Models
+
+One config table maps each role to an ordered list of models and settings, so swapping
+a model (including for a cheap paid open-source one, which ADR-0003 allows) is a
+config change.
+
+| Role          | Model                                | Reasoning | Why                                        |
+| ------------- | ------------------------------------ | --------- | ------------------------------------------ |
+| Note-taker    | `nvidia/nemotron-3.5-lightning:free` | off       | Fills a form; the person is waiting        |
+| Interviewer   | `nvidia/nemotron-3.5-lightning:free` | off       | The thinking happened in the Turn Brief    |
+| Label Judge   | `nvidia/nemotron-3.5-lightning:free` | on        | Once per Result; hard judgement            |
+| Result Writer | `nvidia/nemotron-3.5-lightning:free` | on        | Once per Result; the writing is the payoff |
+
+On failure: retry once, then `google/gemma-4-31b-it:free`, then
+`google/gemma-4-26b-a4b-it:free`, then an honest "busy, try again in a minute".
+**Never `openrouter/free`**: it breaks strict forms and means we wouldn't know which
+model is talking (ADR-0003). Reasoning-on roles need `max_tokens ≥ 2500`.
+
+## Holding Clinical Agnosticism
+
+- **Structure first.** The Interviewer only carries out a narrow Turn Brief; dilemmas
+  and steelmen come from reviewed skeletons; the tone handbook is always loaded.
+- **A neutrality test bench gates every change.** Before any prompt, handbook, or model
+  change ships, a fixed set of personas from across the spectrum gives matching answers,
+  and the outputs are compared for equal pushback, no praise, no one-sided disclaimers,
+  and equally strong steelmen. Model lean is systematic, so testing catches it better
+  than runtime checks.
+- **A code tripwire at runtime**, pattern-matching the protocol's banned forms (praise
+  openers, lecture preambles). No AI checker per turn: it would cost a call per turn,
+  block streaming, and a small model judging neutrality is itself unreliable. With
+  nothing stored server-side, a trip can only be counted anonymously or the turn
+  retried.
+
+## Built on TanStack AI
+
+Each role is a `defineAgent` subagent. The session engine is the `chat({ subagents,
+router })` **router**, so code, not a model, decides which agent runs. The Note-taker
+and Label Judge use structured output. Changes reach the browser as custom stream
+events and are saved into the conversation. The country picker and Tension triage are
+interrupts or browser-side tools. The client uses `useChat` with browser persistence;
+middleware handles model fallback and the tripwire.
+
+Browser-side tools are not used for reading or writing notes: the browser already sends
+the whole conversation, and a model deciding when to fetch or save is the failure this
+design removes.
+
+New roles later (a debate moderator in Stage 3) are new agents plus a router rule.
+
+**First build step:** a one-turn spike proving Note-taker → code → Interviewer end to
+end on these primitives, including how the router hands the Note-taker's result to the
+Interviewer. If a detail doesn't fit, keep this shape and add the smallest glue for
+that gap.
+
+## Not decided here
+
+- Abuse limits and quota protection:
+  [Decide v1 abuse limits and free-quota protection](https://github.com/slovakian/polytic/issues/33).
+- The privacy disclosure for Nvidia and Google logging prompts (ADR-0004).
+- Exact formulas (Label position scoring, Closest Thinker closeness) and the Note-taker's
+  change types: implementation, bound by `framework.md`.
