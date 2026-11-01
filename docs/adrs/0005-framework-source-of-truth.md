@@ -10,3 +10,5 @@ As resolved in [Determine the core user experience and interaction mechanics](ht
 
 1. **First-party web app only (`polytic.party`).** We are retiring the standalone distributable agent skill. Polytic lives exclusively in our first-party web application, where we control model orchestration, RLHF de-biasing (**Clinical Agnosticism**), TanStack AI suggestions, and interactive checkpoint **Results**.
 2. **Framework as structured source of truth.** The dimension taxonomy and label library live as canonical, structured source-of-truth assets inside the monorepo rather than prose files synced into a skill folder.
+
+_Note: ADR-0010 later decided that the grill's reference material (Dimension, move, tone, and Label handbooks) is written in skill format and loaded by the app's code. That is internal packaging of the source-of-truth assets, not a return to a distributable skill._

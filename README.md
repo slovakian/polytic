@@ -1,16 +1,20 @@
 # polytic
 
-**Polytic** helps people understand their own politics in high resolution — an AI that
-_grills_ you and delivers a nuanced verdict, not a crude compass score.
+**Polytic** helps people understand their own politics in high resolution. An AI
+_grills_ you, asking, challenging, and testing the coherence of your views, then maps
+you on dozens of Dimensions in the established language of political thought instead
+of giving you a compass score.
 
-This repo is the **Polytic Party chat app**. It also hosts the distributable grilling skill
-in `skills/polytic-party/`:
+This repo is **Polytic Party** (polytic.party), the web app. v1 is the anonymous first
+visit: no login, a grilling chat on free models via OpenRouter, and an animated,
+screenshot-worthy **Result** page at the end. Nothing about the person is stored on our
+servers, and there are no share links.
 
-```bash
-npx skills add slovakian/polytic
-```
+`skills/polytic-party/` holds the old distributable grilling skill, which is retired
+(`docs/adrs/0005`) and will be removed.
 
-See `AGENTS.md`, `docs/`, and `skills/README.md` for product detail and maintainer workflow.
+See `AGENTS.md` and `docs/` (start at `docs/AGENTS.md`) for the product, its
+principles, and the architecture.
 
 ---
 
@@ -23,7 +27,7 @@ This project was created with [Better-T-Stack](https://github.com/AmanVarshney01
 - **TanStack Start** - Full-stack React framework with SSR and TanStack Router
 - **TailwindCSS** - Utility-first CSS for rapid UI development
 - **Shared UI package** - shadcn/ui primitives live in `packages/ui`
-- **Skills package** - Consumer-facing AI skills live in `skills`
+- **Skills package** - The retired distributable skill lives in `skills` until it is removed
 - **Prisma** - TypeScript-first ORM with Neon serverless Postgres
 - **Oxlint & Oxfmt** - Fast Rust-based linting and formatting with anti-slop rules
 

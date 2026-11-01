@@ -127,7 +127,8 @@ revision by the project owner, never on the fly.
 The AI records an Off-map Belief without interrupting, and surfaces it in a notice that
 doesn't block the conversation and can be confirmed or corrected in one click, until the
 person opts out ("don't ask again"). It stops to ask only when it genuinely can't tell
-what the person meant, the same rule as for any Belief.
+what the person meant, the same rule as for any Belief. v1 leaves the notice out:
+Off-map Beliefs are recorded and shown on the Result only (`roadmap.md`).
 
 ## Values and moral psychology
 
@@ -192,4 +193,5 @@ where they are furthest apart. The exact formula is an implementation decision.
 ## Still open
 
 - The Reference Figure catalog, and the cards for most Labels (`label-library.md`).
-- How Beliefs, Tensions, and Labels are laid out on the Result and in a live view.
+- A live view of Beliefs during the grill (not in v1). The Result's layout is set in
+  `roadmap.md`.

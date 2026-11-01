@@ -28,7 +28,7 @@ Polytic is built first for the **reflective, politically curious, or cross-press
 
 ## Product lifecycle: one-shot hook to living profile
 
-Polytic combines the immediate gratification of a standalone diagnostic with the cumulative depth of a persistent personal profile:
+Polytic combines the immediate gratification of a standalone diagnostic with the cumulative depth of a persistent personal profile. The first build (v1) is only the first step below, the zero-wall first session, with nothing stored on our servers and no share links; the rest follows it (ADR-0009, `roadmap.md`):
 
 1. **Zero-wall first session:** A new user enters directly into their first grilling session with zero signup wall and receives a complete **Result** at the end — including their anchored political labels, narrative synthesis, and their **Closest Thinkers** (matched against a curated catalog of historical and contemporary figures, highlighting both where they align and their primary point of divergence).
 2. **Claiming a Living Profile:** At the end of the first session, the user can optionally create an account to save their result as a **Living Profile**. Profiles are **private by default** so users never self-censor during grilling, with a clear prompt encouraging them to make their profile public or share their Result link.
