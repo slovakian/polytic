@@ -504,62 +504,67 @@ given by the heading.
 
 ### Foundation Labels
 
-| Label                                  | Type       | Parent | Gist                                                                                                                                         |
-| -------------------------------------- | ---------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Libertarian free will                  | Foundation | —      | Free choices are not fixed by prior causes; agents originate them.                                                                           |
-| Compatibilism                          | Foundation | —      | Freedom and responsibility are compatible with determinism.                                                                                  |
-| Free-will skepticism                   | Foundation | —      | No one has the control basic desert requires.                                                                                                |
-| Meritocratic desert                    | Foundation | —      | People deserve the rewards of their talent and effort.                                                                                       |
-| Luck egalitarianism                    | Foundation | —      | Inequalities from brute luck are unjust; those from choice may not be.                                                                       |
-| Constrained vision                     | Foundation | —      | Human limits are permanent; institutions must work with them, not perfect people. Covers Augustinian and Hobbesian views.                    |
-| Unconstrained vision                   | Foundation | —      | Reason and better institutions can substantially improve human beings.                                                                       |
-| Christian realism                      | Foundation | —      | Sin makes collective life a realm of power, so justice needs balanced power, not idealism.                                                   |
-| Social constructionism                 | Foundation | —      | Many human differences and categories are produced by social arrangements.                                                                   |
-| Psychological nativism                 | Foundation | —      | Many individual differences have substantial biological, heritable bases.                                                                    |
-| Hereditarianism                        | Foundation | —      | Race is a biological reality and average group differences in traits are partly genetic.                                                     |
-| Racial constructivism                  | Foundation | —      | Race is a social construction; group differences are produced by history and environment.                                                    |
-| Moral realism                          | Foundation | —      | Some moral claims are true independent of anyone's attitudes.                                                                                |
-| Moral constructivism                   | Foundation | —      | Moral truths are what rational agents would construct or agree to from a proper standpoint.                                                  |
-| Moral anti-realism                     | Foundation | —      | Moral claims express attitudes, are all false, or are true only relative to cultures.                                                        |
-| Divine command theory                  | Foundation | —      | Moral obligation is constituted by God's commands.                                                                                           |
-| Natural law                            | Foundation | —      | Morality follows from human nature and basic goods, knowable by reason.                                                                      |
-| Social contract theory                 | Foundation | —      | Moral and political principles are those people would agree to.                                                                              |
-| Utilitarianism                         | Foundation | —      | The right act produces the best overall outcome, usually the greatest well-being.                                                            |
-| Deontology                             | Foundation | —      | Some acts are forbidden whatever the consequences; persons are never mere means. Covers threshold deontology and side-constraints.           |
-| Virtue ethics                          | Foundation | —      | Ethics centres on character and flourishing rather than rules or outcomes.                                                                   |
-| Value pluralism                        | Foundation | —      | Genuine values are many, conflicting and sometimes incommensurable.                                                                          |
-| Impartialism                           | Foundation | —      | Everyone's interests count equally, wherever and whoever they are. _Variants:_ Mohism.                                                       |
-| Moral partialism (special obligations) | Foundation | —      | We rightly owe more to family, friends, community and compatriots.                                                                           |
-| Sentientism                            | Foundation | —      | All sentient beings have moral status in proportion to their capacity to suffer.                                                             |
-| Anthropocentrism                       | Foundation | —      | Nature matters morally only for what it means to humans.                                                                                     |
-| Stewardship                            | Foundation | —      | Humans hold creation in trust and owe care for it.                                                                                           |
-| Ecocentrism                            | Foundation | —      | Ecosystems and species have value of their own. Covers biocentrism (P. Taylor 1986).                                                         |
-| Sanctity of life                       | Foundation | —      | Every human life has inviolable worth from conception to natural death.                                                                      |
-| Personhood view                        | Foundation | —      | Full moral status depends on capacities such as consciousness and self-awareness.                                                            |
-| Natural hierarchy                      | Foundation | —      | People are naturally ranked by ability, virtue or role. Covers Nietzschean aristocratism as an R variant.                                    |
-| Basic moral equality                   | Foundation | —      | All persons are fundamentally equal in worth.                                                                                                |
-| Methodological individualism           | Foundation | —      | Social phenomena are explained by individuals' actions and interactions.                                                                     |
-| Holism (organicism)                    | Foundation | —      | Communities, nations and classes are real wholes with goods of their own.                                                                    |
-| Natural rights                         | Foundation | —      | People have rights, including over themselves, before any law.                                                                               |
-| Rights conventionalism                 | Foundation | —      | Rights are what law and social convention create.                                                                                            |
-| Evidentialism                          | Foundation | —      | It is wrong to believe anything on insufficient evidence.                                                                                    |
-| Critical rationalism                   | Foundation | —      | Knowledge grows by conjecture and refutation; nothing is beyond criticism.                                                                   |
-| Pragmatism                             | Foundation | —      | Beliefs are tools to be judged by their practical consequences in experience.                                                                |
-| Fideism                                | Foundation | —      | Faith is a legitimate ground of belief independent of reason or evidence. Covers reformed epistemology as R.                                 |
-| Standpoint epistemology                | Foundation | —      | Social position shapes knowledge; marginalised standpoints can see what others cannot.                                                       |
-| Burkean traditionalism                 | Foundation | —      | Inherited practices hold tacit knowledge; change bears the burden of proof. Covers Hayek's evolutionary epistemology and Chesterton's fence. |
-| Enlightenment rationalism              | Foundation | —      | Practices earn authority only by passing the test of explicit reason.                                                                        |
-| Theism                                 | Foundation | —      | A personal God exists and grounds meaning and value. _Variants:_ Deism.                                                                      |
-| Agnosticism                            | Foundation | —      | Whether a transcendent reality exists is unknown or unknowable.                                                                              |
-| Naturalism                             | Foundation | —      | Nature is all there is; meaning and morality are human achievements.                                                                         |
-| Progressive view of history            | Foundation | —      | History is broadly a story of moral and material progress.                                                                                   |
-| Declinism                              | Foundation | —      | Civilisations rise and fall in cycles, or the present is a decline from better times.                                                        |
-| Welfare subjectivism                   | Foundation | —      | A life goes well as it contains pleasure or satisfies the person's desires.                                                                  |
-| Objective-list theory                  | Foundation | —      | Some goods (knowledge, friendship, achievement, virtue) are good for anyone.                                                                 |
-| Existentialism                         | Foundation | —      | We are condemned to be free and must author our own commitments.                                                                             |
-| Role ethics                            | Foundation | —      | The good life is the faithful fulfilment of roles and relationships one did not choose.                                                      |
-| Ethical egoism                         | Foundation | —      | Each person ought to pursue their own interest.                                                                                              |
-| Altruism                               | Foundation | —      | A person's life is owed, at least in part, to serving others (Comte's coinage; Christian and humanist ethics of service).                    |
+A Foundation Label has a parent only where every holder of it also fits the parent's
+central Positions on the same question, so the most-specific rule shows just the child
+(decided in
+[Write the Label cards: Foundation Labels](https://github.com/slovakian/polytic/issues/48)).
+
+| Label                                  | Type       | Parent             | Gist                                                                                                                                         |
+| -------------------------------------- | ---------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Libertarian free will                  | Foundation | —                  | Free choices are not fixed by prior causes; agents originate them.                                                                           |
+| Compatibilism                          | Foundation | —                  | Freedom and responsibility are compatible with determinism.                                                                                  |
+| Free-will skepticism                   | Foundation | —                  | No one has the control basic desert requires.                                                                                                |
+| Meritocratic desert                    | Foundation | —                  | People deserve the rewards of their talent and effort.                                                                                       |
+| Luck egalitarianism                    | Foundation | —                  | Inequalities from brute luck are unjust; those from choice may not be.                                                                       |
+| Constrained vision                     | Foundation | —                  | Human limits are permanent; institutions must work with them, not perfect people. Covers Augustinian and Hobbesian views.                    |
+| Unconstrained vision                   | Foundation | —                  | Reason and better institutions can substantially improve human beings.                                                                       |
+| Christian realism                      | Foundation | Constrained vision | Sin makes collective life a realm of power, so justice needs balanced power, not idealism.                                                   |
+| Social constructionism                 | Foundation | —                  | Many human differences and categories are produced by social arrangements.                                                                   |
+| Psychological nativism                 | Foundation | —                  | Many individual differences have substantial biological, heritable bases.                                                                    |
+| Hereditarianism                        | Foundation | —                  | Race is a biological reality and average group differences in traits are partly genetic.                                                     |
+| Racial constructivism                  | Foundation | —                  | Race is a social construction; group differences are produced by history and environment.                                                    |
+| Moral realism                          | Foundation | —                  | Some moral claims are true independent of anyone's attitudes.                                                                                |
+| Moral constructivism                   | Foundation | —                  | Moral truths are what rational agents would construct or agree to from a proper standpoint.                                                  |
+| Moral anti-realism                     | Foundation | —                  | Moral claims express attitudes, are all false, or are true only relative to cultures.                                                        |
+| Divine command theory                  | Foundation | Moral realism      | Moral obligation is constituted by God's commands.                                                                                           |
+| Natural law                            | Foundation | Moral realism      | Morality follows from human nature and basic goods, knowable by reason.                                                                      |
+| Social contract theory                 | Foundation | —                  | Moral and political principles are those people would agree to.                                                                              |
+| Utilitarianism                         | Foundation | —                  | The right act produces the best overall outcome, usually the greatest well-being.                                                            |
+| Deontology                             | Foundation | —                  | Some acts are forbidden whatever the consequences; persons are never mere means. Covers threshold deontology and side-constraints.           |
+| Virtue ethics                          | Foundation | —                  | Ethics centres on character and flourishing rather than rules or outcomes.                                                                   |
+| Value pluralism                        | Foundation | —                  | Genuine values are many, conflicting and sometimes incommensurable.                                                                          |
+| Impartialism                           | Foundation | —                  | Everyone's interests count equally, wherever and whoever they are. _Variants:_ Mohism.                                                       |
+| Moral partialism (special obligations) | Foundation | —                  | We rightly owe more to family, friends, community and compatriots.                                                                           |
+| Sentientism                            | Foundation | —                  | All sentient beings have moral status in proportion to their capacity to suffer.                                                             |
+| Anthropocentrism                       | Foundation | —                  | Nature matters morally only for what it means to humans.                                                                                     |
+| Stewardship                            | Foundation | —                  | Humans hold creation in trust and owe care for it.                                                                                           |
+| Ecocentrism                            | Foundation | —                  | Ecosystems and species have value of their own. Covers biocentrism (P. Taylor 1986).                                                         |
+| Sanctity of life                       | Foundation | —                  | Every human life has inviolable worth from conception to natural death.                                                                      |
+| Personhood view                        | Foundation | —                  | Full moral status depends on capacities such as consciousness and self-awareness.                                                            |
+| Natural hierarchy                      | Foundation | —                  | People are naturally ranked by ability, virtue or role. Covers Nietzschean aristocratism as an R variant.                                    |
+| Basic moral equality                   | Foundation | —                  | All persons are fundamentally equal in worth.                                                                                                |
+| Methodological individualism           | Foundation | —                  | Social phenomena are explained by individuals' actions and interactions.                                                                     |
+| Holism (organicism)                    | Foundation | —                  | Communities, nations and classes are real wholes with goods of their own.                                                                    |
+| Natural rights                         | Foundation | —                  | People have rights, including over themselves, before any law.                                                                               |
+| Rights conventionalism                 | Foundation | —                  | Rights are what law and social convention create.                                                                                            |
+| Evidentialism                          | Foundation | —                  | It is wrong to believe anything on insufficient evidence.                                                                                    |
+| Critical rationalism                   | Foundation | —                  | Knowledge grows by conjecture and refutation; nothing is beyond criticism.                                                                   |
+| Pragmatism                             | Foundation | —                  | Beliefs are tools to be judged by their practical consequences in experience.                                                                |
+| Fideism                                | Foundation | —                  | Faith is a legitimate ground of belief independent of reason or evidence. Covers reformed epistemology as R.                                 |
+| Standpoint epistemology                | Foundation | —                  | Social position shapes knowledge; marginalised standpoints can see what others cannot.                                                       |
+| Burkean traditionalism                 | Foundation | —                  | Inherited practices hold tacit knowledge; change bears the burden of proof. Covers Hayek's evolutionary epistemology and Chesterton's fence. |
+| Enlightenment rationalism              | Foundation | —                  | Practices earn authority only by passing the test of explicit reason.                                                                        |
+| Theism                                 | Foundation | —                  | A personal God exists and grounds meaning and value. _Variants:_ Deism.                                                                      |
+| Agnosticism                            | Foundation | —                  | Whether a transcendent reality exists is unknown or unknowable.                                                                              |
+| Naturalism                             | Foundation | —                  | Nature is all there is; meaning and morality are human achievements.                                                                         |
+| Progressive view of history            | Foundation | —                  | History is broadly a story of moral and material progress.                                                                                   |
+| Declinism                              | Foundation | —                  | Civilisations rise and fall in cycles, or the present is a decline from better times.                                                        |
+| Welfare subjectivism                   | Foundation | —                  | A life goes well as it contains pleasure or satisfies the person's desires.                                                                  |
+| Objective-list theory                  | Foundation | —                  | Some goods (knowledge, friendship, achievement, virtue) are good for anyone.                                                                 |
+| Existentialism                         | Foundation | —                  | We are condemned to be free and must author our own commitments.                                                                             |
+| Role ethics                            | Foundation | —                  | The good life is the faithful fulfilment of roles and relationships one did not choose.                                                      |
+| Ethical egoism                         | Foundation | —                  | Each person ought to pursue their own interest.                                                                                              |
+| Altruism                               | Foundation | —                  | A person's life is owed, at least in part, to serving others (Comte's coinage; Christian and humanist ethics of service).                    |
 
 ---
 
