@@ -14,14 +14,7 @@ template below. The list changes only by deliberate revision by the project owne
 
 **Status.** The list is locked. Two cards were written first as the quality bar
 ([Social democracy](labels/socialism.md#social-democracy),
-[White nationalism](labels/radical-right.md#white-nationalism)). Every card is written
-for Liberalism and libertarianism, Conservatism, Socialism and social democracy, Marxism
-and communism, Anarchism, Republicanism and communitarianism, Ecologism, Feminism and
-gender politics, Critical, liberation, and postcolonial traditions, Economic and
-developmental doctrines, Democratic theory and governance, Foreign policy and world
-order, Technology and contemporary tendencies, Other Thin Labels, Non-Western and classical
-traditions, and Foundation Labels; the remaining families are written in follow-up tickets on the
-[map](https://github.com/slovakian/polytic/issues/12).
+[White nationalism](labels/radical-right.md#white-nationalism)). Every Label in the list now has a card, in the family files below.
 
 ## Library-anchored, narrative-flexible
 
