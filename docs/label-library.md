@@ -12,10 +12,11 @@ candidate survey in [`research/label-candidates.md`](research/label-candidates.m
 full definition, its **card**, lives in a family file under `labels/`, written to the
 template below. The list changes only by deliberate revision by the project owner.
 
-**Status.** The list is locked. Two cards are written as the quality bar
+**Status.** The list is locked. Two cards were written first as the quality bar
 ([Social democracy](labels/socialism.md#social-democracy),
-[White nationalism](labels/radical-right.md#white-nationalism)); the rest are written
-family by family in follow-up tickets on the
+[White nationalism](labels/radical-right.md#white-nationalism)). Every card is written
+for Socialism and social democracy, Marxism and communism, Anarchism, and Republicanism
+and communitarianism; the remaining families are written in follow-up tickets on the
 [map](https://github.com/slovakian/polytic/issues/12).
 
 ## Library-anchored, narrative-flexible
@@ -294,18 +295,18 @@ given by the heading.
 
 ### Anarchism
 
-| Label                     | Type     | Parent                | Gist                                                                                                                                                          |
-| ------------------------- | -------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Anarchism                 | Ideology | —                     | The state and other unjustified hierarchies should be replaced by voluntary co-operation.                                                                     |
-| Philosophical anarchism   | Ideology | Anarchism             | No state has a general right to be obeyed, though abolishing states now may be unwise.                                                                        |
-| Individualist anarchism   | Ideology | Anarchism             | The sovereign individual owes nothing to state or society (Stirner); free exchange among self-owners (Tucker).                                                |
-| Mutualism                 | Ideology | Anarchism             | Free exchange among producers, mutual credit and possession by use instead of capitalist property.                                                            |
-| Anarcho-communism         | Ideology | Anarchism             | A stateless, moneyless federation of communes: from each according to ability, to each according to need. Covers Bakunin's collectivism and platformism.      |
-| Anarcho-syndicalism       | Ideology | Anarchism             | Revolutionary unions, through the general strike, become the organs of a self-managed society.                                                                |
-| Insurrectionary anarchism | Ideology | Anarchism             | Informal affinity groups and direct attack, rejecting formal organisation and mediation.                                                                      |
-| Christian anarchism       | Ideology | Anarchism             | The Sermon on the Mount, or principled nonviolence, forbids the coercion on which states rest.                                                                |
-| Anarcho-primitivism       | Ideology | Anarchism             | Civilisation, agriculture and industrial technology are the root of domination; return to forager-like life.                                                  |
-| Social ecology            | Ideology | Anarchism / Ecologism | Ecological crisis stems from social hierarchy; replace the state with confederated, directly democratic municipalities. _Variants:_ Democratic confederalism. |
+| Label                     | Type     | Parent                            | Gist                                                                                                                                                          |
+| ------------------------- | -------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Anarchism                 | Ideology | —                                 | The state and other unjustified hierarchies should be replaced by voluntary co-operation.                                                                     |
+| Philosophical anarchism   | Ideology | Anarchism                         | No state has a general right to be obeyed, though abolishing states now may be unwise.                                                                        |
+| Individualist anarchism   | Ideology | Anarchism                         | The sovereign individual owes nothing to state or society (Stirner); free exchange among self-owners (Tucker).                                                |
+| Mutualism                 | Ideology | Anarchism                         | Free exchange among producers, mutual credit and possession by use instead of capitalist property.                                                            |
+| Anarcho-communism         | Ideology | Anarchism / Libertarian socialism | A stateless, moneyless federation of communes: from each according to ability, to each according to need. Covers Bakunin's collectivism and platformism.      |
+| Anarcho-syndicalism       | Ideology | Anarchism / Libertarian socialism | Revolutionary unions, through the general strike, become the organs of a self-managed society.                                                                |
+| Insurrectionary anarchism | Ideology | Anarchism                         | Informal affinity groups and direct attack, rejecting formal organisation and mediation.                                                                      |
+| Christian anarchism       | Ideology | Anarchism                         | The Sermon on the Mount forbids the coercion on which states rest; secular anarcho-pacifists match Anarchism and Pacifism.                                    |
+| Anarcho-primitivism       | Ideology | Anarchism                         | Civilisation, agriculture and industrial technology are the root of domination; return to forager-like life.                                                  |
+| Social ecology            | Ideology | Anarchism / Ecologism             | Ecological crisis stems from social hierarchy; replace the state with confederated, directly democratic municipalities. _Variants:_ Democratic confederalism. |
 
 ### Republicanism and communitarianism
 
