@@ -15,11 +15,12 @@ template below. The list changes only by deliberate revision by the project owne
 **Status.** The list is locked. Two cards were written first as the quality bar
 ([Social democracy](labels/socialism.md#social-democracy),
 [White nationalism](labels/radical-right.md#white-nationalism)). Every card is written
-for Liberalism and libertarianism, Conservatism, Socialism and social democracy,
-Marxism and communism, Anarchism, Republicanism and communitarianism, Economic and
+for Liberalism and libertarianism, Conservatism, Socialism and social democracy, Marxism
+and communism, Anarchism, Republicanism and communitarianism, Ecologism, Feminism and
+gender politics, Critical, liberation, and postcolonial traditions, Economic and
 developmental doctrines, Democratic theory and governance, Foreign policy and world
-order, Technology and contemporary tendencies, and Non-Western and classical
-traditions; the remaining families are written in follow-up tickets on the
+order, Technology and contemporary tendencies, Other Thin Labels, and Non-Western and
+classical traditions; the remaining families are written in follow-up tickets on the
 [map](https://github.com/slovakian/polytic/issues/12).
 
 ## Library-anchored, narrative-flexible
@@ -167,6 +168,14 @@ structured data mechanically (ADR-0005; converting it is implementation work).
   person's Main or Area Label. A non-central Dimension only lowers the fit.
 - Five named steps, not numbers: they are what a careful author can defend from
   sources, and what the owner can review.
+- **A Thin card lists only its thin core**: the few Dimensions (usually two to six) the
+  tradition itself commits to, with one to three central. Dimensions that depend on the
+  host Ideology stay unlisted, so a left and a right populist both fit Populism.
+- **A card may have no central Dimension** when the tradition's defining claim is only a
+  facet of Dimensions, not a Dimension, and most holders sit anywhere on them. The match
+  then rests on the person's Evidence against the card's Reasons. Monarchism is the
+  case: a hereditary head of state is a facet of _Social hierarchy_ and _Leadership_, and
+  most monarchists today are constitutional and otherwise egalitarian.
 
 **Reasons have a fixed shape** so that the AI's judgment has something concrete to
 check. _Telling it apart_ matters most: neighbors are where matching goes wrong.
@@ -376,6 +385,7 @@ given by the heading.
 
 | Label                     | Type     | Parent                   | Gist                                                                                                                                              |
 | ------------------------- | -------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ecologism                 | Thin     | —                        | Human beings are part of nature; ecological limits should reshape politics, economy and ethics.                                                   |
 | Green politics            | Ideology | Ecologism                | The four pillars: ecological wisdom, social justice, grassroots democracy and nonviolence. _Variants:_ Bioregionalism.                            |
 | Deep ecology              | Ideology | Ecologism                | All living beings have intrinsic value; human population and consumption must shrink to let nature flourish.                                      |
 | Eco-socialism             | Ideology | Ecologism / Socialism    | Capitalism's growth drive causes ecological crisis; only democratic social ownership can live within limits.                                      |
@@ -387,19 +397,20 @@ given by the heading.
 
 ### Feminism and gender politics
 
-| Label                    | Type | Parent               | Gist                                                                                                                         |
-| ------------------------ | ---- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Liberal feminism         | Thin | Feminism             | Equal rights and opportunities for women through law, education and choice. _Variants:_ Equity feminism.                     |
-| Radical feminism         | Thin | Feminism             | Patriarchy, rooted in sexual dominance, is the basic system of oppression and must be uprooted.                              |
-| Socialist feminism       | Thin | Feminism / Socialism | Women's oppression is bound up with capitalism and unpaid reproductive labour.                                               |
-| Difference feminism      | Thin | Feminism             | Women's distinct values and an ethic of care should be honoured, not assimilated to male norms. Covers maternalist feminism. |
-| Intersectional feminism  | Thin | Feminism             | Race, sex, class and other systems of power interlock and must be analysed together. _Variants:_ Postcolonial feminism.      |
-| Gender-critical feminism | Thin | Radical feminism     | Sex is real and politically salient; women's rights and single-sex spaces should be based on sex, not gender identity.       |
-| Queer feminism           | Thin | Feminism             | Gender and sex are performed and socially constructed; liberation includes trans and gender-nonconforming people.            |
-| Sex-positive feminism    | Thin | Feminism             | Sexual freedom, including pornography and sex work, is part of women's liberation.                                           |
-| Ecofeminism              | Thin | Feminism / Ecologism | The domination of women and of nature are linked and must be overcome together.                                              |
-| Islamic feminism         | Thin | Feminism             | Gender equality grounded in a re-reading of the Qur'an and Islamic tradition.                                                |
-| Men's rights             | Thin | —                    | Men face neglected legal and social disadvantages (custody, conscription, suicide, sentencing) that politics should address. |
+| Label                    | Type | Parent                      | Gist                                                                                                                         |
+| ------------------------ | ---- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Feminism                 | Thin | —                           | Women are disadvantaged because of their sex, and this can and should be overcome.                                           |
+| Liberal feminism         | Thin | Feminism                    | Equal rights and opportunities for women through law, education and choice. _Variants:_ Equity feminism.                     |
+| Radical feminism         | Thin | Feminism                    | Patriarchy, rooted in sexual dominance, is the basic system of oppression and must be uprooted.                              |
+| Socialist feminism       | Thin | Feminism / Socialism        | Women's oppression is bound up with capitalism and unpaid reproductive labour.                                               |
+| Difference feminism      | Thin | Feminism                    | Women's distinct values and an ethic of care should be honoured, not assimilated to male norms. Covers maternalist feminism. |
+| Intersectional feminism  | Thin | Feminism                    | Race, sex, class and other systems of power interlock and must be analysed together. _Variants:_ Postcolonial feminism.      |
+| Gender-critical feminism | Thin | Feminism / Radical feminism | Sex is real and politically salient; women's rights and single-sex spaces should be based on sex, not gender identity.       |
+| Queer feminism           | Thin | Feminism                    | Gender and sex are performed and socially constructed; liberation includes trans and gender-nonconforming people.            |
+| Sex-positive feminism    | Thin | Feminism                    | Sexual freedom, including pornography and sex work, is part of women's liberation.                                           |
+| Ecofeminism              | Thin | Feminism / Ecologism        | The domination of women and of nature are linked and must be overcome together.                                              |
+| Islamic feminism         | Thin | Feminism                    | Gender equality grounded in a re-reading of the Qur'an and Islamic tradition.                                                |
+| Men's rights             | Thin | —                           | Men face neglected legal and social disadvantages (custody, conscription, suicide, sentencing) that politics should address. |
 
 ### Critical, liberation, and postcolonial traditions
 
@@ -479,9 +490,7 @@ given by the heading.
 | Liberal nationalism          | Thin | Nationalism / Liberalism | National cultures matter to people's freedom and identity, and can ground solidarity and welfare within liberal limits.          |
 | Stateless-nation nationalism | Thin | Nationalism              | A minority nation within a state (Scotland, Catalonia, Quebec, Flanders…) seeks autonomy or independence.                        |
 | Pan-Africanism               | Thin | Nationalism              | Unity and self-determination of Africa and the African diaspora against imperialism. _Variants:_ Négritude.                      |
-| Ecologism                    | Thin | —                        | Human beings are part of nature; ecological limits should reshape politics, economy and ethics.                                  |
-| Environmentalism             | Thin | Ecologism                | Protect the environment through reforms within existing economic and political arrangements.                                     |
-| Feminism                     | Thin | —                        | Women are disadvantaged because of their sex, and this can and should be overcome.                                               |
+| Environmentalism             | Thin | —                        | Protect the environment through reforms within existing economic and political arrangements.                                     |
 | Multiculturalism             | Thin | —                        | Cultural diversity should be publicly recognised and accommodated, not assimilated.                                              |
 | Cosmopolitanism              | Thin | —                        | All humans belong to a single moral community; borders have little moral weight.                                                 |
 | Sovereigntism                | Thin | —                        | Oppose or limit European (or other supranational) integration in favour of national self-government.                             |
