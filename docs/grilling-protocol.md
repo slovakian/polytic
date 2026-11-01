@@ -1,33 +1,33 @@
 # Core User Experience & Grilling Protocol
 
-This document specifies Polytic's primary user experience and interaction mechanics, resolved in [Determine the core user experience and interaction mechanics](https://github.com/slovakian/polytic/issues/15).
+This document specifies Polytic's primary user experience and interaction mechanics, resolved in [Determine the core user experience and interaction mechanics](https://github.com/slovakian/polytic/issues/15). How each turn is produced behind the scenes (who notices what, who picks the next move, who writes the words) is in `architecture.md`; v1's exact scope is in `roadmap.md`.
 
 ## 1. Architectural Separation: Worldview Model vs. Elicitation Modes
 
 Polytic strictly separates **what it knows/infers about a user's politics** from **how it draws that evidence out**:
 
-- **The Worldview Model (Underlying Brain):** Stores and updates the user's dimensional positions, conceptual definitions, value trade-offs, active **Tensions**, and **Epistemic States** (`Settled`, `Torn`, `Indifferent`, `Open`; see `framework.md`).
+- **The Worldview Model (Underlying Brain):** The user's dimensional positions, conceptual definitions, value trade-offs, active **Tensions**, and **Epistemic States** (`Settled`, `Torn`, `Indifferent`, `Open`; see `framework.md`). In v1 this record is the **Case File**, rebuilt on every turn from the notes stored in the conversation (`architecture.md`).
 - **Elicitation Modes (Interaction Formats):** Pluggable interaction mechanics that gather evidence and feed it into the shared Worldview Model.
   - **Primary Mode (v1): Structured Socratic Grilling Anchored by Diagnostic Dilemmas.** A live, clinically neutral cross-examination where the AI drops the user into concrete dilemmas where values collide, probes _why_ they hold their stance, and tests internal coherence across dimensions.
-  - **Future Extensibility:** Because the Worldview Model is decoupled from chat transcripts, future elicitation modes (such as rapid dilemma decks, reacting to real-world claims/essays, or structured multi-person discourse) plug into the exact same underlying model without re-architecting the core.
+  - **Future Extensibility:** Because the Worldview Model is built from structured notes rather than read off the chat text, future elicitation modes (such as rapid dilemma decks, reacting to real-world claims/essays, or structured multi-person discourse) plug into the exact same underlying model without re-architecting the core.
 
 ## 2. Delivery Surface: First-Party Web App Only
 
 Polytic lives exclusively in the first-party web application (`polytic.party`).
 
-- **No distributable agent skill:** We do not maintain a standalone markdown skill (`skills/polytic-party`) for third-party chat clients. Owning the full delivery surface in the web app ensures complete control over model selection, RLHF de-biasing (**Clinical Agnosticism**), structured state tracking, steering suggestions, and interactive checkpoint **Results**.
+- **No distributable agent skill:** We do not maintain a standalone markdown skill (`skills/polytic-party`) for third-party chat clients. Owning the full delivery surface in the web app ensures complete control over model selection, RLHF de-biasing (**Clinical Agnosticism**), structured state tracking, steering suggestions, and the **Result** page (ADR-0005).
 
 ## 3. Session Flow & User Steering: "Follow the Heat, Then Bridge the Skeleton"
 
 A grilling session balances **user energy** (starting where the user actually cares) with **structural completeness** (mapping across the full dimension taxonomy):
 
 ```
-ANCHOR & HEAT → PRINCIPLE-BRIDGED SKELETON SWEEP → CHECKPOINT RESULT CARD → OPT-IN DEEPENING
+ANCHOR & HEAT → PRINCIPLE-BRIDGED SKELETON SWEEP → RESULT → OPT-IN DEEPENING
 ```
 
 1. **Anchor & Open with Heat (User-Seeded Entry):**
-   - Establish the user's country/political context (so **Diagnostic Dilemmas** use locally relevant institutions and flashpoints).
-   - Invite the user to start with a political question, frustration, or principle they care deeply about right now (or pick an opening thread).
+   - Establish the user's country/political context (so **Diagnostic Dilemmas** use locally relevant institutions and flashpoints). In v1 this is a searchable country picker in the chat flow, with "Prefer not to say" (dilemmas then stay generic).
+   - Invite the user to start with a political question, frustration, or principle they care deeply about right now, in their own words. Fixed topic-name buttons ("the economy", "immigration") are the fallback for someone who'd rather pick. The first model call happens after both.
 2. **Principle-Bridged Skeleton Sweep:**
    - Rather than marching down a numbered list of dimensions (`1 → 2 → 3...`) like a bureaucracy form, the AI extracts the core normative principle or rule the user relied on in their opening thread and **uses that principle as a bridge into the next dimension** (_"You argued that individual autonomy is sacred in healthcare — let's test whether that same rule holds when we look at economic regulation..."_).
    - Under the hood, the system tracks coverage across the canonical dimension taxonomy so blind spots and cross-domain contradictions are systematically tested. The sweep works through the taxonomy's **Core** Dimensions first; the rest are reached when the user raises them or deepens (`dimension-taxonomy.md`).
@@ -45,7 +45,7 @@ ANCHOR & HEAT → PRINCIPLE-BRIDGED SKELETON SWEEP → CHECKPOINT RESULT CARD �
 
 ### Probing Depth Principle: "Follow Diagnostic Yield & User Pull, Not a Fixed Counter"
 
-Instead of cutting off every topic after an arbitrary number of turns, the AI evaluates each turn across four response signals and continues only while **diagnostic yield** or **user pull** remains high:
+Instead of cutting off every topic after an arbitrary number of turns, each answer is read for four response signals, and the grill continues on a topic only while **diagnostic yield** or **user pull** remains high. (In v1 the Note-taker reads the signal and suggests the move; code checks it against the moves allowed right now; see `architecture.md`.)
 
 | User Answer Signal                              | AI Action                                                                                                                                                                                                                                                                   |
 | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -68,12 +68,15 @@ Instead of cutting off every topic after an arbitrary number of turns, the AI ev
 - Pre-baked compromises when confronting a **Tension** (e.g., `"Balance both case by case"`).
 - Ideologically leading or biased framings.
 
-### Permitted Suggestions (a fixed list, chosen by code; see `architecture.md`)
+### Permitted Suggestions (a fixed list, chosen by code; see ADR-0007 and `architecture.md`)
 
 1. **Context & Unpacking:** `"Unpack the trade-offs here"`, `"Steelman both sides"`, `"Give me a concrete example"`
 2. **Epistemic Honesty & Skipping:** `"I'm genuinely torn on this"`, `"Haven't thought much about this — skip"`
-3. **Depth & Pacing Control:** `"Push me harder on this"`, `"Ready for the next topic"`, `"Give me my Result now"`
-4. **Dimension & Post-Result-Card Branching:** Selecting which **Open** dimension or active **Tension** to explore next.
+3. **Depth & Pacing Control:** `"Push me harder on this"`, `"Ready for the next topic"`, `"Give me my Result now"`, and during deepening `"Back to my Result"`
+4. **Dimension & Post-Result Branching:** Selecting which **Open** dimension or active **Tension** to explore next.
+5. **Tension Triage:** When the AI raises a **Tension**, one click records how the person holds it: _fits, because…_ (which opens free text for the reason, in their own words), _I'm torn_, or _not now_. The triage card replaces the usual buttons on that turn.
+
+Controls appear in the chat flow, attached to the message they belong to and stacked vertically. Nothing ever sits below the text input ([Prototype the grilling chat screen and its controls](https://github.com/slovakian/polytic/issues/30)).
 
 ## 6. Pacing & Payoff: Micro-Mirrors and Stepped Checkpoints
 
@@ -82,7 +85,8 @@ Polytic avoids both the **25-question black-box marathon** (where users get zero
 1. **In-Session Feedback via `Micro-Mirrors` (Never Premature Labels):**
    - During the grill, Polytic never announces _"You sound like a Classical Liberal"_ or shows a live-updating ideological scoreboard.
    - Instead, when transitioning between topics, the AI delivers a **Micro-Mirror**: a single, surgical sentence reflecting the exact rule, trade-off priority, or tension the user just established (_"So for you, state intervention is justified to break monopolies, not to equalize outcomes — let's see if that rule holds on..."_). This delivers continuous proof of deep comprehension without anchoring the user to a camp.
-2. **Stepped Checkpoint `Result` (~10–12 Turns) + Opt-In Chapter Deepening:**
-   - After a focused initial pass (~10–12 turns covering the user's opening high-heat thread and core cross-cutting dilemmas), the user unlocks their initial **Result** (combining the **Personal Mirror** and **Intellectual Bridge**).
+2. **Stepped Checkpoint `Result` + Opt-In Deepening:**
+   - After a focused initial pass covering the user's opening high-heat thread and the Core Dimensions, the user unlocks their initial **Result** (combining the **Personal Mirror** and **Intellectual Bridge**). The Result is a page of its own, not a chat message.
+   - **When it unlocks** (starting values, tuned on real sessions): at **10 or more turns and 8 or more of the 19 Core Dimensions at Solid Coverage**. A Dimension where the person is Open still counts, because Coverage measures the asking, not whether they had a view. Around turn 16 the Result is offered even if coverage is short, and _"Give me my Result now"_ always works; the Result is then honest about what wasn't covered (`architecture.md`).
    - The Result explicitly distinguishes **Settled** convictions, active **Tensions**, and **Open / Unexplored** dimensions.
-   - Directly from the Result, the user can click into any **Open** dimension (_"Grill me on foreign policy next"_) or any **Tension** (_"Stress-test this contradiction"_) to continue deepening their map in bite-sized chapters.
+   - Directly from the Result, the user can click into any **Open** or unasked dimension (_"Grill me on foreign policy next"_) or any **Tension** (_"Stress-test this contradiction"_) to continue deepening their map in a new section of the same conversation, in the same tab. Once that Dimension or Tension is covered, the AI offers _"Back to my Result"_ once, and the Result rebuilds on return.

@@ -14,5 +14,6 @@ We chose cheap and free models over a single premium model to keep a public, log
 chat affordable. The cost is variable quality and, for some free endpoints, provider-side
 logging; the privacy consequence is handled in ADR-0004.
 
-**Open:** the rate-limiting and abuse strategy for a login-free public chat is not yet
-designed (see `docs/architecture.md`).
+Which models fill which role, and the fallback order, are set in `docs/architecture.md`
+(ADR-0010). The rate-limiting and abuse strategy for a login-free public chat is decided
+in [Decide v1 abuse limits and free-quota protection](https://github.com/slovakian/polytic/issues/33).

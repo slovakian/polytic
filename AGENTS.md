@@ -17,24 +17,26 @@ OpenRouter, and an animated, screenshot-worthy **Result** page at the end. Nothi
 about the person is stored on our servers, and there are no share links. Full
 requirements: `docs/roadmap.md` ("v1: the first build"); decision: `docs/adrs/0009`.
 
-The distributable skill below is being retired (`docs/adrs/0005`). Accounts, Living
-Profiles, return sessions, and share links come after v1; see `docs/roadmap.md`.
-**Do not build ahead of v1.** Architecture ideas in `docs/architecture.md` under
-"Direction under consideration" are not decisions.
+How a grilling turn runs behind the scenes (a Note-taker and an Interviewer per turn,
+with code directing through a shared session engine) is decided in
+`docs/architecture.md` and `docs/adrs/0010`. The conversation's shape is in
+`docs/grilling-protocol.md`.
 
-## Polytic Party skill (public install)
+Accounts, Living Profiles, return sessions, and share links come after v1; see
+`docs/roadmap.md`. **Do not build ahead of v1.**
 
-The distributable skill lives in **`skills/polytic-party/`** and users install it straight
-from this repo:
+## The old distributable skill (retired)
 
-```bash
-npx skills add slovakian/polytic
-```
+`skills/polytic-party/` is the pre-greenfield grilling skill, installable with
+`npx skills add slovakian/polytic`. It is **retired** (`docs/adrs/0005`): Polytic
+lives only in the web app. Don't extend it or design for it, and don't add other skills
+to `skills/`, since anything there shows up in users' install picker. It stays
+installable from `main` until it's removed alongside the v1 build. Maintainer notes:
+`skills/README.md`.
 
-Changes reach users once they're merged to `main`; there is no separate publish step.
-`skills/` is the first place the skills CLI looks, so keep `polytic-party` the only skill in
-it — anything else added there shows up in every user's install picker. Full maintainer
-notes: **`skills/README.md`**. Product behavior: **`docs/grilling-protocol.md`**.
+v1's reference material (Dimension, move, tone, and Label handbooks) is also written
+in skill format, but it is loaded by the app's code, not installed by users
+(`docs/architecture.md`). It is a different thing from this skill.
 
 ## Database migrations (mandatory)
 
@@ -74,30 +76,38 @@ the dry run for what deploy will execute.
 
 ## Inviolable principles
 
-These bind every feature, forever. If a change violates one, it's wrong.
+These bind every feature, forever. If a change violates one, it's wrong. Rationale
+in `docs/principles.md`.
 
-- **Non-partisan.** The AI never reveals or pushes its own politics. It steelmans
-  every side equally.
+- **Clinical Agnosticism.** The AI is a stoic, friendly clinician with no politics of
+  its own. It never lectures, praises, scolds, or hedges, and it examines every
+  tradition, however radical, with the same curiosity and the same strong steelman.
+- **Objective realism, not relativism.** Being non-judgmental doesn't mean pretending
+  every philosophy rests on the same foundations. Structural and epistemic
+  differences are named plainly, never flattened for balance.
 - **Map, don't grade.** Polytic describes where you are; it never judges where you
   should be.
 - **Challenge coherence, not ideology.** Pushback tests the internal consistency of
   your views — never nudges you toward a position.
-- **Nuance over reduction.** We add dimensions and resolution; we never collapse
-  people into a crude axis.
+- **Nuance and epistemic honesty.** We add dimensions and resolution; we never collapse
+  people into a crude axis, and Torn and Open count as real answers.
 
 ## Source-of-truth assets
 
-Two curated, versioned assets in `docs/` define Polytic's worldview and must stay
-coherent: the **dimension taxonomy** (the axes we measure) and the **label library**
-(the established political vocabulary Results are anchored to). The grilling uses a
-_fixed skeleton, adaptive flesh_ model — fixed dimensions, free probing of issues —
-and Results are _library-anchored but narrative-flexible_.
+Curated, versioned assets in `docs/` define Polytic's worldview and must stay
+coherent: the **Dimension taxonomy** (`docs/dimension-taxonomy.md`, the Dimensions we
+measure), the **label library** (`docs/label-library.md` and the cards in
+`docs/labels/`, the established vocabulary Results are anchored to), and, once chosen,
+the **Reference Figure catalog** behind Closest Thinkers. The model they share is in
+`docs/framework.md`. The grilling uses a _fixed skeleton, adaptive flesh_ model (fixed
+Dimensions, free probing of Issues), and Results are _library-anchored but
+narrative-flexible_.
 
 ## Where to read more
 
-Vision, principles, the grilling protocol, the taxonomy/label models, and the full
-roadmap live in **`docs/`** — start at `docs/AGENTS.md`. Setup, stack, and commands
-live in `README.md`. Keep this file brief; put detail in `docs/`.
+Vision, principles, the framework, the grilling protocol, the architecture, and the
+full roadmap live in **`docs/`** — start at `docs/AGENTS.md`. Setup, stack, and
+commands live in `README.md`. Keep this file brief; put detail in `docs/`.
 
 <!-- intent-skills:start -->
 

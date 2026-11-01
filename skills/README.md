@@ -1,6 +1,13 @@
 # Skills (maintainers)
 
-Consumer-facing agent skills for Polytic. These are **for everyone** — not dev tooling. Users install them into Claude, Cursor, or any skills-compatible agent to get grilled on their politics.
+> **Retired.** Polytic now lives only in the first-party web app (`docs/adrs/0005`).
+> `polytic-party` stays installable from `main` until it's removed alongside the v1
+> build. Don't extend it, don't design product behavior around it, and don't add a
+> second skill here. The notes below describe how it works until then.
+
+The consumer-facing agent skill for Polytic, installed into Claude, Cursor, or any
+skills-compatible agent to get grilled on your politics. It is for users, not dev
+tooling.
 
 ## Install
 
@@ -50,9 +57,3 @@ agents working in this repo use.
 
 The marketing site (`apps/web`) bundles `skills/polytic-party/SKILL.md` at build time for
 the copy-paste preview — edit the skill file only; do not duplicate it in the web app.
-
-## Adding a second consumer skill later
-
-Add it as `skills/<name>/` and switch the install docs to
-`npx skills add slovakian/polytic --skill <name>`, since `skills add` will otherwise list
-every skill in the folder.

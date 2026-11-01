@@ -9,3 +9,6 @@ product name and the domain (polytic.party), and also the name of the distributa
 (`polytic-party`). Use "Polytic Party" where the full name reads naturally
 (page titles, the skill, first mention) and "Polytic" anywhere else. "Polytic" stays the
 codebase and package namespace (`@polytic/*`).
+
+_Note: the distributable skill was later retired (ADR-0005). The naming rule stands for
+the web app._

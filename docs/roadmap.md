@@ -16,18 +16,21 @@ v1 is the first slice of Stage 1: one visit, done very well, with nothing about 
 
 **The grill**
 
-- Socratic Grilling as specified in `grilling-protocol.md`, with text input only.
-- Two kinds of clickable controls: steering suggestions (ADR-0007) and one-click Tension triage (_fits, because…_ / _I'm torn_ / _not now_).
-- Nothing ever sits below the text input. Controls float above it or appear in the chat flow; exactly where is a UI design decision.
+- Socratic Grilling as specified in `grilling-protocol.md`, with text input only, run behind the scenes as specified in `architecture.md` (ADR-0010).
+- Two kinds of clickable controls, both from a fixed list chosen by code: steering suggestions (ADR-0007) and one-click Tension triage (_fits, because…_ / _I'm torn_ / _not now_).
+- Nothing ever sits below the text input. Controls appear in the chat flow, attached to the message they belong to and stacked vertically.
+- The conversation is split into sections (the first pass, then each round of deepening), navigated from a rail on large screens and a header dropdown on phones. Past sections are read-only, and while one is open the composer becomes a banner that jumps back to the live section. Decided in [Prototype the grilling chat screen and its controls](https://github.com/slovakian/polytic/issues/30); sections follow the session engine's phases, not model tool calls (ADR-0010).
 - Not in v1: the Off-map confirm/edit notice (Off-map Beliefs still appear on the Result) and any live view of Beliefs during the grill.
 
 **The Result**
 
-- After the first pass (~10–12 turns) the person unlocks their **Result**: a page, not a chat message. It's animated and visually rich, built for the reveal, and designed to be screenshotted. It is designed for phones first.
+- After the first pass (at least 10 turns and 8 of the 19 Core Dimensions at Solid Coverage, offered anyway around turn 16, or whenever the person asks; `grilling-protocol.md`) the person unlocks their **Result**: a page, not a chat message. It's animated and visually rich, built for the reveal, and designed to be screenshotted. It is designed for phones first.
 - It is a highlight, not an exhaustive report. It shows Labels, a short narrative, key Tensions, Closest Thinkers (top 2–3, why they align, and the Divergence), and every Dimension.
+- **Layout**, top to bottom, as an open vertical flow rather than nested cards: headline; narrative; Labels; Closest Thinkers, each with a portrait; a two-Dimension plot placing the person among their Closest Thinkers (by default the Dimension they most share with the top thinker against that thinker's Divergence); the Dimension breakdown; Tensions and Bridges; unexplored Dimensions. It reveals in a staggered sequence with a one-click replay. Decided in [Prototype the Result page and its reveal](https://github.com/slovakian/polytic/issues/29).
 - **The Dimension breakdown** lists every Dimension. It is ordered by strongest Pull first (Settled and Torn alike), then weaker Pull, then Thin Coverage (marked as such), then Not asked (lower opacity, last). It starts collapsed to the top few, with the rest one tap away.
 - Unexplored areas and Off-map Beliefs appear as quieter extras.
-- Unasked Dimensions and Tensions are entry points to another round of grilling in the same tab, after which the Result updates.
+- Unasked Dimensions and Tensions are entry points to another round of grilling in the same tab, after which the Result rebuilds.
+- Code computes the Dimension breakdown, Label shortlist, and Closest Thinkers; a Label Judge and a Result Writer add the judgement and the words (`architecture.md`).
 - The Result stays in the browser until the person starts over, and a "Save as image" button exports the whole page as one image.
 - Built from shadcn/ui components and renderable on the server (no browser-only visuals).
 
