@@ -19,8 +19,8 @@ for Liberalism and libertarianism, Conservatism, Socialism and social democracy,
 and communism, Anarchism, Republicanism and communitarianism, Ecologism, Feminism and
 gender politics, Critical, liberation, and postcolonial traditions, Economic and
 developmental doctrines, Democratic theory and governance, Foreign policy and world
-order, Technology and contemporary tendencies, Other Thin Labels, and Non-Western and
-classical traditions; the remaining families are written in follow-up tickets on the
+order, Technology and contemporary tendencies, Other Thin Labels, Non-Western and classical
+traditions, and Foundation Labels; the remaining families are written in follow-up tickets on the
 [map](https://github.com/slovakian/polytic/issues/12).
 
 ## Library-anchored, narrative-flexible

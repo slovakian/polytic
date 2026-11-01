@@ -1312,3 +1312,1790 @@ they conflict, and recognising that is the beginning of political wisdom and tol
 Humanity_ (1990); Bernard Williams, _Moral Luck_ (1981); Joseph Raz, _The Morality of
 Freedom_ (1986); John Gray, _Isaiah Berlin_ (1995); William Galston, _Liberal Pluralism_
 (2002); Elinor Mason, "Value Pluralism", _Stanford Encyclopedia of Philosophy_.
+
+## Impartialism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** impartial benevolence; moral cosmopolitanism (as a view of who counts)
+- **Variants:** Mohism
+- **Centered group:** —
+
+### Positions
+
+| Dimension             | Range                                                                | Central |
+| --------------------- | -------------------------------------------------------------------- | ------- |
+| Moral circle          | Leans _Everyone counts equally_ – Strongly _Everyone counts equally_ | Yes     |
+| Hierarchy or equality | Leans _Equality is basic_ – Strongly _Equality is basic_             | No      |
+
+### Reasons
+
+**Self-description.** Each person's life matters as much as anyone else's, and the
+accident of being near me, related to me, or sharing my nationality does not make
+someone's suffering count for more. From the moral point of view, no one is special.
+That does not forbid loving one's own, but it does mean that the interests of distant
+strangers weigh as much as those of neighbours when we ask what is right.
+
+**Key concepts.**
+
+- **The moral point of view:** "the point of view of the universe" (Sidgwick), from which
+  no one's good counts more than anyone else's.
+- **Distance:** physical or social distance makes no moral difference to the duty to
+  help (Singer's drowning child).
+- **Partiality:** permitted at most where impartial reasons themselves justify it, as
+  when parents caring for their own children is best for children generally.
+- **Mohism:** Mozi's "impartial care" (_jian ai_), a classical variant.
+
+**Signature reasons.**
+
+- "A child drowning far away matters as much as one drowning in front of you."
+- "No one's suffering counts for more because of where they were born."
+- "From the moral point of view, nobody is special."
+- "Favouring your own is understandable, but it isn't a moral reason."
+
+**Telling it apart.**
+
+- **Moral partialism (special obligations):** holds that we rightly owe more to those
+  close to us (_Moral circle_).
+- **Utilitarianism:** the best-known impartialist theory, but Kantians and
+  contractualists are impartialists too; Impartialism says whose interests count, not
+  how to act on them (Reasons).
+- **Cosmopolitanism:** the Thin Label draws political conclusions about borders and
+  global institutions; Impartialism is the Foundation view beneath them (Reasons).
+
+**Sources.** Mozi, chs. 14–16 ("Impartial Caring"); William Godwin, _Enquiry concerning
+Political Justice_ (1793), book II; Henry Sidgwick, _The Methods of Ethics_ (1874); Peter
+Singer, "Famine, Affluence, and Morality" (1972); Shelly Kagan, _The Limits of Morality_
+(1989); Brian Barry, _Justice as Impartiality_ (1995); Troy Jollimore, "Impartiality",
+_Stanford Encyclopedia of Philosophy_.
+
+## Moral partialism (special obligations)
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** special obligations; associative duties; the ethics of loyalty
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                     | Range                                                        | Central |
+| ----------------------------- | ------------------------------------------------------------ | ------- |
+| Moral circle                  | Strongly _Near and dear first_ – Leans _Near and dear first_ | Yes     |
+| Self-authorship or given role | Middle – Leans _Live up to a given role_                     | No      |
+
+### Reasons
+
+**Self-description.** We are not interchangeable points of view; we are parents,
+children, friends, neighbours, and citizens, and those relationships carry obligations of
+their own. Someone who weighed their own child's life no more than a stranger's would not
+be admirably impartial; they would have missed something essential about love and
+loyalty. Special obligations are not a bias to overcome but part of what morality is.
+
+**Key concepts.**
+
+- **Special obligations:** duties owed to particular people because of a relationship
+  (family, friendship, community, nation), on top of duties owed to everyone.
+- **One thought too many:** a man who saves his wife rather than a stranger, and first
+  checks that impartial morality allows it, has missed the point (Williams).
+- **Associative duties:** obligations that come from belonging to a group, even one you
+  did not choose (Scheffler).
+- **Graded love:** concern that radiates outward from those closest, as in Confucian
+  ethics.
+
+**Signature reasons.**
+
+- "Of course I owe more to my own children than to strangers."
+- "Loyalty isn't a bias; it's a virtue."
+- "Someone who loves everyone equally doesn't really love anyone."
+- "Charity begins at home."
+
+**Telling it apart.**
+
+- **Impartialism:** holds that everyone's interests count equally (_Moral circle_).
+- **Role ethics:** makes the faithful filling of given roles the substance of the good
+  life; partialism is only about whose interests count for more (_Self-authorship or
+  given role_; Reasons).
+- **Nationalism:** the Thin Label puts the nation first politically; partialism counts
+  compatriots as one circle among several, and need not put the nation first (Reasons).
+
+**Sources.** Confucius, _Analects_; Mencius; Bernard Williams, "Persons, Character and
+Morality" (1981); Alasdair MacIntyre, "Is Patriotism a Virtue?" (1984); Samuel Scheffler,
+_Boundaries and Allegiances_ (2001); Simon Keller, _Partiality_ (2013); Diane Jeske,
+"Special Obligations", _Stanford Encyclopedia of Philosophy_.
+
+## Sentientism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** sentiocentrism; the sentience criterion
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension               | Range                                                                                                                    | Central |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------- |
+| Grounds of moral status | Leans _What matters is the life's quality and capacities_ – Strongly _What matters is the life's quality and capacities_ | Yes     |
+| Standing of nature      | Middle – Leans _Nature-centered_                                                                                         | No      |
+| Moral circle            | Leans _Everyone counts equally_ – Strongly _Everyone counts equally_                                                     | No      |
+
+### Reasons
+
+**Self-description.** What makes a being matter morally is that it can suffer and enjoy:
+that there is something it is like to be it. Every sentient creature, human or not, has
+interests that count, and belonging to a species is in itself no more a reason to
+discount suffering than race or sex is. Rocks, rivers, and species matter only through
+the sentient beings whose lives depend on them.
+
+**Key concepts.**
+
+- **Sentience:** the capacity for experience, above all for pain and pleasure.
+- **Speciesism:** giving less weight to a being's interests merely because of its species
+  (Ryder; Singer).
+- **Equal consideration:** like interests count equally, whoever has them, which does not
+  mean identical treatment.
+- **Nature:** ecosystems and species matter for the sentient beings in them, not in
+  their own right.
+
+**Signature reasons.**
+
+- "The question is not, Can they reason? nor, Can they talk? but, Can they suffer?"
+  (Bentham)
+- "Pain is pain, whoever feels it."
+- "Discounting animals for not being human is like discounting people for their race."
+- "A forest matters because of the creatures who live in it."
+
+**Telling it apart.**
+
+- **Ecocentrism:** gives species and ecosystems value of their own; sentientism counts
+  only sentient individuals (_Standing of nature_).
+- **Personhood view:** also grounds status in capacities, but reserves full status for
+  self-aware persons; sentientism sets the bar at sentience (Reasons).
+- **Animal rights:** the Thin Label is the political program; sentientism is the
+  Foundation view many of its holders share (Reasons).
+
+**Sources.** Jeremy Bentham, _An Introduction to the Principles of Morals and
+Legislation_ (1789), ch. 17; Richard Ryder, "Speciesism" (1970); Peter Singer, _Animal
+Liberation_ (1975); Tom Regan, _The Case for Animal Rights_ (1983); Martha Nussbaum,
+_Justice for Animals_ (2022); Lori Gruen, "The Moral Status of Animals", _Stanford
+Encyclopedia of Philosophy_.
+
+## Anthropocentrism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** human-centred ethics; strong and weak anthropocentrism (its two forms,
+  Norton); critics: "human chauvinism" (Routley)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension          | Range                                              | Central |
+| ------------------ | -------------------------------------------------- | ------- |
+| Standing of nature | Strongly _Human-centered_ – Leans _Human-centered_ | Yes     |
+
+### Reasons
+
+**Self-description.** Moral value comes from persons, beings who can reason, value, and
+be held responsible, so nature matters morally because of what it means to human beings,
+now and in the future. That is no licence for destruction: clean air, a stable climate,
+beauty, and wilderness are immense human goods, and cruelty to animals corrupts the
+people who practise it. But the reasons to protect nature are reasons about us.
+
+**Key concepts.**
+
+- **Moral value:** only humans, as rational beings, have it in their own right; the rest
+  of nature has value for them.
+- **Indirect duties:** duties regarding animals and nature are at bottom duties to
+  humans (Kant).
+- **Weak anthropocentrism:** human values, including aesthetic and spiritual ones, give
+  strong reasons to protect nature (Norton).
+
+**Signature reasons.**
+
+- "Nature matters because of what it means for people."
+- "We protect the environment for our children, not for the rocks."
+- "Only beings who can value things can give anything value."
+- "Cruelty to animals is wrong because of what it does to us."
+
+**Telling it apart.**
+
+- **Stewardship:** also gives humans a special place, but adds a duty of care owed for
+  creation, usually to God, and often value in creation itself (_Standing of nature_;
+  Reasons).
+- **Sentientism and Ecocentrism:** give animals, or species and ecosystems, standing of
+  their own (_Standing of nature_).
+
+**Sources.** Aristotle, _Politics_ I.8; Immanuel Kant, _Lectures on Ethics_ (c. 1780);
+John Passmore, _Man's Responsibility for Nature_ (1974); William Baxter, _People or
+Penguins_ (1974); Bryan Norton, "Environmental Ethics and Weak Anthropocentrism" (1984);
+Andrew Brennan & Norva Lo, "Environmental Ethics", _Stanford Encyclopedia of
+Philosophy_.
+
+## Stewardship
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** creation care (mainly evangelical Christian); trusteeship; _khalifa_
+  (vicegerency, in Islamic thought)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension           | Range                                                                          | Central |
+| ------------------- | ------------------------------------------------------------------------------ | ------- |
+| Standing of nature  | Leans _Human-centered_ – Leans _Nature-centered_                               | Yes     |
+| Transcendence       | Strongly _A transcendent order exists_ – Middle                                | No      |
+| Sacred or tradeable | Strongly _Some things are beyond price_ – Leans _Some things are beyond price_ | No      |
+
+### Reasons
+
+**Self-description.** The earth is not ours to use up. We hold it in trust, from God or
+from those who came before us and those who will come after, and we are answerable for
+how we care for it. Human beings have a special place and may use nature for their needs,
+but as stewards and gardeners, not owners or conquerors, and waste and destruction betray
+that trust.
+
+**Key concepts.**
+
+- **Trust:** humans hold creation as trustees, answerable to its owner (God) or to
+  future generations, not as absolute owners.
+- **Dominion:** in Genesis, read as responsible rule and care ("to till it and keep it",
+  Genesis 2:15), not exploitation.
+- **Integral ecology:** care for nature and care for the poor belong together (Pope
+  Francis).
+- **Vicegerency:** in Islamic thought, humans are God's deputies on earth and will
+  answer for it (Qur'an 2:30).
+
+**Signature reasons.**
+
+- "The earth is the Lord's, and we're its caretakers."
+- "We don't own the land; we borrow it from our children."
+- "Using creation is fine; wasting it is a sin."
+- "We'll answer for what we did with what we were given."
+
+**Telling it apart.**
+
+- **Anthropocentrism:** nature matters only for what it means to humans; stewardship
+  adds a duty of care, and often sees value in creation itself (_Standing of nature_;
+  Reasons).
+- **Ecocentrism:** gives humans no special place; stewardship does (_Standing of
+  nature_).
+- **Eco-conservatism:** the Ideology draws on stewardship and love of home; stewardship
+  is the Foundation view, with no political program (Reasons).
+
+**Sources.** Genesis 1:28 and 2:15; Qur'an 2:30; Francis Schaeffer, _Pollution and the
+Death of Man_ (1970); Wendell Berry, _The Gift of Good Land_ (1981); Robin Attfield, _The
+Ethics of Environmental Concern_ (1983); Evangelical Environmental Network, "An
+Evangelical Declaration on the Care of Creation" (1994); Pope Francis, _Laudato si'_
+(2015).
+
+## Ecocentrism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** the land ethic (Leopold); holistic environmental ethics; biocentrism
+  (P. Taylor's life-centred form, covered here)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension             | Range                                                | Central |
+| --------------------- | ---------------------------------------------------- | ------- |
+| Standing of nature    | Leans _Nature-centered_ – Strongly _Nature-centered_ | Yes     |
+| Individuals or wholes | Middle – Strongly _Groups and relations are real_    | No      |
+| Sacred or tradeable   | Strongly _Some things are beyond price_ – Middle     | No      |
+
+### Reasons
+
+**Self-description.** Humans are one species among many, members of a community of life
+rather than its masters, and species, ecosystems, and the living world have value of their
+own, not only value for us. A thing is right when it preserves the integrity, stability,
+and beauty of that community. Treating nature as a stock of resources is the root error
+behind ecological destruction.
+
+**Key concepts.**
+
+- **Intrinsic value:** value in itself, independent of any use to humans.
+- **The land ethic:** extending the idea of community to soils, waters, plants, and
+  animals (Leopold).
+- **Holism:** wholes such as species and ecosystems can matter more than individual
+  organisms.
+- **Biocentrism:** every living organism is a "teleological centre of life" with a good
+  of its own (P. Taylor).
+
+**Signature reasons.**
+
+- "A thing is right when it tends to preserve the integrity, stability, and beauty of
+  the biotic community." (Leopold)
+- "We belong to the earth; it doesn't belong to us."
+- "A species going extinct is a loss even if no human ever notices."
+- "Humans are plain members of the community of life, not its owners."
+
+**Telling it apart.**
+
+- **Sentientism:** counts only sentient individuals; ecocentrism counts species and
+  ecosystems (_Standing of nature_, _Individuals or wholes_).
+- **Stewardship:** gives humans a special place as trustees (_Standing of nature_).
+- **Deep ecology:** the Ideology adds "self-realization" and a call to shrink human
+  population and consumption; ecocentrism is the Foundation view beneath it (Reasons).
+
+**Sources.** Aldo Leopold, _A Sand County Almanac_ (1949); Arne Naess, "The Shallow and
+the Deep, Long-Range Ecology Movement" (1973); Richard Routley, "Is There a Need for a
+New, an Environmental, Ethic?" (1973); Paul Taylor, _Respect for Nature_ (1986); Holmes
+Rolston III, _Environmental Ethics_ (1988); J. Baird Callicott, _In Defense of the Land
+Ethic_ (1989).
+
+## Sanctity of life
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** the sanctity-of-life ethic; the consistent ethic of life (Bernardin,
+  one form); pro-life (in politics)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension               | Range                                                                          | Central |
+| ----------------------- | ------------------------------------------------------------------------------ | ------- |
+| Grounds of moral status | Strongly _Life itself is inviolable_ – Leans _Life itself is inviolable_       | Yes     |
+| Sacred or tradeable     | Strongly _Some things are beyond price_ – Leans _Some things are beyond price_ | No      |
+| Outcomes or rules       | Leans _Inviolable rules_ – Strongly _Inviolable rules_                         | No      |
+| Transcendence           | Strongly _A transcendent order exists_ – Middle                                | No      |
+
+### Reasons
+
+**Self-description.** Every human being has an inviolable worth that does not depend on
+age, ability, health, or usefulness, from conception until natural death. That worth
+belongs to the human being as such, not to capacities that come and go, so the unborn
+child, the severely disabled, and the dying have the same claim not to be killed as
+anyone else. Once we begin ranking lives by their quality, no one's life is safe.
+
+**Key concepts.**
+
+- **Human dignity:** the intrinsic worth of every human being, grounded in being made in
+  God's image or simply in being a living member of the human kind.
+- **Inviolability:** intentionally killing an innocent human being is always wrong.
+- **Conception:** the beginning of a new human organism, and so of full moral status.
+- **Natural death:** life should not be deliberately ended, though burdensome treatment
+  may be refused.
+
+**Signature reasons.**
+
+- "Every human life has the same worth, from conception to natural death."
+- "Your worth doesn't depend on what you can do."
+- "Quality-of-life judgments end with some lives judged not worth living."
+- "We don't get to decide whose life counts."
+
+**Telling it apart.**
+
+- **Personhood view:** grounds moral status in capacities such as consciousness and
+  self-awareness (_Grounds of moral status_).
+- **Natural law:** often its grounding, but natural law is a whole moral theory, and many
+  hold the sanctity of life outside it, religious and secular (Reasons).
+- **Deontology:** shares an absolute prohibition, but sanctity of life is a view about who
+  has full moral status, not about the structure of all of ethics (Reasons).
+
+**Sources.** Genesis 1:27 and 9:6; Joseph Bernardin, "A Consistent Ethic of Life" (1983);
+Don Marquis, "Why Abortion Is Immoral" (1989); John Paul II, _Evangelium Vitae_ (1995);
+Robert P. George & Christopher Tollefsen, _Embryo_ (2008); Christopher Kaczor, _The
+Ethics of Abortion_ (2011).
+
+## Personhood view
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** the capacity view; quality-of-life ethics
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension               | Range                                                                                                                    | Central |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------- |
+| Grounds of moral status | Leans _What matters is the life's quality and capacities_ – Strongly _What matters is the life's quality and capacities_ | Yes     |
+
+### Reasons
+
+**Self-description.** What gives a being full moral status is not membership in a species
+but what it is like to be it: consciousness, the capacity to suffer, self-awareness, and a
+stake in its own future. Being biologically human is neither necessary nor sufficient for
+being a person. Taking this seriously lets us reason honestly about the beginning and end
+of life, and about animals, rather than treating a cluster of cells and an adult as the
+same.
+
+**Key concepts.**
+
+- **Person:** a being with capacities such as consciousness, reasoning, self-awareness,
+  and concern for its own future (Locke, Tooley, Warren).
+- **Moral status:** graded by capacities, with full status for persons and less for
+  beings that are only sentient.
+- **Quality of life:** what is good in a life lies in the experiences and activities it
+  contains.
+
+**Signature reasons.**
+
+- "What matters is whether anyone's home, not whether the heart is beating."
+- "Being biologically human isn't what makes a life morally important."
+- "An embryo with no awareness isn't a person yet."
+- "Keeping a body alive with no mind left isn't protecting a person."
+
+**Telling it apart.**
+
+- **Sanctity of life:** holds that every living human has full, inviolable worth
+  (_Grounds of moral status_).
+- **Sentientism:** sets the bar for moral status at sentience; the personhood view
+  reserves full status for self-aware persons (Reasons).
+- **Utilitarianism:** often held with it (Singer), but deontologists such as Warren hold
+  the personhood view too (_Outcomes or rules_).
+
+**Sources.** John Locke, _An Essay concerning Human Understanding_ (2nd ed., 1694), II.27;
+Michael Tooley, "Abortion and Infanticide" (1972); Mary Anne Warren, "On the Moral and
+Legal Status of Abortion" (1973); Peter Singer, _Rethinking Life and Death_ (1994); Jeff
+McMahan, _The Ethics of Killing_ (2002); Agnieszka Jaworska & Julie Tannenbaum, "The
+Grounds of Moral Status", _Stanford Encyclopedia of Philosophy_.
+
+## Natural hierarchy
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** Aristotelian hierarchy; aristocratism (Nietzschean, covered as a
+  Reasons variant); critics: "inegalitarianism"
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension             | Range                                                          | Central |
+| --------------------- | -------------------------------------------------------------- | ------- |
+| Hierarchy or equality | Strongly _Hierarchy is natural_ – Leans _Hierarchy is natural_ | Yes     |
+| Given or made         | Strongly _Given by nature_ – Leans _Given by nature_           | No      |
+
+### Reasons
+
+**Self-description.** People are not equal in ability, virtue, or excellence, and
+pretending otherwise is a comfortable lie. A well-ordered society recognises that some
+are fit to lead and others to follow, and that a hierarchy of merit, role, and
+responsibility is natural and good, as it is in a family, an army, or a craft. Levelling
+everyone down degrades the excellent without raising anyone.
+
+**Key concepts.**
+
+- **Rank:** people differ by nature in capacity and virtue, and a good social order
+  reflects those differences (Plato, Aristotle).
+- **The great chain of being:** a cosmic order of ranks, from lowest to highest, in
+  classical and medieval thought.
+- **Excellence:** what a society should honour and cultivate; for Nietzsche, the higher
+  type, against "slave morality".
+- **Justice:** treating equals equally and unequals unequally (Aristotle), not treating
+  everyone the same.
+
+**Signature reasons.**
+
+- "People aren't equal, and pretending they are helps no one."
+- "Some are born to lead."
+- "Justice means giving each what fits their worth, not giving everyone the same."
+- "A society without rank has no standards."
+
+**Telling it apart.**
+
+- **Basic moral equality:** holds that all persons are fundamentally equal in worth
+  (_Hierarchy or equality_).
+- **Meritocratic desert:** rewards what people do against a background of equal worth;
+  natural hierarchy ranks worth or station by nature (_Hierarchy or equality_; Reasons).
+- **Hereditarianism:** a claim about average traits of groups, not about the rank of
+  persons' worth (_Race and ethnicity_; Reasons).
+
+**Sources.** Plato, _Republic_ III (the myth of the metals); Aristotle, _Politics_ I;
+Thomas Aquinas, _Summa contra Gentiles_ III; Thomas Carlyle, _On Heroes, Hero-Worship,
+and the Heroic in History_ (1841); Friedrich Nietzsche, _Beyond Good and Evil_ (1886)
+and _On the Genealogy of Morality_ (1887); Arthur Lovejoy, _The Great Chain of Being_
+(1936), a history of the idea.
+
+## Basic moral equality
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** equal human worth; human dignity (in its egalitarian sense)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension             | Range                                                    | Central |
+| --------------------- | -------------------------------------------------------- | ------- |
+| Hierarchy or equality | Leans _Equality is basic_ – Strongly _Equality is basic_ | Yes     |
+
+### Reasons
+
+**Self-description.** Every person has the same fundamental worth, whatever their talent,
+wealth, sex, race, or station, and no one is born to rule another. People differ in
+countless ways, but none of those differences makes one person's life matter more than
+another's, so every inequality of power or treatment has to be justified. This conviction
+is the ground floor of modern ethics, religious and secular alike.
+
+**Key concepts.**
+
+- **Equal worth:** a status all persons share, not a claim that people are alike in
+  ability (Waldron).
+- **Dignity:** worth beyond price, grounded in rational nature (Kant), in being made in
+  God's image, or in shared humanity.
+- **Range property:** what makes persons equal is a capacity everyone above a threshold
+  has, in the same way (Rawls).
+- **Burden of justification:** hierarchies are not natural; they must be justified to
+  those beneath them.
+
+**Signature reasons.**
+
+- "All men are created equal." (US Declaration of Independence, 1776)
+- "No one is born better than anyone else."
+- "People differ in talent, not in worth."
+- "Any inequality has to be justified to the person at the bottom."
+
+**Telling it apart.**
+
+- **Natural hierarchy:** holds that people are naturally ranked (_Hierarchy or
+  equality_).
+- **Impartialism:** gives everyone's interests equal weight in decisions; basic equality
+  is about status, and partialists hold it too (_Moral circle_).
+- **Luck egalitarianism:** a theory of fair distribution built on basic equality, not the
+  status claim itself (Reasons).
+
+**Sources.** John Locke, _Second Treatise of Government_ (1689), §4; US Declaration of
+Independence (1776); Immanuel Kant, _Groundwork of the Metaphysics of Morals_ (1785);
+Universal Declaration of Human Rights (1948), art. 1; Bernard Williams, "The Idea of
+Equality" (1962); John Rawls, _A Theory of Justice_ (1971), §77; Jeremy Waldron, _One
+Another's Equals_ (2017).
+
+## Methodological individualism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** ontological individualism (its stronger, metaphysical form); critics:
+  "atomism" (Taylor)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension             | Range                                                                    | Central |
+| --------------------- | ------------------------------------------------------------------------ | ------- |
+| Individuals or wholes | Strongly _Only individuals are real_ – Leans _Only individuals are real_ | Yes     |
+
+### Reasons
+
+**Self-description.** Societies, nations, classes, and markets are real only as patterns
+in what individual people do, believe, and want; there is no collective mind or will over
+and above them. To explain a social fact, trace it to individual actions and their often
+unintended interactions. Talk of what "the nation" or "the class" wants is shorthand at
+best, and at worst a cover for someone imposing their will in its name.
+
+**Key concepts.**
+
+- **Explanation:** social phenomena are explained by individuals' actions, beliefs, and
+  interactions (Weber, Popper, Hayek; the term is Schumpeter's).
+- **Unintended consequences:** much social order emerges from individual actions that no
+  one designed.
+- **Collectives:** abstractions or fictions, not agents with goods of their own
+  (Bentham's "fictitious body").
+
+**Signature reasons.**
+
+- "Society is just people and what they do."
+- "There's no such thing as society. There are individual men and women and there are
+  families." (Thatcher, 1987)
+- "Only individuals think, choose, and act."
+- "Whenever someone speaks for 'the people', ask which people."
+
+**Telling it apart.**
+
+- **Holism (organicism):** holds that communities, nations, and classes are real wholes
+  (_Individuals or wholes_).
+- **Ethical egoism:** a view of what each person ought to pursue, not of what society is;
+  many individualists are altruists (_Self-interest or duty to others_).
+- **Classical liberalism:** the Ideology often rests on methodological individualism, but
+  Marxists such as Elster hold it too (Reasons).
+
+**Sources.** Thomas Hobbes, _De Cive_ (1642); Jeremy Bentham, _An Introduction to the
+Principles of Morals and Legislation_ (1789), ch. 1; Max Weber, _Economy and Society_
+(1922); Friedrich Hayek, "Scientism and the Study of Society" (1942–44); Karl Popper,
+_The Open Society and Its Enemies_ (1945); Jon Elster, _Making Sense of Marx_ (1985);
+Joseph Heath, "Methodological Individualism", _Stanford Encyclopedia of Philosophy_.
+
+## Holism (organicism)
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** organicism; social holism; relational ontology (its Ubuntu and
+  Confucian forms)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                     | Range                                                                            | Central |
+| ----------------------------- | -------------------------------------------------------------------------------- | ------- |
+| Individuals or wholes         | Leans _Groups and relations are real_ – Strongly _Groups and relations are real_ | Yes     |
+| Self-authorship or given role | Middle – Strongly _Live up to a given role_                                      | No      |
+
+### Reasons
+
+**Self-description.** A society is not a heap of separate individuals but a living whole:
+families, communities, nations, classes, and institutions are real, with histories,
+characters, and goods of their own that are more than the sum of their members. We are
+formed by these wholes before we ever choose anything, and explanations that leave them
+out miss what actually moves people. A politics that sees only individuals sees nothing of
+what holds them together.
+
+**Key concepts.**
+
+- **Social wholes:** real entities with properties, goods, and sometimes agency that
+  cannot be reduced to individuals (Hegel, Durkheim).
+- **Social facts:** ways of acting and thinking that exist outside individuals and
+  constrain them (Durkheim).
+- **The organic analogy:** society as a body whose parts have functions within the whole.
+- **The relational self:** persons are made by their relations ("a person is a person
+  through other persons").
+
+**Signature reasons.**
+
+- "We aren't just individuals; we're members of something larger."
+- "A nation is more than the people living in it right now."
+- "You can't understand anyone apart from the communities that made them."
+- "The whole is more than the sum of its parts."
+
+**Telling it apart.**
+
+- **Methodological individualism:** holds that only individuals are real (_Individuals or
+  wholes_).
+- **Moral partialism (special obligations):** about whose interests count for more;
+  holism is about what is real (Reasons).
+- **Communitarianism:** the Ideology builds a politics of shared goods on holist premises;
+  holism is the Foundation view, held by Marxists and nationalists too (Reasons).
+
+**Sources.** G. W. F. Hegel, _Elements of the Philosophy of Right_ (1820); Ferdinand
+Tönnies, _Community and Society_ (1887); Émile Durkheim, _The Rules of Sociological
+Method_ (1895); Ifeanyi Menkiti, "Person and Community in African Traditional Thought"
+(1984); Charles Taylor, "Atomism" (1985); Margaret Gilbert, _On Social Facts_ (1989).
+
+## Natural rights
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** the rights of man; human rights (in their natural-rights grounding);
+  self-ownership (one form: Locke, Nozick); critics: "nonsense upon stilts" (Bentham)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                   | Range                                                                            | Central |
+| --------------------------- | -------------------------------------------------------------------------------- | ------- |
+| Rights: natural or man-made | Strongly _Rights exist before the state_ – Leans _Rights exist before the state_ | Yes     |
+| Moral objectivity           | Strongly _Objective moral truth_ – Leans _Objective moral truth_                 | No      |
+
+### Reasons
+
+**Self-description.** Every person has rights simply by being a person, to life, liberty,
+and property, that no government grants and no government may take away. Governments are
+instituted to secure these rights and are legitimate only in so far as they respect them.
+If rights were merely creatures of law, a majority or a tyrant could abolish them, and
+there would be nothing wrong in principle with what they did.
+
+**Key concepts.**
+
+- **Rights:** moral claims held prior to, and independent of, any legal order.
+- **Self-ownership:** each person owns their own body and labour (Locke, Nozick), a
+  common basis for the other rights.
+- **Inalienability:** some rights cannot be given up or taken away.
+- **Legitimacy:** government exists to secure rights, and violating them can justify
+  resistance.
+
+**Signature reasons.**
+
+- "We hold these truths to be self-evident, that all men are created equal, that they are
+  endowed by their Creator with certain unalienable Rights." (1776)
+- "Rights don't come from the government; the government is there to protect them."
+- "If rights were just laws, the majority could vote them away."
+- "My body is mine before any law says so."
+
+**Telling it apart.**
+
+- **Rights conventionalism:** holds that rights are created by law and convention
+  (_Rights: natural or man-made_).
+- **Natural law:** the older tradition of goods and duties; natural-rights theorists need
+  not accept its account of human purposes (Reasons).
+- **Social contract theory:** Locke joins the two, but pure contract theorists derive
+  rights from the agreement itself (_Rights: natural or man-made_).
+
+**Sources.** John Locke, _Second Treatise of Government_ (1689); US Declaration of
+Independence (1776); Declaration of the Rights of Man and of the Citizen (1789); Thomas
+Paine, _Rights of Man_ (1791); Robert Nozick, _Anarchy, State, and Utopia_ (1974); Brian
+Tierney, _The Idea of Natural Rights_ (1997); Leif Wenar, "Rights", _Stanford
+Encyclopedia of Philosophy_.
+
+## Rights conventionalism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** legal positivism about rights; rights as social creations
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                   | Range                                                                            | Central |
+| --------------------------- | -------------------------------------------------------------------------------- | ------- |
+| Rights: natural or man-made | Leans _Rights are created by society_ – Strongly _Rights are created by society_ | Yes     |
+
+### Reasons
+
+**Self-description.** Rights are real and precious, but they are made, not found: they
+are rules that societies create, through law and settled convention, to protect interests
+that matter. Talk of rights that exist before any law adds rhetoric, not substance, and
+hides the work of building and defending the institutions that make rights real. Because
+we make rights, we can also justify, extend, and reshape them for good reasons.
+
+**Key concepts.**
+
+- **Rights:** rules of law or convention that protect interests or choices (Hume's
+  conventions of justice; Bentham; Hart).
+- **"Nonsense upon stilts":** Bentham's verdict on natural rights as rhetorical fictions.
+- **Inherited rights:** the "rights of Englishmen" as the inheritance of a particular
+  people, not abstract rights of man (Burke).
+- **Interests:** rights are justified by the interests they protect.
+
+**Signature reasons.**
+
+- "Natural rights is simple nonsense: natural and imprescriptible rights, rhetorical
+  nonsense, nonsense upon stilts." (Bentham)
+- "A right you can't enforce is just a wish."
+- "Rights exist because people built institutions to protect them."
+- "Judge a right by what it does for people, not by where it supposedly came from."
+
+**Telling it apart.**
+
+- **Natural rights:** holds that rights exist before any state (_Rights: natural or
+  man-made_).
+- **Moral anti-realism:** rights conventionalists can be moral realists, as Bentham the
+  utilitarian was (_Moral objectivity_).
+- **Burkean traditionalism:** Burke's inherited rights are one form, but rights
+  conventionalists also include rationalist reformers such as Bentham (_Tradition or
+  reason_).
+
+**Sources.** David Hume, _A Treatise of Human Nature_ (1739–40), III.2; Edmund Burke,
+_Reflections on the Revolution in France_ (1790); Jeremy Bentham, _Anarchical Fallacies_
+(written 1796); H. L. A. Hart, _The Concept of Law_ (1961); Richard Rorty, "Human Rights,
+Rationality, and Sentimentality" (1993); Leif Wenar, "Rights", _Stanford Encyclopedia of
+Philosophy_.
+
+## Evidentialism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** the ethics of belief (Clifford's phrase)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension          | Range                                      | Central |
+| ------------------ | ------------------------------------------ | ------- |
+| Grounds for belief | Strongly _Belief proportioned to evidence_ | Yes     |
+
+### Reasons
+
+**Self-description.** "It is wrong always, everywhere, and for anyone, to believe anything
+upon insufficient evidence" (Clifford). A wise person proportions belief to the evidence,
+holding firmly what is well supported, tentatively what is less so, and suspending
+judgment where the evidence runs out. Belief is not a private matter: what we believe
+shapes what we do to others, so believing without evidence is a failure of
+responsibility.
+
+**Key concepts.**
+
+- **Evidence:** what the believer's experience, testimony, and reasoning actually
+  support.
+- **Proportion:** the degree of belief should match the strength of the evidence (Locke,
+  Hume).
+- **The ethics of belief:** believing is subject to duties, like acting (Clifford).
+- **Faith:** legitimate only where it is itself supported by evidence, for example
+  evidence for a revelation (Locke).
+
+**Signature reasons.**
+
+- "A wise man proportions his belief to the evidence." (Hume)
+- "Extraordinary claims require extraordinary evidence." (Sagan)
+- "Wanting something to be true is no reason to believe it."
+- "If you can't show me why, I don't have to believe it."
+
+**Telling it apart.**
+
+- **Fideism:** holds that faith is a legitimate ground of belief independent of evidence
+  (_Grounds for belief_).
+- **Critical rationalism:** holds that no belief is ever justified, only tested and not
+  yet refuted (Reasons).
+- **Pragmatism:** allows belief on practical grounds where the evidence leaves a live
+  question open (James) (_Grounds for belief_).
+
+**Sources.** John Locke, _An Essay concerning Human Understanding_ (1689), IV.16 and IV.19;
+David Hume, _An Enquiry concerning Human Understanding_ (1748), §10; W. K. Clifford, "The
+Ethics of Belief" (1877); Earl Conee & Richard Feldman, _Evidentialism_ (2004); Andrew
+Chignell, "The Ethics of Belief", _Stanford Encyclopedia of Philosophy_.
+
+## Critical rationalism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** Popperian fallibilism; falsificationism (in the philosophy of
+  science); pancritical rationalism (Bartley)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension            | Range                                                                                | Central |
+| -------------------- | ------------------------------------------------------------------------------------ | ------- |
+| Grounds for belief   | Strongly _Belief proportioned to evidence_ – Leans _Belief proportioned to evidence_ | Yes     |
+| Tradition or reason  | Middle – Strongly _Reason should audit inheritance_                                  | No      |
+| Direction of history | Middle – Leans _Progress is not assured_                                             | No      |
+
+### Reasons
+
+**Self-description.** We can never prove a belief true; all knowledge is conjecture, and
+it grows by boldly proposing theories and trying hard to refute them. What makes an
+attitude rational is not having justified beliefs but holding every belief, our most
+cherished included, open to criticism. A society that builds criticism into its
+institutions, in science and in politics, can learn from its mistakes; one that puts some
+beliefs beyond question cannot.
+
+**Key concepts.**
+
+- **Fallibilism:** any belief may be mistaken.
+- **Conjecture and refutation:** knowledge grows by trial and the elimination of error,
+  not by piling up proofs.
+- **Falsifiability:** a theory is scientific if some possible observation could refute
+  it.
+- **The open society:** institutions (free criticism, governments that can be removed)
+  that let errors be corrected without bloodshed; history has no laws that guarantee
+  progress.
+
+**Signature reasons.**
+
+- "We can never be certain; we can only find out where we were wrong."
+- "A theory that explains everything explains nothing."
+- "Nothing is beyond criticism, including my own views."
+- "Democracy's point is that we can get rid of bad rulers without violence." (after
+  Popper)
+
+**Telling it apart.**
+
+- **Evidentialism:** holds that evidence can justify beliefs; critical rationalism gives
+  up justification and stresses criticism (Reasons).
+- **Enlightenment rationalism:** Popper takes tradition as a starting point to be
+  criticised and reformed piecemeal, not torn down (_Tradition or reason_; Reasons).
+- **Pragmatism:** shares fallibilism (Peirce), but judges beliefs by their practical
+  consequences rather than by surviving refutation (Reasons).
+
+**Sources.** Karl Popper, _The Logic of Scientific Discovery_ (1934; English 1959), _The
+Open Society and Its Enemies_ (1945), _The Poverty of Historicism_ (1957), and
+_Conjectures and Refutations_ (1963); W. W. Bartley, _The Retreat to Commitment_ (1962);
+Hans Albert, _Treatise on Critical Reason_ (1968); David Deutsch, _The Beginning of
+Infinity_ (2011); Stephen Thornton, "Karl Popper", _Stanford Encyclopedia of Philosophy_.
+
+## Pragmatism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** American pragmatism; instrumentalism (Dewey's term); neopragmatism
+  (Rorty, a later form)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                 | Range                                                  | Central |
+| ------------------------- | ------------------------------------------------------ | ------- |
+| Source of moral authority | Leans _Worked out by us_ – Strongly _Worked out by us_ | Yes     |
+| Grounds for belief        | Leans _Belief proportioned to evidence_ – Middle       | No      |
+| Moral objectivity         | Middle – Leans _Human-made morality_                   | No      |
+| Tradition or reason       | Middle – Leans _Reason should audit inheritance_       | No      |
+
+### Reasons
+
+**Self-description.** The meaning and truth of an idea lie in the difference it makes in
+experience: beliefs are tools for coping with the world, judged by how well they work when
+put to use. Inquiry in science, ethics, and politics is an ongoing, experimental, shared
+process of solving problems, with no final certainties and no need for them. Democracy is
+that method applied to living together.
+
+**Key concepts.**
+
+- **The pragmatic maxim:** the meaning of a concept is its conceivable practical effects
+  (Peirce).
+- **Truth:** what works out in experience (James), or what inquiry would finally agree
+  on (Peirce); pragmatism's theory of truth is carried in Reasons, not on a Dimension.
+- **Inquiry:** experimental, fallible problem-solving, in morals as in science (Dewey).
+- **Democracy:** a way of life of shared inquiry, not only a form of government (Dewey).
+
+**Signature reasons.**
+
+- "The proof of an idea is in how it works out in practice."
+- "Don't ask whether it's true in the abstract; ask what difference it makes."
+- "We learn by trying things and seeing what happens."
+- "Values get tested in living, the way hypotheses get tested in a lab."
+
+**Telling it apart.**
+
+- **Evidentialism:** proportions belief to evidence alone; pragmatists such as James
+  allow belief on practical grounds where evidence leaves a live question open
+  (_Grounds for belief_).
+- **Critical rationalism:** shares fallibilism, but judges theories by whether they
+  survive refutation, not by their practical consequences (Reasons).
+- **Moral anti-realism:** pragmatists reject the realist and anti-realist framing alike,
+  and treat values as products of fallible inquiry (_Moral objectivity_; Reasons).
+
+**Sources.** Charles Sanders Peirce, "How to Make Our Ideas Clear" (1878); William James,
+"The Will to Believe" (1896) and _Pragmatism_ (1907); John Dewey, _Democracy and
+Education_ (1916), _The Public and Its Problems_ (1927), and _The Quest for Certainty_
+(1929); Richard Rorty, _Contingency, Irony, and Solidarity_ (1989); Cheryl Misak, _The
+American Pragmatists_ (2013); Catherine Legg & Christopher Hookway, "Pragmatism",
+_Stanford Encyclopedia of Philosophy_.
+
+## Fideism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** reformed epistemology (Plantinga, Wolterstorff, covered as a Reasons
+  variant); critics: "blind faith"
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension          | Range                                                                                          | Central |
+| ------------------ | ---------------------------------------------------------------------------------------------- | ------- |
+| Grounds for belief | Leans _Belief rightly held on other grounds_ – Strongly _Belief rightly held on other grounds_ | Yes     |
+| Transcendence      | Strongly _A transcendent order exists_ – Leans _A transcendent order exists_                   | Yes     |
+
+### Reasons
+
+**Self-description.** Faith is a legitimate way of knowing, not a failure of reason: the
+deepest truths, about God, meaning, and how to live, are not reached by weighing evidence
+like a laboratory hypothesis but by trust, commitment, and encounter. Reason has its own
+limits and its own unprovable starting points, and demanding that faith first pass
+reason's test misunderstands both. "The heart has its reasons, which reason does not
+know" (Pascal).
+
+**Key concepts.**
+
+- **Faith:** trust and commitment that is a proper ground of belief in its own right, not
+  a conclusion drawn from evidence.
+- **The limits of reason:** reason cannot reach the truths of faith, or cannot justify its
+  own starting points (Pascal, Kierkegaard).
+- **Properly basic belief:** belief in God can be rational without argument, like belief
+  in other minds (Plantinga's reformed epistemology).
+- **The leap of faith:** commitment beyond what evidence can settle (Kierkegaard).
+
+**Signature reasons.**
+
+- "The heart has its reasons, which reason does not know." (Pascal)
+- "Some things you know by faith, not by proof."
+- "Everyone starts from something they can't prove; I start from God."
+- "If you could prove it, it wouldn't be faith."
+
+**Telling it apart.**
+
+- **Evidentialism:** holds that belief must be proportioned to evidence (_Grounds for
+  belief_).
+- **Theism:** many theists hold God's existence on evidence and argument, as in natural
+  theology (Aquinas, Swinburne) (_Grounds for belief_).
+- **Standpoint epistemology:** claims that lived experience gives access to evidence
+  others miss; fideism holds faith as a ground of its own (Reasons).
+
+**Sources.** Blaise Pascal, _Pensées_ (1670); Søren Kierkegaard, _Concluding Unscientific
+Postscript_ (1846); Ludwig Wittgenstein, _Lectures and Conversations on Aesthetics,
+Psychology and Religious Belief_ (1966); Nicholas Wolterstorff, _Reason within the Bounds
+of Religion_ (1976); Alvin Plantinga, _Warranted Christian Belief_ (2000); Richard
+Amesbury, "Fideism", _Stanford Encyclopedia of Philosophy_.
+
+## Standpoint epistemology
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** standpoint theory; feminist standpoint theory (its founding form)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension             | Range                                                                                  | Central |
+| --------------------- | -------------------------------------------------------------------------------------- | ------- |
+| Grounds for belief    | Leans _Belief proportioned to evidence_ – Leans _Belief rightly held on other grounds_ | Yes     |
+| Individuals or wholes | Leans _Groups and relations are real_ – Strongly _Groups and relations are real_       | Yes     |
+| Expert trust          | Middle – Leans _Judge for yourself_                                                    | No      |
+
+### Reasons
+
+**Self-description.** Knowledge is produced by people in particular social positions, and
+those positions shape what they can see. People on the underside of a social hierarchy,
+such as women, workers, or racial minorities, must understand both their own lives and
+the dominant group's view of them, so their standpoint, achieved through reflection and
+struggle, can reveal what the powerful overlook. Taking this seriously makes inquiry more
+objective, not less.
+
+**Key concepts.**
+
+- **Situated knowledge:** all knowledge comes from somewhere; there is no view from
+  nowhere (Haraway).
+- **Standpoint:** a critical perspective achieved from a social position, not something
+  automatic in group membership (Hartsock, Harding).
+- **Strong objectivity:** starting inquiry from marginalised lives corrects biases built
+  into dominant knowledge (Harding).
+- **Epistemic injustice:** wronging someone as a knower, by discounting their testimony or
+  lacking the concepts to make sense of their experience (Fricker).
+
+**Signature reasons.**
+
+- "Where you stand shapes what you see."
+- "People at the bottom see things the people at the top never have to."
+- "Lived experience is evidence, not just opinion."
+- "Leaving out whose perspective is missing makes knowledge less objective."
+
+**Telling it apart.**
+
+- **Evidentialism:** treats evidence as equally available to anyone; standpoint
+  epistemology holds that social position shapes access to it (_Grounds for belief_;
+  Reasons).
+- **Fideism:** holds faith as a ground independent of evidence; standpoint epistemology
+  claims better evidence, not faith (Reasons).
+- **Social constructionism:** about whether categories are made; standpoint epistemology
+  is about who is placed to know (_Given or made_; Reasons).
+
+**Sources.** Georg Lukács, _History and Class Consciousness_ (1923); Nancy Hartsock, "The
+Feminist Standpoint" (1983); Donna Haraway, "Situated Knowledges" (1988); Patricia Hill
+Collins, _Black Feminist Thought_ (1990); Sandra Harding, _Whose Science? Whose
+Knowledge?_ (1991); Miranda Fricker, _Epistemic Injustice_ (2007); Elizabeth Anderson,
+"Feminist Epistemology and Philosophy of Science", _Stanford Encyclopedia of Philosophy_.
+
+## Burkean traditionalism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** Chesterton's fence; Hayek's evolutionary epistemology (covered here);
+  epistemic traditionalism
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension           | Range                                                                                    | Central |
+| ------------------- | ---------------------------------------------------------------------------------------- | ------- |
+| Tradition or reason | Strongly _Inherited practice carries wisdom_ – Leans _Inherited practice carries wisdom_ | Yes     |
+| Human nature        | Strongly _Fixed and flawed_ – Middle                                                     | No      |
+
+### Reasons
+
+**Self-description.** Inherited practices, customs, and institutions hold knowledge that
+no single generation, and no individual mind, could reconstruct: the tested experience
+of countless people solving problems they never wrote down. Before reforming a practice
+we do not understand, we should find out why it is there, and the burden of proof lies on
+change. Reason is a fine instrument but a poor foundation when it tries to build society
+from scratch.
+
+**Key concepts.**
+
+- **Prejudice:** in Burke's sense, inherited judgment that acts before reflection and
+  holds wisdom that reflection may miss.
+- **Tacit knowledge:** know-how carried in practices rather than stated rules
+  (Oakeshott, Polanyi).
+- **Spontaneous order:** language, law, and markets evolved through the selection of
+  practices no one designed (Hayek).
+- **Chesterton's fence:** do not take down a fence until you know why it was put up.
+
+**Signature reasons.**
+
+- "Don't take down a fence until you know why it was put up." (after Chesterton)
+- "Customs that have lasted centuries know something we don't."
+- "The individual is foolish, but the species is wise." (after Burke)
+- "Fix what's broken, but don't rebuild society from a blueprint."
+
+**Telling it apart.**
+
+- **Enlightenment rationalism:** holds that practices earn authority only by passing
+  explicit reason (_Tradition or reason_).
+- **Constrained vision:** about human nature rather than inherited practice; often held
+  with it, but either can be held alone (_Human nature_).
+- **Traditionalist conservatism:** the Ideology, whose card lists "Burkean
+  traditionalism" as another name, adds a politics of custom, religion, family, and
+  locality; this Foundation Label is only the claim about knowledge, and liberals such as
+  Hayek hold it too (Reasons).
+
+**Sources.** David Hume, _A Treatise of Human Nature_ (1739–40), III.2; Edmund Burke,
+_Reflections on the Revolution in France_ (1790); G. K. Chesterton, _The Thing_ (1929);
+Michael Polanyi, _Personal Knowledge_ (1958); Friedrich Hayek, _The Constitution of
+Liberty_ (1960) and _Law, Legislation and Liberty_ (1973–79); Michael Oakeshott,
+_Rationalism in Politics_ (1962).
+
+## Enlightenment rationalism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** rationalism in politics (critics' sense: Oakeshott)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension            | Range                                                                                | Central |
+| -------------------- | ------------------------------------------------------------------------------------ | ------- |
+| Tradition or reason  | Leans _Reason should audit inheritance_ – Strongly _Reason should audit inheritance_ | Yes     |
+| Grounds for belief   | Strongly _Belief proportioned to evidence_ – Leans _Belief proportioned to evidence_ | No      |
+| Direction of history | Strongly _History is progressing_ – Middle                                           | No      |
+
+### Reasons
+
+**Self-description.** No practice earns authority merely by being old: customs, laws, and
+institutions must be able to justify themselves to the reason of the people who live
+under them. Every great moral advance, from religious toleration to the abolition of
+slavery and the emancipation of women, came from refusing to accept tradition's verdict.
+Dare to know: think for yourself, and build institutions that can explain themselves.
+
+**Key concepts.**
+
+- **Reason:** a faculty everyone shares, able to judge any inherited practice by explicit
+  argument.
+- **Sapere aude:** "have courage to use your own understanding" (Kant).
+- **The rights of the living:** each generation decides for itself, against "the vanity
+  and presumption of governing beyond the grave" (Paine).
+- **Progress:** improvement through reason and science applied to society (Condorcet).
+
+**Signature reasons.**
+
+- "'We've always done it this way' isn't a reason."
+- "Dare to think for yourself." (after Kant)
+- "Every generation has the right to decide for itself." (after Paine)
+- "Tradition gave us slavery too."
+
+**Telling it apart.**
+
+- **Burkean traditionalism:** holds that inherited practice carries wisdom reason cannot
+  reconstruct (_Tradition or reason_).
+- **Critical rationalism:** also puts reason above authority, but reforms piecemeal and
+  takes tradition as a starting point (Reasons).
+- **Unconstrained vision:** about whether people can be improved; often held with it, but
+  a separate question (_Human nature_).
+
+**Sources.** René Descartes, _Discourse on the Method_ (1637); Immanuel Kant, "An Answer to
+the Question: What Is Enlightenment?" (1784); Thomas Paine, _Rights of Man_ (1791);
+William Godwin, _Enquiry concerning Political Justice_ (1793); Condorcet, _Sketch for a
+Historical Picture of the Progress of the Human Mind_ (1795); Jürgen Habermas, _The
+Philosophical Discourse of Modernity_ (1985); Steven Pinker, _Enlightenment Now_ (2018).
+
+## Theism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** classical theism; monotheism (its main forms)
+- **Variants:** Deism
+- **Centered group:** —
+
+### Positions
+
+| Dimension                 | Range                                                            | Central |
+| ------------------------- | ---------------------------------------------------------------- | ------- |
+| Transcendence             | Strongly _A transcendent order exists_                           | Yes     |
+| Source of moral authority | Strongly _Given from beyond us_ – Middle                         | No      |
+| Moral objectivity         | Strongly _Objective moral truth_ – Leans _Objective moral truth_ | No      |
+
+### Reasons
+
+**Self-description.** A personal God, perfectly good, wise, and powerful, created the
+world and sustains it, so human life has a purpose and the moral law has an author.
+Belief in God is not a stopgap for ignorance but the best explanation of why there is
+anything at all, why the world is intelligible, and why we feel bound by goodness. Without
+God, meaning and value would be things we invent and can unmake.
+
+**Key concepts.**
+
+- **God:** a personal being, creator and sustainer of everything, perfectly good.
+  Belief in a non-personal reality beyond nature (Buddhist, pantheist, "spiritual")
+  shares the Position on _Transcendence_, but not this Label.
+- **Creation:** the world depends on God for its existence at every moment.
+- **Meaning:** human life has a purpose given by God, not invented.
+- **Deism:** God as a creator who does not intervene, a variant with few living holders.
+
+**Signature reasons.**
+
+- "Something can't come from nothing; the universe needs a cause."
+- "If there's no God, life has no ultimate meaning."
+- "Our sense of right and wrong points to a lawgiver."
+- "I believe in God because I've known him in my life."
+
+**Telling it apart.**
+
+- **Agnosticism and Naturalism:** hold that a transcendent order is unknown, or does not
+  exist (_Transcendence_).
+- **Divine command theory:** many theists, natural lawyers among them, do not ground
+  obligation in God's commands (_Source of moral authority_).
+- **Fideism:** many theists hold their belief on evidence and argument (_Grounds for
+  belief_).
+
+**Sources.** Anselm, _Proslogion_ (1078); Thomas Aquinas, _Summa Theologiae_ I, qq. 2–11;
+William Paley, _Natural Theology_ (1802); Richard Swinburne, _The Existence of God_
+(1979); Alvin Plantinga, _Warranted Christian Belief_ (2000); Edward Feser, _Five Proofs
+of the Existence of God_ (2017); Charles Taliaferro, "Philosophy of Religion", _Stanford
+Encyclopedia of Philosophy_.
+
+## Agnosticism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** — (the word is T. H. Huxley's, 1869)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension          | Range                                                                                | Central |
+| ------------------ | ------------------------------------------------------------------------------------ | ------- |
+| Transcendence      | Middle                                                                               | Yes     |
+| Grounds for belief | Strongly _Belief proportioned to evidence_ – Leans _Belief proportioned to evidence_ | No      |
+
+### Reasons
+
+**Self-description.** Whether God or any transcendent reality exists is a question the
+evidence does not settle, and perhaps never can. The honest response is to say so:
+neither to affirm nor to deny what we do not know, while living as well as we can without
+the certainty that believers and atheists claim. It is wrong to say you are certain of
+something unless you can produce the evidence that justifies the certainty.
+
+**Key concepts.**
+
+- **Agnosticism:** the principle of claiming no knowledge beyond the evidence (Huxley),
+  applied to the transcendent.
+- **Permanent or provisional:** whether the question is unanswerable in principle (Kant,
+  Spencer) or only unsettled so far.
+- **Suspended judgment:** a considered position, not indecision. A person whose Belief on
+  _Transcendence_ is Torn or Open has not thereby taken it.
+
+**Signature reasons.**
+
+- "I don't know, and I don't think anyone does."
+- "Neither side can prove its case."
+- "Admitting you don't know is more honest than pretending."
+- "No evidence either way means no verdict either way."
+
+**Telling it apart.**
+
+- **Theism and Naturalism:** affirm or deny a transcendent order (_Transcendence_).
+- **Evidentialism:** agnosticism is often evidentialism applied to God, but evidentialists
+  can be theists or naturalists (_Transcendence_).
+
+**Sources.** Herbert Spencer, _First Principles_ (1862); Leslie Stephen, _An Agnostic's
+Apology_ (1876); Thomas Henry Huxley, "Agnosticism" and "Agnosticism and Christianity"
+(both 1889); Bertrand Russell, "Am I an Atheist or an Agnostic?" (1947); Anthony Kenny,
+_What I Believe_ (2006); Robin Le Poidevin, _Agnosticism: A Very Short Introduction_
+(2010).
+
+## Naturalism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** philosophical naturalism; atheism (its denial of God; naturalism is
+  wider); secular humanism (its ethical form)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                 | Range                                                                                | Central |
+| ------------------------- | ------------------------------------------------------------------------------------ | ------- |
+| Transcendence             | Leans _Nature is all there is_ – Strongly _Nature is all there is_                   | Yes     |
+| Grounds for belief        | Strongly _Belief proportioned to evidence_ – Leans _Belief proportioned to evidence_ | No      |
+| Source of moral authority | Leans _Worked out by us_ – Strongly _Worked out by us_                               | No      |
+
+### Reasons
+
+**Self-description.** Nature is all there is: everything that exists is part of the
+natural world that science studies, and there is no God, soul, or supernatural order
+above it. That does not empty life of meaning; it means meaning, morality, and beauty are
+human achievements, made by beings who are part of nature and must care for one another
+because no one else will. A world without the supernatural is still full of wonder.
+
+**Key concepts.**
+
+- **Nature:** the world of space, time, and causes that science investigates; everything
+  real belongs to it.
+- **The supernatural:** there is no such realm, or none we have reason to believe in.
+- **Meaning:** made by humans, not given.
+- **Humanism:** an ethic grounded in human welfare and reason (secular humanism).
+
+**Signature reasons.**
+
+- "There's no evidence for anything beyond nature."
+- "We make our own meaning, and that makes it ours."
+- "Science explains more every year; the gods explain less."
+- "This life is the only one we get, so it matters."
+
+**Telling it apart.**
+
+- **Theism and Agnosticism:** affirm a transcendent order, or suspend judgment on it
+  (_Transcendence_).
+- **Moral anti-realism:** many naturalists are moral realists who take moral facts to be
+  natural facts (_Moral objectivity_).
+- **Existentialism:** atheist existentialists share naturalism, but the label is an ethic
+  of self-authorship, and Kierkegaard was a Christian (_Transcendence_; Reasons).
+
+**Sources.** Lucretius, _On the Nature of Things_; Baron d'Holbach, _The System of Nature_
+(1770); Ludwig Feuerbach, _The Essence of Christianity_ (1841); Bertrand Russell, "A Free
+Man's Worship" (1903) and _Why I Am Not a Christian_ (1927); John Dewey, _A Common Faith_
+(1934); Paul Kurtz, _In Defense of Secular Humanism_ (1983); David Papineau,
+"Naturalism", _Stanford Encyclopedia of Philosophy_.
+
+## Progressive view of history
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** the idea of progress; meliorism (James); critics: "Whig history"
+  (Butterfield)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension            | Range                                                              | Central |
+| -------------------- | ------------------------------------------------------------------ | ------- |
+| Direction of history | Strongly _History is progressing_ – Leans _History is progressing_ | Yes     |
+| Human nature         | Middle – Strongly _Malleable and improvable_                       | No      |
+
+### Reasons
+
+**Self-description.** Taken as a whole, history is a story of improvement: people today
+live longer, healthier, freer, and more peaceful lives than almost anyone in the past,
+and the circle of moral concern has widened from tribe to nation to humanity. Progress is
+not automatic or even, and it can be reversed, but it is real, and it comes from reason,
+science, and moral argument. Denying it dishonours those who fought for it and
+discourages those who would carry it on.
+
+**Key concepts.**
+
+- **Progress:** moral and material improvement over long periods (Kant, Condorcet, Hegel,
+  Mill).
+- **The expanding circle:** the widening of moral concern over history (Singer, Pinker).
+- **Meliorism:** the world can be made better by human effort (James).
+- **The arc:** progress is slow and uneven but has a direction.
+
+**Signature reasons.**
+
+- "The arc of the moral universe is long, but it bends toward justice." (King, after
+  Theodore Parker)
+- "There's never been a better time to be alive."
+- "Every generation has extended rights to people the last one left out."
+- "Look at the numbers: progress is real."
+
+**Telling it apart.**
+
+- **Declinism:** holds that civilisations decline, or that the present is worse than the
+  past (_Direction of history_).
+- **Unconstrained vision:** about what human beings can become; the progressive view is
+  about the course history has actually taken (_Human nature_).
+- **Marxism:** its historical materialism is a progressive view with a theory of stages
+  and their cause; this Foundation Label carries no theory of how progress happens
+  (Reasons).
+
+**Sources.** Immanuel Kant, "Idea for a Universal History with a Cosmopolitan Purpose"
+(1784); Condorcet, _Sketch for a Historical Picture of the Progress of the Human Mind_
+(1795); G. W. F. Hegel, _Lectures on the Philosophy of History_ (1837); Thomas Babington
+Macaulay, _The History of England_ (1848); J. B. Bury, _The Idea of Progress_ (1920);
+Steven Pinker, _The Better Angels of Our Nature_ (2011) and _Enlightenment Now_ (2018);
+Hans Rosling, _Factfulness_ (2018).
+
+## Declinism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** cyclical history (one form: Polybius, Ibn Khaldun, Spengler); cultural
+  pessimism
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension            | Range                                                                | Central |
+| -------------------- | -------------------------------------------------------------------- | ------- |
+| Direction of history | Leans _Progress is not assured_ – Strongly _Progress is not assured_ | Yes     |
+| Tradition or reason  | Strongly _Inherited practice carries wisdom_ – Middle                | No      |
+
+### Reasons
+
+**Self-description.** Civilisations are born, flourish, and decay; the ancients, Ibn
+Khaldun, and the historians of Rome all saw it, and there is no reason to think we are
+exempt. Material comfort can rise while the things that made a civilisation great, such
+as shared faith, civic virtue, strong families, and high culture, erode. Faith in
+inevitable progress blinds a society to its own decline.
+
+**Key concepts.**
+
+- **Cycle:** civilisations rise and fall in recurring patterns (Polybius's cycle of
+  constitutions; Ibn Khaldun's _asabiyya_, group cohesion; Spengler).
+- **Decline:** the loss of the cohesion, virtue, or spiritual vitality that built a
+  civilisation, which material progress can hide.
+- **Golden age:** a past better in important ways than the present.
+- **Degrees:** mild forms hold that progress is fragile and never assured; strong forms
+  hold that we are in decline now.
+
+**Signature reasons.**
+
+- "Every great civilisation thought it would last forever."
+- "Being richer isn't the same as being better."
+- "We're living off an inheritance we're not replacing."
+- "Hard-won strength breeds comfort, and comfort breeds decay."
+
+**Telling it apart.**
+
+- **Progressive view of history:** holds that history is broadly a story of progress
+  (_Direction of history_).
+- **Burkean traditionalism:** trusts inherited practice without needing to think the
+  present a decline (_Tradition or reason_; Reasons).
+- **Traditionalism:** the radical-right Ideology sees modernity as the end of a cosmic
+  cycle of decline from a primordial sacred Tradition; Declinism carries no such
+  metaphysics (Reasons).
+
+**Sources.** Hesiod, _Works and Days_ (the ages of man); Polybius, _Histories_ VI; Ibn
+Khaldun, _Muqaddimah_ (1377); Edward Gibbon, _The History of the Decline and Fall of the
+Roman Empire_ (1776–89); Oswald Spengler, _The Decline of the West_ (1918–22); Arnold
+Toynbee, _A Study of History_ (1934–61); Arthur Herman, _The Idea of Decline in Western
+History_ (1997), a history of the idea.
+
+## Welfare subjectivism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** hedonism and desire-satisfaction theory (its two main forms);
+  preference-satisfaction view
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                 | Range                                                                                                                        | Central |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- |
+| What makes a life go well | Strongly _It depends on the person's own experience and wants_ – Leans _It depends on the person's own experience and wants_ | Yes     |
+
+### Reasons
+
+**Self-description.** A life goes well for the person living it when it contains what they
+enjoy, or what they want and would still want on reflection. No one else, whether a
+philosopher, a priest, or the state, can tell you that your life is going badly when you
+find it satisfying, or that something is good for you when you neither want it nor enjoy
+it. Taking each person as the authority on their own good is a mark of respect.
+
+**Key concepts.**
+
+- **Hedonism:** well-being is pleasure and the absence of pain (Epicurus, Bentham).
+- **Desire satisfaction:** well-being is getting what you want, or what you would want if
+  you were fully informed (Brandt, Railton).
+- **Subjectivism:** nothing is good for a person unless it connects with their own
+  attitudes.
+
+**Signature reasons.**
+
+- "Who are you to tell me what's good for me?"
+- "If you're happy, your life is going well."
+- "What's good for me is what I'd want if I knew all the facts."
+- "Pushpin is as good as poetry, if it gives as much pleasure." (after Bentham)
+
+**Telling it apart.**
+
+- **Objective-list theory:** holds that some things are good for anyone, whatever they
+  want (_What makes a life go well_).
+- **Existentialism:** an ethic of authoring your own life, which may cost you
+  satisfaction; welfare subjectivism is a theory of what is good for you (Reasons).
+- **Utilitarianism:** often uses a subjectivist theory of well-being, but it is a theory
+  of right action, and some utilitarians use objective lists (Reasons).
+
+**Sources.** Epicurus, _Letter to Menoeceus_; Jeremy Bentham, _An Introduction to the
+Principles of Morals and Legislation_ (1789) and _The Rationale of Reward_ (1825);
+Richard Brandt, _A Theory of the Good and the Right_ (1979); Peter Railton, "Facts and
+Values" (1986); Fred Feldman, _Pleasure and the Good Life_ (2004); Roger Crisp,
+"Well-Being", _Stanford Encyclopedia of Philosophy_.
+
+## Objective-list theory
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** perfectionism about well-being; the capabilities approach (Sen,
+  Nussbaum; a related list)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                 | Range                                                                                | Central |
+| ------------------------- | ------------------------------------------------------------------------------------ | ------- |
+| What makes a life go well | Leans _Some things are good for anyone_ – Strongly _Some things are good for anyone_ | Yes     |
+
+### Reasons
+
+**Self-description.** Some things make any human life go better, whether or not the
+person wants them: knowledge, friendship, love, achievement, meaningful work, health,
+and virtue among them. A life spent happily plugged into a pleasure machine, or one in
+which every desire is met but nothing worthwhile is done, is poorer than it feels from
+inside. Recognising this lets us say honestly when people are deprived of real goods.
+
+**Key concepts.**
+
+- **Objective goods:** things good for a person whatever their attitude toward them
+  (Finnis's basic goods; Parfit's list; Hurka's perfectionism).
+- **The experience machine:** we would not plug into a machine that gave us any
+  experience we wanted, so well-being is more than experience (Nozick).
+- **Capabilities:** what people are able to do and to be, as a measure of how well their
+  lives go (Sen, Nussbaum).
+
+**Signature reasons.**
+
+- "Some things are good for you whether you want them or not."
+- "Friendship, knowledge, and achievement make any life better."
+- "A life of pleasure with nothing worthwhile in it isn't a good life."
+- "You wouldn't plug into the experience machine, and that tells you something."
+
+**Telling it apart.**
+
+- **Welfare subjectivism:** holds that a life goes well as it gives the person pleasure
+  or what they want (_What makes a life go well_).
+- **Natural law:** shares the list of goods, and adds a moral law with absolute rules
+  (_Outcomes or rules_, _Source of moral authority_).
+- **Virtue ethics:** also holds objective goods, but is a theory of right action and
+  character, not only of well-being (Reasons).
+
+**Sources.** Aristotle, _Nicomachean Ethics_ I; John Finnis, _Natural Law and Natural
+Rights_ (1980); Derek Parfit, _Reasons and Persons_ (1984), appendix I; James Griffin,
+_Well-Being_ (1986); Thomas Hurka, _Perfectionism_ (1993); Martha Nussbaum, _Women and
+Human Development_ (2000); Guy Fletcher, "A Fresh Start for the Objective-List Theory of
+Well-Being" (2013).
+
+## Existentialism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** the ethics of authenticity; Christian existentialism (Kierkegaard,
+  Marcel; a religious form)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                     | Range                                                          | Central |
+| ----------------------------- | -------------------------------------------------------------- | ------- |
+| Self-authorship or given role | Strongly _Author your own life_ – Leans _Author your own life_ | Yes     |
+| Free will                     | Strongly _Self-authored agency_ – Leans _Self-authored agency_ | No      |
+| Moral objectivity             | Middle – Strongly _Human-made morality_                        | No      |
+
+### Reasons
+
+**Self-description.** Human beings have no fixed essence handed to them by God, nature,
+or society: we exist first and make ourselves through our choices. That freedom is
+inescapable, and so is the responsibility that comes with it; blaming our roles, our
+upbringing, or human nature is bad faith. The good life is an authentic one, in which you
+own your commitments instead of borrowing them from others.
+
+**Key concepts.**
+
+- **Existence precedes essence:** there is no predefined human nature or purpose; we
+  define ourselves by acting (Sartre).
+- **Freedom:** radical and inescapable; we are "condemned to be free".
+- **Authenticity:** living by commitments you own, rather than by what "one" does
+  (Heidegger) or by the roles society assigns.
+- **Bad faith:** denying your own freedom by pretending to be fixed by role or
+  circumstance (Sartre, Beauvoir).
+
+**Signature reasons.**
+
+- "Man is condemned to be free." (Sartre)
+- "You are what you make of yourself."
+- "Blaming your role or upbringing is a way of dodging your freedom."
+- "No one can tell you what your life means; you have to decide."
+
+**Telling it apart.**
+
+- **Role ethics:** finds the good life in faithfully filling roles one did not choose
+  (_Self-authorship or given role_).
+- **Libertarian free will:** a theory of how choices are caused; existentialism is an
+  ethic of how to live (Reasons).
+- **Welfare subjectivism:** a life goes well by giving you what you want;
+  existentialism values authenticity, which can cost you satisfaction (Reasons).
+
+**Sources.** Søren Kierkegaard, _Either/Or_ (1843); Friedrich Nietzsche, _The Gay Science_
+(1882); Martin Heidegger, _Being and Time_ (1927); Albert Camus, _The Myth of Sisyphus_
+(1942); Jean-Paul Sartre, _Being and Nothingness_ (1943) and _Existentialism Is a
+Humanism_ (1946); Simone de Beauvoir, _The Ethics of Ambiguity_ (1947); Steven Crowell,
+"Existentialism", _Stanford Encyclopedia of Philosophy_.
+
+## Role ethics
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** Confucian role ethics (Ames, Rosemont); the ethics of "my station and
+  its duties" (Bradley)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                     | Range                                                                | Central |
+| ----------------------------- | -------------------------------------------------------------------- | ------- |
+| Self-authorship or given role | Leans _Live up to a given role_ – Strongly _Live up to a given role_ | Yes     |
+| Individuals or wholes         | Middle – Strongly _Groups and relations are real_                    | No      |
+| Moral circle                  | Strongly _Near and dear first_ – Middle                              | No      |
+
+### Reasons
+
+**Self-description.** We are not abstract individuals who choose our attachments; we are
+sons and daughters, parents, neighbours, citizens, and members of a faith and a craft,
+and living well means faithfully filling those roles. The duties of a station are not a
+cage but the shape of a meaningful life, learned from those who came before. A person who
+treats every bond as optional ends up belonging to no one.
+
+**Key concepts.**
+
+- **Roles:** relationships (parent and child, ruler and minister, husband and wife, elder
+  and younger, friend and friend) whose duties make up the moral life.
+- **Filial piety (_xiao_):** respect and care for parents and ancestors, the root of the
+  other virtues.
+- **My station and its duties:** finding one's moral self in one's place in a community
+  (Bradley).
+- **The narrative self:** identity given by the stories and communities one belongs to
+  (MacIntyre).
+
+**Signature reasons.**
+
+- "Being a good son, a good father, and a good neighbour is what a good life is."
+- "You don't choose your family, but you owe them."
+- "Let the ruler be a ruler, the minister a minister, the father a father, the son a
+  son." (Confucius, _Analects_ 12.11)
+- "Freedom without duties leaves you belonging nowhere."
+
+**Telling it apart.**
+
+- **Existentialism:** holds that the good life is one you author by choosing your own
+  commitments (_Self-authorship or given role_).
+- **Moral partialism (special obligations):** about whose interests count for more; role
+  ethics makes filling one's roles the substance of the good life (Reasons).
+- **Virtue ethics:** centres on traits of individual character; role ethics centres on
+  relationships (Reasons).
+
+**Sources.** Confucius, _Analects_; Mencius; Epictetus, _Enchiridion_; F. H. Bradley,
+_Ethical Studies_ (1876), "My Station and Its Duties"; Alasdair MacIntyre, _After
+Virtue_ (1981); Roger Ames, _Confucian Role Ethics_ (2011); Henry Rosemont Jr., _Against
+Individualism_ (2015).
+
+## Ethical egoism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** rational egoism (Rand); egoism (Stirner's form, which rejects morality
+  itself, is covered here)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                       | Range                                                                    | Central |
+| ------------------------------- | ------------------------------------------------------------------------ | ------- |
+| Self-interest or duty to others | Strongly _Rational self-interest_ – Leans _Rational self-interest_       | Yes     |
+| Individuals or wholes           | Strongly _Only individuals are real_ – Leans _Only individuals are real_ | No      |
+
+### Reasons
+
+**Self-description.** Each person's own life and flourishing is the proper aim of their
+actions, and no one is morally obliged to sacrifice their good for others. Pursuing your
+interest rationally over a whole life means being honest, productive, and a good friend
+and trading partner, not trampling others. A morality that demands self-sacrifice treats
+people as means to others' ends, and breeds either resentment or exploitation.
+
+**Key concepts.**
+
+- **Self-interest:** a person's long-term, rational interest, not momentary impulse.
+- **Altruism:** the demand for self-sacrifice, which egoists reject as degrading (Rand).
+- **Trade:** dealing with others by voluntary exchange of value for value.
+- **Stirner's egoism:** rejects every morality, egoist duty included, as a "spook" that
+  rules over the individual.
+
+**Signature reasons.**
+
+- "My life is my own, and I don't owe it to anyone."
+- "Looking after yourself isn't a vice; it's your job."
+- "Help others when it serves your values, not because it's a duty."
+- "Self-sacrifice isn't noble; it's a wasted life."
+
+**Telling it apart.**
+
+- **Altruism:** holds that a person's life is owed, at least in part, to serving others
+  (_Self-interest or duty to others_).
+- **Objectivism:** the Ideology builds a whole political philosophy on rational egoism;
+  ethical egoism is only the Foundation view (Reasons).
+- **Moral partialism (special obligations):** puts family and community first, not
+  oneself (_Moral circle_; Reasons).
+
+**Sources.** Thomas Hobbes, _Leviathan_ (1651); Max Stirner, _The Ego and Its Own_ (1844);
+Henry Sidgwick, _The Methods of Ethics_ (1874), book II; Ayn Rand, _The Virtue of
+Selfishness_ (1964); Tara Smith, _Ayn Rand's Normative Ethics_ (2006); Robert Shaver,
+"Egoism", _Stanford Encyclopedia of Philosophy_.
+
+## Altruism
+
+- **Type:** Foundation
+- **Parent:** —
+- **Also called:** the ethic of service; living for others (Comte coined the word, from
+  _vivre pour autrui_)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                       | Range                                                                  | Central |
+| ------------------------------- | ---------------------------------------------------------------------- | ------- |
+| Self-interest or duty to others | Leans _Owing yourself to others_ – Strongly _Owing yourself to others_ | Yes     |
+
+### Reasons
+
+**Self-description.** A good life is not lived for oneself alone: part of what we owe,
+and part of what makes life meaningful, is service to others, to family, neighbours, the
+poor, and humanity. We are who we are because of others' care, and to live only for our
+own flourishing would be ingratitude and smallness of soul. The great religious and
+humanist traditions agree: love your neighbour as yourself.
+
+**Key concepts.**
+
+- **Altruism:** living for others (Comte).
+- **Service:** a calling to serve God and neighbour, in Christian, Jewish, Muslim,
+  Buddhist, and humanist forms.
+- **Self-sacrifice:** sometimes required and always admirable, though altruists differ
+  on how far it goes.
+- **Mutual aid:** cooperation as a natural human tendency (Kropotkin).
+
+**Signature reasons.**
+
+- "Love your neighbour as yourself." (Leviticus 19:18; Matthew 22:39)
+- "We're here to help each other."
+- "A life lived only for yourself is a small life."
+- "Whatever good fortune I have, I owe something back."
+
+**Telling it apart.**
+
+- **Ethical egoism:** holds that each person ought to pursue their own interest
+  (_Self-interest or duty to others_).
+- **Impartialism:** about whose interests count equally; altruism is about whether your
+  life is owed to others at all (_Moral circle_).
+- **Effective altruism:** the Ideology adds impartial, evidence-based maximising of the
+  good; altruism as a Foundation view carries no method (Reasons).
+
+**Sources.** Auguste Comte, _System of Positive Polity_ (1851–54); Leviticus 19:18;
+Matthew 22:36–40; Peter Kropotkin, _Mutual Aid_ (1902); Thomas Nagel, _The Possibility of
+Altruism_ (1970); Richard Kraut, "Altruism", _Stanford Encyclopedia of Philosophy_.
