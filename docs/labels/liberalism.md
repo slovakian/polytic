@@ -851,3 +851,606 @@ _Capitalism and Freedom_ (1962); John Williamson, "What Washington Means by Poli
 Reform" (1990); Thomas Friedman, _The Lexus and the Olive Tree_ (1999); Jagdish
 Bhagwati, _In Defense of Globalization_ (2004); Martin Wolf, _Why Globalization Works_
 (2004); Quinn Slobodian, _Globalists_ (2018).
+
+## Libertarianism
+
+- **Type:** Ideology
+- **Parent:** —
+- **Also called:** "right-libertarianism" (used by others to tell it apart from
+  libertarian socialism); critics: "propertarianism"
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                     | Range                                                                                                          | Central |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------- | ------- |
+| Property in capital and goods | Strongly _Robust private ownership_ – Leans _Robust private ownership_                                         | Yes     |
+| Economic coordination         | Leans _Market coordination_ – Strongly _Market coordination_                                                   | Yes     |
+| Legal moralism                | Strongly _Liberty of self-regarding conduct_ – Leans _Liberty of self-regarding conduct_                       | Yes     |
+| Paternalism                   | Leans _Choice_ – Strongly _Choice_                                                                             | Yes     |
+| Welfare and social insurance  | Strongly _Self-reliance and voluntary provision_ – Middle                                                      | No      |
+| Distribution                  | Strongly _Market entitlement_ – Middle                                                                         | No      |
+| Moral limits of markets       | Leans _Markets without fixed limits_ – Strongly _Markets without fixed limits_                                 | No      |
+| Speech and expression         | Strongly _Maximal expressive freedom_ – Leans _Maximal expressive freedom_                                     | No      |
+| Security and civil liberties  | Strongly _Civil liberties and due process_ – Leans _Civil liberties and due process_                           | No      |
+| Civil society vs. the state   | Strongly _Family, community, and voluntary association_ – Leans _Family, community, and voluntary association_ | No      |
+| Trade and economic openness   | Strongly _Open exchange_ – Leans _Open exchange_                                                               | No      |
+| Money and public finance      | Leans _Rules and fiscal discipline_ – Strongly _Rules and fiscal discipline_                                   | No      |
+| Use of force                  | Middle – Strongly _Reluctance to use force_                                                                    | No      |
+| Rights: natural or man-made   | Strongly _Rights exist before the state_ – Middle                                                              | No      |
+| Individuals or wholes         | Strongly _Only individuals are real_ – Leans _Only individuals are real_                                       | No      |
+
+### Reasons
+
+**Self-description.** Each person owns themselves: their body, their labor, and what
+they acquire by honest work and voluntary exchange. No one, including a government, may
+initiate force against a peaceful person or take what is theirs, however good the cause.
+A free society is one where every relationship, economic or personal, rests on consent,
+and where people may live as they choose so long as they leave others equally free.
+Most of what the state does by force could be done better, and more justly, by
+voluntary cooperation.
+
+**Key concepts.**
+
+- **Self-ownership:** each person has full rights over their own body and labor; the
+  moral foundation of the tradition.
+- **Non-aggression:** initiating force or fraud against others is wrong, whoever does
+  it; force is legitimate only in defense.
+- **Property:** a rightful extension of self-ownership, acquired by labor and voluntary
+  transfer, and the main protection of personal freedom.
+- **The state:** at best a minimal protector of rights, at worst an organized violation
+  of them; its powers need justifying, not assuming.
+- **Liberty:** non-interference: being left free to use what is yours as you choose.
+
+**Signature reasons.**
+
+- "Taxation is taking people's money by force."
+- "You own yourself; the government doesn't."
+- "If it's peaceful and consensual, it should be legal."
+- "The market is just people cooperating voluntarily."
+- "Government doesn't have any rights you don't have."
+
+**Telling it apart.**
+
+- **Classical liberalism:** accepts a somewhat larger state for public goods and a safety
+  net, and argues more from consequences and the rule of law than from self-ownership
+  (_Welfare and social insurance_; Reasons).
+- **Anarchism:** most anarchist traditions oppose private ownership of capital as a
+  hierarchy alongside the state; libertarianism defends it (_Property in capital and
+  goods_, _Economic coordination_).
+- **Libertarian socialism:** also anti-state and pro-liberty, but seeks collective
+  self-management of production (_Property in capital and goods_, _Workplace
+  governance_).
+- **Liberal conservatism:** can share the economic Positions, but defends them as
+  inherited institutions and accepts law upholding traditional morality (_Legal
+  moralism_, _Tradition or reason_).
+
+**Sources.** Murray Rothbard, _For a New Liberty_ (1973); Robert Nozick, _Anarchy, State,
+and Utopia_ (1974); David Boaz, _The Libertarian Mind_ (2015); Brian Doherty, _Radicals
+for Capitalism_ (2007); Jason Brennan, _Libertarianism: What Everyone Needs to Know_
+(2012); Matt Zwolinski & John Tomasi, _The Individualists_ (2023); Peter Vallentyne &
+Bas van der Vossen, "Libertarianism", _Stanford Encyclopedia of Philosophy_.
+
+## Minarchism
+
+- **Type:** Ideology
+- **Parent:** Libertarianism
+- **Also called:** night-watchman state libertarianism; limited-government
+  libertarianism
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                                         | Range                                                                                            | Central |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------- |
+| Political authority                               | Strongly _Legitimate state authority_ – Leans _Legitimate state authority_                       | Yes     |
+| Welfare and social insurance                      | Strongly _Self-reliance and voluntary provision_                                                 | Yes     |
+| Distribution                                      | Strongly _Market entitlement_                                                                    | Yes     |
+| Economic coordination                             | Strongly _Market coordination_                                                                   | Yes     |
+| Property in capital and goods                     | Strongly _Robust private ownership_                                                              | No      |
+| Rights: natural or man-made                       | Strongly _Rights exist before the state_ – Leans _Rights exist before the state_                 | No      |
+| Outcomes or rules                                 | Leans _Inviolable rules_ – Strongly _Inviolable rules_                                           | No      |
+| Rule of law vs. discretion                        | Leans _Rule by general, fixed rules_ – Strongly _Rule by general, fixed rules_                   | No      |
+| Popular sovereignty vs. constitutional constraint | Strongly _Entrenched rights and judicial review_ – Leans _Entrenched rights and judicial review_ | No      |
+| Legal moralism                                    | Strongly _Liberty of self-regarding conduct_                                                     | No      |
+| Paternalism                                       | Strongly _Choice_                                                                                | No      |
+| Security and civil liberties                      | Strongly _Civil liberties and due process_ – Leans _Civil liberties and due process_             | No      |
+
+### Reasons
+
+**Self-description.** People have rights that no one may violate, and a government is
+justified only because it protects them better than people could alone. That gives the
+state a real but narrow job: police to stop aggression, courts to settle disputes and
+enforce contracts, and an army to defend against invasion. Anything more, from welfare
+to regulation to running businesses, means taking from some people by force to benefit
+others, which no one has a right to do.
+
+**Key concepts.**
+
+- **Night-watchman state:** a state confined to protecting rights through police,
+  courts, and defense, funded as lightly as possible.
+- **Rights as side-constraints:** rights limit what anyone may do to a person, and may not
+  be traded off for better outcomes.
+- **Legitimacy:** a minimal state can arise without violating anyone's rights; anything
+  larger cannot.
+- **Rule of law:** fixed constitutional limits that keep the state from growing past its
+  protective role.
+
+**Signature reasons.**
+
+- "Government has one job: protect our rights."
+- "Police, courts, and an army; everything else people can do for themselves."
+- "Rights aren't something you can trade away for good results."
+- "Once you let the state do more, it never stops growing."
+- "A constitution should chain the government, not the people."
+
+**Telling it apart.**
+
+- **Anarcho-capitalism:** holds that even police, courts, and defense should be supplied
+  by voluntary markets, with no state at all (_Political authority_, the central
+  difference).
+- **Classical liberalism:** allows public goods and often a modest safety net beyond the
+  night-watchman functions (_Welfare and social insurance_, _Distribution_).
+- **Objectivism:** also minarchist, but grounds the state in an egoist ethics and a full
+  philosophical system (_Self-interest or duty to others_, _Moral objectivity_).
+- **Bleeding-heart libertarianism:** accepts a moderate safety net justified by its
+  benefit to the poor (_Welfare and social insurance_).
+
+**Sources.** Wilhelm von Humboldt, _The Limits of State Action_ (written 1792, published
+1851); Herbert Spencer, _Social Statics_ (1851); Ayn Rand, "The Nature of Government", in
+_The Virtue of Selfishness_ (1964); Robert Nozick, _Anarchy, State, and Utopia_ (1974);
+Tibor Machan, _Individuals and Their Rights_ (1989); Peter Vallentyne & Bas van der
+Vossen, "Libertarianism", _Stanford Encyclopedia of Philosophy_.
+
+## Anarcho-capitalism
+
+- **Type:** Ideology
+- **Parent:** Libertarianism
+- **Also called:** market anarchism; private-property anarchism; "ancap"; voluntaryism
+  (a closely related self-name)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                     | Range                                                                          | Central |
+| ----------------------------- | ------------------------------------------------------------------------------ | ------- |
+| Political authority           | Strongly _Voluntary order_                                                     | Yes     |
+| Property in capital and goods | Strongly _Robust private ownership_                                            | Yes     |
+| Economic coordination         | Strongly _Market coordination_                                                 | Yes     |
+| Welfare and social insurance  | Strongly _Self-reliance and voluntary provision_                               | No      |
+| Distribution                  | Strongly _Market entitlement_                                                  | No      |
+| Civil society vs. the state   | Strongly _Family, community, and voluntary association_                        | No      |
+| Design vs. evolved order      | Strongly _Evolved, spontaneous order_ – Leans _Evolved, spontaneous order_     | No      |
+| Moral limits of markets       | Leans _Markets without fixed limits_ – Strongly _Markets without fixed limits_ | No      |
+| Money and public finance      | Leans _Rules and fiscal discipline_ – Strongly _Rules and fiscal discipline_   | No      |
+| Use of force                  | Leans _Reluctance to use force_ – Strongly _Reluctance to use force_           | No      |
+| Legal moralism                | Strongly _Liberty of self-regarding conduct_                                   | No      |
+| Paternalism                   | Strongly _Choice_                                                              | No      |
+| Rights: natural or man-made   | Strongly _Rights exist before the state_ – Middle                              | No      |
+
+### Reasons
+
+**Self-description.** If it is wrong for an individual to take your money by force or
+to forbid you from offering a service, it is wrong when a state does it too. Every
+genuine service a state provides, including security, courts, and law, could be
+supplied by competing firms and voluntary associations that must win customers rather
+than command subjects. A society of private property and free exchange, with no
+institution claiming a monopoly on force, would be both more just and more peaceful.
+
+**Key concepts.**
+
+- **The state:** a territorial monopoly on force financed by taxation, which no one has
+  the right to create.
+- **Polycentric law:** law and dispute resolution supplied by competing courts,
+  arbitrators, and protection agencies, as in historical merchant and customary law.
+- **Non-aggression:** applied without exception, including to governments.
+- **Private property:** the framework that lets all social life, defense included, be
+  organized voluntarily.
+
+**Signature reasons.**
+
+- "Taxation is theft, and the state is a gang that won't admit it."
+- "If private firms can provide everything else, they can provide security and courts
+  too."
+- "Monopolies are bad, and the state is the biggest monopoly of all."
+- "No one ever signed a social contract."
+- "Competition would make justice better and cheaper."
+
+**Telling it apart.**
+
+- **Minarchism:** keeps a minimal state for police, courts, and defense (_Political
+  authority_, the central difference).
+- **Agorism:** its strategic branch, which seeks statelessness by building untaxed
+  counter-economies rather than through politics or persuasion (_Channels of change_).
+- **Anarcho-communism:** also stateless, but abolishes private property and markets
+  (_Property in capital and goods_, _Economic coordination_).
+- **Mutualism:** an anarchism of free exchange that rejects capitalist property, rent,
+  and interest, and recognizes possession by use (_Property in capital and goods_;
+  Reasons).
+- **Objectivism:** shares the economics, but holds that a limited government is morally
+  required and anarchy unworkable (_Political authority_).
+
+**Sources.** Gustave de Molinari, "The Production of Security" (1849); Murray Rothbard,
+_For a New Liberty_ (1973) and _The Ethics of Liberty_ (1982); David Friedman, _The
+Machinery of Freedom_ (1973); Hans-Hermann Hoppe, _Democracy: The God That Failed_
+(2001); Edward Stringham (ed.), _Anarchy and the Law_ (2007); Michael Huemer, _The
+Problem of Political Authority_ (2013).
+
+## Agorism
+
+- **Type:** Ideology
+- **Parent:** Anarcho-capitalism
+- **Also called:** counter-economics; New Libertarianism (Konkin's own name)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                     | Range                                                        | Central |
+| ----------------------------- | ------------------------------------------------------------ | ------- |
+| Channels of change            | Leans _Beyond institutions_ – Strongly _Beyond institutions_ | Yes     |
+| Political authority           | Strongly _Voluntary order_                                   | Yes     |
+| Economic coordination         | Strongly _Market coordination_                               | No      |
+| Property in capital and goods | Strongly _Robust private ownership_                          | No      |
+| Moral limits of markets       | Strongly _Markets without fixed limits_                      | No      |
+| Welfare and social insurance  | Strongly _Self-reliance and voluntary provision_             | No      |
+| Legal moralism                | Strongly _Liberty of self-regarding conduct_                 | No      |
+| Paternalism                   | Strongly _Choice_                                            | No      |
+
+### Reasons
+
+**Self-description.** You cannot vote your way out of the state: political parties and
+elections only legitimize the system and are absorbed by it. The way to a free society
+is to withdraw from the state now, by trading, working, and building in the untaxed and
+unregulated economy, the "counter-economy". As more of life moves into free markets
+the state cannot see or tax, its power drains away, and the voluntary institutions
+people have built in the meantime, from private arbitration to protection agencies, are
+ready to replace it.
+
+**Key concepts.**
+
+- **Counter-economics:** peaceful economic activity that evades the state (black and
+  grey markets, untaxed trade), practiced as a political strategy.
+- **Agora:** the free marketplace, and the name for the stateless society the strategy
+  aims at.
+- **Electoral politics:** rejected as a trap; voting and parties strengthen the state's
+  claim to legitimacy.
+- **Class:** the conflict that matters is between those who live by the state and those
+  who live by production and exchange.
+
+**Signature reasons.**
+
+- "You can't vote away the state; you can only stop feeding it."
+- "Every untaxed trade is a small act of liberation."
+- "Build the free society now, in the shadows of the old one."
+- "Libertarian political parties end up becoming part of the system."
+- "The black market is just the free market under occupation."
+
+**Telling it apart.**
+
+- **Anarcho-capitalism:** its parent; most anarcho-capitalists pursue change by
+  persuasion, education, or political projects rather than counter-economic evasion
+  (_Channels of change_, the central difference).
+- **Techno-libertarianism:** also routes around the state, through cryptography and
+  networks rather than black-market trade; the two overlap in crypto-anarchism
+  (Reasons).
+- **Insurrectionary anarchism:** also rejects working through institutions, but attacks
+  property and capital as well as the state (_Property in capital and goods_, _Force in
+  domestic politics_).
+- **Minarchism:** works within constitutional politics for a limited state (_Political
+  authority_, _Channels of change_).
+
+**Sources.** Samuel Edward Konkin III, _New Libertarian Manifesto_ (1980) and _An Agorist
+Primer_ (2008); J. Neil Schulman, _Alongside Night_ (1979, novel); Murray Rothbard,
+"Konkin on Libertarian Strategy" (1981); Brian Doherty, _Radicals for Capitalism_
+(2007).
+
+## Objectivism
+
+- **Type:** Ideology
+- **Parent:** Libertarianism
+- **Also called:** Randianism (mainly outsiders); Rand and her movement reject the
+  "libertarian" label (see _Telling it apart_)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                       | Range                                                                      | Central |
+| ------------------------------- | -------------------------------------------------------------------------- | ------- |
+| Self-interest or duty to others | Strongly _Rational self-interest_                                          | Yes     |
+| Moral objectivity               | Strongly _Objective moral truth_                                           | Yes     |
+| Political authority             | Strongly _Legitimate state authority_ – Leans _Legitimate state authority_ | Yes     |
+| Economic coordination           | Strongly _Market coordination_                                             | Yes     |
+| Welfare and social insurance    | Strongly _Self-reliance and voluntary provision_                           | No      |
+| Distribution                    | Strongly _Market entitlement_                                              | No      |
+| Property in capital and goods   | Strongly _Robust private ownership_                                        | No      |
+| Rights: natural or man-made     | Strongly _Rights exist before the state_                                   | No      |
+| Transcendence                   | Leans _Nature is all there is_ – Strongly _Nature is all there is_         | No      |
+| Grounds for belief              | Strongly _Belief proportioned to evidence_                                 | No      |
+| Tradition or reason             | Strongly _Reason should audit inheritance_                                 | No      |
+| Religion and state              | Strongly _Secular public order_                                            | No      |
+| Life and body                   | Strongly _Bodily and reproductive autonomy_                                | No      |
+| Standing of nature              | Strongly _Human-centered_                                                  | No      |
+| Technology and risk             | Strongly _Proaction_ – Leans _Proaction_                                   | No      |
+| Use of force                    | Strongly _Readiness to use force_ – Middle                                 | No      |
+
+### Reasons
+
+**Self-description.** Reality is objective, reason is our only means of knowing it, and
+each person's own life and happiness is the proper purpose of their life. A rational
+person neither sacrifices themselves to others nor others to themselves; they deal with
+others by trade, value for value. Because the individual's life is an end in itself,
+the only moral social system is laissez-faire capitalism, in which force is banished
+from human relationships and government exists solely to protect individual rights.
+
+**Key concepts.**
+
+- **Rational egoism:** pursuing your own long-term flourishing by reason is a moral
+  duty; altruism, the demand to live for others, is the root of tyranny.
+- **Objective reality and reason:** existence exists independently of any mind, and
+  reason, not faith or feeling, is the only guide to knowledge and action.
+- **Rights:** moral principles that follow from what a rational being needs to live,
+  above all the right to one's own life and its product.
+- **Capitalism:** the system that recognizes individual rights, including property
+  rights, and so the only moral one.
+- **Government:** necessary and proper, but limited to police, courts, and defense;
+  anarchy is rejected as rule by competing gangs.
+
+**Signature reasons.**
+
+- "My life belongs to me, not to society."
+- "Selfishness, properly understood, is a virtue."
+- "Capitalism is the only moral system because it's based on voluntary trade."
+- "Reason is man's only means of knowledge."
+- "I will never live for the sake of another man, nor ask another man to live for mine."
+  (Rand, _Atlas Shrugged_)
+
+**Telling it apart.**
+
+- **Libertarianism generally:** shares the politics but rests it on varied grounds;
+  Objectivism derives it from rational egoism and a complete philosophy, and Rand
+  denounced the libertarian movement for having no such foundation
+  (_Self-interest or duty to others_, _Moral objectivity_; Reasons).
+- **Anarcho-capitalism:** abolishes the state; Objectivism holds that a limited
+  government is morally required (_Political authority_).
+- **Individualist anarchism:** in Stirner's egoist form, rejects morality and the state
+  alike; Objectivism's egoism is a strict objective morality and keeps a state (_Moral
+  objectivity_, _Political authority_).
+- **Classical liberalism:** argues for markets from welfare, rule of law, or natural
+  rights, not from the morality of self-interest (_Self-interest or duty to others_;
+  Reasons).
+- **Neoconservatism:** can share a hawkish foreign policy, but values religion and
+  tradition as social foundations (_Religion and state_, _Tradition or reason_).
+
+**Sources.** Ayn Rand, _The Fountainhead_ (1943), _Atlas Shrugged_ (1957), _The Virtue of
+Selfishness_ (1964), and _Capitalism: The Unknown Ideal_ (1966); Leonard Peikoff,
+_Objectivism: The Philosophy of Ayn Rand_ (1991); Tara Smith, _Ayn Rand's Normative
+Ethics_ (2006); Neera K. Badhwar & Roderick T. Long, "Ayn Rand", _Stanford Encyclopedia
+of Philosophy_.
+
+## Left-libertarianism (Steiner–Vallentyne)
+
+- **Type:** Ideology
+- **Parent:** Libertarianism
+- **Also called:** left-libertarianism; egalitarian libertarianism; geolibertarianism
+  (its overlap with Georgism). Not to be confused with the looser use of
+  "left-libertarian" for libertarian socialism or the anti-authoritarian left
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                                   | Range                                                                                  | Central |
+| ------------------------------------------- | -------------------------------------------------------------------------------------- | ------- |
+| Land and natural resources                  | Strongly _Common inheritance_ – Leans _Common inheritance_                             | Yes     |
+| Property in capital and goods               | Strongly _Robust private ownership_ – Leans _Robust private ownership_                 | Yes     |
+| Distribution                                | Leans _Market entitlement_ – Leans _Egalitarian redistribution_                        | No      |
+| Reciprocity in support                      | Strongly _Unconditional support_ – Leans _Unconditional support_                       | No      |
+| Welfare and social insurance                | Leans _Self-reliance and voluntary provision_ – Leans _Public social insurance_        | No      |
+| Compatriot priority vs. global impartiality | Leans _Impartial concern for all people_ – Strongly _Impartial concern for all people_ | No      |
+| Immigration and borders                     | Leans _Freedom of movement_ – Strongly _Freedom of movement_                           | No      |
+| Rights: natural or man-made                 | Strongly _Rights exist before the state_ – Leans _Rights exist before the state_       | No      |
+| Legal moralism                              | Strongly _Liberty of self-regarding conduct_                                           | No      |
+| Paternalism                                 | Strongly _Choice_                                                                      | No      |
+
+### Reasons
+
+**Self-description.** Each person fully owns themselves, so no one may be conscripted,
+coerced, or taxed on the fruits of their own labor. But no one made the earth. Land and
+natural resources belong to everyone in common, so those who take more than their fair
+share owe the value of the excess to everyone else. Full self-ownership plus equal
+shares in the world's natural wealth give a libertarianism that is genuinely egalitarian.
+
+**Key concepts.**
+
+- **Self-ownership:** full and equal, exactly as in other libertarianism.
+- **Natural resources:** unowned by anyone at first and owned in common by all, so
+  appropriating them creates a debt to everyone else.
+- **Equal shares:** the value of land and resources (rents, taxes on appropriation) is
+  shared out equally, often as an unconditional payment to each person.
+- **Global scope:** in most versions, equal shares are owed to all people, not just
+  citizens.
+
+**Signature reasons.**
+
+- "You own yourself, but nobody made the land."
+- "Taxing what someone earns is wrong; charging for what they took from nature is not."
+- "Everyone is entitled to an equal share of the earth's value."
+- "A land-value dividend could fund a basic income with no strings attached."
+- "Freedom and equality aren't opposites if you get property right."
+
+**Telling it apart.**
+
+- **Libertarianism:** most libertarians let people appropriate unowned land and resources
+  with little or no debt to others (_Land and natural resources_, the central
+  difference).
+- **Georgism:** reaches a similar single-tax-on-land program, but within a classical
+  liberal state and without a full theory of self-ownership (Reasons; _Political
+  authority_).
+- **Libertarian socialism:** rejects private ownership of capital, not only of land
+  (_Property in capital and goods_).
+- **Egalitarian liberalism:** does not accept full self-ownership, so allows taxing labor
+  income to help the worst off (_Distribution_, _Property in capital and goods_;
+  Reasons).
+
+**Sources.** Thomas Paine, _Agrarian Justice_ (1797); Henry George, _Progress and
+Poverty_ (1879); Hillel Steiner, _An Essay on Rights_ (1994); Peter Vallentyne & Hillel
+Steiner (eds.), _The Origins of Left-Libertarianism_ and _Left-Libertarianism and Its
+Critics_ (2000); Michael Otsuka, _Libertarianism without Inequality_ (2003); Peter
+Vallentyne, "Left-Libertarianism", in _The Oxford Handbook of Political Philosophy_
+(2012).
+
+## Bleeding-heart libertarianism (neoclassical liberalism)
+
+- **Type:** Ideology
+- **Parent:** Libertarianism
+- **Also called:** neoclassical liberalism; market democracy (Tomasi); liberaltarianism
+  (Lindsey 2006)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                     | Range                                                                           | Central |
+| ----------------------------- | ------------------------------------------------------------------------------- | ------- |
+| Welfare and social insurance  | Leans _Self-reliance and voluntary provision_ – Leans _Public social insurance_ | Yes     |
+| Economic coordination         | Leans _Market coordination_ – Strongly _Market coordination_                    | Yes     |
+| Property in capital and goods | Strongly _Robust private ownership_ – Leans _Robust private ownership_          | Yes     |
+| Distribution                  | Leans _Market entitlement_ – Middle                                             | No      |
+| Reciprocity in support        | Leans _Unconditional support_ – Leans _Conditional (reciprocal) support_        | No      |
+| Political authority           | Strongly _Legitimate state authority_ – Leans _Legitimate state authority_      | No      |
+| Immigration and borders       | Middle – Strongly _Freedom of movement_                                         | No      |
+| Legal moralism                | Strongly _Liberty of self-regarding conduct_                                    | No      |
+| Paternalism                   | Leans _Choice_ – Strongly _Choice_                                              | No      |
+| Speech and expression         | Strongly _Maximal expressive freedom_ – Leans _Maximal expressive freedom_      | No      |
+
+### Reasons
+
+**Self-description.** Free markets and strong economic liberties are the best thing that
+has ever happened to the poor, and that, not only the rights of owners, is why
+libertarians should defend them. Social justice is a legitimate standard: a society
+should be judged partly by how well its least advantaged members fare. Judged that
+way, open markets, secure property, and freedom of movement beat central planning and
+heavy regulation, and a modest, market-friendly safety net or basic income can fill the
+gaps that markets leave.
+
+**Key concepts.**
+
+- **Social justice:** a real standard for judging institutions, which markets meet
+  better than their rivals.
+- **Economic liberty:** working, owning, and trading are basic liberties, as important
+  to a person's self-authorship as speech or religion.
+- **Concern for the poor:** a primary justification for markets and property, not an
+  afterthought.
+- **Safety net:** acceptable, even required, when it is simple, market-compatible, and
+  helps those markets fail (often a basic income or negative income tax).
+
+**Signature reasons.**
+
+- "Free markets have done more for the poor than any government program."
+- "Economic freedom is as basic as freedom of speech."
+- "Libertarians should care about social justice, and markets deliver it."
+- "Open borders would be the biggest anti-poverty program in history."
+- "A simple basic income beats a maze of welfare bureaucracies."
+
+**Telling it apart.**
+
+- **Classical liberalism:** close in Positions; bleeding-heart libertarianism explicitly
+  adopts a social-justice standard and argues from self-ownership and economic liberty
+  as basic rights (Reasons).
+- **Minarchism:** rejects any public safety net (_Welfare and social insurance_, the
+  central difference).
+- **Egalitarian liberalism:** does not count economic liberties as basic, so supports far
+  more redistribution and regulation (_Distribution_, _Property in capital and goods_).
+- **Social liberalism:** accepts much more public direction and public provision
+  (_Economic coordination_, _Welfare and social insurance_).
+
+**Sources.** Brink Lindsey, "Liberaltarians", _The New Republic_ (2006); Gerald Gaus,
+_The Order of Public Reason_ (2011); Bleeding Heart Libertarians (group blog, 2011–2017);
+John Tomasi, _Free Market Fairness_ (2012); Jason Brennan & John Tomasi, "Classical
+Liberalism", in _The Oxford Handbook of Political Philosophy_ (2012); Matt Zwolinski &
+John Tomasi, _The Individualists_ (2023).
+
+## Paleolibertarianism
+
+- **Type:** Ideology
+- **Parent:** Libertarianism
+- **Also called:** paleo-libertarianism; right-wing populist libertarianism (Rothbard's
+  own framing, 1992)
+- **Variants:** —
+- **Centered group:** —
+
+### Positions
+
+| Dimension                         | Range                                                                                    | Central |
+| --------------------------------- | ---------------------------------------------------------------------------------------- | ------- |
+| Economic coordination             | Strongly _Market coordination_                                                           | Yes     |
+| Immigration and borders           | Strongly _Community control over membership_ – Leans _Community control over membership_ | Yes     |
+| Tradition or reason               | Strongly _Inherited practice carries wisdom_ – Leans _Inherited practice carries wisdom_ | Yes     |
+| Welfare and social insurance      | Strongly _Self-reliance and voluntary provision_                                         | No      |
+| Property in capital and goods     | Strongly _Robust private ownership_                                                      | No      |
+| Civil society vs. the state       | Strongly _Family, community, and voluntary association_                                  | No      |
+| Self-authorship or given role     | Middle – Leans _Live up to a given role_                                                 | No      |
+| Local vs. central                 | Strongly _Local and regional self-rule_ – Leans _Local and regional self-rule_           | No      |
+| Sovereignty vs. pooled governance | Leans _Sovereign self-government_ – Strongly _Sovereign self-government_                 | No      |
+| Use of force                      | Leans _Reluctance to use force_ – Strongly _Reluctance to use force_                     | No      |
+| Expert trust                      | Leans _Judge for yourself_ – Strongly _Judge for yourself_                               | No      |
+| Money and public finance          | Strongly _Rules and fiscal discipline_                                                   | No      |
+| Trade and economic openness       | Strongly _Open exchange_ – Middle                                                        | No      |
+| Legal moralism                    | Strongly _Liberty of self-regarding conduct_ – Leans _Liberty of self-regarding conduct_ | No      |
+
+### Reasons
+
+**Self-description.** A free society does not survive on markets alone. It depends on
+strong families, churches, local communities, and inherited moral norms that the
+welfare state, mass culture, and a governing elite are steadily eroding. Libertarians
+who pair free markets with cultural libertinism and open borders mistake the
+conditions of liberty for its enemies. The path to freedom is to strip power from the
+central state and its managerial class, in alliance with ordinary people who resent
+them, while defending the traditional communities that make self-government possible.
+
+**Key concepts.**
+
+- **Culture:** traditional morality, family, and religion are the social foundation a
+  free, stateless or nearly stateless order needs; libertinism undermines it.
+- **The ruling elite:** a coalition of the central state, media, and academia, opposed by
+  appeal to ordinary people.
+- **Decentralization:** secession, states' rights, and local rule as checks on central
+  power.
+- **Immigration:** state-run open borders amount to forced integration; property owners
+  and communities should control who comes in.
+- **Non-intervention:** no foreign wars, alliances, or international bodies.
+
+**Signature reasons.**
+
+- "Freedom needs strong families and churches, not just free markets."
+- "Open borders run by the state aren't free immigration; they're forced integration."
+- "The real enemy is the ruling elite in the capital and the media."
+- "Power should go back to states, towns, and families."
+- "End the Fed, and stay out of foreign wars."
+
+**Telling it apart.**
+
+- **Libertarianism:** most libertarians are culturally liberal and favor freer
+  immigration (_Immigration and borders_, _Tradition or reason_).
+- **Paleoconservatism:** shares the cultural and anti-interventionist outlook, but
+  accepts a larger state, tariffs, and law that enforces morality (_Welfare and social
+  insurance_, _Trade and economic openness_, _Legal moralism_).
+- **National populism:** shares the anti-elite and immigration stance, but accepts an
+  active state and economic protection (_Economic coordination_, _Trade and economic
+  openness_).
+- **Anarcho-capitalism:** overlaps in its Hoppean form; paleolibertarianism adds
+  cultural traditionalism and restriction of immigration (_Tradition or reason_,
+  _Immigration and borders_).
+- **Liberal conservatism:** pairs markets with tradition, but accepts a hawkish foreign
+  policy and a fuller state (_Use of force_, _Political authority_).
+
+**Sources.** Llewellyn H. Rockwell Jr., "The Case for Paleo-Libertarianism", _Liberty_
+(1990); Murray Rothbard, "Right-Wing Populism" (1992); Hans-Hermann Hoppe, _Democracy:
+The God That Failed_ (2001); Ron Paul, _The Revolution: A Manifesto_ (2008); Brian
+Doherty, _Radicals for Capitalism_ (2007); Matt Zwolinski & John Tomasi, _The
+Individualists_ (2023).
