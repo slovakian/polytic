@@ -11,7 +11,8 @@ v1 is the first slice of Stage 1: one visit, done very well, with nothing about 
 **Access**
 
 - No login. Anyone starts grilling straight away.
-- Free for the person, running on free models via OpenRouter (ADR-0003), with light limits so no one exhausts the shared free quotas.
+- Free for the person, running only on our free OpenRouter quota (ADR-0003, ADR-0011). Each Session that gets in is guaranteed its Result; each IP gets one first pass a day, behind an invisible bot check. When the day is full, an honest "opens again at HH:MM" screen.
+- Anyone can bring their own OpenRouter key at any time, for the same free models on their own limits or a short, bench-tested list of paid models (`architecture.md`, "Bring your own key").
 - English only, open to any country. Diagnostic Dilemmas use the person's own country.
 
 **The grill**
