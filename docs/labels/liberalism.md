@@ -1211,7 +1211,7 @@ from human relationships and government exists solely to protect individual righ
 
 **Telling it apart.**
 
-- **Libertarianism generally:** shares the politics but rests it on varied grounds;
+- **Libertarianism:** shares the politics but rests it on varied grounds;
   Objectivism derives it from rational egoism and a complete philosophy, and Rand
   denounced the libertarian movement for having no such foundation
   (_Self-interest or duty to others_, _Moral objectivity_; Reasons).
