@@ -15,5 +15,5 @@ chat affordable. The cost is variable quality and, for some free endpoints, prov
 logging; the privacy consequence is handled in ADR-0004.
 
 Which models fill which role, and the fallback order, are set in `docs/architecture.md`
-(ADR-0010). The rate-limiting and abuse strategy for a login-free public chat is decided
-in [Decide v1 abuse limits and free-quota protection](https://github.com/slovakian/polytic/issues/33).
+(ADR-0010). How the shared free quota is protected, and the curated paid models a
+person may run on their own key, are in ADR-0011. We never pay for model calls in v1.

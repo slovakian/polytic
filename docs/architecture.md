@@ -19,7 +19,8 @@ The binding constraint is the shared free quota (1,000 model calls a day,
 `docs/research/free-model-live-testing.md`). Every model call is budgeted: about **2 per
 turn** and **2 per Result**, so roughly 26–30 per first visit and 33–38 first visits a
 day. Anything that adds a call per turn (model-chosen tool loops, skill loading, a
-per-turn checker) has to earn it.
+per-turn checker) has to earn it. How that quota is shared out, and how a person can
+bring their own key past it, is in "Limits and quota protection" below (ADR-0011).
 
 ## One turn
 
@@ -172,6 +173,103 @@ On failure: retry once, then `google/gemma-4-31b-it:free`, then
 **Never `openrouter/free`**: it breaks strict forms and means we wouldn't know which
 model is talking (ADR-0003). Reasoning-on roles need `max_tokens ≥ 2500`.
 
+## Limits and quota protection
+
+Decided in
+[Decide v1 abuse limits and free-quota protection](https://github.com/slovakian/polytic/issues/33);
+the core commitment is ADR-0011. v1 runs **only on our free quota**. There is no paid
+fallback. All numbers below are starting values in config.
+
+**Getting in.** Limits count Sessions, not requests. A Session gets in at its first
+model call, after the country picker and the opening thread:
+
+1. An invisible **Cloudflare Turnstile** check runs. Most people never see it; Cloudflare
+   challenges only traffic it's unsure about.
+2. The **per-IP limit** is checked: 1 first pass per IP per 24 hours, counted in a
+   Durable Object keyed by a salted hash of the IP. The counter holds only a count,
+   expires within 24 hours, and is never linked to anything the person said. A
+   browser-side count is a soft first check.
+3. The day's budget must have room to **reserve 42 calls**: the worst-case first pass,
+   20 turns × 2 calls plus 2 for the Result.
+4. The server issues a **signed Session token**, which every later call must carry.
+
+Whoever gets in is guaranteed to reach their Result. Unused reserved calls go back to
+the pool when the Result is built, after **30 minutes idle** (coming back after that
+means getting in again, continuing the same conversation), or when the person switches
+to their own key.
+
+**Caps on every Session**, whoever's key it runs on:
+
+- First pass: the Result is offered at the soft cap (~turn 16) and built automatically
+  at **turn 20**.
+- **2,000 characters per message.** A circular progress ring appears in the composer at
+  80% of the limit, fills as you type, and turns red with Send disabled when you're over.
+  There is no character count, and text is never silently cut. The server enforces the
+  same limit.
+- A maximum conversation size the server will accept, and `max_tokens` per role.
+
+Because the server writes every prompt and the Interviewer only carries out a Turn
+Brief, the chat is worth little as a free general-purpose model; these caps close the
+remaining gaps (huge inputs, forged histories).
+
+**Deepening** runs only on what's left over. It's allowed while the day's uncommitted
+budget is above a **reserve of 250 calls** (about 6 new Sessions). Each Session gets up
+to **2 rounds of 6 turns** plus a Result rebuild. When it's closed, the Result's
+deepening entry points say so ("deepening opens again tomorrow") rather than disappearing.
+
+**Counting.** A Durable Object counts every model call on our key, including retries and
+fallbacks, and holds the reservations. Every 5 minutes it's reconciled with OpenRouter's
+`GET /api/v1/key`, which wins when they disagree. Preview and dev deployments share the
+production key, so they use **mocked models by default**. Live calls there are opt-in
+and capped at 100 a day in a separate counter, so production always keeps at least 900.
+
+**Per-minute limit.** OpenRouter allows about 20 free requests a minute per account.
+v1 has no cap on how many Sessions run at once: retry briefly with backoff behind the
+"thinking" indicator, then show "busy, try again in a minute". Revisit if real traffic
+shows otherwise.
+
+**When we're full**, honest screens, never a waitlist or an email form:
+
+- Daily budget used: "Polytic is full for today. It opens again at HH:MM" (the quota's
+  UTC reset, in local time), with one line explaining it runs on free models.
+- Per-IP limit: "you've had today's Session; it opens again at HH:MM". Their Result is
+  still in their browser.
+- Each of these screens offers bringing your own key prominently.
+
+## Bring your own key
+
+Anyone can switch a Session to **their own OpenRouter key** at any time, through a quiet
+link that never sits in front of the first message.
+
+- **Connecting:** "Sign in with OpenRouter" (OAuth) is the main option; "paste an
+  existing key" is a secondary link.
+- **The key** lives only in that tab's memory (TanStack AI BYOK, no passkey storage). It
+  is sent in an `x-byok-openrouter` header, used for one call, and never stored on our
+  servers. Closing the tab forgets it; a refresh means signing in again.
+- **Models:** the same free models and fallback order, on the person's own free limits
+  (50 calls a day on an account that has never bought credits, which the picker notes),
+  or one of a **curated list of 2–3 paid models**. People can't name any other model.
+  The chosen model runs **all four roles**, so each listed model is one tested setup.
+- **Every listed paid model** passes the neutrality test bench and the structured-output
+  check, and both re-run on every prompt, handbook, or model change. Paid requests set
+  OpenRouter's `provider.data_collection: "deny"`, and a model is listed only if a
+  provider meets it.
+- **The picker** shows one plain privacy line per option. Free: "free · lower daily
+  limits · the provider may log or train on your conversation". Paid: "billed to your
+  OpenRouter account · providers don't keep your conversation". The disclosure follows
+  the selection.
+- **Limits:** the quota protections (reservation, per-IP limit, deepening reserve,
+  Turnstile) don't apply. The caps on every Session do.
+- **Failures:** a chosen paid model that fails is retried once, then the person picks:
+  try again, pick another model, or continue on free models with their key. We never
+  switch models silently and never fall back to our key. Quota or credit errors name
+  the person's own account ("your OpenRouter free quota is used up for today"), never
+  our "full" screen. If the account's privacy settings block the free providers, the
+  error says which setting does.
+- **Switching partway through** continues the same conversation, since the notes travel
+  with it. Switching back to our key counts as getting in again. Switching models
+  mid-Session is allowed, and the Result's small print names the models used.
+
 ## Holding Clinical Agnosticism
 
 - **Structure first.** The Interviewer only carries out a narrow Turn Brief; dilemmas
@@ -209,8 +307,8 @@ that gap.
 
 ## Not decided here
 
-- Abuse limits and quota protection:
-  [Decide v1 abuse limits and free-quota protection](https://github.com/slovakian/polytic/issues/33).
+- Which 2–3 paid models fill the bring-your-own-key list:
+  [Choose the paid models for the bring-your-own-key list](https://github.com/slovakian/polytic/issues/55).
 - The privacy disclosure for Nvidia and Google logging prompts (ADR-0004).
 - Exact formulas (Label position scoring, Closest Thinker closeness) and the Note-taker's
   change types: implementation, bound by `framework.md`.

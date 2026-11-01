@@ -16,6 +16,12 @@ conversation, but it is sent to third-party AI models, some of which may log it.
 The rule: **never claim more privacy than the current model pool actually provides.** If
 the pool or storage changes, the disclosure changes with it.
 
+ADR-0011 adds two things the disclosure must cover. Our servers hold a short-lived
+counter keyed by a salted hash of the person's IP (a count only, expiring within 24
+hours, never linked to what they said). A person who brings their own OpenRouter key
+sends it through our server for each call, where it is never stored, and the privacy
+line shown for their chosen model replaces the default one.
+
 ## Considered options
 
 - **Only providers that don't collect data.** Rejected for v1 because it excludes most
