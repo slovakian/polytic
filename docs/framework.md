@@ -183,15 +183,19 @@ person and a Reference Figure:
   Coverage;
 - **rewards shared Reasons**: the same Position for the same reasons is closer than the
   same Position for different reasons;
+- **weighs centered groups as Reasons**: mirror-image particularist traditions (e.g. White
+  nationalism and Black nationalism) differ by their centered group; comparison penalizes
+  conflicting centered groups so they do not false-match on spatial Positions alone;
 - compares **in-practice** readings by default where either side splits, noting a shared
   principle as a secondary insight;
 - ignores Off-map Beliefs.
 
 The **Divergence** shown for each Closest Thinker is the Dimension both care most about
-where they are furthest apart. The exact formula is an implementation decision.
+where they are furthest apart. The exact comparison formula and rules are locked in
+[`reference-figures.md`](reference-figures.md).
 
 ## Still open
 
-- The Reference Figure catalog, and the cards for most Labels (`label-library.md`).
+- Card authoring for the remaining Reference Figures in the catalog (`reference-figures.md`).
 - A live view of Beliefs during the grill (not in v1). The Result's layout is set in
   `roadmap.md`.
