@@ -65,14 +65,14 @@ precisely, without tagging every Belief with a level.
 
 Each Belief records:
 
-| Part                | What it captures                                                        |
-| ------------------- | ----------------------------------------------------------------------- |
-| **Position**        | Where the person lands when the two Poles collide.                      |
-| **Pull**            | How strongly each Pole draws them, recorded separately for each Pole.   |
-| **Epistemic State** | Settled, Torn, Indifferent, or Open — a fact about the person.          |
-| **Coverage**        | Not asked, Thin, or Solid — a fact about the session, never the person. |
-| **Reasons**         | What they mean by the contested concepts, and which values win.         |
-| **Evidence**        | What they actually said. No Evidence, no Belief.                        |
+| Part                | What it captures                                                                                     |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Position**        | Where the person lands when the two Poles collide.                                                   |
+| **Pull**            | How strongly each Pole draws them, recorded separately for each Pole (None, Weak, Moderate, Strong). |
+| **Epistemic State** | Settled, Torn, Indifferent, or Open — a fact about the person.                                       |
+| **Coverage**        | Not asked, Thin, or Solid — a fact about the session, never the person.                              |
+| **Reasons**         | What they mean by the contested concepts, and which values win.                                      |
+| **Evidence**        | What they actually said. No Evidence, no Belief.                                                     |
 
 **Why Pull is separate from Position.** Two people can land at the same Position, one
 torn between two things they care about deeply and one indifferent to both. A single

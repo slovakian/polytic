@@ -30,6 +30,7 @@ why_.
 | `dimension-taxonomy.md` | Polytic's Foundation and Political Dimensions (source-of-truth asset). |
 | `label-library.md`      | The Label rules and list Results anchor to (source-of-truth asset).    |
 | `labels/`               | Full Label cards, one file per family (part of the label library).     |
+| `handbooks/`            | The grill's code-loaded handbooks in skill format, one folder each.    |
 | `roadmap.md`            | v1 requirements, then Stage 1 (current focus) through Stage 3.         |
 | `framework.md`          | The model of a belief system: Dimensions, Beliefs, Tensions, Labels.   |
 | `architecture.md`       | How a grilling session runs behind the scenes (mermaid diagrams).      |
