@@ -134,6 +134,24 @@ which handbooks to load from the Turn Brief, which costs no calls and can't be
 forgotten. Because they are real skills, any of them can later be handed to a model to
 open itself (`@tanstack/ai-skills`) without rewriting the content.
 
+The handbooks live in `docs/handbooks/<name>/SKILL.md`, one folder each, with `name` and
+`description` frontmatter
+([Write the grill's move and tone handbooks](https://github.com/slovakian/polytic/issues/51)):
+
+| Handbook                                                                                                                       | Loaded for                                        |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| `tone`                                                                                                                         | The Interviewer, every turn                       |
+| `move-probe`, `move-mirror-and-bridge`, `move-raise-tension`, `move-mark-open-and-advance`, `move-unpack`, `move-offer-result` | The Interviewer, the one the Turn Brief names     |
+| `note-taker`                                                                                                                   | The Note-taker, every turn                        |
+| `dimension-<slug>`                                                                                                             | Either role, for the Dimensions the turn is about |
+
+So an Interviewer prompt is the tone handbook, one move handbook, and the Dimension
+handbooks the brief names. The Note-taker's handbook also fixes two scales the
+framework leaves open: **Pull** per Pole is None, Weak, Moderate, or Strong, and a
+Belief reaches **Solid Coverage** once the person has faced a case where its Poles
+collide and given a Position and a Reason, or was asked directly and answered Open,
+Torn, or Indifferent.
+
 Each Dimension handbook carries 2–3 **Dilemma Skeletons**: the two Poles that collide,
 a country-free scenario, the strongest case for each side written evenly, and any
 special rules (_Force in domestic politics_ stays historical or abstract; the fixed
