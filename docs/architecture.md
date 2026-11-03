@@ -157,7 +157,9 @@ a country-free scenario, the strongest case for each side written evenly, and an
 special rules (_Force in domestic politics_ stays historical or abstract; the fixed
 abortion and medical-transition-for-minors dilemmas in the taxonomy are used as
 written). The Interviewer only localises a skeleton to the person's country; it never
-invents the collision or either side's best argument.
+invents the collision or either side's best argument. The template, the writing and
+localising rules are in `dilemma-skeletons.md`; the skeletons are in the
+`dimension-<slug>` handbooks.
 
 ## The Result
 

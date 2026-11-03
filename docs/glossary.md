@@ -66,9 +66,9 @@ _Avoid_: Topic dimension, policy axis
 
 **Dilemma Skeleton**:
 The pre-written core of a Diagnostic Dilemma: the two Poles that collide, a scenario
-with no country attached, and the strongest case for each side, written evenly. The
-grill dresses it in the person's own country; it never changes the collision or either
-side's case.
+with no country attached, the strongest case for each side, written evenly, and two
+variants that push toward each side in turn. The grill dresses it in the person's own
+country; it never changes the collision or either side's case.
 _Avoid_: Dilemma template, question bank
 
 **Turn Brief**:
