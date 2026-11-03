@@ -15,8 +15,9 @@ why_.
   `README.md`, not here. How the product works behind the scenes belongs in
   `architecture.md`.
 - **The source-of-truth assets** (`dimension-taxonomy.md`, `label-library.md` and
-  `labels/`) are authored deliberately with the project owner. Don't add, remove, or
-  redefine Dimensions or Labels, or write Label cards, unless the user explicitly asks.
+  `labels/`, `dilemma-skeletons.md` and the skeletons in `handbooks/dimension-*/`) are authored deliberately with the
+  project owner. Don't add, remove, or redefine Dimensions or Labels, or write Label
+  cards or Dilemma Skeletons, unless the user explicitly asks.
 - **Respect the principles.** Nothing in `docs/` may contradict the inviolable
   principles in `principles.md` / root `AGENTS.md`.
 
@@ -30,6 +31,7 @@ why_.
 | `dimension-taxonomy.md` | Polytic's Foundation and Political Dimensions (source-of-truth asset). |
 | `label-library.md`      | The Label rules and list Results anchor to (source-of-truth asset).    |
 | `labels/`               | Full Label cards, one file per family (part of the label library).     |
+| `dilemma-skeletons.md`  | The Dilemma Skeleton template and rules (source-of-truth asset).       |
 | `handbooks/`            | The grill's code-loaded handbooks in skill format, one folder each.    |
 | `roadmap.md`            | v1 requirements, then Stage 1 (current focus) through Stage 3.         |
 | `framework.md`          | The model of a belief system: Dimensions, Beliefs, Tensions, Labels.   |

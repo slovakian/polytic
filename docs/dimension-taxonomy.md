@@ -64,10 +64,12 @@ surveys. The set changes only by deliberate revision by the project owner.
 
 ## Diagnostic Dilemmas written into the set
 
-Whether Diagnostic Dilemmas are pre-written per Dimension or generated live for the
-person's country is decided in
-[Decide how a grilling session runs behind the scenes](https://github.com/slovakian/polytic/issues/32).
-Two are fixed here because the owner asked for them by name:
+Diagnostic Dilemmas are pre-written per Dimension as **Dilemma Skeletons**, which
+the Interviewer only localises to the person's country
+([Decide how a grilling session runs behind the scenes](https://github.com/slovakian/polytic/issues/32)).
+The format is in `dilemma-skeletons.md`, and the skeletons are in each Dimension's
+handbook, `handbooks/dimension-<slug>/SKILL.md`. Two are
+fixed here because the owner asked for them by name:
 
 - **Abortion.** An Issue across _Life and body_ (Political), _Grounds of moral status_
   and _Transcendence_ (Foundation). Where moral status begins (conception, heartbeat,
@@ -936,9 +938,9 @@ What society should do, collectively or by law.
 
 ## Open
 
-- **Diagnostic Dilemmas** for each Dimension, and whether they are pre-written or
-  generated live:
-  [Decide how a grilling session runs behind the scenes](https://github.com/slovakian/polytic/issues/32).
+- **Dilemma Skeletons** for the non-Core Dimensions: the Core ones are in
+  the `handbooks/dimension-<slug>/` handbooks (format in `dilemma-skeletons.md`); the rest follow in batches on the
+  [map](https://github.com/slovakian/polytic/issues/12).
 - **Versioning** the set, and what a browser-held Result built on an older version
   shows: fog on the
   [map](https://github.com/slovakian/polytic/issues/12).

@@ -20,7 +20,8 @@ which gives way and why. This is the grill's default move.
 ## What the brief gives you
 
 - The topic and the **Dilemma Skeleton**: the two sides that collide, a scenario with no
-  country attached, the strongest case for each side, and any special rules.
+  country attached, the strongest case for each side, two **Turn the dial** variants
+  (one toward each side), and any special rules.
 - The person's country, or none.
 - Sometimes the person's own words to test (their slogan or stated rule).
 - Sometimes "harder".
@@ -44,9 +45,10 @@ which gives way and why. This is the grill's default move.
 
 ### Harder
 
-- Raise the cost to the side the person has taken, or move to the edge case where their
-  rule bites hardest. Same evenness: harder never means hostile, and it never pushes
-  toward the other side's answer.
+- Use the skeleton's **Turn the dial** variant that pushes against the side the person
+  has taken: it raises the cost of their answer by one fact. If they have already had
+  it, move to the edge case where their rule bites hardest. Same evenness: harder never
+  means hostile, and it never argues for the other side's answer.
 
 ### Special rules from the skeleton
 
@@ -68,11 +70,12 @@ Same Dimension, person said "inequality is the root of everything wrong":
 > neighbour who chose to work part-time. Should the law narrow that gap too, and on
 > what grounds?
 
-Expert trust, harder, generic country:
+Expert trust (a Foundation Dimension, so no policy question), harder after the person
+said to trust the experts, generic country:
 
-> Your health agency recommends a vaccine for children, and a parent who has read the
-> trial data closely disagrees. Should schools be allowed to require it anyway? What
-> would make you side with the parent?
+> Your health agency recommends a new treatment for your child, and a friend who has
+> read the trial data thinks the risks are understated. Suppose the treatment's maker
+> paid for every trial. Whose judgment decides what you do?
 
 ## Don't
 

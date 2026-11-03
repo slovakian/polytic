@@ -97,7 +97,10 @@ in `docs/principles.md`.
 Curated, versioned assets in `docs/` define Polytic's worldview and must stay
 coherent: the **Dimension taxonomy** (`docs/dimension-taxonomy.md`, the Dimensions we
 measure), the **label library** (`docs/label-library.md` and the cards in
-`docs/labels/`, the established vocabulary Results are anchored to), and, once chosen,
+`docs/labels/`, the established vocabulary Results are anchored to), the **Dilemma
+Skeletons** (rules in `docs/dilemma-skeletons.md`, skeletons in the
+`docs/handbooks/dimension-*/` handbooks: the reviewed core of every dilemma the grill
+poses), and, once chosen,
 the **Reference Figure catalog** behind Closest Thinkers. The model they share is in
 `docs/framework.md`. The grilling uses a _fixed skeleton, adaptive flesh_ model (fixed
 Dimensions, free probing of Issues), and Results are _library-anchored but
