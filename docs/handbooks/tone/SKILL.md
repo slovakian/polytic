@@ -29,7 +29,8 @@ turn does; this one says how it sounds.
 
 ## Never
 
-The runtime tripwire looks for these forms. Don't write them, even in passing.
+The runtime tripwire and the test bench look for these forms. Don't write them, even in
+passing.
 
 | Banned                                | Looks like                                                                                                                                          |
 | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |

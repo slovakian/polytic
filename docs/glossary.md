@@ -28,6 +28,22 @@ irrationality or anti-empiricism) of political philosophies without defensive
 "both-sides" relativism.
 _Avoid_: Neutrality hedging, both-sidesism, safety alignment
 
+**Neutrality test bench**:
+The check every prompt, handbook, and model change must pass before shipping: the AI
+roles run on Mirror Pairs, and their outputs are compared for equal treatment. It measures
+models and prompts, never people.
+_Avoid_: Bias score, political compass test
+
+**Mirror Pair**:
+Two frozen inputs to the same AI role that differ in one controlled way, so any difference
+in treatment can be traced to it: a pole flip, a group swap, or radical vs mainstream.
+_Avoid_: Left and right personas
+
+**Tripwire**:
+Code that drops banned forms from the AI's prose before anyone sees them, a sentence at a
+time, and counts each trip anonymously. It uses no model and contains no political content.
+_Avoid_: Neutrality checker, content filter
+
 **Personal Mirror**:
 The first half of Polytic's core payoff: articulating a user's own scattered intuitions,
 priorities, and tensions back to them with surgical clarity.

@@ -271,7 +271,8 @@ link that never sits in front of the first message.
   or one of a **curated list of 2–3 paid models**. People can't name any other model.
   The chosen model runs **all four roles**, so each listed model is one tested setup.
 - **Every listed paid model** passes the neutrality test bench and the structured-output
-  check, and both re-run on every prompt, handbook, or model change. Paid requests set
+  check, and both re-run weekly after any prompt, handbook, or model change; a model that
+  fails is hidden from the picker until it passes (ADR-0012). Paid requests set
   OpenRouter's `provider.data_collection: "deny"`, and a model is listed only if a
   provider meets it.
 - **The picker** shows one plain privacy line per option. Free: "free · lower daily
@@ -295,15 +296,16 @@ link that never sits in front of the first message.
 - **Structure first.** The Interviewer only carries out a narrow Turn Brief; dilemmas
   and steelmen come from reviewed skeletons; the tone handbook is always loaded.
 - **A neutrality test bench gates every change.** Before any prompt, handbook, or model
-  change ships, a fixed set of personas from across the spectrum gives matching answers,
-  and the outputs are compared for equal pushback, no praise, no one-sided disclaimers,
-  and equally strong steelmen. Model lean is systematic, so testing catches it better
-  than runtime checks.
-- **A code tripwire at runtime**, pattern-matching the protocol's banned forms (praise
-  openers, lecture preambles). No AI checker per turn: it would cost a call per turn,
-  block streaming, and a small model judging neutrality is itself unreliable. With
-  nothing stored server-side, a trip can only be counted anonymously or the turn
-  retried.
+  change ships, all four roles run on frozen **Mirror Pairs** (pole flips, group swaps,
+  and radical vs mainstream), and the outputs are compared for equal treatment. Code
+  compares what it can, and calibrated strong models judge the rest. Model lean is
+  systematic, so testing catches it better than runtime checks. The design is in
+  `neutrality-test-bench.md` (ADR-0012).
+- **A code tripwire at runtime.** The Interviewer's reply is released a sentence at a
+  time, and a sentence matching a high-precision list of banned forms (praise openers,
+  lecture preambles) is dropped and counted by date, role, model, and pattern only. No AI
+  checker per turn: it would cost a call per turn, block streaming, and a small model
+  judging neutrality is itself unreliable.
 
 ## Built on TanStack AI
 

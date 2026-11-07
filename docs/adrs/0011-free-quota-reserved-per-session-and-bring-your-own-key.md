@@ -48,5 +48,6 @@ The per-IP counter is the one thing derived from a person that our servers hold,
 disclosure (ADR-0004) must say so, along with the key passing through our server. People
 sharing an IP (campuses, carrier-grade NAT) get one free first pass between them. Every
 prompt or handbook change re-runs the bench against every listed paid model, which
-keeps that list short. Preview and dev deployments share the production key, so they
-use mocked models by default.
+keeps that list short (amended by ADR-0012: these runs are weekly, when something has
+changed). Preview and dev deployments share the production key, so they use mocked
+models by default.
