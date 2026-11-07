@@ -23,21 +23,22 @@ why_.
 
 ## Structure
 
-| File                    | Purpose                                                                |
-| ----------------------- | ---------------------------------------------------------------------- |
-| `vision.md`             | The thesis and north star, long form.                                  |
-| `principles.md`         | The inviolable design laws, expanded with rationale.                   |
-| `grilling-protocol.md`  | The core user experience and the Socratic Grilling protocol.           |
-| `dimension-taxonomy.md` | Polytic's Foundation and Political Dimensions (source-of-truth asset). |
-| `label-library.md`      | The Label rules and list Results anchor to (source-of-truth asset).    |
-| `labels/`               | Full Label cards, one file per family (part of the label library).     |
-| `dilemma-skeletons.md`  | The Dilemma Skeleton template and rules (source-of-truth asset).       |
-| `handbooks/`            | The grill's code-loaded handbooks in skill format, one folder each.    |
-| `roadmap.md`            | v1 requirements, then Stage 1 (current focus) through Stage 3.         |
-| `framework.md`          | The model of a belief system: Dimensions, Beliefs, Tensions, Labels.   |
-| `architecture.md`       | How a grilling session runs behind the scenes (mermaid diagrams).      |
-| `glossary.md`           | Canonical terms (Worldview, Dimension, Belief, Tension, Result, …).    |
-| `adrs/`                 | Architecture decision records, `NNNN-slug.md`. Commitments only.       |
-| `research/`             | Literature surveys feeding decisions. Input, not decisions.            |
+| File                       | Purpose                                                                |
+| -------------------------- | ---------------------------------------------------------------------- |
+| `vision.md`                | The thesis and north star, long form.                                  |
+| `principles.md`            | The inviolable design laws, expanded with rationale.                   |
+| `grilling-protocol.md`     | The core user experience and the Socratic Grilling protocol.           |
+| `dimension-taxonomy.md`    | Polytic's Foundation and Political Dimensions (source-of-truth asset). |
+| `label-library.md`         | The Label rules and list Results anchor to (source-of-truth asset).    |
+| `labels/`                  | Full Label cards, one file per family (part of the label library).     |
+| `dilemma-skeletons.md`     | The Dilemma Skeleton template and rules (source-of-truth asset).       |
+| `handbooks/`               | The grill's code-loaded handbooks in skill format, one folder each.    |
+| `roadmap.md`               | v1 requirements, then Stage 1 (current focus) through Stage 3.         |
+| `framework.md`             | The model of a belief system: Dimensions, Beliefs, Tensions, Labels.   |
+| `architecture.md`          | How a grilling session runs behind the scenes (mermaid diagrams).      |
+| `neutrality-test-bench.md` | How neutrality is tested on every change, and the runtime tripwire.    |
+| `glossary.md`              | Canonical terms (Worldview, Dimension, Belief, Tension, Result, …).    |
+| `adrs/`                    | Architecture decision records, `NNNN-slug.md`. Commitments only.       |
+| `research/`                | Literature surveys feeding decisions. Input, not decisions.            |
 
 If you add a doc, add a row here too.
